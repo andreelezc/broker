@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -66,17 +67,15 @@
     </head>
     
     <body>
+
+@extends('layouts.app')
+
+@section('content')             
+        
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">INET</a>
-                    @else
-                        <a href="{{ route('login') }}">Acceso</a>
-                        <a href="{{ route('register') }}">Registro</a>
-                    @endauth
-                </div>
-            @endif
+         
+
+            
 
             <div class="content">
                 <div class="title m-b-md">
@@ -87,3 +86,4 @@
         </div>
     </body>
 </html>
+@endsection
