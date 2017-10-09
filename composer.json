@@ -22,7 +22,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "inet\\": "app/"
+            "inetweb\\": "app/"
         }
     },
     "autoload-dev": {

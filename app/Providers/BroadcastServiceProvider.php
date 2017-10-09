@@ -1,6 +1,6 @@
 <?php
 
-namespace inet\Providers;
+namespace inetweb\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

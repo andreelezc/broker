@@ -11,16 +11,56 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', function () {
+    return view('inicio');
+});
 
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/regisprod','RegisprodController@showRegistrationForm')->name ('productor');
-Route::post('/regisprod','RegisprodController@showRegistrationForm')->name ('productor');
-Route::get('/regisempren','RegisemprenController@showRegistrationForm')->name ('emprendedor');
+
+
+
+// route:: get('institucion/inicio', function(){
+// 	return view('institucion.inicio');
+
+// });
+
+
+/*Vistas Institucion */
+Route::get('institucion/inicio', 'Institucion\InicioController@index');
+ // Acceso Routes...
+Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
+Route::post('institucion/acceso', 'InstitucionController@login');
+Route::get('institucion/home', 'InstitucionController@index');
+//Route::get('institucion/registro', 'Institucion\RegistroController@index');
+
+
+  // Registro Routes...
+Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
+Route::post('institucion/registro', 'Institucion\RegistroController@register');
+
+
+
+
+/*Vistas Productor */
+Route::get('productor/inicio', 'Productor\InicioController@index');
+ // Acceso Routes...
+Route::get('productor/acceso', 'ProductorController@showLoginForm');
+Route::post('productor/acceso', 'ProductorController@login');
+// Registro Routes..
+Route::get('productor/registro', 'Productor\RegistroController@showRegistrationForm');
+Route::post('productor/registro', 'Productor\RegistroController@register');
+Route::get('productor/home', 'ProductorController@index');
+/*
+Route::get('productor/inicio', 'Productor\InicioController@index');
+Route::get('productor/acceso', 'Productor\AccesoController@index');*/
+
+
+
+
+
+
 

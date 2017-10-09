@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => inet\User::class,
+        'model' => inetweb\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

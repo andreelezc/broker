@@ -1,6 +1,6 @@
 <?php
 
-namespace inet\Http\Middleware;
+namespace inetweb\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

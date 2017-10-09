@@ -1,8 +1,8 @@
 <?php
 
-namespace inet\Http\Controllers\Auth;
+namespace inetweb\Http\Controllers\Auth;
 
-use inet\Http\Controllers\Controller;
+use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

@@ -1,9 +1,9 @@
 <?php
 
-namespace inet\Http\Controllers\Auth;
+namespace inetweb\Http\Controllers\Auth;
 
-use inet\User;
-use inet\Http\Controllers\Controller;
+use inetweb\User;
+use inetweb\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \inet\User
+     * @return \inetweb\User
      */
     protected function create(array $data)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace inet\Providers;
+namespace inetweb\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'inet\Model' => 'inet\Policies\ModelPolicy',
+        'inetweb\Model' => 'inetweb\Policies\ModelPolicy',
     ];
 
     /**

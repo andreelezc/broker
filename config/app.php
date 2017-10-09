@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'inetweb'),
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'America/Argentina/Buenos_Aires',
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        inet\Providers\AppServiceProvider::class,
-        inet\Providers\AuthServiceProvider::class,
-        // inet\Providers\BroadcastServiceProvider::class,
-        inet\Providers\EventServiceProvider::class,
-        inet\Providers\RouteServiceProvider::class,
+        inetweb\Providers\AppServiceProvider::class,
+        inetweb\Providers\AuthServiceProvider::class,
+        // inetweb\Providers\BroadcastServiceProvider::class,
+        inetweb\Providers\EventServiceProvider::class,
+        inetweb\Providers\RouteServiceProvider::class,
 
     ],
 

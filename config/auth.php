@@ -45,6 +45,19 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'institucion' => [
+            'driver' => 'session',
+            'provider' => 'institucion',
+        ],
+
+        'productor' => [
+            'driver' => 'session',
+            'provider' => 'productor',
+        ],
+
+
+
     ],
 
     /*
@@ -67,9 +80,18 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => inet\User::class,
+            'model' => inetweb\User::class,
         ],
 
+        'productor' => [
+            'driver' => 'eloquent',
+            'model' => inetweb\Productor::class,
+        ],
+
+        'institucion' => [
+            'driver' => 'eloquent',
+            'model' => inetweb\Institucion::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

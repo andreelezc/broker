@@ -1,6 +1,6 @@
 <?php
 
-namespace inet\Http\Middleware;
+namespace inetweb\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

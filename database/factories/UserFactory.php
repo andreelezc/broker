@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(inet\User::class, function (Faker $faker) {
+$factory->define(inetweb\User::class, function (Faker $faker) {
     static $password;
 
     return [

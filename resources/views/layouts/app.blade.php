@@ -7,11 +7,11 @@
 
 
    
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="bootstrap/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="bootstrap/css/styles.css">
+    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Cookie')}}">
+    <link rel="stylesheet" href="{{asset('/assets/fonts/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/bootstrap/css/Pretty-Footer.css')}}">
+    <link rel="stylesheet" href="{{asset('/bootstrap/css/styles.css')}}">
     
 
     <!-- CSRF Token -->
@@ -27,7 +27,7 @@
         <nav class="navbar navbar-default navbar-static-top">    
             <div class="navbar-header">
                  <a class="navbar-brand" href="{{ url('/') }}">     
-                <img src="logo-inet.png" height=""  width="400" class="img-thumbnail"  />
+                <img src="{{asset('logo-inet.png')}}" height=""  width="400" class="img-thumbnail"  />
                     </a>
 
               <div class="container">
@@ -58,18 +58,16 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @guest
-                            <li role="presentation"><a href="{{ route('login') }}">Acceso</a></li>
-                            <li role="presentation"><a href="{{ route('register') }}">Registro</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                        @if (Auth::guard('institucion')->check())
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
+                       
+                                <label>
+                                    {{ Auth::guard('institucion')->user()->name }} 
+                                </label>
+
+                                
+                                    
+                                        <a class="btn btn-primary" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Salir
@@ -78,10 +76,30 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
+                                    
+                                
+                          
+                            @elseif (Auth::guard('productor')->check())
+
+                          <label>
+                                    {{ Auth::guard('productor')->user()->name }} 
+                                </label>
+
+                                
+                                    
+                                        <a class="btn btn-primary" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Salir
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form> 
+                        @else
+                           <li role="presentation"><a href="{{ url('institucion/inicio') }}">Institución</a></li>
+                            <li role="presentation"><a href="{{ url('productor/inicio') }}">Productor</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -97,9 +115,9 @@
         <footer>
          <div class="row">
             <div class="col-md-3 col-md-offset-0 col-sm-4 footer-navigation">
-                <header><img class="img-responsive" src="assets/img/logo-inet2.png" width="200" height="100"></header>
+                <header><img class="img-responsive" src=" {{asset('img/logo-inet2.png')}}" width="200" height="100"></header>
                 <h5 class="text-left"><a href="#" target="_parent">Instituto Nacional de Ecucacion Texnologica </a></h5>
-                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
+                <p class="links"><a href="#">inicio</a><strong> · </strong><a href="#">contacto</a><strong> · </strong><a href="#">Novedades</a><strong> · </strong></p>
                 <p class="text-nowrap text-left company-name">
                 LINSSE © 2017 </p>
             </div>
@@ -114,7 +132,7 @@
                     <p> <a href="mailto:info@produccion.gob.ar">info@produccion.gob.ar</a> </p>
                 </div>
             </div>
-            <div class="col-md-5 col-md-offset-0 footer-about"><img class="img-responsive" src="assets/img/logoMinisterio.png" width="300" height="200">
+            <div class="col-md-5 col-md-offset-0 footer-about"><img class="img-responsive" src="{{asset('img/logoMinisterio.png')}}" width="300" height="200">
                 <div class="social-links social-icons"><a href="https://www.facebook.com/ProdArgentina"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/PRODUCCION_ARG"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/ministeriodeproduccion/"><i class="fa fa-instagram"></i></a>
                     <a
                     href="https://www.youtube.com/channel/UCHOdvOZ0I3vdv59jqDyuC6w"><i class="fa fa-youtube"></i></a>
@@ -123,8 +141,8 @@
          </div>
         </footer>
     
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 </body>
 </html>
   

@@ -1,6 +1,6 @@
 <?php
 
-namespace inet;
+namespace inetweb;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-=======
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -10,7 +8,7 @@
                 <div class="panel-heading">Registrar</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('productor') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -32,27 +30,15 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
->>>>>>> 42bfa4e51080a0fcd950e589e5c1f21adef316d8
 
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
-<<<<<<< HEAD
-
-<div class="container">
-    <div class="container-fluid">
-        <section id="botones">
-            <div class="row">
-                
-                
-                
-
-            
-                 <div class="col-md-3 col-md-offset-3"><a class="btn btn-success btn-block btn-lg" role="button" href="{{ route('productor') }}"}>Productor </a></div> 
-                <div class="col-md-3 col-md-offset-0"><a class="btn btn-primary btn-block btn-lg" role="button" href="{{ route('emprendedor') }}">Emprendedor </a></div> 
-                            
-                      
-                           
-                        
-=======
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Contraseña</label>
 
@@ -84,11 +70,10 @@
                         </div>
                     </form>
                 </div>
->>>>>>> 42bfa4e51080a0fcd950e589e5c1f21adef316d8
             </div>
-        </section>
-        <section></section>
-    </div>
+        </div>
     </div>
 </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 @endsection
