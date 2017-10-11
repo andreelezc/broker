@@ -36,6 +36,8 @@ Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
 Route::get('institucion/home', 'InstitucionController@index');
 //Route::get('institucion/registro', 'Institucion\RegistroController@index');
+Route::get('institucion/perfil', 'Institucion\PerfilController@index');
+Route::get('institucion/capacidad', 'InstitucionController@capacit');
 
 
   // Registro Routes...
@@ -54,6 +56,8 @@ Route::post('productor/acceso', 'ProductorController@login');
 Route::get('productor/registro', 'Productor\RegistroController@showRegistrationForm');
 Route::post('productor/registro', 'Productor\RegistroController@register');
 Route::get('productor/home', 'ProductorController@index');
+Route::get('productor/perfil', 'Productor\PerfilController@index');
+Route::get('productor/oportunidad', 'ProductorController@oport');
 /*
 Route::get('productor/inicio', 'Productor\InicioController@index');
 Route::get('productor/acceso', 'Productor\AccesoController@index');*/
