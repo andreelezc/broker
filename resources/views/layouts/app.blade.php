@@ -81,7 +81,7 @@
                           
                             @elseif (Auth::guard('productor')->check())
 
-                          <label>
+                                 <label>
                                     {{ Auth::guard('productor')->user()->name }} 
                                 </label>
 
