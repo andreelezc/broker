@@ -45,7 +45,7 @@ Route::get('institucion/buscar', 'InstitucionController@buscar');
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
 Route::post('institucion/registro', 'Institucion\RegistroController@register');
 
-
+Route::post('institucion/capacidad', 'CapacidadController@crear');
 
 
 /*Vistas Productor */
@@ -61,6 +61,13 @@ Route::get('productor/perfil', 'Productor\PerfilController@index');
 Route::get('productor/oportunidad', 'ProductorController@oport');
 
 Route::get('productor/buscar', 'ProductorController@buscar');
+
+
+Route::post('productor/oportunidad', 'OportunidadController@crear');
+
+
+
+
 /*
 Route::get('productor/inicio', 'Productor\InicioController@index');
 Route::get('productor/acceso', 'Productor\AccesoController@index');*/
