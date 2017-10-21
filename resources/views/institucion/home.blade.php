@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                   <
+                   
                     <div class="container">
                         <div class="col-lg-offset-2 col-md-1"><img src="{{asset('img/escuela.png')}}"  height="200"  /></div>
                     </div>

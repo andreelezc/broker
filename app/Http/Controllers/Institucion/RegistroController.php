@@ -59,14 +59,5 @@ class RegistroController extends Controller
     }
 
 
-     public function store (Request $request)
-    { 
-        Mail::send('institucion.mail', $request->all(), function ($msj){
-            $msj->subject('correo correcto');
-            $msj->to('aflorenciacabrera@gmail.com');
-        } );
-
-        Session::flash('message','mensaje enviado');
-        
-       }
+     
 }
