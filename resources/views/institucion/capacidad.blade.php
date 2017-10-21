@@ -3,8 +3,6 @@
 @section('content')
 
 
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -15,7 +13,6 @@
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
-                       
                         </div>
                     @endif
 
@@ -23,56 +20,100 @@
             <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}
             <h2 class="text-center">Capacidad Laboral</h2>
+            {{-- TITULO --}}
             <div class="form-group">
                 <label class="control-label" for="text-input"> Titulo :</label>
                 <input class="form-control" type="text" name="titulo" id="text-input">
             </div>
-            <div class="form-group">
-                <label class="control-label" for="password-input">Capacidad: </label>
-                <input class="form-control" type="text" name="capacidad" id="text-input">
-            </div>
+            
+            {{-- PROPUESTA --}}
             <div class="form-group">
                 <label class="control-label" for="email-input">Propuesta: </label>
-                <input class="form-control" type="text" name="propuesta" id="text-input">
+                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propongo ...">
             </div>
+            {{-- EXPERIENCIA --}}
             <div class="form-group">
-                <label class="control-label" for="textarea-input">Ecperiencia: </label>
+                <label class="control-label" for="textarea-input">Experiencia: </label>
                 <textarea class="form-control" name="experiencias" id="textarea-input"></textarea>
             </div>
-              <div class="form-group">
-                <label class="control-label" name= "categoria" for="file-input">Categoria</label>
+                 {{-- PALABRAS CLAVE --}}
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12"> <label class="control-label">Palabras Clave:</label>
+                <label>(ingrese palabras clave para facilitar la busqueda de su capacidad laboral)</label>
+                </div>
+                <div class="col-md-3">
+                    <input name="key1" type="text" class="form-control" required />
+                </div>
+                <div class="col-md-3">
+                    <input name="key2" type="text" class="form-control" required />
+                </div>
+                <div class="col-md-3">
+                    <input name="key3" type="text" class="form-control" required />
+                </div>
+                <div class="col-md-3">
+                    <input name="key4" type="text" class="form-control" required/>
+                </div>
             </div>
-           <div class="form-group has-success"><span><label class="control-label checkbox-inline"><input  name= "categoria" type="checkbox">Pasante   </label><p></p></span><span><label class="control-label checkbox-inline"><input  name= "categoria" type="checkbox">Encargado   </label></span><p></p><span><label class="control-label checkbox-inline"><input   name= "categoria" type="checkbox"> Proyecto   </label></span><p></p><span><label class="control-label checkbox-inline"><input  name= "categoria" type="checkbox">Estudiante   </label></span></div>
-            <div
-            class="form-group">
-                <label class="control-label" name= "rubro">Rubro  </label>
-    </div>
-    <div class="form-group">
-        <div class="radio">
-            <label class="control-label">
-                <input type="radio"> PYME</label>
         </div>
-        <div class="radio">
-            <label class="control-label">
-                <input type="radio" name="rubro" checked="">Beca</label>
+
+            <div class="row">
+                <div class="col-md-6">
+                     {{-- CATEGORIA --}}
+              <div class="form-group">
+                <label class="control-label" for="textarea-input">Categoria: </label>
+                        <select name="categoria"  class="form-control" required>
+                                
+                                <option value="pasante">Pasante</option>
+                                <option value="encargado">Encargado</option>
+                                <option value="estudiante">Estudiante</option>
+                         
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                          {{-- RUBRO --}}
+                 <div class="form-group">
+                <label class="control-label" for="textarea-input">Rubro: </label>
+                        <select name="rubro"  class="form-control" required>
+                                
+                                <option value="pyme">PYME</option>
+                                <option value="beca">Beca</option>
+                                <option value="emprededores">Emprededores</option>
+                         
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+           
+    
+    {{-- DISPONIBILIDAD --}}
+    <div class="row">
+        <div class="col-md-6">
+            
+            <div class="form-group">
+                <label class="control-label">Disponibilidad Horaria: </label>
+                <input class="form-control" type="text" name="disponibilidad" minlength="5" inputmode="full-width-latin">
+            </div>
         </div>
-        <div class="radio">
-            <label class="control-label">
-                <input type="radio" name="rubro">Emprendedores</label>
+    {{-- REMUNERACION --}}
+    <div class="col-md-6">
+            <div class="form-group">
+        
+               <label class="control-label">Remuneracion Pretendida: </label>
+                <input class="form-control" type="text"  name="remuneracion"  placeholder="$">
+            </div>
+    </div>
+    </div>
+
+       
+    {{-- SUBMIT --}}
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Cargar </button>
         </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label">Disponibilidad Horaria: </label>
-        <input class="form-control input-sm" type="text" name="disponibilidad" minlength="5" inputmode="full-width-latin">
-    </div>
-    <div class="form-group">
-       <label class="control-label">Remuneracion Pretendida: </label>
-        <input class="form-control" type="text"  name="remuneracion"  placeholder="$$">
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">Cargar </button>
-    </div>
-    </form>
+        {{-- END FORM --}}
+    </form> 
     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
