@@ -50,9 +50,9 @@ class ProductorController extends Controller
      public function buscar()
     {
         ///buscar 10 capacidades y mostrar
-        $capacidades = capacidad::all()->first();
-        return $capacidades->Institucion;
+        $capacidades = capacidad::orderBy('id', 'desc')->take(10)->get();
+        // return $capacidades->Institucion;
         //envio los resultados a la vista
-        // return view('productor.buscar',array('capacidades'=>$capacidades));
+        return view('productor.buscar',array('capacidades'=>$capacidades));
     }
 }

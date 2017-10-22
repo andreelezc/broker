@@ -28,10 +28,42 @@
  
  {{-- LISTA DE OPORTUNIDADES --}}
 <ul class="list-group">
-    
+    {{-- 
+            $table->string('propuesta');
+            $table->string('experiencias');
+            $table->string('categoria');
+            $table->string('rubro');
+            $table->string('disponibilidad');
+            $table->string('remuneracion');
+            $table->integer('institucion_id')->references('id')->on('intitucions'); --}}
 @foreach( $capacidades as $capacidad)
 
-    <li class="list-group-item"><span>List Group Item 1</span></li>
+    <a href="#" class="list-group-item">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
+            </div>
+
+            <div class="col-md-4 col-md-offset-4">
+                <span>
+                    
+                Publicado por: {{ $capacidad->institucion->name }}
+                </span>
+            </div>    
+        </div>
+    <p></p>        
+        <p class="list-group-item-text">
+            {{ $capacidad->experiencias }}
+        </p>
+        <p></p>
+        <ul>
+            <li>Categoria: {{ $capacidad->categoria }}</li>
+            <li>Rubro: {{ $capacidad->rubro }}</li>
+            <li>Disponibilidad: {{ $capacidad->disponibilidad }}</li>
+            <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
+        </ul>
+            
+    </a>
 
 @endforeach
 
