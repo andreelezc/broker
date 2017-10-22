@@ -5,7 +5,7 @@ namespace inetweb\Http\Controllers;
 use Illuminate\Http\Request;
 use inetweb\Capacidad;
 use inetweb\Keyword;
-
+use Illuminate\Support\Facades\Auth;
 class CapacidadController extends Controller
 {
     //
@@ -14,6 +14,7 @@ class CapacidadController extends Controller
      public function crear(Request $request)
      {
 
+          $user = Auth::guard('institucion')->user();
           // creo la capacidad
      	$c=new capacidad;
      	$c->titulo= $request->titulo;
@@ -23,7 +24,8 @@ class CapacidadController extends Controller
      	$c->categoria= $request->categoria;
      	$c->rubro= $request->rubro;
      	$c->disponibilidad= $request->disponibilidad;
-     	$c->remuneracion= $request->remuneracion;  	
+     	$c->remuneracion= $request->remuneracion; 
+          $c->institucion_id = $user->id; 	
      	$c->save(); //guardo en la base de datos
 
           //por cada palabra clave creo una keyword;

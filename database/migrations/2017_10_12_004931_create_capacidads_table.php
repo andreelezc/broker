@@ -23,6 +23,7 @@ class CreateCapacidadsTable extends Migration
             $table->string('rubro');
             $table->string('disponibilidad');
             $table->string('remuneracion');
+            $table->integer('institucion_id')->references('id')->on('intitucions');
             $table->timestamps();
         });
     }
