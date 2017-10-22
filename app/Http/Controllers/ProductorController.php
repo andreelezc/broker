@@ -51,7 +51,7 @@ class ProductorController extends Controller
     {
         ///buscar 10 capacidades y mostrar
         $capacidades = capacidad::all()->first();
-        return $capacidades;
+        return $capacidades->Institucion;
         //envio los resultados a la vista
         // return view('productor.buscar',array('capacidades'=>$capacidades));
     }

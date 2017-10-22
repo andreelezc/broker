@@ -12,6 +12,6 @@ class capacidad extends Model
 
     public function institucion()
     {
-    	return $this->belongsTo('inetweb\Institucion','referencia');
+    	return $this->belongsTo('inetweb\Institucion','institucion_id');
     }
 }
