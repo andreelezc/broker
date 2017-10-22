@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 
+use inetweb\Oportunidad;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -51,6 +52,11 @@ class InstitucionController extends Controller
 
      public function buscar()
     {
+        ///primero obtener una lista de 10 ultimas ofertas obtenidas
+        //TODO: oportunidades recomendadas segun usuario
+        // $oportunidad = Oportunidad::all();
+        ///envio los resultados a la vista
+        // return view('institucion.buscar',array('oportunidad'=>$oportunidad));
         return view('institucion.buscar');
     }
 

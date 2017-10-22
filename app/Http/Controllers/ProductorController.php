@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+use inetweb\Capacidad;
+use inetweb\Institucion;
+
 class ProductorController extends Controller
 {
     //
@@ -45,6 +49,10 @@ class ProductorController extends Controller
 
      public function buscar()
     {
-        return view('productor.buscar');
+        ///buscar 10 capacidades y mostrar
+        $capacidades = capacidad::all()->first();
+        return $capacidades;
+        //envio los resultados a la vista
+        // return view('productor.buscar',array('capacidades'=>$capacidades));
     }
 }
