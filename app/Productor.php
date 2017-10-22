@@ -28,4 +28,11 @@ class Productor extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //relacion con capacidad
+    //productor->"tienevarias"->oportunidades
+    public function oportunidad()
+    {
+        return $this->hasMany('inetweb\oportunidad');
+    }
 }

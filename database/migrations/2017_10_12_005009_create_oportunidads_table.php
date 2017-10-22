@@ -16,7 +16,6 @@ class CreateOportunidadsTable extends Migration
         Schema::create('oportunidads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->string('necesidad');
             $table->string('propuesta');
             $table->string('requisito');
             $table->string('categoria');

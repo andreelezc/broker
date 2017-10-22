@@ -18,7 +18,6 @@ class CapacidadController extends Controller
           // creo la capacidad
      	$c=new capacidad;
      	$c->titulo= $request->titulo;
-     	
      	$c->propuesta= $request->propuesta;
      	$c->experiencias= $request->experiencias;
      	$c->categoria= $request->categoria;
@@ -29,7 +28,7 @@ class CapacidadController extends Controller
      	$c->save(); //guardo en la base de datos
 
           //por cada palabra clave creo una keyword;
-          $k = new Keyword;
+           $k = new Keyword;
           $k->referencia = ($c->id);
           $k->palabra = ($request->key1);
           $k->tipo = ('capacidad');
@@ -50,8 +49,12 @@ class CapacidadController extends Controller
           $k->tipo = ('capacidad');
           $k->save();
 
-          // redireccion
+          //redireccion a la pag de inicio
+          return view('institucion.home');
 
+         
+
+         
 
 
 

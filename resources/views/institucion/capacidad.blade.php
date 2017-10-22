@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 
 <div class="container">
     <div class="row">
@@ -16,7 +14,7 @@
                         </div>
                     @endif
 
-    
+     {{-- Inicio FORM --}}
             <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}
             <h2 class="text-center">Capacidad Laboral</h2>
@@ -28,8 +26,8 @@
             
             {{-- PROPUESTA --}}
             <div class="form-group">
-                <label class="control-label" for="email-input">Propuesta: </label>
-                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propongo ...">
+                <label class="control-label" for="email-input"> Objetivos: </label>
+                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Mi objetivo es ...">
             </div>
             {{-- EXPERIENCIA --}}
             <div class="form-group">
@@ -67,7 +65,6 @@
                                 <option value="pasante">Pasante</option>
                                 <option value="encargado">Encargado</option>
                                 <option value="estudiante">Estudiante</option>
-                         
                         </select>
                     </div>
                 </div>
@@ -76,25 +73,20 @@
                  <div class="form-group">
                 <label class="control-label" for="textarea-input">Rubro: </label>
                         <select name="rubro"  class="form-control" required>
-                                
                                 <option value="pyme">PYME</option>
                                 <option value="beca">Beca</option>
                                 <option value="emprededores">Emprededores</option>
-                         
                         </select>
                     </div>
                 </div>
             </div>
-
-           
-    
     {{-- DISPONIBILIDAD --}}
     <div class="row">
         <div class="col-md-6">
             
             <div class="form-group">
                 <label class="control-label">Disponibilidad Horaria: </label>
-                <input class="form-control" type="text" name="disponibilidad" minlength="5" inputmode="full-width-latin">
+                <input class="form-control" type="text" name="disponibilidad" minlength="5" inputmode="full-width-latin" placeholder="00:00   a  00:00">
             </div>
         </div>
     {{-- REMUNERACION --}}
@@ -117,10 +109,7 @@
     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-           
-               
-
-                 </div>
+             </div>
             </div>
         </div>
     </div>

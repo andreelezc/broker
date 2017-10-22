@@ -55,13 +55,14 @@ class InstitucionController extends Controller
         ///primero obtener una lista de 10 ultimas ofertas obtenidas
         //TODO: oportunidades recomendadas segun usuario
         // $oportunidad = Oportunidad::all();
+
+       
+
         ///envio los resultados a la vista
-        // return view('institucion.buscar',array('oportunidad'=>$oportunidad));
+        
         return view('institucion.buscar');
     }
 
-
-   
 }
 
 

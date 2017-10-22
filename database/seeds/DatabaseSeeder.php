@@ -17,8 +17,7 @@ class DatabaseSeeder extends Seeder
         self::seedProductors();
         self::seedInstitucions();
       
-        $this->command->info('Tabla catálogo inicializada con datos!');
-     
+        $this->command->info('Tabla usuarios inicializada con datos!');
     }
 
     private function seedProductors(){
@@ -29,20 +28,18 @@ class DatabaseSeeder extends Seeder
             $p->email = 'sambranaivan@gmail.com' ;
             $p->direccion = 'casa de ivan';
             $p->password = bcrypt('123456');
-            $p->save();
-    	
+             $p->save();  	
     }
 
     private function seedInstitucions(){
     	DB::table('Institucions')->delete();
     	
-    	$p = new Institucion;
-            $p->name = 'Sr Institucion';
-            $p->email = 'sambranaivan@gmail.com' ;
-            $p->direccion = 'casa de ivan';
-            $p->password = bcrypt('123456');
-            $p->save();
-    	
+    	$i = new Institucion;
+            $i->name = 'Sr Institucion';
+            $i->email = 'sambranaivan@gmail.com' ;
+            $i->direccion = 'casa de ivan';
+            $i->password = bcrypt('123456');
+            $i->save();    	
     }
 
 }
