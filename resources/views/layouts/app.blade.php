@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Cookie')}}">
     <link rel="stylesheet" href="{{asset('/assets/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('/bootstrap/css/Pretty-Footer.css')}}">
+    <link rel="stylesheet" href="{{asset('/bootstrap/css/Hero-Technology.css')}}">
     <link rel="stylesheet" href="{{asset('/bootstrap/css/styles.css')}}">
     
 
@@ -21,49 +22,46 @@
     <title>INET</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        
+        .navbar-brand {
+          padding: 0px;
+        }
+        .navbar-brand>img {
+          height: 100%;
+          padding: 15px;
+          width: auto;
+        }
+
+        .navbar-brand>img {
+          padding: 7px 15px;
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">    
-            <div class="navbar-header">
-                 <a class="navbar-brand" href="{{ url('/') }}">     
-                <img src="{{asset('logo-inet.png')}}" height=""  width="400" class="img-thumbnail"  />
-                    </a>
+     
 
-              <div class="container">
-                
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image 
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'INETweb') }}
-                    </a>-->
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-
-
-
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('logo-inet.png')}}" >
+        </a>
+      </div>
+      <div id="navbar2" class="navbar-collapse collapse">
+      <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
+                     
                         @if (Auth::guard('institucion')->check())
-
-                       
-                                <label>
-                                    {{ Auth::guard('institucion')->user()->name }} 
-                                </label>
+                                <label>{{ Auth::guard('institucion')->user()->name }}</label>
 
                                 
                                     
@@ -81,9 +79,7 @@
                           
                             @elseif (Auth::guard('productor')->check())
 
-                                 <label>
-                                    {{ Auth::guard('productor')->user()->name }} 
-                                </label>
+                                 <label>{{ Auth::guard('productor')->user()->name }}</label>
 
                                 
                                     
@@ -97,13 +93,15 @@
                                             {{ csrf_field() }}
                                         </form> 
                         @else
-                           <li role="presentation"><a href="{{ url('institucion/inicio') }}">Institución</a></li>
+                            <li role="presentation"><a href="{{ url('institucion/inicio') }}">Institución</a></li>
                             <li role="presentation"><a href="{{ url('productor/inicio') }}">Productor</a></li>
                         @endif
                     </ul>
-                </div>
-            </div>
-        </nav>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
 
         @yield('content')
     </div>
@@ -143,6 +141,7 @@
     
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/ajax.js')}}"></script>
 </body>
 </html>
   

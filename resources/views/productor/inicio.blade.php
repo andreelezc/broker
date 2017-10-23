@@ -3,52 +3,27 @@
 @section('content')
 
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>INET-Web</title>
-    
-  
-    
-</head>
-
-<body>
-
-    <div class="panel panel-default">
-    <h1 class= "text-center"> Pequeños Productores </h1>
-</div>
-    <div class="container">
-        <div class="row">
-             <!-- <div class="col-lg-1 col-lg-offset-3 col-md-12"><span class="label label-success">Ingresar </span></div>
-            <div class="col-lg-3 col-lg-offset-2 col-md-12 col-md-offset-4"><span class="label label-warning">Crear cuenta</span></div>-->
-        </div>
-        <div class="row">
-           
-            
-
-           <div class="col-lg-3 col-lg-offset-3 col-md-12">
-                 <div class="col-lg-1 col-lg-offset-3 col-md-12"><span class="label label-success">Ingresar </span></div>
-                <a class="btn " role="button" href="{{ url('productor/acceso') }}">
-                <img  src="{{asset('img/acceder.png')}}" height="200" class="img-circle"/> 
-             </div>
-
-              <div class="col-lg-3 col-lg-offset-0 col-md-4 col-md-offset-4 col-sm-5 col-sm-offset-4 col-xs-3 col-xs-offset-3"> 
-                <div class="col-lg-3 col-lg-offset-2 col-md-12 col-md-offset-4"><span class="label label-primary">Crear cuenta</span></div>
-                <a class="btn " role="button" href="{{ url('productor/registro') }}">
-                <img src="{{asset('img/im5.png')}}"  height="200" class="img-circle"/>
-             </div>
 
 
-            
-
-            <div class="col-md-12">
-                <section></section>
-            </div>
-
-
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h1 class="text-center">Pequeños Productores</h1>
+       <div class="row">
+    <div class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-6">
+        <a class="btn btn-default btn-block" type="button" href="{{ url('productor/acceso') }}">
+          <img src="{{asset('img/acceder.png')}}" class="img-circle img-responsive center-block"/> 
+           <h3 class="text-center">INGRESAR</h3>
+        </a>
     </div>
-</body>
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+        <a class="btn btn-default btn-block" type="button" href="{{ url('productor/registro') }}">
+          <img  src="{{asset('img/im5.png')}}"  class="img-circle img-responsive center-block"/>
+           <h3 class="text-center">CREAR CUENTA</h3>
+        </a>
+    </div>
+    </div>
+    </div>
+</div>
 
 
 @endsection

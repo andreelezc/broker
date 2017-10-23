@@ -42,7 +42,8 @@ class InstitucionController extends Controller
 
      public function index()
     {
-        return view('institucion.home');
+        $user = Auth::guard('institucion')->user();
+        return view('institucion.home',array('user'=>$user));
     }
 
     public function capacit()

@@ -65,7 +65,10 @@ Route::get('productor/buscar', 'ProductorController@buscar');
 
 Route::post('productor/oportunidad', 'OportunidadController@crear');
 
+////////////////////API para consultas * sin vistas
 
+Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
+Route::get('capacidad/all', 'CapacidadController@getAll');
 
 
 /*

@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         self::seedProductors();
         self::seedInstitucions();
-      
         $this->command->info('Tabla usuarios inicializada con datos!');
     }
 

@@ -1,7 +1,7 @@
 div.jumbotron.hero-technology{
   color:#fff;
   text-align:center;
-  background:url('../../assets/img/hero-background-technology.jpg');
+   background:url('{{ asset('assets/img/hero-background-technology.jpg') }}');
   background-size:cover;
   background-position:center;
   padding-top:100px;

@@ -5,54 +5,44 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Bienvenido "Institucion Educativa"</div>
+                <div class="panel-heading">
+                  @if (Auth::guard('institucion')->check())
+                      Bienvenido {{ Auth::guard('institucion')->user()->name }}
+                  @endif
+                </div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
+      <div class="panel-body">
+         @if (session('status'))
+                              <div class="alert alert-success">
+                                  {{ session('status') }}
+                              </div>
+                          @endif
+          <div class="row">
+              <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                  <div><img src="{{asset('img/escuela.png')}}" class="img-rounded img-responsive" /></div>
+              </div>
+          </div>
+          <div class="row">
+            {{-- BOTON PERFIL --}}
+              <div class="col-md-4 col-xs-4">
+                  <a class="btn btn-success btn-block btn-lg" href="{{ url('institucion/perfil') }}" type="button">PERFIL</a>
+              </div>
+            {{--  --}}
+              {{-- BOTON CAPACIDADES --}}
+              <div class="col-md-4 col-xs-4">
+                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('institucion/capacidad')}}" type="button">CARGAR CAPACIDADES</a>
+              </div>
+              {{-- BOTON BUSCAR --}}
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('institucion/buscar')}}" type="button">BUSCAR OPORTUNIDADES</a>
+              </div>
+              {{--  --}}
+          </div>
+      </div>
                    
-                    <div class="container">
-                        <div class="col-lg-offset-2 col-md-1"><img src="{{asset('img/escuela.png')}}"  height="200"  /></div>
-                    </div>
 
-                    <div><br></div>
-              <div class="col-lg-1 col-lg-offset-1 col-md-12">
-              
-                <a class="btn btn-success " role="button" href="{{ url('institucion/perfil') }}">Perfil
-                  </a>
-               
-             </div>
-
-             
-              <div class="col-lg-2 col-lg-offset-2 col-md-12">
-
-
-                <a class="btn btn-primary" role="button" href="{{ url('institucion/capacidad') }}"> Capacidades Laboral
-                  </a>
-             
-                
-                </div>
-        
-          
-          <div class="col-lg-1 col-lg-offset-2 col-md-12">
-
-
-                <a class="btn btn-warning" role="button" href="{{ url('institucion/buscar') }}"> Buscar Oportunidades
-                  </a>
-             
-                
-                </div>
-
-
-
-
-                </div>
-            </div>
-        </div>
     </div>
+</div>
+</div>
 </div>
 @endsection

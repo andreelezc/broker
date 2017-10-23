@@ -12,6 +12,8 @@ class OportunidadController extends Controller
      public function crear(Request $request)
      {
 
+            $user = Auth::guard('productor')->user();
+
      	$o=new oportunidad;
      	$o->titulo= $request->titulo;
      	$o->propuesta= $request->propuesta;
@@ -22,7 +24,7 @@ class OportunidadController extends Controller
      	$o->remuneracion= $request->remuneracion;
      	$o->fechaIngreso= $request->fechaIngreso;
      	$o->fechaEgreso= $request->fechaEgreso;
-          //$o->productor_id = $user->id; 
+          $o->productor_id = $user->id; 
      	$o->save(); //guardo en la base de datos
 
            //por cada palabra clave creo una keyword;

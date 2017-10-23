@@ -51,12 +51,11 @@ class CapacidadController extends Controller
 
           //redireccion a la pag de inicio
           return view('institucion.home');
-
-         
-
-         
+     }
 
 
-
+     public function getAll(){
+          $capacidades = capacidad::all();
+          return json_encode($capacidades);
      }
 }

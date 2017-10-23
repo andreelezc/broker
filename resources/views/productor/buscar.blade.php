@@ -28,14 +28,7 @@
  
  {{-- LISTA DE OPORTUNIDADES --}}
 <ul class="list-group">
-    {{-- 
-            $table->string('propuesta');
-            $table->string('experiencias');
-            $table->string('categoria');
-            $table->string('rubro');
-            $table->string('disponibilidad');
-            $table->string('remuneracion');
-            $table->integer('institucion_id')->references('id')->on('intitucions'); --}}
+   
 @foreach( $capacidades as $capacidad)
 
     <a href="#" class="list-group-item">
