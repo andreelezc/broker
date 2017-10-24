@@ -5,6 +5,7 @@ namespace inetweb\Http\Controllers;
 use Illuminate\Http\Request;
 use inetweb\Oportunidad;
 use inetweb\Keyword;
+use Illuminate\Support\Facades\Auth;
 class OportunidadController extends Controller
 {
     //protected function guard()

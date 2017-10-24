@@ -27,10 +27,10 @@
                   <a class="btn btn-success btn-block btn-lg" href="{{ url('productor/perfil') }}" type="button">PERFIL</a>
               </div>
               <div class="col-md-4 col-xs-4">
-                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/oportunidad')}}" type="button">CARGAR OPORTUNIDADES</a>
+                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/oportunidad')}}" type="button"> OPORTUNIDADES</a>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('institucion/buscar')}}" type="button">BUSCAR CAPACIDADES</a>
+                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}" type="button">BUSCAR CAPACIDADES</a>
               </div>
           </div>
       </div>

@@ -36,31 +36,78 @@
             <div class="col-md-4">
                 <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
             </div>
-
             <div class="col-md-4 col-md-offset-4">
-                <span>
-                    
+                <span>                  
                 Publicado por: {{ $capacidad->institucion->name }}
                 </span>
-            </div>    
+
+            </div>       
         </div>
+
     <p></p>        
-        <p class="list-group-item-text">
-            {{ $capacidad->experiencias }}
-        </p>
+        <p class="list-group-item-text"> Experiencias: {{ $capacidad->experiencias }} </p>
         <p></p>
-        <ul>
-            <li>Categoria: {{ $capacidad->categoria }}</li>
-            <li>Rubro: {{ $capacidad->rubro }}</li>
-            <li>Disponibilidad: {{ $capacidad->disponibilidad }}</li>
-            <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
-        </ul>
-            
+          <!-- boton de la ventana-->
+        <div  class=" col-md-offset-10">  
+             <p href="#ventana1"   class="text-center btn-default " data-toggle="modal" > ver mas</p>
+        </div>  
+                        <div class="modal fade in" id="ventana1" >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- header de la ventana-->
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                        </button>
+                                        <h4 class="modal-title"> {{ $capacidad->titulo }} </h4>
+
+                                    </div>
+                                     <!-- contenido de la ventana de la ventana-->
+                                            <!-- panel de capacidad-->
+                                    <div class="modal-body"> 
+                                    <p class="list-group-item-text"> Experiencia:  {{ $capacidad->experiencias }}</p>
+                                        <p></p>
+                                        <ul>
+                                            <li>Categoria: {{ $capacidad->categoria }}</li>
+                                            <li>Rubro: {{ $capacidad->rubro }}</li>
+                                            <li>Disponibilidad: {{ $capacidad->disponibilidad }}</li>
+                                            <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
+                                        </ul>
+                                        <p></p>
+                                    </div>
+                                            <!-- panel de contacto-->
+                                    <div class="modal-body">     
+                                    <p class="list-group-item-text"> Contacto:  {{ $capacidad->institucion->name }}</p>
+                                        <p></p>
+                                        <ul>
+                                            <li>Correo Electronico : {{ $capacidad->institucion->email }}</li>
+                                            <li>Direccion: {{ $capacidad->institucion->direccion }}</li>
+                                            <li>Telefono: {{ $capacidad->institucion->telefono  }}</li>
+
+                                           
+                                        </ul> 
+           
+                                         <p  href="" class="text-center btn">Ver Perfil </p>
+                                          <p></p>
+
+                                    </div>
+                                     <!-- footer de la ventana-->
+                                    <div class="modal-footer">
+                                        <button class="btn btn-default" type="button" data-dismiss="modal">Cerrar</button>
+                                         <!--<button class="btn btn-primary" type="button">Save</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
     </a>
+<br>
+
+
 
 @endforeach
-
 </ul>
+
                  </div>
             </div>
         </div>

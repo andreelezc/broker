@@ -30,7 +30,7 @@
             {{--  --}}
               {{-- BOTON CAPACIDADES --}}
               <div class="col-md-4 col-xs-4">
-                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('institucion/capacidad')}}" type="button">CARGAR CAPACIDADES</a>
+                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('institucion/capacidad')}}" type="button"> CAPACIDADES</a>
               </div>
               {{-- BOTON BUSCAR --}}
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
