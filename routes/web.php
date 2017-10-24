@@ -12,6 +12,32 @@
 */
 
 
+Route::middleware('isInstitucion')->group(function(){
+///rutas solo accesibles por usuarios autenticados de tipo institucion
+Route::get('institucion/home', 'InstitucionController@index');
+Route::get('institucion/perfil', 'Institucion\PerfilController@index');
+Route::get('institucion/capacidad', 'InstitucionController@capacit');
+Route::get('institucion/buscar', 'InstitucionController@buscar');
+Route::post('institucion/capacidad', 'CapacidadController@crear');
+
+
+
+});
+
+Route::middleware('isProductor')->group(function(){
+///rutas solo accesibles por usuarios autenticados de tipo productor
+
+Route::get('productor/home', 'ProductorController@index');
+Route::get('productor/perfil', 'Productor\PerfilController@index');
+Route::get('productor/oportunidad', 'ProductorController@oport');
+Route::get('productor/buscar', 'ProductorController@buscar');
+Route::post('productor/oportunidad', 'OportunidadController@crear');
+
+});
+
+
+
+///no logueados
 Route::get('/', function () {
     return view('inicio');
 });
@@ -23,29 +49,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-// route:: get('institucion/inicio', function(){
-// 	return view('institucion.inicio');
-
-// });
-
 
 /*Vistas Institucion */
 Route::get('institucion/inicio', 'Institucion\InicioController@index');
  // Acceso Routes...
 Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
-Route::get('institucion/home', 'InstitucionController@index');
-//Route::get('institucion/registro', 'Institucion\RegistroController@index');
-Route::get('institucion/perfil', 'Institucion\PerfilController@index');
-Route::get('institucion/capacidad', 'InstitucionController@capacit');
-Route::get('institucion/buscar', 'InstitucionController@buscar');
-
 
   // Registro Routes...
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
 Route::post('institucion/registro', 'Institucion\RegistroController@register');
 
-Route::post('institucion/capacidad', 'CapacidadController@crear');
+
 
 
 /*Vistas Productor */
@@ -56,14 +71,6 @@ Route::post('productor/acceso', 'ProductorController@login');
 // Registro Routes..
 Route::get('productor/registro', 'Productor\RegistroController@showRegistrationForm');
 Route::post('productor/registro', 'Productor\RegistroController@register');
-Route::get('productor/home', 'ProductorController@index');
-Route::get('productor/perfil', 'Productor\PerfilController@index');
-Route::get('productor/oportunidad', 'ProductorController@oport');
-
-Route::get('productor/buscar', 'ProductorController@buscar');
-
-
-Route::post('productor/oportunidad', 'OportunidadController@crear');
 
 ////////////////////API para consultas * sin vistas
 

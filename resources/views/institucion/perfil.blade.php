@@ -2,104 +2,80 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Perfil de la Institucion</div>
+      <div class="row">
 
-   <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('institucion/registro') }}">
-                        {{ csrf_field() }}
-
-
-<div class=" col-md-1"><img src="{{asset('img/avatar_2x.png')}}" height="100"  /></div>
-
-
-            
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Usuario</label>
-                            <div class="col-md-5"> 
-
-                                <label for="name" class="col-md-2 control-label">{{ Auth::guard('institucion')->user()->name }} </label>
-                                    
-                               
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-                                
-                       
-
-                                
-                              
-
-                               
-                            </div>
-                        </div>
-
-                     
-
-                        <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
-                            <label for="direccion" class="col-md-4 control-label">Direccion </label>
-
-                            <div class="col-md-6">
-
-<label for="direccion" class="col-md-4 control-label">{{ Auth::guard('institucion')->user()->direccion }} </label>
-                                
-                                <input id="direccion" type="text" class="form-control" name="direccion" value="{{ old('direccion') }}" required>
-
-                         
-                       
-                               
-                                 
-                                
- 
-                            </div>
-                        </div>
-
- 
- 
-                         <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
-                            <label for="telefono" class="col-md-4 control-label">Telefono </label>
-
- 
-                            <div class="col-md-6">
-                                <input id="telefono" type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required>
-                     <label for="telefono" class="col-md-4 control-label">{{ Auth::guard('institucion')->user()->telefono }} </label>
-                              
-
-                                
-                            </div>
-                        </div>
-
-
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email </label>
-
-                            <div class="col-md-6">
-
-                                <label for="email" class="col-md-4 control-label">{{ Auth::guard('institucion')->user()->email }} </label>
-                                
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-                                 
-
-                               
-                            </div>
-                        </div>
-
-                       
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Actualizar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3" >
+   
+   
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ Auth::Guard('institucion')->user()->name }}</h3>
             </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive"> </div>
+            
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Nombre:</td>
+                        <td>{{ Auth::Guard('institucion')->user()->name }}</td>
+                      </tr>
+                      <tr>
+                          <td>Direccion de Correo:</td>
+                        <td>
+                            <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
+                                
+                            {{ Auth::Guard('institucion')->user()->email }}
+                            </a>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>Direccion:</td>
+                        <td>{{ Auth::Guard('institucion')->user()->direccion }}</td>
+                         <td>
+                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
+                        
+                        <span class="pull-right">
+                        </td>
+                      </tr>
+                   
+                    <tr>
+                        <td>Telefono: </td>
+                        <td>{{ Auth::Guard('institucion')->user()->telefono }}
+                            
+                        </td>
+                        <td>
+                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
+                          {{-- glyphicon glyphicon-ok --}}
+                        <span class="pull-right">
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+         
+                </div>
+              </div>
+            </div>
+             <div class="panel-footer">
+                     <div class="row">
+                         <div class="col-md-4">
+                             <a class="btn btn-lg btn-warning btn-block">Editar Perfil</a>
+                         </div>
+                         <div class="col-md-4">
+                             <a class="btn btn-lg btn-success btn-block">Ajustes</a>
+                         </div>
+                         <div class="col-md-4">
+                             <a class="btn btn-lg btn-danger btn-block">Mensajes</a>
+                         </div>
+                     </div>
+                    </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 @endsection

@@ -18,6 +18,7 @@ class CreateInstitucionsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('direccion');
+            $table->string('telefono')->nullable();
             $table->string('password');
 
             $table->timestamps();
