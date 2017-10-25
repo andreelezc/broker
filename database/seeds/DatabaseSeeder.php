@@ -32,7 +32,9 @@ class DatabaseSeeder extends Seeder
             $p->email = 'sambranaivan@gmail.com' ;
             $p->direccion = 'Bolivar 635';
             $p->password = bcrypt('123456');
-             $p->save();  	
+             $p->save();  
+
+       $productores = factory(inetweb\Productor::class,10)->create();	
     }
 
     private function seedInstitucions(){
@@ -44,6 +46,8 @@ class DatabaseSeeder extends Seeder
             $i->direccion = 'Bolivar 1074';
             $i->password = bcrypt('123456');
             $i->save();    	
+       $instituciones = factory(inetweb\Institucion::class,10)->create();
+
     }
 
      private function seedCapacidads(){
