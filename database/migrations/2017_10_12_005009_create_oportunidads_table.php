@@ -24,7 +24,8 @@ class CreateOportunidadsTable extends Migration
             $table->string('remuneracion');
             $table->date('fechaIngreso');
             $table->date('fechaEgreso');
-            $table->foreign('productor_id')->references('id')->on('productors');
+            $table->integer('productor_id')->unsigned();
+            $table->foreign('productor_id')->references('id')->on('productors')->onDelete('cascade');
             $table->timestamps();
         });
     }
