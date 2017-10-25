@@ -22,6 +22,7 @@
     <title>INET</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/avatar.css') }}" rel="stylesheet">
 
     <style>
         
@@ -141,7 +142,7 @@
     
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/ajax.js')}}"></script>
+    
 </body>
 </html>
   
