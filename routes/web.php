@@ -4,26 +4,32 @@
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+
 */
+/*
+|--------------------------------------------------------------------------
+| Rutas Privada Instituciones
+|--------------------------------------------------------------------------
 
+*/
+Route::middleware('isInstitucion')->group(function()
+{
 
-Route::middleware('isInstitucion')->group(function(){
-///rutas solo accesibles por usuarios autenticados de tipo institucion
-Route::get('institucion/home', 'InstitucionController@index');
-Route::get('institucion/perfil', 'Institucion\PerfilController@index');
-Route::get('institucion/capacidad', 'InstitucionController@capacit');
-Route::get('institucion/buscar', 'InstitucionController@buscar');
-Route::post('institucion/capacidad', 'CapacidadController@crear');
+		Route::get('institucion/home', 'InstitucionController@index');
+		Route::get('institucion/perfil', 'Institucion\PerfilController@index');
+		Route::get('institucion/capacidad', 'InstitucionController@capacit');
+		Route::get('institucion/buscar', 'InstitucionController@buscar');
+		Route::post('institucion/capacidad', 'CapacidadController@crear');
 
 
 
 });
+/*
+|--------------------------------------------------------------------------
+| Rutas Privada Productors
+|--------------------------------------------------------------------------
 
+*/
 Route::middleware('isProductor')->group(function(){
 ///rutas solo accesibles por usuarios autenticados de tipo productor
 
@@ -44,19 +50,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-
-
+/*
+|--------------------------------------------------------------------------
+| Rutas Publicas
+|--------------------------------------------------------------------------
 
 /*Vistas Institucion */
 Route::get('institucion/inicio', 'Institucion\InicioController@index');
- // Acceso Routes...
+
 Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
 
-  // Registro Routes...
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
 Route::post('institucion/registro', 'Institucion\RegistroController@register');
 
@@ -77,10 +81,8 @@ Route::post('productor/registro', 'Productor\RegistroController@register');
 Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
 Route::get('capacidad/all', 'CapacidadController@getAll');
 
+// showlists
 
-/*
-Route::get('productor/inicio', 'Productor\InicioController@index');
-Route::get('productor/acceso', 'Productor\AccesoController@index');*/
 
 
 

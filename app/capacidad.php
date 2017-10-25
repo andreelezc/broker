@@ -1,7 +1,6 @@
 <?php
 
 namespace inetweb;
-
 use inetweb\Institucion;
 use Illuminate\Database\Eloquent\Model;
 

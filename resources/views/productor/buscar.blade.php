@@ -31,7 +31,7 @@
    
 @foreach( $capacidades as $capacidad)
 
-    <a href="#" class="list-group-item">
+    <li class="list-group-item">
         <div class="row">
             <div class="col-md-4">
                 <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
@@ -49,7 +49,7 @@
         <p></p>
           <!-- boton de la ventana-->
         <div  class=" col-md-offset-10">  
-             <p href="#ventana1"   class="text-center btn-default " data-toggle="modal" > ver mas</p>
+             <a href="#ventana1"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
         </div>  
                         <div class="modal fade in" id="ventana1" >
                             <div class="modal-dialog">
@@ -100,11 +100,7 @@
                             </div>
                         </div>
 
-    </a>
-<br>
-
-
-
+    </li>
 @endforeach
 </ul>
 

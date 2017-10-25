@@ -60,8 +60,8 @@ class InstitucionController extends Controller
        
 
         ///envio los resultados a la vista
-        
-        return view('institucion.buscar');
+        $oportunidades = Oportunidad::orderBy('id', 'desc')->take(10)->get();
+        return view('institucion.buscar',array('oportunidades'=>$oportunidades));
     }
 
 }

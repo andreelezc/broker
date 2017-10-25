@@ -26,7 +26,29 @@
     </div>
 </div>
  
+<ul class="list-group">
+    @foreach($oportunidades as $oportunidad)
+   <li class="list-group-item">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$oportunidad->productor->name}}"/>
 
+
+      </div> 
+        <div class="col-md-10 col-sm-10 col-xs-8">
+             <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>
+             <span>                  
+                Publicado por: {{$oportunidad->productor->name}}
+                </span>
+                     <p>
+               @foreach($oportunidad->keywords() as $key)
+                    <a href="#"><span class="badge">$key</span></a><br>
+               @endforeach
+                </p>
+        </div>
+    </div>
+</li>
+    @endforeach
+</ul>
 
 
 
@@ -35,4 +57,5 @@
         </div>
     </div>
 </div>
+ <script src="{{ asset('js/avatar.js') }} "></script>
 @endsection
