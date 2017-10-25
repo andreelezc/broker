@@ -20,6 +20,7 @@ $factory->define(inetweb\Institucion::class, function (Faker $faker) {
         'name' => $faker->company,
         'email' => $faker->unique()->safeEmail,
         'direccion' =>$faker->Address,
+        'telefono' =>$faker->phoneNumber,
         'password' => $password ?: $password = bcrypt('1234'),
         // 'remember_token' => str_random(10),
     ];

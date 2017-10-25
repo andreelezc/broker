@@ -3,7 +3,7 @@
 namespace inetweb\Http\Middleware;
 
 use Closure;
-
+use Illuminate\Support\Facades\Auth;
 class isProductor
 {
     /**
