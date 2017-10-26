@@ -117,8 +117,7 @@
                                             <li>Correo Electronico : {{ $oportunidad->productor->email }}</li>
                                             <li>Direccion: {{ $oportunidad->productor->direccion }}</li>
                                             <li>Telefono: {{ $oportunidad->productor->telefono  }}</li>
-
-                                           
+      
                                         </ul> 
            
                                          <p  href="" class="text-center btn">Ver Perfil </p>
@@ -135,13 +134,6 @@
                         </div>
 
     </li>
-
-
-   
-
-   
-
-
 @endforeach
 </ul>
 
