@@ -20,6 +20,7 @@ class CreateInstitucionsTable extends Migration
             $table->string('direccion');
             $table->string('telefono')->nullable();
             $table->string('password');
+               $table->rememberToken();
 
             $table->timestamps();
         });

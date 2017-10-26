@@ -29,26 +29,10 @@ class OportunidadController extends Controller
      	$o->save(); //guardo en la base de datos
 
            //por cada palabra clave creo una keyword;
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key1);
-          $k->tipo = ('oportunidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key2);
-          $k->tipo = ('oportunidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key3);
-          $k->tipo = ('oportunidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key4);
-          $k->tipo = ('oportunidad');
-          $k->save();
+          $c->addKey($request->key1);
+          $c->addKey($request->key2);
+          $c->addKey($request->key3);
+          $c->addKey($request->key4);
            // redireccion
           return view('productor.home');
 
