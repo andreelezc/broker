@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <!--Titulo-->
-              <div class="panel-heading"><h2 class="text-center"> Productores</h2> </div> 
+              <div class="panel-heading"><h2 class="text-center"> Instituciones</h2> </div> 
 
                <div class="panel-body">
                  <div class="row">
