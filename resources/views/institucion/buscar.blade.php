@@ -50,6 +50,7 @@
                 </a>
                @endforeach
                 </p>
+
         </div>
     
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
@@ -78,10 +79,16 @@
                                     <p class="list-group-item-text"> Experiencia:  {{ $oportunidad->experiencias }}</p>
                                         <p></p>
                                         <ul>
+                                            <li>Propuesta: {{ $oportunidad->propuesta }}</li>
+                                            
+                                            <li>Requisitos: {{ $oportunidad->requisito }}</li>
                                             <li>Categoria: {{ $oportunidad->categoria }}</li>
                                             <li>Rubro: {{ $oportunidad->rubro }}</li>
-                                            <li>Disponibilidad: {{ $oportunidad->disponibilidad }}</li>
-                                            <li>Remuneracion Pretendida: {{ $oportunidad->remuneracion }}</li>
+                                            <li>Franja Horaria:: {{ $oportunidad->disponibilidad }}</li>
+                                            <li>Remuneracion: {{ $oportunidad->remuneracion }}</li>
+                                             <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li>
+                                             <li>Fecha de Egreso: {{ $oportunidad->fechaEgreso }}</li>
+
                                         </ul>
                                         <p></p>
                                     </div>
