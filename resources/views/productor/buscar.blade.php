@@ -26,10 +26,11 @@
     </div>
 </div>
  
- {{-- LISTA DE CAPACIDADES --}}
-<ul class="list-group">
-   
+
+ {{-- LISTA DE capacidades --}}
+<ul class="list-group"> 
 @foreach( $capacidades as $capacidad)
+
 
     <li class="list-group-item">
     <div class="row">
@@ -51,6 +52,7 @@
                @endforeach
              
                 </p>
+
         </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
@@ -58,9 +60,6 @@
     </div>
     </div>
        
-       {{--  <p class="list-group-item-text"> Experiencias: {{ $capacidad->experiencias }} </p>
-        <p></p> --}}
-          <!-- boton de la ventana-->
         
          
                         <div class="modal fade in" id="ventana{{ $capacidad->id }}" >

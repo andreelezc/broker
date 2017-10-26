@@ -27,9 +27,10 @@
 </div>
  
 
- {{-- LISTA DE OPORTINIDADES --}}
+{{-- LISTA DE OPORTUNIDADES ivan --}}
 <ul class="list-group">
     @foreach($oportunidades as $oportunidad)
+
    <li class="list-group-item">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$oportunidad->productor->name}}"/>
@@ -56,8 +57,7 @@
     </div>
     </div>
        
-       {{--  <p class="list-group-item-text"> Experiencias: {{ $oportunidad->experiencias }} </p>
-        <p></p> --}}
+       
           <!-- boton de la ventana-->
         
          
