@@ -22,6 +22,7 @@
     <title>INET</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/avatar.css') }}" rel="stylesheet">
 
     <style>
         
@@ -61,33 +62,64 @@
                     <ul class="nav navbar-nav navbar-right">
                      
                         @if (Auth::guard('institucion')->check())
-                                <label>{{ Auth::guard('institucion')->user()->name }}</label>
+                                <li role="presentation">
+                                        <a>
+                                          
+                                                    {{ Auth::guard('institucion')->user()->name }}
+                                        </a>
+                                      </li>
 
-                                
-                                    
-                                        <a class="btn btn-primary" href="{{ route('logout') }}"
+                                      <li role="presentation">
+                                          <a href="{{ url('/institucion/perfil') }}">
+                                          Perfil
+                                        </a>
+                                      </li>
+                                        <li role="presentation">
+                                          <a href="{{ url('/institucion/home') }}">
+                                          Inicio
+                                        </a>
+                                      </li>
+                                  
+                                      
+                                        <a class="btn btn-sm btn-primary navbar-btn " href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Salir
                                         </a>
+                                  
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
-                                        </form>
-                                    
+                                        </form> 
                                 
                           
                             @elseif (Auth::guard('productor')->check())
+                  
+                                      <li role="presentation">
+                                        <a>
+                                          
+                                                    {{ Auth::guard('productor')->user()->name }}
+                                        </a>
+                                      </li>
 
-                                 <label>{{ Auth::guard('productor')->user()->name }}</label>
-
-                                
-                                    
-                                        <a class="btn btn-primary" href="{{ route('logout') }}"
+                                      <li role="presentation">
+                                          <a href="{{ url('/productor/perfil') }}">
+                                          Perfil
+                                        </a>
+                                      </li>
+                                        <li role="presentation">
+                                          <a href="{{ url('/productor/home') }}">
+                                          Inicio
+                                        </a>
+                                      </li>
+                                  
+                                      
+                                        <a class="btn btn-sm btn-primary navbar-btn " href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Salir
                                         </a>
+                                  
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -141,7 +173,7 @@
     
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/ajax.js')}}"></script>
+    
 </body>
 </html>
   

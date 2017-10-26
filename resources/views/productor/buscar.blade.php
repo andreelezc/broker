@@ -26,22 +26,28 @@
     </div>
 </div>
  
- {{-- LISTA DE OPORTUNIDADES --}}
-<ul class="list-group">
-   
+ {{-- LISTA DE capacidades --}}
+<ul class="list-group"> 
 @foreach( $capacidades as $capacidad)
 
-    <a href="#" class="list-group-item">
+
+    <li class="list-group-item">
         <div class="row">
             <div class="col-md-4">
-                <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
+
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                <img class="round" avatar="{{$capacidad->institucion->name}}"/>
+                 </div> 
+               
             </div>
             <div class="col-md-4 col-md-offset-4">
                 <span>                  
                 Publicado por: {{ $capacidad->institucion->name }}
                 </span>
-
-            </div>       
+            </div>   
+             <div class=" col-xs-4">
+             <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4> 
+            </div>    
         </div>
 
     <p></p>        
@@ -49,7 +55,7 @@
         <p></p>
           <!-- boton de la ventana-->
         <div  class=" col-md-offset-10">  
-             <p href="#ventana1"   class="text-center btn-default " data-toggle="modal" > ver mas</p>
+             <a href="#ventana1"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
         </div>  
                         <div class="modal fade in" id="ventana1" >
                             <div class="modal-dialog">
@@ -100,11 +106,7 @@
                             </div>
                         </div>
 
-    </a>
-<br>
-
-
-
+    </li>
 @endforeach
 </ul>
 

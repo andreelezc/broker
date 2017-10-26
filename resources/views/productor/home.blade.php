@@ -22,14 +22,15 @@
                   <div><img src="{{asset('img/tractor.png')}}" class="img-rounded img-responsive" /></div>
               </div>
           </div>
+          
           <div class="row">
-              <div class="col-md-4 col-xs-4">
+              <div class="col-md-3 col-xs-4">
                   <a class="btn btn-success btn-block btn-lg" href="{{ url('productor/perfil') }}" type="button">PERFIL</a>
               </div>
               <div class="col-md-4 col-xs-4">
                   <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/oportunidad')}}" type="button"> OPORTUNIDADES</a>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
                   <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}" type="button">BUSCAR CAPACIDADES</a>
               </div>
           </div>

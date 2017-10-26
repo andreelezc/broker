@@ -25,7 +25,7 @@
             </div>
             {{-- PROPUESTA --}}
             <div class="form-group">
-                <label class="control-label" for="email-input">Necesidad: </label>
+                <label class="control-label" for="email-input">Propuesta: </label>
                 <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propongo ...">
             </div>
             {{-- PALABRAS CLAVE --}}
@@ -98,7 +98,7 @@
             {{-- REMUNERACION --}}
              <div class="col-md-6">
                 <div class="for-group">
-                <label class="control-label">Remuneracion Pretendida: </label>
+                <label class="control-label">Remuneracion : </label>
                 <input class="form-control" type="text"  name="remuneracion"  placeholder="$" required>
                 </div>
             </div>

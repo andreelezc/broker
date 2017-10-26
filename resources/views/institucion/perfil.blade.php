@@ -13,7 +13,12 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> 
+                    {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
+                    <img  height="100" width="100" avatar="{{ Auth::Guard('institucion')->user()->name }}" class="img-responsive round" >
+                    
+
+                </div>
             
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
@@ -78,4 +83,5 @@
         </div>
       </div>
     </div>
+    <script src="{{ asset('js/avatar.js') }} "></script>
 @endsection

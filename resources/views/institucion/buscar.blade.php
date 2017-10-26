@@ -26,9 +26,124 @@
     </div>
 </div>
  
+{{-- LISTA DE OPORTUNIDADES ivan --}}
+{{-- <ul class="list-group">
+    @foreach($oportunidades as $oportunidad)
 
- 
+   <li class="list-group-item">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$oportunidad->productor->name}}"/>
 
+
+      </div> 
+        <div class="col-md-10 col-sm-10 col-xs-8">
+             <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>
+             <span>                  
+                Publicado por: {{$oportunidad->productor->name}}
+                </span>
+                     <p>
+               @foreach($oportunidad->keywords() as $key)
+                    <a href="#"><span class="badge">$key</span></a><br>
+               @endforeach
+                </p>
+        </div>
+    </div>
+</li>
+    @endforeach
+</ul>--}}
+{{-- LISTA DE OPORTUNIDADES flor --}}
+<ul class="list-group"> 
+@foreach( $oportunidades as $oportunidad)
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-md-4">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$oportunidad->productor->name}}"/>
+              </div> 
+            </div>
+
+            <div class="col-md-4 col-md-offset-4">
+                <span>Publicado por: {{ $oportunidad->productor->name }}</span>
+            </div> 
+
+            <div class=" col-xs-4">
+               <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>  
+               <p>
+               @foreach($oportunidad->keywords() as $key)
+                    <a href="#"><span class="badge">$key</span></a><br>
+               @endforeach
+                </p>
+            </div>          
+        </div>
+  <p></p>        
+        <p class="list-group-item-text"> Propuesta:  {{ $oportunidad->propuesta }} </p>
+        <p></p>
+          <!-- boton de la ventana-->
+        <div  class=" col-md-offset-10">  
+             <a href="#ventana1"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+        </div>  
+                        <div class="modal fade in" id="ventana1" >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- header de la ventana-->
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                        </button>
+                                        <h4 class="modal-title"> {{ $oportunidad->titulo }} </h4>
+
+                                    </div>
+                                     <!-- contenido de la ventana de la ventana-->
+                                            <!-- panel de oportunidad-->
+                                    <div class="modal-body"> 
+                                    <p class="list-group-item-text"> Propuesta:  {{ $oportunidad->propuesta }}</p>
+                                        <p></p>
+                                        <ul>
+                                            <li>Requisitos: {{ $oportunidad->requisito }}</li>
+                                            <li>Categoria: {{ $oportunidad->categoria }}</li>
+                                            <li>Rubro: {{ $oportunidad->rubro }}</li>
+                                            <li>Franja Horaria: {{ $oportunidad->disponibilidad }}</li>
+                                            <li>Remuneracion : {{ $oportunidad->remuneracion }}</li>
+                                            <li>Fecha de Ingreso : {{ $oportunidad->fechaIngreso }}</li>
+                                            <li>Fecha de Egreso : {{ $oportunidad->fechaEgreso }}</li>
+                                        </ul>
+                                        <p></p>
+                                    </div>
+                                            <!-- panel de contacto-->
+                                    <div class="modal-body">     
+                                    <p class="list-group-item-text"> Contacto:  {{ $oportunidad->productor->name }}</p>
+                                        <p></p>
+                                        <ul>
+                                            <li>Correo Electronico : {{ $oportunidad->productor->email }}</li>
+                                            <li>Direccion: {{ $oportunidad->productor->direccion }}</li>
+                                            <li>Telefono: {{ $oportunidad->productor->telefono  }}</li>
+
+                                           
+                                        </ul> 
+           
+                                         <p  href="" class="text-center btn">Ver Perfil </p>
+                                          <p></p>
+
+                                    </div>
+                                     <!-- footer de la ventana-->
+                                    <div class="modal-footer">
+                                        <button class="btn btn-default" type="button" data-dismiss="modal">Cerrar</button>
+                                         <!--<button class="btn btn-primary" type="button">Save</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    </li>
+
+
+   
+
+   
+
+
+@endforeach
+</ul>
 
 
                  </div>
@@ -36,4 +151,5 @@
         </div>
     </div>
 </div>
+ <script src="{{ asset('js/avatar.js') }} "></script>
 @endsection
