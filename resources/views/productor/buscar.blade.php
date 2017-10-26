@@ -26,32 +26,44 @@
     </div>
 </div>
  
- {{-- LISTA DE OPORTUNIDADES --}}
+ {{-- LISTA DE CAPACIDADES --}}
 <ul class="list-group">
    
 @foreach( $capacidades as $capacidad)
 
     <li class="list-group-item">
-        <div class="row">
-            <div class="col-md-4">
-                <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
-            </div>
-            <div class="col-md-4 col-md-offset-4">
-                <span>                  
-                Publicado por: {{ $capacidad->institucion->name }}
-                </span>
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$capacidad->institucion->name}}"/>
 
-            </div>       
+
+      </div> 
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-4">
+             <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
+             <span>                  
+                Publicado por: {{$capacidad->institucion->name}}
+                </span>
+                     <p>
+               @foreach($capacidad->keywords as $key)
+                <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
+               <span class="badge">{{ $key->palabra }}</span>
+                  
+                </a>
+               @endforeach
+             
+                </p>
         </div>
 
-    <p></p>        
-        <p class="list-group-item-text"> Experiencias: {{ $capacidad->experiencias }} </p>
-        <p></p>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+        <a href="#ventana{{ $capacidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+    </div>
+    </div>
+       
+       {{--  <p class="list-group-item-text"> Experiencias: {{ $capacidad->experiencias }} </p>
+        <p></p> --}}
           <!-- boton de la ventana-->
-        <div  class=" col-md-offset-10">  
-             <a href="#ventana1"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
-        </div>  
-                        <div class="modal fade in" id="ventana1" >
+        
+         
+                        <div class="modal fade in" id="ventana{{ $capacidad->id }}" >
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <!-- header de la ventana-->
@@ -109,4 +121,5 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/avatar.js') }} "></script>
 @endsection
