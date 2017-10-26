@@ -12,7 +12,7 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
-
+// new factoritys
 $factory->define(inetweb\User::class, function (Faker $faker) {
     static $password;
 
