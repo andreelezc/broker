@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
             $c->rubro = 'Beca';
             $c->disponibilidad = '8:00 a 14:00';
             $c->remuneracion = '$5000';          
-            $c->institucion_id = 1;
+            $c->institucion_id = 2;
             $c->save();  
 
       
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
             $c->rubro = 'Beca';
             $c->disponibilidad = '8:00 a 14:00';
             $c->remuneracion = '$5000';          
-            $c->institucion_id = 1;
+            $c->institucion_id = 3;
             $c->save();  
 
      
@@ -112,7 +112,7 @@ class DatabaseSeeder extends Seeder
             $c->rubro = 'Beca';
             $c->disponibilidad = '8:00 a 14:00';
             $c->remuneracion = '$5000';          
-            $c->institucion_id = 1;
+            $c->institucion_id = 4;
             $c->save();  
 
     

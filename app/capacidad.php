@@ -17,7 +17,7 @@ class capacidad extends Model
 
      public function keywords()
     {
-    	return $this->hasMany('inetweb\CapacidadKey','capacidad_id');
+    	return $this->hasMany('inetweb\CapacidadKey');
     }
     public function addKey($palabra)
     {

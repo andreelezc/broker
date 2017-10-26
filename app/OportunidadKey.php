@@ -3,13 +3,13 @@
 namespace inetweb;
 
 use Illuminate\Database\Eloquent\Model;
-use inetweb\oportunidad;
+use inetweb\Oportunidad;
 
 class OportunidadKey extends Model
 {
     //
-          public function oportunidad()
+    public function oportunidad()
     {
-    	return $this->belongsTo('inetweb\oportunidad','oportunidad_id');
+    	return $this->belongsTo('inetweb\Oportunidad','oportunidad_id');
     }
 }
