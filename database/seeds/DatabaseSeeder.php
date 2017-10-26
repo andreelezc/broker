@@ -70,12 +70,10 @@ class DatabaseSeeder extends Seeder
             $c->save(); 
 
               //por cada palabra clave creo una keyword;
-            $c->addKey("keyword1");
-            $c->addKey("keyword2");
-            $c->addKey("keyword3");
-            $c->addKey("keyword4");
-
-       
+            $c->addKey("Php");
+            $c->addKey("Laravel");
+            $c->addKey("Web");
+            $c->addKey("Diseño");       
 
      //-------------carga 2
               $c = new Capacidad;

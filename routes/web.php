@@ -82,6 +82,8 @@ Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
 Route::get('capacidad/all', 'CapacidadController@getAll');
 
 // showlists
+Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra');
+Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra');
 
 
 

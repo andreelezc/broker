@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
 use inetweb\Oportunidad;
+use inetweb\OportunidadKey;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -53,16 +54,24 @@ class InstitucionController extends Controller
 
      public function buscar()
     {
-        ///primero obtener una lista de 10 ultimas ofertas obtenidas
-        //TODO: oportunidades recomendadas segun usuario
-        // $oportunidad = Oportunidad::all();
-
-       
-
         ///envio los resultados a la vista
         $oportunidades = Oportunidad::orderBy('id', 'desc')->take(10)->get();
         return view('institucion.buscar',array('oportunidades'=>$oportunidades));
     }
+
+    //TODO 
+    public function buscarPalabra($palabra,$pagina = 0)
+    {
+        // SELECT * FROM `oportunidads` LEFT JOIN oportunidad_keys on oportunidads.id = oportunidad_keys.oportunidad_id where oportunidad_keys.palabra LIKE '%full%'
+        ///buscar las capacidades que tengan la keyword o en su contenidos
+        $oportunidades = Oportunidad::leftJoin('oportunidad_keys','oportunidads.id','=','oportunidad_keys.oportunidad_id')
+                                    ->where('oportunidad_keys.palabra','like','%'.$palabra.'%')
+                                    ->get();
+        // return json_encode($oportunidades);
+                                    return view('institucion.buscar',array('oportunidades'=>$oportunidades));
+    }
+
+
 
 }
 

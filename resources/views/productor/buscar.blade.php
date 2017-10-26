@@ -45,7 +45,7 @@
                 </span>
                      <p>
                @foreach($capacidad->keywords as $key)
-                <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
+                <a href="{{ url('/productor/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
                <span class="badge">{{ $key->palabra }}</span>
                   
                 </a>
