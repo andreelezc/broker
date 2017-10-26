@@ -4,7 +4,7 @@ namespace inetweb\Http\Controllers;
 
 use Illuminate\Http\Request;
 use inetweb\Oportunidad;
-use inetweb\Keyword;
+use inetweb\OportunidadKey;
 use Illuminate\Support\Facades\Auth;
 class OportunidadController extends Controller
 {
@@ -29,26 +29,10 @@ class OportunidadController extends Controller
      	$o->save(); //guardo en la base de datos
 
            //por cada palabra clave creo una keyword;
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key1);
-          $k->tipo = ('oportunidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key2);
-          $k->tipo = ('oportunidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key3);
-          $k->tipo = ('oportunidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($o->id);
-          $k->palabra = ($request->key4);
-          $k->tipo = ('oportunidad');
-          $k->save();
+          $o->addKey($request->key1);
+          $o->addKey($request->key2);
+          $o->addKey($request->key3);
+          $o->addKey($request->key4);
            // redireccion
           return view('productor.home');
 

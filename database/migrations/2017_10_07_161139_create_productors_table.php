@@ -19,6 +19,7 @@ class CreateProductorsTable extends Migration
             $table->string('email')->unique();
             $table->string('direccion');
             $table->string('password');
+               $table->rememberToken();
 
             $table->timestamps();
         });

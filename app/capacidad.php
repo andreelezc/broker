@@ -2,6 +2,7 @@
 
 namespace inetweb;
 use inetweb\Institucion;
+use inetweb\CapacidadKey;
 use Illuminate\Database\Eloquent\Model;
 
 class capacidad extends Model
@@ -12,5 +13,18 @@ class capacidad extends Model
     public function institucion()
     {
     	return $this->belongsTo('inetweb\Institucion','institucion_id');
+    }
+
+     public function keywords()
+    {
+    	return $this->hasMany('inetweb\CapacidadKey','capacidad_id');
+    }
+    public function addKey($palabra)
+    {
+    	$key = new CapacidadKey;
+    	$key->capacidad_id = $this->id;
+    	$key->palabra = $palabra;
+    	$key->save();
+    	return $this;
     }
 }

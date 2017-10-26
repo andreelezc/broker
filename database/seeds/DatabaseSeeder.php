@@ -34,6 +34,9 @@ class DatabaseSeeder extends Seeder
             $p->password = bcrypt('123456');
              $p->save();  
 
+
+             // FABRICA 10 INSTANCIAS de Productor
+
        $productores = factory(inetweb\Productor::class,10)->create();	
     }
 
@@ -45,7 +48,9 @@ class DatabaseSeeder extends Seeder
             $i->email = 'sambranaivan@gmail.com' ;
             $i->direccion = 'Bolivar 1074';
             $i->password = bcrypt('123456');
-            $i->save();    	
+            $i->save();    
+
+        	// FABRICA 10 INSTANCIAS de institucion
        $instituciones = factory(inetweb\Institucion::class,10)->create();
 
     }
@@ -62,28 +67,15 @@ class DatabaseSeeder extends Seeder
             $c->disponibilidad = '8:00 a 14:00';
             $c->remuneracion = '$5000';          
             $c->institucion_id = 1;
-            $c->save();  
+            $c->save(); 
 
-         $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = 'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
+              //por cada palabra clave creo una keyword;
+            $c->addKey("keyword1");
+            $c->addKey("keyword2");
+            $c->addKey("keyword3");
+            $c->addKey("keyword4");
+
+       
 
      //-------------carga 2
               $c = new Capacidad;
@@ -97,26 +89,7 @@ class DatabaseSeeder extends Seeder
             $c->institucion_id = 1;
             $c->save();  
 
-            $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = 'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
+      
      //-------------carga 3   
       $c = new Capacidad;
             $c->titulo = 'Programacion Web';
@@ -129,26 +102,7 @@ class DatabaseSeeder extends Seeder
             $c->institucion_id = 1;
             $c->save();  
 
-            $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = 'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
+     
     //-------------carga 4   
        $c = new Capacidad;
             $c->titulo = 'Programacion Web';
@@ -161,26 +115,7 @@ class DatabaseSeeder extends Seeder
             $c->institucion_id = 1;
             $c->save();  
 
-            $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = 'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra =  'php';
-          $k->tipo = ('capacidad');
-          $k->save();
+    
     }
 
 

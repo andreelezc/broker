@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeywordsTable extends Migration
+class CreateCapacidadKeysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,13 @@ class CreateKeywordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('keywords', function (Blueprint $table) {
+        Schema::create('capacidad_keys', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('referencia');
-            $table->string('tipo');
+            $table->integer('capacidad_id')->unsigned();
+            $table->foreign('capacidad_id')->references('id')->on('capacidads')->onDelete('cascade');
             $table->string('palabra');
             $table->timestamps();
         });
-
-        //$o->save();
-        // $k = new Keyword;
-        // $k->refencia = $o->id;
-        // $k->tipo = 'oportunidad';
-        // $k->palabra = $r->palabra;
-        // $k->save();
     }
 
     /**
@@ -36,6 +29,6 @@ class CreateKeywordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keywords');
+        Schema::dropIfExists('capacidad_keys');
     }
 }

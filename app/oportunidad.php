@@ -2,7 +2,7 @@
 
 namespace inetweb;
 use inetweb\Productor;
-use inetweb\keyword;
+use inetweb\OportunidadKey;
 use Illuminate\Database\Eloquent\Model;
 
 class oportunidad extends Model
@@ -15,6 +15,15 @@ class oportunidad extends Model
 
     public function keywords()
     {
-    	return $this->hasMany('inetweb\keyword','referencia');
+    	return $this->hasMany('inetweb\OportunidadKey','oportunidad_id');
+    }
+
+    public function addKey($palabra)
+    {
+    	$key = new OportunidadKey;
+    	$key->oportunidad_id = $this->id;
+    	$key->palabra = $palabra;
+    	$key->save();
+    	return $this;
     }
 }

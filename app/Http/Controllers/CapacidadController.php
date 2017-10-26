@@ -4,7 +4,7 @@ namespace inetweb\Http\Controllers;
 
 use Illuminate\Http\Request;
 use inetweb\Capacidad;
-use inetweb\Keyword;
+use inetweb\CapacidadKey;
 use Illuminate\Support\Facades\Auth;
 class CapacidadController extends Controller
 {
@@ -28,26 +28,10 @@ class CapacidadController extends Controller
      	$c->save(); //guardo en la base de datos
 
           //por cada palabra clave creo una keyword;
-           $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = ($request->key1);
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = ($request->key2);
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = ($request->key3);
-          $k->tipo = ('capacidad');
-          $k->save();
-          $k = new Keyword;
-          $k->referencia = ($c->id);
-          $k->palabra = ($request->key4);
-          $k->tipo = ('capacidad');
-          $k->save();
+          $c->addKey($request->key1);
+          $c->addKey($request->key2);
+          $c->addKey($request->key3);
+          $c->addKey($request->key4);
 
           //redireccion a la pag de inicio
           return view('institucion.home');
