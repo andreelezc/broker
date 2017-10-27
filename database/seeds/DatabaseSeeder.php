@@ -152,7 +152,7 @@ class DatabaseSeeder extends Seeder
             $o->fechaIngreso= '2017-10-05';
             $o->fechaEgreso= '2017-10-05';
                       
-            $o->productor_id = 1;
+            $o->productor_id = 3;
             $o->save(); 
             //por cada palabra clave creo una keyword;
             $o->addKey("Soporte");
@@ -172,7 +172,7 @@ class DatabaseSeeder extends Seeder
             $o->fechaIngreso= '2017-10-05';
             $o->fechaEgreso= '2017-10-05';
                       
-            $o->productor_id = 2;
+            $o->productor_id = 4;
             $o->save(); 
             //por cada palabra clave creo una keyword;
             $o->addKey("Asesor");
@@ -192,7 +192,7 @@ class DatabaseSeeder extends Seeder
             $o->fechaIngreso= '2017-10-05';
             $o->fechaEgreso= '2017-10-05';
                       
-            $o->productor_id = 3;
+            $o->productor_id = 6;
             $o->save(); 
             //por cada palabra clave creo una keyword;
             $o->addKey("Negocios");
@@ -212,7 +212,7 @@ class DatabaseSeeder extends Seeder
             $o->fechaIngreso= '2017-10-05';
             $o->fechaEgreso= '2017-10-05';
                       
-            $o->productor_id = 4;
+            $o->productor_id = 10;
             $o->save(); 
             //por cada palabra clave creo una keyword;
             $o->addKey("Soporte");

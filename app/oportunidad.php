@@ -15,7 +15,7 @@ class oportunidad extends Model
 
     public function keywords()
     {
-    	return $this->hasMany('inetweb\OportunidadKey');
+    	return $this->hasMany('inetweb\OportunidadKey','oportunidad_id');
     }
 
     public function addKey($palabra)

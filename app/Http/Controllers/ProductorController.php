@@ -63,10 +63,12 @@ class ProductorController extends Controller
     {
         // SELECT * FROM `oportunidads` LEFT JOIN oportunidad_keys on oportunidads.id = oportunidad_keys.oportunidad_id where oportunidad_keys.palabra LIKE '%full%'
         ///buscar las capacidades que tengan la keyword o en su contenidos
-        $capacidades = Capacidad::leftJoin('capacidad_keys','capacidads.id','=','capacidad_keys.capacidad_id')
+       $capacidades = Capacidad::leftJoin('capacidad_keys','capacidads.id','=','capacidad_keys.capacidad_id')
                                     ->where('capacidad_keys.palabra','like','%'.$palabra.'%')
-                                    ->get();
-        // return json_encode($capacidades);
+                                    ->skip($pagina * 10)
+                                    ->take(10)
+                                    ->get(['capacidads.*']);
+                // 
                                     return view('productor.buscar',array('capacidades'=>$capacidades));
     }
 }

@@ -42,7 +42,7 @@
              <span>                  
                 Publicado por: {{$oportunidad->productor->name}}
                 </span>
-                     <p>
+                     <p>Palabras
                @foreach($oportunidad->keywords as $key)
                 <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
                <span class="badge">{{ $key->palabra }}</span>
