@@ -121,4 +121,15 @@
     </div>
 </div>
 <script src="{{ asset('js/avatar.js') }} "></script>
+ <script src="{{ asset('js/jquery.min.js') }} "></script>
+ <script type="text/javascript">
+     $(document).ready(function(){
+        $("#search-input").keydown(function(e){
+            if(e.which == 13)
+            {
+               location.href = '/productor/buscar/'+$(this).val();
+            }
+        })
+     })
+ </script>
 @endsection

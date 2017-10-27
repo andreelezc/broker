@@ -66,6 +66,9 @@ class InstitucionController extends Controller
         ///buscar las capacidades que tengan la keyword o en su contenidos
         $oportunidades = Oportunidad::leftJoin('oportunidad_keys','oportunidads.id','=','oportunidad_keys.oportunidad_id')
                                     ->where('oportunidad_keys.palabra','like','%'.$palabra.'%')
+                                    ->orWhere('oportunidads.titulo','like','%'.$palabra.'%')
+                                    ->orWhere('oportunidads.propuesta','like','%'.$palabra.'%')
+                                    ->distinct()
                                     ->skip($pagina * 10)
                                     ->take(10)
                                     ->get(['oportunidads.*']);

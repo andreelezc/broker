@@ -65,6 +65,10 @@ class ProductorController extends Controller
         ///buscar las capacidades que tengan la keyword o en su contenidos
        $capacidades = Capacidad::leftJoin('capacidad_keys','capacidads.id','=','capacidad_keys.capacidad_id')
                                     ->where('capacidad_keys.palabra','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.titulo','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.propuesta','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.experiencias','like','%'.$palabra.'%')
+                                    ->distinct()
                                     ->skip($pagina * 10)
                                     ->take(10)
                                     ->get(['capacidads.*']);
