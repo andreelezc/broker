@@ -27,7 +27,7 @@
 </div>
  
 
-{{-- LISTA DE OPORTUNIDADES ivan --}}
+{{-- LISTA DE OPORTUNIDADES flor --}}
 <ul class="list-group">
     @foreach($oportunidades as $oportunidad)
 
