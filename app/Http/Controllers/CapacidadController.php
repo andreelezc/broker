@@ -42,4 +42,6 @@ class CapacidadController extends Controller
           $capacidades = capacidad::all();
           return json_encode($capacidades);
      }
+
+     
 }
