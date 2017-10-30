@@ -13,7 +13,6 @@ use inetweb\OportunidadKey;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
-use GoogleMaps\Facade\GoogleMapsFacade;
 
 
 class InstitucionController extends Controller
