@@ -180,7 +180,7 @@ return [
 
         Intervention\Image\ImageServiceProvider::class,
 
-        GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
+      
 
        
 
@@ -235,8 +235,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+
         'Gmaps' => Appitventures\Phpgmaps\Facades\Phpgmaps::class,
-        'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
+        
 
     ],
 

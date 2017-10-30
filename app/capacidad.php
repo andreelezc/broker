@@ -14,7 +14,7 @@ class capacidad extends Model
     public function institucion()
     {
        
-    	return $this->belongsTo('inetweb\Institucion','institucion_id', array('institucion'=> Auth::user()));
+    	return $this->belongsTo('inetweb\Institucion');
     }
 
      public function keywords()

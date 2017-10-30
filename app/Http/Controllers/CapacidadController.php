@@ -34,7 +34,7 @@ class CapacidadController extends Controller
           $c->addKey($request->key4);
 
           //redireccion a la pag de inicio
-          return view('institucion.home');
+          return view('institucion.nuevaCapacidad');
      }
 
 

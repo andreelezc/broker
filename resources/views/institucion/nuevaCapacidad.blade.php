@@ -40,11 +40,13 @@
                           <td>Titulo:
                           <td><a href="#ventana"   class=" btn btn-default " data-toggle="modal" > mostrar </a></td>
                       </tr>
+                    @foreach(Auth::Guard('institucion')->user()->capacidades as $capacidad)
+
                       <tr>
-                          <td>Titulo: </td>
+                          <td>Titulo: {{$capacidad->titulo}} </td>
                           <td><a href="#ventana"   class="text-center btn btn-default " data-toggle="modal" > mostrar </a></td>
                       </tr>
-
+                      @endforeach
                     </tbody>
                 </table>
                
