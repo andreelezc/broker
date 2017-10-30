@@ -37,10 +37,7 @@ class Institucion extends Authenticatable
         return $this->hasMany('inetweb\capacidad');
     }
 
-    
-public function listaTCapacidad()
-    {
-        return $this->hasMany('inetweb\capacidad');
-    }
+
+
 
 }

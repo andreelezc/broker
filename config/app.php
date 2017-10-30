@@ -177,6 +177,13 @@ return [
         inetweb\Providers\EventServiceProvider::class,
         inetweb\Providers\RouteServiceProvider::class,
 
+
+        Intervention\Image\ImageServiceProvider::class,
+
+        GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
+
+       
+
     ],
 
     // FAKER
@@ -227,6 +234,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Gmaps' => Appitventures\Phpgmaps\Facades\Phpgmaps::class,
+        'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
 
     ],
 

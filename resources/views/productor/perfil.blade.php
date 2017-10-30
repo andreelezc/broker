@@ -59,7 +59,7 @@
                              <a class="btn btn-lg btn-warning btn-block">Editar Perfil</a>
                          </div>
                          <div class="col-md-4">
-                             <a class="btn btn-lg btn-success btn-block">Ajustes</a>
+                             <a class="btn btn-lg btn-success btn-block">Actualizar</a>
                          </div>
                          <div class="col-md-4">
                              <a class="btn btn-lg btn-danger btn-block">Mensajes</a>

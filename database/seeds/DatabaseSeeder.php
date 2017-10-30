@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
     	DB::table('productors')->delete();
     	
     	$p = new Productor;
-            $p->name = 'Productor';
+            $p->name = 'Sambrana';
             $p->email = 'sambranaivan@gmail.com' ;
             $p->direccion = 'Bolivar 635';
             $p->password = bcrypt('123456');
@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
     	DB::table('Institucions')->delete();
     	
     	$i = new Institucion;
-            $i->name = 'Institucion';
+            $i->name = 'UNNE';
             $i->email = 'sambranaivan@gmail.com' ;
             $i->direccion = 'Bolivar 1074';
             $i->password = bcrypt('123456');

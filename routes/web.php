@@ -16,7 +16,9 @@ Route::middleware('isInstitucion')->group(function()
 {
 
 		Route::get('institucion/home', 'InstitucionController@index');
-		Route::get('institucion/perfil', 'Institucion\PerfilController@index');
+		//Route::get('institucion/perfil', 'Institucion\PerfilController@index');
+		Route::get('institucion/perfil','InstitucionController@perfil');
+
 		Route::get('institucion/capacidad', 'InstitucionController@capacit');
 		Route::get('institucion/nuevaCapacidad', 'InstitucionController@nuevacapacit');
 		Route::get('institucion/buscar', 'InstitucionController@buscar');

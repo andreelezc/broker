@@ -12,6 +12,9 @@ use inetweb\OportunidadKey;
 
 
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
+use GoogleMaps\Facade\GoogleMapsFacade;
+
 
 class InstitucionController extends Controller
 {
@@ -81,6 +84,32 @@ class InstitucionController extends Controller
                                     return view('institucion.buscar',array('oportunidades'=>$oportunidades));
     }
 
+
+    public function perfil(){
+        return view ('institucion.perfil', array('institucion'=> Auth::user()));
+    }
+
+    public function imag_perfil(Request $request){
+        //Subir imagen del perfil
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/avatar/' . $filename));
+            # code...
+            $user = Auth::user();
+            $user->avatar= $filename;
+            $user->save();
+
+
+        }
+
+        return view ('institucion.perfil', array('institucion'=> Auth::user()));
+        //code maps
+    }
+
+    public function maps() {
+       
+    }
 
 
 }
