@@ -54,6 +54,12 @@ class InstitucionController extends Controller
         return view('institucion.capacidad');
     }
 
+     public function perfil()
+    {
+        return view('institucion.perfil');
+    }
+
+
     public function mostrarCapacidad()
     {
         return view('institucion.mostrarCapacidad');
@@ -95,31 +101,7 @@ class InstitucionController extends Controller
     }
 
 
-    public function perfil(){
-        return view ('institucion.perfil', array('institucion'=> Auth::user()));
-    }
-
-    public function imag_perfil(Request $request){
-        //Subir imagen del perfil
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(public_path('/avatar/' . $filename));
-            # code...
-            $user = Auth::user();
-            $user->avatar= $filename;
-            $user->save();
-
-
-        }
-
-        return view ('institucion.perfil', array('institucion'=> Auth::user()));
-        //code maps
-    }
-
-    public function maps() {
-       
-    }
+   
 
 
 }

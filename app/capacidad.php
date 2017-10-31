@@ -29,4 +29,6 @@ class capacidad extends Model
     	$key->save();
     	return $this;
     }
+
+  
 }
