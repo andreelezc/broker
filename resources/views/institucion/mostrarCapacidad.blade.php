@@ -40,7 +40,7 @@
 
     <div class="row">
     
-        <div class="  col-sm-8 col-xs-2">
+        <div class="  col-sm-9 col-xs-2">
                            
 
          @foreach(Auth::Guard('institucion')->user()->capacidades as $capacidad)
@@ -108,7 +108,12 @@
                         {{--Boton de eliminar --}}
                         <div class="   col-lg-offset-7" >
                          <div class="col-md-1">
-                            <a data-original-title="Eliminar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger">Eliminar  <i class="glyphicon glyphicon-remove"></i></a>
+                         
+                            <a data-original-title="Eliminar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar  <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                           
+
+                             
                          </div>
                         </div>
 
@@ -122,7 +127,7 @@
     </li>
 @endforeach
 </ul>
-
+</div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
           
 
@@ -132,9 +137,11 @@
                          
                 </div>
                 </div>
-               
-            </div>
+               <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+            
         </div>
          </div>
-         </div>
+         </div> 
+       </div>
 @endsection

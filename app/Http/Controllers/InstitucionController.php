@@ -54,9 +54,20 @@ class InstitucionController extends Controller
         return view('institucion.capacidad');
     }
 
-    public function nuevacapacit()
+    public function mostrarCapacidad()
     {
-        return view('institucion.nuevaCapacidad');
+        return view('institucion.mostrarCapacidad');
+    }
+
+    public function inicio()
+    {
+        
+        return view('institucion.inicio');
+    }
+
+     public function acceso()
+    {
+        return view('institucion.acceso');
     }
 
      public function buscar()

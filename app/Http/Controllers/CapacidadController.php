@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use inetweb\Capacidad;
 use inetweb\CapacidadKey;
 use Illuminate\Support\Facades\Auth;
+use DB;
 class CapacidadController extends Controller
 {
     //
@@ -34,7 +35,7 @@ class CapacidadController extends Controller
           $c->addKey($request->key4);
 
           //redireccion a la pag de inicio
-          return view('institucion.capacidad');
+          return view('institucion.mostrarCapacidad');
      }
 
 
@@ -42,6 +43,8 @@ class CapacidadController extends Controller
           $capacidades = capacidad::all();
           return json_encode($capacidades);
      }
+      
 
+      
      
 }

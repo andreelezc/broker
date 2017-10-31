@@ -18,13 +18,15 @@ Route::middleware('isInstitucion')->group(function()
 		Route::get('institucion/home', 'InstitucionController@index');
 		//Route::get('institucion/perfil', 'Institucion\PerfilController@index');
 		Route::get('institucion/perfil','InstitucionController@perfil');
+		Route::get('institucion/acceso','InstitucionController@acceso');
 		//Route::post('institucion/perfil','InstitucionController@imag_perfil');
 		//Route::get('institucion/perfil','InstitucionController@maps');
 
 		Route::get('institucion/capacidad', 'InstitucionController@capacit');
-		Route::get('institucion/nuevaCapacidad', 'InstitucionController@nuevacapacit');
+		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
 		Route::get('institucion/buscar', 'InstitucionController@buscar');
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
+
 
 
 
@@ -61,14 +63,14 @@ Auth::routes();
 |--------------------------------------------------------------------------
 
 /*Vistas Institucion */
-Route::get('institucion/inicio', 'Institucion\InicioController@index');
-
+//Route::get('institucion/inicio', 'Institucion\InicioController@index');
+Route::get('institucion/inicio', 'InstitucionController@inicio');
+Route::get('institucion/acceso','InstitucionController@acceso');
 Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
 
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
 Route::post('institucion/registro', 'Institucion\RegistroController@register');
-
 
 
 
