@@ -4,12 +4,12 @@
 <div class="container">
       <div class="row">
 
-        <div class=" col-md-offset-6 col-lg-offset-0" >
+        <div class="  col-md-9 col-lg-10 col-md-offset-3 col-lg-offset-1" >
    
    
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">{{ Auth::Guard('institucion')->user()->name }}</h3>
+              <h3 class="panel-title text-center">{{ Auth::Guard('institucion')->user()->name }}</h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -23,29 +23,21 @@
                 <div class=" col-md-9 col-lg-9"> 
                   <table class="table table-user-information">
                     <tbody>     
-                      <tr>
-                        <td>Nombre:</td>
-                        <td>{{ Auth::Guard('institucion')->user()->name }}</td>
-                      </tr>
 
                      <tr>
-                      <td>Imagen:</td>
-                          <td><form enctype="multipart/form-data" action="{{ url('institucion/perfil') }}" method="POST">
-                            {{ csrf_field() }}
+                      <td>Foto de Perfil:</td>
+                         <td><form  action="{{ url('institucion/perfil') }}" method="POST">
+                           
                           <input type="file" name="avatar">  
-                          <input type="submit" name="Guardar" class="pull-right btn btn-sm btn-primary">
+                           {{--<input type="submit" value="guardar" name="Guardar" class=" btn btn-sm pull-right btn btn-sm btn-primary">--}}
                           </form> </td>
-                      </tr>
-                      
-                      <tr>
-                          <td>Direccion de Correo:</td>
                         <td>
-                            <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
-                                
-                            {{ Auth::Guard('institucion')->user()->email }}
-                            </a>
+                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar <i class="glyphicon glyphicon-edit"></i></a>
                         </td>
-                      </tr>
+                         
+                      </tr> 
+                      
+                      
                       <tr>
                           <td>Direccion:</td>
                         <td>{{ Auth::Guard('institucion')->user()->direccion }}</td>
@@ -55,6 +47,7 @@
                         <span class="pull-right">
                         </td>
                       </tr>
+
                    
                     <tr>
                         <td>Telefono: </td>
@@ -68,27 +61,45 @@
                         </td>
                            
                       </tr>
+
+                      <tr>
+                          <td>Direccion de Correo:</td>
+                        <td>
+                            <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
+                                
+                            {{ Auth::Guard('institucion')->user()->email }}
+                            </a>
+                            
+                        </td>
+                      </tr>
+
+                      
                      
                     </tbody>
                   </table>
+
+                    {{-- botones de abajo --}}
+                   <div class="panel-footer  ">
+                     <div class="row">
+                      <div class="col-md-4">
+                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="">Maps  <i class="glyphicon glyphicon-map-marker"></i></a>
+                         </div>
+
+                         <div class="col-md-4">
+                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mensaje <i class="glyphicon glyphicon-comment"></i> </a>
+                         </div>
+   
+                         <div class="col-md-4">
+                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil  <i class="glyphicon glyphicon-remove"></i> </a>
+                         </div>
+
+                     </div>
+                  </div>
                   
-         
                 </div>
               </div>
             </div>
-             <div class="panel-footer col-md-18 col-lg-9 center">
-                     <div class="row">
-   
-                         <div class="col-md-2">
-                             <a class="btn btn-lg btn-primary btn-block">Maps</a>
-                         </div>
-                     </div>
-
-
-                    {{-- Mostrar maps --}}
-
-
-             </div>
+             
           </div>
         </div>
       </div>

@@ -102,8 +102,8 @@
        
     {{-- SUBMIT --}}
         <div class="form-group">
-            <button class="btn btn-primary" type="submit">Cargar </button>
-            <a  type="button" class="btn btn-primary close glyphicon glyphicon-arrow-left"  href="{{ url('institucion/mostrarCapacidad') }}"> </a>
+            <button class="btn btn-primary " type="submit">Cargar </button>
+            <a  type="button" class="btn btn-primary close glyphicon glyphicon-arrow-left"  href="{{ url('institucion/mostrarCapacidad') }}"></a>
             
         {{-- END FORM --}}
         
