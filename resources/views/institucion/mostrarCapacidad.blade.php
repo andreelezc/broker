@@ -100,36 +100,34 @@
                                         <div class="  col-lg-offset-2" >
                  <div class="row">
                         <div class="col-md-1  ">
-                            <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar  <i class="glyphicon glyphicon-edit"></i>   </a>
+                            <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="{{ url('institucion/capacidad/editar/'.$capacidad->id) }}">Editar  <i class="glyphicon glyphicon-edit"></i>   </a>
                         </div>
                         {{--Boton de eliminar --}}
                         <div class="   col-lg-offset-7" >
                          <div class="col-md-1">
 
+                          <form method="post" action="{{ route('borrarCapacidad') }}">
+                              {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
                          
-
-                           
-
-
-                            <form method="post" action="{{ url('institucion/capacidad', ['id' => $capacidad->id]) }}">
-                         
-                            <input type="hidden" name="_method" value="delete">
+                            {{-- <input type="hidden" name="_method" value="delete"> --}}
+                            <input type="hidden" name="id" value="{{ $capacidad->id }}">
                              <button class="btn btn-default">Delete</button>
 
-                              {{ csrf_field() }}
+
                            </form>
+ 
 
-
-                             
-                         </div>
-                        </div>
-
-          </div>
-        </div>
-                                    </div>
-                                </div>
+                                 
                             </div>
                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     </li>
 @endforeach

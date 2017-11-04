@@ -38,6 +38,19 @@ class OportunidadController extends Controller
 
      	
      }
+    public function borrar(Request $request) {
+  
+      
+       $oportunidad = oportunidad::findOrFail($request->id);
+        $oportunidad->delete();
+
+        //TODO boton borrar
+        //que mande el borrado con exito
+        return view('institucion.mostrarOportunidad');
+
+
+    
+    }
      
 
 

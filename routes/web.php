@@ -22,13 +22,17 @@ Route::middleware('isInstitucion')->group(function()
 		//Route::post('institucion/perfil','InstitucionController@imag_perfil');
 		//Route::get('institucion/perfil','InstitucionController@maps');
 
-		Route::get('institucion/capacidad', 'InstitucionController@capacit');
+		Route::get('institucion/capacidad', 'InstitucionController@cargarCapacidad');
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
 		Route::get('institucion/buscar', 'InstitucionController@buscar');
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
 	
-		Route::post('institucion/mostrarCapacidad', 'CapacidadController@destroy');
+		
 
+		Route::delete('institucion/capacidad','CapacidadController@borrar')->name("borrarCapacidad");
+
+		Route::get('institucion/capacidad/editar/{id}','InstitucionController@editarCapacidad');
+		Route::put('institucion/capacidad/editar/{id}','CapacidadController@editar');
 
 
 
@@ -48,7 +52,7 @@ Route::get('productor/oportunidad', 'ProductorController@oport');
 Route::get('productor/buscar', 'ProductorController@buscar');
 Route::post('productor/oportunidad', 'OportunidadController@crear');
 
-
+Route::delete('institucion/oportunidad','OportunidadController@borrar')->name("borrarOportunidad");
 });
 
 

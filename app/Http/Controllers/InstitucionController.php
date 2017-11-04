@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
 use inetweb\Oportunidad;
+use inetweb\Capacidad;
 use inetweb\OportunidadKey;
 
 
@@ -49,9 +50,15 @@ class InstitucionController extends Controller
         return view('institucion.home',array('user'=>$user));
     }
 
-    public function capacit()
+    public function cargarCapacidad()
     {
         return view('institucion.capacidad');
+    }
+
+     public function editarCapacidad($id)
+    {
+        $capacidad = capacidad::findOrFail($id);
+        return view('institucion.editarCapacidad',array("capacidad"=>$capacidad));
     }
 
      public function perfil()

@@ -46,15 +46,34 @@ class CapacidadController extends Controller
       
 
       
-      public function destroy($id) {
+      public function borrar(Request $request) {
         
             
-             $capacidades = capacidad::findOrFail($id);
-        $capacidades->delete();
+             $capacidad = capacidad::findOrFail($request->id);
+              $capacidad->delete();
+
+              //TODO
+              //que mande el borrado con exito
+              return view('institucion.mostrarCapacidad');
 
     
           
           }
+
+      public function editar(Request $request, $id)
+      {
+        $c = capacidad::findOrFail($id);
+          $c->titulo= $request->titulo;
+      $c->propuesta= $request->propuesta;
+      $c->experiencias= $request->experiencias;
+      $c->categoria= $request->categoria;
+      $c->rubro= $request->rubro;
+      $c->disponibilidad= $request->disponibilidad;
+      $c->remuneracion= $request->remuneracion; 
+      $c->save();
+
+      return view("institucion.mostrarCapacidad");
+      }
 
      
 }
