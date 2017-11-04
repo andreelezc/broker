@@ -12,13 +12,13 @@
 |--------------------------------------------------------------------------
 
 */
+	
 Route::middleware('isInstitucion')->group(function()
 {
 
 		Route::get('institucion/home', 'InstitucionController@index');
 		//Route::get('institucion/perfil', 'Institucion\PerfilController@index');
 		Route::get('institucion/perfil','InstitucionController@perfil');
-		Route::get('institucion/acceso','InstitucionController@acceso');
 		//Route::post('institucion/perfil','InstitucionController@imag_perfil');
 		//Route::get('institucion/perfil','InstitucionController@maps');
 
@@ -46,13 +46,13 @@ Route::middleware('isInstitucion')->group(function()
 Route::middleware('isProductor')->group(function(){
 ///rutas solo accesibles por usuarios autenticados de tipo productor
 
-Route::get('productor/home', 'ProductorController@index');
-Route::get('productor/perfil', 'Productor\PerfilController@index');
-Route::get('productor/oportunidad', 'ProductorController@oport');
-Route::get('productor/buscar', 'ProductorController@buscar');
-Route::post('productor/oportunidad', 'OportunidadController@crear');
+		Route::get('productor/home', 'ProductorController@index');
+		Route::get('productor/perfil', 'Productor\PerfilController@index');
+		Route::get('productor/oportunidad', 'ProductorController@oport');
+		Route::get('productor/buscar', 'ProductorController@buscar');
+		Route::post('productor/oportunidad', 'OportunidadController@crear');
 
-Route::delete('institucion/oportunidad','OportunidadController@borrar')->name("borrarOportunidad");
+		Route::delete('institucion/oportunidad','OportunidadController@borrar')->name("borrarOportunidad");
 });
 
 
@@ -102,7 +102,9 @@ Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra')
 
 
 
-
+// Route::get("superlogout",function(){
+// 	Session::flush();
+// });
 
 
 

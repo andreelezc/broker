@@ -14,7 +14,8 @@ use inetweb\OportunidadKey;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
-
+use Illuminate\Support\Facades\Mail;
+use inetweb\Mail\nuevoUsuario;
 
 class InstitucionController extends Controller
 {
@@ -63,6 +64,7 @@ class InstitucionController extends Controller
 
      public function perfil()
     {
+         Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
         return view('institucion.perfil');
     }
 

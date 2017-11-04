@@ -5,7 +5,8 @@ use inetweb\Institucion;
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\Mail;
+use inetweb\Mail\nuevoUsuario;
 class RegistroController extends Controller
 {
     //
@@ -47,13 +48,20 @@ class RegistroController extends Controller
    
     protected function create(array $data)
     {
-        return Institucion::create([
+        $institucion =  Institucion::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'direccion' => $data['direccion'],
             'password' => bcrypt($data['password']),
         ]);
         
+        ///manda mail
+
+       
+
+
+
+        return $institucion;
 
 
     }
