@@ -102,7 +102,7 @@ Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra')
 
 
 
-//Route::get("superlogout",function(){
-//	Session::flush();
-//});
+Route::get("superlogout",function(){
+	Session::flush();
+});
 

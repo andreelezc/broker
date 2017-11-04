@@ -56,16 +56,10 @@ class RegistroController extends Controller
         ]);
         
         ///manda mail
-
-       
-
-
+        Mail::to($institucion)->send(new nuevoUsuario()); 
 
         return $institucion;
 
-
     }
-
-
      
 }
