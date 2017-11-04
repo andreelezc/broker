@@ -106,20 +106,8 @@
                         <div class="   col-lg-offset-7" >
                          <div class="col-md-1">
 
-                         
 
-                           
-
-
-                            <form method="post" action="{{ url('institucion/capacidad', ['id' => $capacidad->id]) }}">
-                         
-                            <input type="hidden" name="_method" value="delete">
-                             <button class="btn btn-default">Delete</button>
-
-                              {{ csrf_field() }}
-                           </form>
-
-
+                          
                              
                          </div>
                         </div>

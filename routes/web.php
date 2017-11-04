@@ -27,7 +27,7 @@ Route::middleware('isInstitucion')->group(function()
 		Route::get('institucion/buscar', 'InstitucionController@buscar');
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
 	
-		Route::post('institucion/mostrarCapacidad', 'CapacidadController@destroy');
+		
 
 
 
