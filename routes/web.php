@@ -106,5 +106,3 @@ Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra')
 // 	Session::flush();
 // });
 
-
-

@@ -14,7 +14,7 @@ use inetweb\OportunidadKey;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\Mail;
+use Mail;
 use inetweb\Mail\nuevoUsuario;
 
 class InstitucionController extends Controller
