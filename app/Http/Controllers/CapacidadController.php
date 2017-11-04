@@ -46,5 +46,15 @@ class CapacidadController extends Controller
       
 
       
+      public function destroy($id) {
+        
+            
+             $capacidades = capacidad::findOrFail($id);
+        $capacidades->delete();
+
+    
+          
+          }
+
      
 }

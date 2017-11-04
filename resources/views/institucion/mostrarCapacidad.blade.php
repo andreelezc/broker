@@ -69,9 +69,6 @@
     </div>
     </div>
 
-       
-        
-         
                         <div class="modal fade in" id="ventana{{ $capacidad->id }}" >
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -108,10 +105,20 @@
                         {{--Boton de eliminar --}}
                         <div class="   col-lg-offset-7" >
                          <div class="col-md-1">
+
                          
-                            <a data-original-title="Eliminar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar  <i class="glyphicon glyphicon-remove"></i>
-                            </a>
+
                            
+
+
+                            <form method="post" action="{{ url('institucion/capacidad', ['id' => $capacidad->id]) }}">
+                         
+                            <input type="hidden" name="_method" value="delete">
+                             <button class="btn btn-default">Delete</button>
+
+                              {{ csrf_field() }}
+                           </form>
+
 
                              
                          </div>

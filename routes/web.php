@@ -26,6 +26,8 @@ Route::middleware('isInstitucion')->group(function()
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
 		Route::get('institucion/buscar', 'InstitucionController@buscar');
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
+	
+		Route::post('institucion/mostrarCapacidad', 'CapacidadController@destroy');
 
 
 
@@ -45,6 +47,7 @@ Route::get('productor/perfil', 'Productor\PerfilController@index');
 Route::get('productor/oportunidad', 'ProductorController@oport');
 Route::get('productor/buscar', 'ProductorController@buscar');
 Route::post('productor/oportunidad', 'OportunidadController@crear');
+
 
 });
 
