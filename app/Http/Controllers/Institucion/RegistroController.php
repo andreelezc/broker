@@ -30,8 +30,6 @@ class RegistroController extends Controller
     }
 
 
-
-
     
     protected function validator(array $data)
     {
@@ -56,7 +54,7 @@ class RegistroController extends Controller
         ]);
         
         ///manda mail
-        Mail::to($institucion)->send(new nuevoUsuario()); 
+        Mail::to($institucion)->send(new nuevoUsuario($institucion->name)); 
 
         return $institucion;
 
