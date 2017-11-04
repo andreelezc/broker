@@ -4,6 +4,7 @@ namespace inetweb\Http\Controllers\Auth;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Session;
 
 class LoginController extends Controller
 {
