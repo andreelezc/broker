@@ -10,3 +10,6 @@ ir a Mi Cuenta
 <br>
 {{ config('app.name') }}
 @endcomponent
+
+
+

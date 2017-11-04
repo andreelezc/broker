@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Mail;
 use inetweb\Mail\nuevoUsuario;
+use Session;
+
 class RegistroController extends Controller
 {
     //
@@ -20,6 +22,7 @@ class RegistroController extends Controller
     {
         return view('institucion.registro');
     }
+    
 
 
      protected $redirectTo = 'institucion/acceso';
@@ -27,7 +30,10 @@ class RegistroController extends Controller
       public function __construct()
     {
         $this->middleware('guest');
+
+
     }
+     
 
 
     
