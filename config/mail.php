@@ -55,11 +55,11 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS'),
-        'name' => env('MAIL_FROM_NAME'),
-    ],
- 
+
+  
+
+    'from' => ['address' => "linsse.unne@gmail.com" , 'name' => "InetWeb"],
+
 
 
     /*
@@ -70,10 +70,10 @@ return [
     | Here you may specify the encryption protocol that should be used when
     | the application send e-mail messages. A sensible default using the
     | transport layer security protocol should provide great security.
-    |
-    */
+    |*/
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', ''),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -103,6 +103,9 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
+    'pretend' => false,
+
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
@@ -121,5 +124,15 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+
+
+
+    'stream' => [
+    'ssl' => [
+    'allow_self_signed' => true,
+    'verify_peer' => false,
+    'verify_peer_name' => false,
+],
+],
 
 ];
