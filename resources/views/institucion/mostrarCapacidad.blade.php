@@ -106,6 +106,7 @@
                         <div class="   col-lg-offset-7" >
                          <div class="col-md-1">
 
+
                           <form method="post" action="{{ route('borrarCapacidad') }}">
                               {{ csrf_field() }}
                             {{ method_field('DELETE') }}
@@ -120,7 +121,12 @@
 
                                  
                             </div>
+
+                                {{-- end col-lg --}}
+                         </div>
+                        {{-- end col --}}
                         </div>
+                        {{-- end row --}}
 
                     </div>
                 </div>
