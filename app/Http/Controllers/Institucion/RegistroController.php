@@ -27,14 +27,14 @@ class RegistroController extends Controller
 
      protected $redirectTo = 'institucion/acceso';
 
-      public function __construct()
+
+     /* public function __construct()
     {
         $this->middleware('guest');
 
 
     }
-     
-
+     */
 
     
     protected function validator(array $data)
