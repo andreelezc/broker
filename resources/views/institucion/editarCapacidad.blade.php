@@ -42,11 +42,11 @@
                 <div class="col-md-12"> <label class="control-label">Palabras Clave:</label>
                 <label>(ingrese palabras clave para facilitar la busqueda de su capacidad laboral)</label>
                 </div>
-                 @foreach($oportunidad->keywords as $key)
+                 @foreach($capacidad->keywords as $key)
                 <div class="col-md-3">
-                    <input name="palabra" type="text" class="form-control" required  {{ $key->palabra }}"  disabled />
+                    <input name="palabra" type="text" class="form-control" required  value=" {{ $key->palabra }}"  disabled />
                 </div>
-                
+                @endforeach
             </div>
         </div> 
 
@@ -122,7 +122,7 @@
     {{-- SUBMIT --}}
         <div class="form-group">
             <button class="btn btn-primary" type="submit">Guardar Cambios </button>
-            <a  type="button" class="btn btn-primary col-md-offset-8 "  href="{{ url('productor/mostrarOportunidad') }}">Volver <i class=" glyphicon glyphicon-arrow-left "></i></a>
+            <a  type="button" class="btn btn-primary col-md-offset-8 "  href="{{ url('institucion/mostrarCapacidad') }}">Volver <i class=" glyphicon glyphicon-arrow-left "></i></a>
            </div> 
         {{-- END FORM --}}
         
