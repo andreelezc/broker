@@ -30,25 +30,20 @@
                 <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propongo ..." value="{{ $oportunidad->propuesta }}">
             </div>
             {{-- PALABRAS CLAVE --}}
-        {{--<div class="form-group">
+        <div class="form-group">
             <div class="row">
+               
                 <div class="col-md-12"> <label class="control-label">Palabras Clave:</label>
                 <label>(ingrese palabras clave para facilitar la busqueda de su oportunidad  laboral)</label>
                 </div>
+                 @foreach($oportunidad->keywords as $key)
                 <div class="col-md-3">
-                    <input name="key1" type="text" class="form-control" required />
+                    <input name="palabra" type="text" class="form-control" required value="{{ $key->palabra }}"  disabled />
                 </div>
-                <div class="col-md-3">
-                    <input name="key2" type="text" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                    <input name="key3" type="text" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                    <input name="key4" type="text" class="form-control" required/>
-                </div>
+                
+                  @endforeach
             </div>
-        </div>--}}  
+        </div>
             {{-- Requsitos --}}
             <div class="form-group">
                 <label class="control-label" for="textarea-input">Requisitos: </label>

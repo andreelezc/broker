@@ -37,25 +37,18 @@
                 </textarea>
             </div>
                  {{-- PALABRAS CLAVE --}}
-       {{--  <div class="form-group">
+         <div class="form-group">
             <div class="row">
                 <div class="col-md-12"> <label class="control-label">Palabras Clave:</label>
                 <label>(ingrese palabras clave para facilitar la busqueda de su capacidad laboral)</label>
                 </div>
+                 @foreach($oportunidad->keywords as $key)
                 <div class="col-md-3">
-                    <input name="key1" type="text" class="form-control" required />
+                    <input name="palabra" type="text" class="form-control" required  {{ $key->palabra }}"  disabled />
                 </div>
-                <div class="col-md-3">
-                    <input name="key2" type="text" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                    <input name="key3" type="text" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                    <input name="key4" type="text" class="form-control" required/>
-                </div>
+                
             </div>
-        </div> --}}
+        </div> 
 
             <div class="row">
                 <div class="col-md-6">

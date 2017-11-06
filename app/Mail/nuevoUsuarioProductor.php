@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class nuevoUsuario extends Mailable
+class nuevoUsuarioProductor extends Mailable
 {
     use Queueable, SerializesModels;
     public $name;
@@ -29,7 +29,7 @@ class nuevoUsuario extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.usuarios.nuevo')->with([
+        return $this->markdown('mails.usuarios.nuevoProductor')->with([
                 'name' => $this->name
         ]);
     }

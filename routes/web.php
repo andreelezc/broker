@@ -87,6 +87,7 @@ Route::post('institucion/registro', 'Institucion\RegistroController@register');
 
 /*Vistas Productor */
 Route::get('productor/inicio', 'ProductorController@inicio');
+Route::get('productor/acceso','ProductorController@acceso');
  // Acceso Routes...
 Route::get('productor/acceso', 'ProductorController@showLoginForm');
 Route::post('productor/acceso', 'ProductorController@login');

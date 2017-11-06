@@ -7,7 +7,7 @@ use inetweb\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Mail;
-use inetweb\Mail\nuevoUsuario;
+use inetweb\Mail\nuevoUsuarioProductor;
 use Session;
 
 class RegistroController extends Controller
@@ -53,7 +53,7 @@ class RegistroController extends Controller
         ]);
 
          ///manda mail
-        Mail::to($productor)->send(new nuevoUsuario($productor->name)); 
+        Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
 
         return $productor;
     }

@@ -1,7 +1,7 @@
 
 @component('mail::message')
 
- <h2 class="panel-title text-center">#Bienvenido! {{$name}}</h2>
+ <h2 class="panel-title text-center">Bienvenida Institución! {{$name}}</h2>
 
 Gracias por Registrarte a Inet Web.
 
