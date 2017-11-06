@@ -34,7 +34,7 @@ class OportunidadController extends Controller
           $o->addKey($request->key3);
           $o->addKey($request->key4);
            // redireccion
-          return view('productor.home');
+          return view('productor.mostrarOportunidad');
 
      	
      }
@@ -46,11 +46,26 @@ class OportunidadController extends Controller
 
         //TODO boton borrar
         //que mande el borrado con exito
-        return view('institucion.mostrarOportunidad');
+        return view('productor.mostrarOportunidad');
 
-
-    
     }
+
+    public function editar(Request $request, $id)
+      {
+        $o = oportunidad::findOrFail($id);
+      $o->titulo= $request->titulo;
+      $o->propuesta= $request->propuesta;
+      $o->requisito= $request->requisito;
+      $o->categoria= $request->categoria;
+      $o->rubro= $request->rubro;
+      $o->disponibilidad= $request->disponibilidad;
+      $o->remuneracion= $request->remuneracion;
+      $o->fechaIngreso= $request->fechaIngreso;
+      $o->fechaEgreso= $request->fechaEgreso;
+      $o->save();
+
+      return view("productor.mostrarOportunidad");
+      }
      
 
 

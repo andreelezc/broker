@@ -31,7 +31,7 @@ class Productor extends Authenticatable
 
     //relacion con capacidad
     //productor->"tienevarias"->oportunidades
-    public function oportunidad()
+    public function oportunidades()
     {
         return $this->hasMany('inetweb\oportunidad');
     }

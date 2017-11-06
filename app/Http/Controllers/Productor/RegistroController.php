@@ -6,6 +6,9 @@ use inetweb\Productor;
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Mail;
+use inetweb\Mail\nuevoUsuario;
+use Session;
 
 class RegistroController extends Controller
 {
@@ -24,10 +27,10 @@ class RegistroController extends Controller
 
     protected $redirectTo = 'productor/acceso';
 
-      public function __construct()
+    /*  public function __construct()
     {
         $this->middleware('guest');
-    }
+    }*/
 
     protected function validator(array $data)
     {
@@ -42,12 +45,17 @@ class RegistroController extends Controller
    
     protected function create(array $data)
     {
-        return Productor::create([
+        $productor = Productor::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'direccion' => $data['direccion'],
             'password' => bcrypt($data['password']),
         ]);
+
+         ///manda mail
+        Mail::to($productor)->send(new nuevoUsuario($productor->name)); 
+
+        return $productor;
     }
 
 

@@ -128,9 +128,9 @@
        
     {{-- SUBMIT --}}
         <div class="form-group">
-            <button class="btn btn-primary " type="submit">Guardar Cambios</button>
-            <a  type="button" class="btn btn-primary close glyphicon glyphicon-arrow-left"  href="{{ url('institucion/mostrarCapacidad') }}"></a>
-            
+            <button class="btn btn-primary" type="submit">Guardar Cambios </button>
+            <a  type="button" class="btn btn-primary col-md-offset-8 "  href="{{ url('productor/mostrarOportunidad') }}">Volver <i class=" glyphicon glyphicon-arrow-left "></i></a>
+           </div> 
         {{-- END FORM --}}
         
     </form> 

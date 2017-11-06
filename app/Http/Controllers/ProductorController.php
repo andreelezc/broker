@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
+use inetweb\Oportunidad;
 use inetweb\Capacidad;
 use inetweb\Institucion;
 
@@ -42,9 +42,33 @@ class ProductorController extends Controller
         return view('productor.home');
     }
 
-     public function oport()
+    public function perfil()
+    {
+        return view('productor.perfil');
+    }
+    public function inicio()
+    {
+        return view('productor.inicio');
+    }
+
+     public function acceso()
+    {
+        return view('productor.acceso');
+    }
+
+     public function oportunidad()
     {
         return view('productor.oportunidad');
+    }
+    public function mostrarOportunidad()
+    {
+        return view('productor.mostrarOportunidad');
+    }
+
+    public function editarOportunidad($id)
+    {
+        $oportunidades = oportunidad::findOrFail($id);
+        return view('productor.editarOportunidad',array("oportunidad"=>$oportunidades));
     }
 
      public function buscar()

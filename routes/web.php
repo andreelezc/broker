@@ -47,12 +47,16 @@ Route::middleware('isProductor')->group(function(){
 ///rutas solo accesibles por usuarios autenticados de tipo productor
 
 		Route::get('productor/home', 'ProductorController@index');
-		Route::get('productor/perfil', 'Productor\PerfilController@index');
-		Route::get('productor/oportunidad', 'ProductorController@oport');
+		Route::get('productor/perfil', 'ProductorController@perfil');
+		Route::get('productor/oportunidad', 'ProductorController@oportunidad');
+		Route::get('productor/mostrarOportunidad', 'ProductorController@mostrarOportunidad');
 		Route::get('productor/buscar', 'ProductorController@buscar');
 		Route::post('productor/oportunidad', 'OportunidadController@crear');
 
-		Route::delete('institucion/oportunidad','OportunidadController@borrar')->name("borrarOportunidad");
+		Route::delete('productor/oportunidad','OportunidadController@borrar')->name("borrarOportunidad");
+
+		Route::get('productor/oportunidad/editar/{id}','ProductorController@editarOportunidad');
+		Route::put('productor/oportunidad/editar/{id}','OportunidadController@editar');
 });
 
 
@@ -82,7 +86,7 @@ Route::post('institucion/registro', 'Institucion\RegistroController@register');
 
 
 /*Vistas Productor */
-Route::get('productor/inicio', 'Productor\InicioController@index');
+Route::get('productor/inicio', 'ProductorController@inicio');
  // Acceso Routes...
 Route::get('productor/acceso', 'ProductorController@showLoginForm');
 Route::post('productor/acceso', 'ProductorController@login');
