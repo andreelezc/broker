@@ -43,33 +43,32 @@
         <div class="  col-sm-9 col-xs-2">
                            
 
-         @foreach(Auth::Guard('institucion')->user()->capacidades as $capacidad)
  <ul class="list-group">
+         @foreach(Auth::Guard('institucion')->user()->capacidades as $capacidad)
     <li class="list-group-item">
     <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-4">
-             <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
-             
-                     <p>
-               @foreach($capacidad->keywords as $key)
-                <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
-               <span class="badge">{{ $key->palabra }}</span>
-                  
-                </a>
-               @endforeach
-             
-                </p>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-4">
+              <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
 
-        </div>
+                 <p>
+              @foreach($capacidad->keywords as $key)
+                  <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
+                      <span class="badge">{{ $key->palabra }}</span>
+                  </a>
+              @endforeach
 
+              </p>
+
+          </div>
 
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-        <a href="#ventana{{ $capacidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+              <a href="#ventana{{ $capacidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+          </div>
     </div>
-    </div>
 
-                        <div class="modal fade in" id="ventana{{ $capacidad->id }}" >
+               <div class="modal fade in" id="ventana{{ $capacidad->id }}" >
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <!-- header de la ventana-->
@@ -96,47 +95,42 @@
                                     </div>
                                             
                                      <!-- footer de la ventana-->
-                                    <div class="modal-footer">
-                                        <div class="  col-lg-offset-2" >
-                 <div class="row">
-                        <div class="col-md-1  ">
-                            <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="{{ url('institucion/capacidad/editar/'.$capacidad->id) }}">Editar  <i class="glyphicon glyphicon-edit"></i>   </a>
-                        </div>
-                        {{--Boton de eliminar --}}
-                        <div class="   col-lg-offset-7" >
-                         <div class="col-md-1">
+                              <div class="modal-footer">
+                                <div class="  col-lg-offset-2" >
+                                   <div class="row">
+                                          <div class="col-md-1  ">
+                                              <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="{{ url('institucion/capacidad/editar/'.$capacidad->id) }}">Editar  <i class="glyphicon glyphicon-edit"></i>   </a>
+                                          </div>
+                                          {{--Boton de eliminar --}}
+                                          <div class="   col-lg-offset-7" >
+                                           <div class="col-md-1">
 
 
-                          <form method="post" action="{{ route('borrarCapacidad') }}">
-                              {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                         
-                            {{-- <input type="hidden" name="_method" value="delete"> --}}
-                            <input type="hidden" name="id" value="{{ $capacidad->id }}">
-                             <button class="btn btn-default">Eliminar</button>
+                                                    <form method="post" action="{{ route('borrarCapacidad') }}">
+                                                          {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                                        <input type="hidden" name="id" value="{{ $capacidad->id }}">
+                                                         <button class="btn btn-default">Eliminar</button>
+                                                     </form>
+                                                   
+                                              </div>
 
+                                                  {{-- end col-lg --}}
+                                           </div>
+                                          {{-- end col --}}
+                                    </div>
+                                          {{-- end row --}}
 
-                           </form>
- 
-
-                                 
-                            </div>
-
-                                {{-- end col-lg --}}
-                         </div>
-                        {{-- end col --}}
-                        </div>
-                        {{-- end row --}}
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                                </div>
+                              </div>
+            </div>{{-- modal --}}
+              </div>
+          </div> {{-- modal --}} 
 
     </li>
 @endforeach
+    </div>
 </ul>
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
