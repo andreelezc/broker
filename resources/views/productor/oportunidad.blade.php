@@ -26,7 +26,7 @@
             {{-- PROPUESTA --}}
             <div class="form-group">
                 <label class="control-label" for="email-input">Propuesta: </label>
-                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propongo ...">
+                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propuesta  Laboral Ofrecida...">
             </div>
             {{-- PALABRAS CLAVE --}}
         <div class="form-group">
@@ -51,71 +51,113 @@
             {{-- Requsitos --}}
             <div class="form-group">
                 <label class="control-label" for="textarea-input">Requisitos: </label>
-                <textarea class="form-control" name="requisito" id="textarea-input"></textarea>
+                <textarea class="form-control" name="requisito" id="textarea-input" placeholder="Requisitos minimos esperado del postulante"></textarea>
             </div>
-        <div class="row">
-            {{-- CATEGORIA --}}
-            <div class="col-md-6">
-              <div class="form-group">
-                <label class="control-label" for="textarea-input">Categoria: </label>
-                        <select name="categoria"  class="form-control" required>
-                                
-                                <option value="pasante">Pasante</option>
-                                <option value="encargado">Encargado</option>
-                                <option value="estudiante">Estudiante</option>
-                         
-                        </select>
-                    </div>
-                </div>
-             {{-- RUBRO --}}
-            <div class="col-md-6">   
+       
+        {{-- DISPONIBILIDAD --}}
+    <div class="row">
+        <div class="col-md-8">
+            
+            <div class="form-group">
+                
+                <label class="control-label">Disponibilidad Horaria: </label>
+
+                <div class="row">
+                <div class="col-md-8 ">
                 <div class="form-group">
-                    <label class="control-label" for="textarea-input">Rubro: </label>
-                        <select name="rubro"  class="form-control" required>  
-                                <option value="pyme">PYME</option>
-                                <option value="beca">Beca</option>
-                                <option value="emprededores">Emprededores</option>
-                        </select>
-                </div>
+                Fecha de inicio <input type="date" placeholder="DD" name="disponibilidad"/>
+               
+                </div></div></div>
+                 
+
+                <div class="row">
+                <div class="col-md-6">
+                 <div class="form-group"> 
+                 <table class="table table-user-information">   
+                  <tbody> 
+                  <tr>         
+                     <td><span class="badge">Lunes</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                   <tr>         
+                     <td><span class="badge">Martes</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><span class="badge">Miercoles</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><span class="badge">Jueves</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><span class="badge">Viernes</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><span class="badge">Sabado</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                     <tr>         
+                     <td><span class="badge">Domingo</span></td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                  </tr> 
+                  <p></p>
+                   </tbody>
+          </table>
+                   </div></div></div>
+                   
             </div>
         </div>
-        <div class="row">
-            {{-- DISPONIBILIDAD --}}
-            {{-- 
+        
+          
+    {{-- REMUNERACION --}}
 
-                !!!TODO
-                DISPONIBILIDAD POR DIA DE SEMANAS?
-
-
-
-             --}}
-             <div class="col-md-6"> 
-                <div class="form-group">
-                <label class="control-label">Franja Horaria: </label>
-                <input class="form-control" type="text" name="disponibilidad" minlength="5" inputmode="full-width-latin" placeholder="00:00   a  00:00">
+                <div class="form-group"> 
+                    <label class="control-label">Remuneracion Ofrecida:</label> 
+                <div class="col-md-2">
+                           
+                     <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
                 </div>
-             </div>
-            {{-- REMUNERACION --}}
-             <div class="col-md-6">
-                <div class="for-group">
-                <label class="control-label">Remuneracion : </label>
-                <input class="form-control" type="text"  name="remuneracion"  placeholder="$" required>
                 </div>
-            </div>
-        </div>
+   </div>
+  
             {{-- Fechas de ingreso y egreso --}}
+             <div class="form-group">
         <div class="row">
-            <div class="col-md-6"> 
-                <div class="container">
-                <label class="control-label" for="fechaIngreso">Fecha de Ingreso: </label>
-                <input type="date" placeholder="DD" name="fechaIngreso"  />
+            <div class="col-md-8"> 
+            <table class="table table-user-information">   
+                  <tbody> 
+                  <tr>         
+                            
+        
+                       <td>   <label class="control-label" for="fechaIngreso">Duración: </label> </td>
+                        
+                        <td><input id="number" type="number"  />  </td>
+                       
+                        <td> <select name="categoria"  class="form-control" required>
+                                        <option value="pasante">Días</option>
+                                        <option value="pasante">Semanas</option>
+                                        <option value="encargado">Meses</option>
+                                        <option value="estudiante">Añoa</option>
+                                </select>  </td>
+                                       </tbody>
+          </table>
              </div>
-            </div>
-            <div class="col-md-6"> 
-                <div class="container">
-                     <label class="control-label" for= "fechaEgreso">Fecha de Egreso: </label>
-                     <input type="date" placeholder="DD" name="fechaEgreso"  />
-                </div>   
             </div>
         </div>
             {{-- SUBMIT --}}

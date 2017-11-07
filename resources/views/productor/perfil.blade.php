@@ -25,6 +25,7 @@
                         <td>Nombre:</td>
                         <td>{{ Auth::Guard('productor')->user()->name }}</td>
                       </tr>
+
                       <tr>
                       <td>Foto de Perfil:</td>
                       <td><form  action="{{ url('productor/perfil') }}" method="POST">    
@@ -32,27 +33,19 @@
                                {{--<input type="submit" value="guardar" name="Guardar" class=" btn btn-sm pull-right btn btn-sm btn-primary">--}}
                           </form> 
                       </td>
-                      <td>
-                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar <i class="glyphicon glyphicon-edit"></i></a>
-                      </td>                         
+                                              
                      </tr> 
                       <tr>
                         <td>Direccion:</td>
                         <td>{{ Auth::Guard('productor')->user()->direccion }}</td>
-                        <td>
-                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar<i class="glyphicon glyphicon-edit"></i></a>                        
-                        </td>
+                       
                       </tr>
                       <tr>
                         <td>Telefono: </td>
                         <td>{{ Auth::Guard('productor')->user()->telefono }}
                             
                         </td>
-                        <td>
-                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar <i class="glyphicon glyphicon-edit"></i></a>
-                          {{-- glyphicon glyphicon-ok --}}
-                        <span class="pull-right">
-                        </td>                           
+                                                  
                       </tr>
                        <tr>
                         <td>Direccion de Correo:</td>
@@ -61,9 +54,12 @@
                             {{ Auth::Guard('productor')->user()->email }}
                             </a>
                         </td>
-                        <td>
-                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar <i class="glyphicon glyphicon-edit"></i></a>
-                        </td>
+                        
+                        
+                      </tr>
+                      <tr>
+                        <td>Descripcion:</td>
+                        <td> </td>
                       </tr>
                     </tbody>
                   </table>
@@ -71,7 +67,9 @@
                    <div class="panel-footer  ">
                     <div class="row">
                       <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" href="">Maps  <i class="glyphicon glyphicon-map-marker"></i></a>
+
+                          <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">Editar <i class="glyphicon glyphicon-edit"></i></a>
+                      
                          </div>
 
                          <div class="col-md-4">
