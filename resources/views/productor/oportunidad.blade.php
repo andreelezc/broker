@@ -153,7 +153,7 @@
                                         <option value="pasante">Días</option>
                                         <option value="pasante">Semanas</option>
                                         <option value="encargado">Meses</option>
-                                        <option value="estudiante">Añoa</option>
+                                        <option value="estudiante">Años</option>
                                 </select>  </td>
                                        </tbody>
           </table>
