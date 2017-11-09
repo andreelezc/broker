@@ -127,7 +127,8 @@
         $("#search-input").keydown(function(e){
             if(e.which == 13)
             {
-               location.href = '/productor/buscar/'+$(this).val();
+                var buscarurl = "{{ url('/productor/buscar/')}}";
+               location.href = buscarurl+"/"+$(this).val();
             }
         })
      })
