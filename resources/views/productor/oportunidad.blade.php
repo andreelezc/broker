@@ -76,45 +76,59 @@
                  <table class="table table-user-information">   
                   <tbody> 
                   <tr>         
-                     <td><span class="badge">Lunes</span></td>
+                     <td><label>Lunes</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                    <tr>         
-                     <td><span class="badge">Martes</span></td>
+                     <td><label>Martes</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Miercoles</span></td>
+                     <td><label>Miercoles</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Jueves</span></td>
+                     <td><label>Jueves</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Viernes</span></td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><label>Viernes</label></td>
+                     <td>de</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Sabado</span></td>
+                     <td><label>Sabado</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                      <tr>         
-                     <td><span class="badge">Domingo</span></td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><label>Domingo</label></td>
+                     <td>de</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td> 
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                    </tbody>

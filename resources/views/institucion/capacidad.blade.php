@@ -27,12 +27,12 @@
             {{-- PROPUESTA --}}
             <div class="form-group">
                 <label class="control-label" for="email-input"> Descripción: </label>
-                <textarea class="form-control"  name="propuesta" id="text-input" placeholder=" ..."></textarea>
+                <textarea class="form-control"  name="propuesta" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."></textarea>
             </div>
             {{-- EXPERIENCIA --}}
             <div class="form-group">
                 <label class="control-label" for="textarea-input">Experiencias previas: </label>
-                <textarea class="form-control" name="experiencias" id="textarea-input"></textarea>
+                <textarea class="form-control" name="experiencias" rows="8" cols="40" placeholder=" Mencione sus experiencias laborales..." id="textarea-input"></textarea>
             </div>
                  {{-- PALABRAS CLAVE --}}
         <div class="form-group">
@@ -98,45 +98,59 @@
                  <table class="table table-user-information">   
                   <tbody> 
                   <tr>         
-                     <td><span class="badge">Lunes</span></td>
+                     <td><label>Lunes</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                    <tr>         
-                     <td><span class="badge">Martes</span></td>
+                     <td><label>Martes</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Miercoles</span></td>
+                     <td><label>Miercoles</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Jueves</span></td>
+                     <td><label>Jueves</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Viernes</span></td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><label>Viernes</label></td>
+                     <td>de</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
-                     <td><span class="badge">Sabado</span></td>
+                     <td><label>Sabado</label></td>
+                     <td>de</td>
                      <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                      <tr>         
-                     <td><span class="badge">Domingo</span></td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
-                     <td> <input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><label>Domingo</label></td>
+                     <td>de</td>
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td>a</td> 
+                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
                   </tr> 
                   <p></p>
                    </tbody>
