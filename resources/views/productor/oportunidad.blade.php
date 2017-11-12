@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Bienvenido a Oportunidades Laborales </div>
 
@@ -26,7 +26,8 @@
             {{-- PROPUESTA --}}
             <div class="form-group">
                 <label class="control-label" for="email-input">Propuesta: </label>
-                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propuesta  Laboral Ofrecida...">
+                <textarea class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propuesta  laboral a ofrecer..."  rows="8" cols="40" ></textarea>
+                
             </div>
             {{-- PALABRAS CLAVE --}}
         <div class="form-group">
@@ -51,7 +52,7 @@
             {{-- Requsitos --}}
             <div class="form-group">
                 <label class="control-label" for="textarea-input">Requisitos: </label>
-                <textarea class="form-control" name="requisito" id="textarea-input" placeholder="Requisitos minimos esperado del postulante"></textarea>
+                <textarea class="form-control" name="requisito" id="textarea-input"  rows="8" cols="40"  placeholder="Requisitos minimos esperado del postulante"></textarea>
             </div>
        
         {{-- DISPONIBILIDAD --}}
@@ -65,7 +66,7 @@
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
-                Fecha de inicio <input type="date" placeholder="DD" name="disponibilidad"/>
+                Fecha de inicio: <input type="date" placeholder="DD" name="disponibilidad"/>
                
                 </div></div></div>
                  

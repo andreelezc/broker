@@ -3,9 +3,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Bienvenido a Capacidades Laborales</div>
+                <div class="panel-heading "><h3>Bienvenido a Capacidades Laborales</h3></div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -17,23 +17,19 @@
      {{-- Inicio FORM --}}
             <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}
-            <h2 class="text-center">Capacidad Laboral</h2>
+            {{--<h2 class="text-center">Capacidad Laboral</h2>--}}
             {{-- TITULO --}}
             <div class="form-group">
                 <label class="control-label" for="text-input"> Titulo: </label>
                 <input class="form-control" type="text" name="titulo" id="text-input">
             </div>
             
-            {{-- PROPUESTA --}}
+            {{-- Descripcion --}}
             <div class="form-group">
                 <label class="control-label" for="email-input"> Descripción: </label>
                 <textarea class="form-control"  name="propuesta" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."></textarea>
             </div>
-            {{-- EXPERIENCIA --}}
-            <div class="form-group">
-                <label class="control-label" for="textarea-input">Experiencias previas: </label>
-                <textarea class="form-control" name="experiencias" rows="8" cols="40" placeholder=" Mencione sus experiencias laborales..." id="textarea-input"></textarea>
-            </div>
+            
                  {{-- PALABRAS CLAVE --}}
         <div class="form-group">
             <div class="row">
@@ -55,24 +51,35 @@
             </div>
         </div>
 
+        {{-- EXPERIENCIA --}}
+            <div class="form-group">
+                <label class="control-label" for="textarea-input">Experiencias previas: </label>
+                <textarea class="form-control" name="experiencias" rows="8" cols="40" placeholder=" Mencione sus experiencias laborales..." id="textarea-input"></textarea>
+            </div>
+
+
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                      {{-- CATEGORIA --}}
               <div class="form-group">
                 <label class="control-label" for="textarea-input">Categoria: </label>
                         <select name="categoria"  class="form-control" required>
                                 
+
                                 <option value="pasante">Pasante</option>
-                                <option value="encargado">Trabajo Final</option>
-                                <option value="estudiante">otros</option>
-                        </select>
+                                <option value="trabajoFinal">Trabajo Final</option>
+                               <option value="Otros" 
+                               >Otros </option>
+                          </select>
+                          <br>
+                           <input class="form-control" type="text" name="agregar" id="text-input" placeholder="Agregar mas categorias...">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                           {{-- RUBRO --}}
                  <div class="form-group">
                 <label class="control-label" for="textarea-input">Orientado a: </label>
-                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder=" ..."></textarea>
+                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos..."  rows="4" cols="10" ></textarea>
                     </div>
                 </div>
             </div>
@@ -87,7 +94,7 @@
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
-                Fecha de inicio <input type="date" placeholder="DD" name="disponibilidad"/>
+                Fecha de inicio: <input type="date" placeholder="DD" name="disponibilidad"/>
                
                 </div></div></div>
                  
@@ -159,7 +166,7 @@
                    <div class="row">
                  <div class="col-md-8">
                 <div class="form-group">
-                 Fecha de  finalización <input type="date" placeholder="DD" name="disponibilidad"/>
+                 Fecha de  finalización: <input type="date" placeholder="DD" name="disponibilidad"/>
                 </div></div></div>
 
             </div>

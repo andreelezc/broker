@@ -63,12 +63,8 @@
                      
                         @if (Auth::guard('institucion')->check())
                                 <li role="presentation">
-                                        <a>
-                                          
-                                                    {{ Auth::guard('institucion')->user()->name }}
-                                        </a>
-                                      </li>
-
+                                    <a> {{ Auth::guard('institucion')->user()->name }}</a>
+                                </li>
                                       <li role="presentation">
                                           <a href="{{ url('/institucion/perfil') }}">
                                           Perfil
