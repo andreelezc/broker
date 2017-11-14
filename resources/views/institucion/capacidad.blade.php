@@ -1,6 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({
+        placement : 'top'
+    });
+});
+</script> 
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -20,8 +30,8 @@
             {{--<h2 class="text-center">Capacidad Laboral</h2>--}}
             {{-- TITULO --}}
             <div class="form-group">
-                <label class="control-label" for="text-input"> Titulo: </label>
-                <input class="form-control" type="text" name="titulo" id="text-input">
+                <label class="control-label" for="text-input"> Titulo: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
+                <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad" >
             </div>
             
             {{-- Descripcion --}}
