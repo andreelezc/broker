@@ -22,7 +22,7 @@
               </div>
              
                {{--Tabla del perfil--}}
-              <div class=" col-md-18 col-lg-7 col-lg-offset-1"> 
+              <div class=" col-md-10 col-lg-6 col-lg-offset-1"> 
                 <table class="table table-user-information">
                 <tbody>
                  <tr>
@@ -34,7 +34,7 @@
                  </tr>     
                  
                   <tr>
-                          <td>Direccion de Correo:</td>
+                          <td>Dirección de Correo:</td>
                         <td>
                             <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
                                 
@@ -46,7 +46,7 @@
                                         
                   
                       <tr>
-                          <td>Direccion:</td>
+                          <td>Dirección:</td>
                         <td>{{ Auth::Guard('institucion')->user()->direccion }}</td>
                          
                       </tr>  
@@ -59,12 +59,12 @@
                         <td> </td>
                       </tr>
                       <tr>
-                        <td>Pais:</td>
+                        <td>País:</td>
                         <td> </td>
                       </tr>  
 
                     <tr>
-                        <td>Telefono: </td>
+                        <td>Teléfono: </td>
                         <td>{{ Auth::Guard('institucion')->user()->telefono }}
                             
                         </td>
@@ -84,7 +84,7 @@
                       {{--Boton de Editar Perfil--}}
                     
 
-                          <div class="col-md-4">
+                          <div class="col-md-3 col-lg-offset-1">
                               <a href="#ventana"  data-original-title="Editar Perfil" type="button" class="btn btn-sm btn-primary " data-toggle="modal" > Editar <i class="glyphicon glyphicon-edit"></i></a>
                            </div>
     
@@ -115,7 +115,7 @@
                                          </tr>     
                                          
                                               <tr>
-                                                  <td>Direccion:</td>
+                                                  <td>Dirección:</td>
                                                 <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->direccion }}"></td>
                                                  
                                               </tr>                  
@@ -127,7 +127,7 @@
                                               
                                                 
                                               <tr>
-                                                <td>Descripcion:</td>
+                                                <td>Descripción:</td>
                                                 <td> <textarea  rows="4"   cols="60" placeholder="Elavora una breve Descripcion del perfil de la institucion"></textarea></td>
                                               </tr>
                                             </tbody>
@@ -153,7 +153,7 @@
 
 
                          <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mensaje <i class="glyphicon glyphicon-comment"></i> </a>
+                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Postulaciones <i class="glyphicon glyphicon-pushpin"></i> </a>
                          </div>
    
                          <div class="col-md-4">
