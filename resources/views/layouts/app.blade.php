@@ -57,31 +57,50 @@
         <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('logo-inet.png')}}" >
         </a>
       </div>
-      <div id="navbar2" class="navbar-collapse collapse">
+      <div id="navbar2" class="navbar-collapse collapse" class="navbar-header" class="container-fluid">
       <!-- Right Side Of Navbar -->
+      
                     <ul class="nav navbar-nav navbar-right">
-                     
-                        @if (Auth::guard('institucion')->check())
-                                <li role="presentation">
-                                    <a> {{ Auth::guard('institucion')->user()->name }}</a>
-                                </li>
-                                      <li role="presentation">
-                                          <a href="{{ url('/institucion/perfil') }}">
-                                          Perfil
-                                        </a>
-                                      </li>
-                                        <li role="presentation">
-                                          <a href="{{ url('/institucion/home') }}">
-                                          Inicio
-                                        </a>
-                                      </li>
+
+                   @if (Auth::guard('institucion')->check())
+
+
+        <div class="dropdown">
+           <ul class="nav navbar-nav ">
+          <li role="presentation"><a  href="{{ url('/institucion/home') }}"><i class="glyphicon glyphicon-home"></i></a></li> </ul>
+
+           <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
+                {{ Auth::guard('institucion')->user()->name }} <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+               
+                <li role="presentation">
+                <a href="{{ url('/institucion/perfil') }}">Perfil</a>
+                </li>
+                <li role="presentation">
+                <a href="{{ url('/institucion/mostrarCapacidad') }}">Capacidad
+                </a>
+                <li role="presentation">
+                <a href="{{ url('/institucion/buscar') }}">Buscar Oportunidad
+                </a>
+
+                </li>
+              <li class="divider"></li>
+              <li class="dropdown-submenu">
+                
+                <a tabindex="-1" class="btn   " href="{{ route('logout') }}"onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">Salir
+                </a>
+              </li>
+            </ul>
+         </div>
+              
+                      
+                                     
+                                        
                                   
                                       
-                                        <a class="btn btn-sm btn-primary navbar-btn " href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
+                                        
                                   
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -90,13 +109,21 @@
                                 
                           
                             @elseif (Auth::guard('productor')->check())
-                  
-                                      <li role="presentation">
-                                        <a>
+
+                            <div class="dropdown">
+                            <ul class="nav navbar-nav ">
+          <li role="presentation"><a  href="{{ url('/productor/home') }}"><i class="glyphicon glyphicon-home"></i></a></li> </ul>           
+                            <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
+                 {{ Auth::guard('productor')->user()->name }} <span class="caret"></span>
+            </a>
                                           
-                                                    {{ Auth::guard('productor')->user()->name }}
-                                        </a>
-                                      </li>
+                                                   
+                                      
+                                  
+            
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+               
+                
 
                                       <li role="presentation">
                                           <a href="{{ url('/productor/perfil') }}">
@@ -104,17 +131,31 @@
                                         </a>
                                       </li>
                                         <li role="presentation">
-                                          <a href="{{ url('/productor/home') }}">
-                                          Inicio
+                                          <a href="{{ url('/productor/mostrarOportunidad') }}">
+                                          Oportunidades
                                         </a>
                                       </li>
+                                       <li role="presentation">
+                                          <a href="{{ url('/productor/buscar') }}">
+                                          Buscar Capacidad
+                                        </a>
+                                      </li>
+              <li class="divider"></li>
+              <li class="dropdown-submenu">
+                
+                <a tabindex="-1" class="btn   " href="{{ route('logout') }}"onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">Salir
+                </a>
+              </li>
+            </ul>
+        
+              
+                      
+                  
+                                      
                                   
                                       
-                                        <a class="btn btn-sm btn-primary navbar-btn " href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
+                                        
                                   
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -125,6 +166,7 @@
                             <li role="presentation"><a href="{{ url('productor/inicio') }}">Productor</a></li>
                         @endif
                     </ul>
+                    </div>
       </div>
       <!--/.nav-collapse -->
     </div>

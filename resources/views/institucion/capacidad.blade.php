@@ -31,19 +31,19 @@ $(document).ready(function(){
             {{-- TITULO --}}
             <div class="form-group">
                 <label class="control-label" for="text-input"> Titulo: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
-                <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad" >
+                <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip"  >
             </div>
             
             {{-- Descripcion --}}
             <div class="form-group">
-                <label class="control-label" for="email-input"> Descripción: </label>
+                <label class="control-label" for="email-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span> </label>
                 <textarea class="form-control"  name="propuesta" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."></textarea>
             </div>
             
                  {{-- PALABRAS CLAVE --}}
         <div class="form-group">
             <div class="row">
-                <div class="col-md-10"> <label class="control-label">Palabras Clave:</label>
+                <div class="col-md-10"> <label class="control-label">Palabras Clave:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
                 <label>(ingrese palabras clave para facilitar la busqueda de su capacidad laboral)</label>
                 </div>
                 <div class="col-md-3">
@@ -63,7 +63,7 @@ $(document).ready(function(){
 
         {{-- EXPERIENCIA --}}
             <div class="form-group">
-                <label class="control-label" for="textarea-input">Experiencias previas: </label>
+                <label class="control-label" for="textarea-input">Experiencias previas:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
                 <textarea class="form-control" name="experiencias" rows="8" cols="40" placeholder=" Mencione sus experiencias laborales..." id="textarea-input"></textarea>
             </div>
 
@@ -72,7 +72,7 @@ $(document).ready(function(){
                 <div class="col-md-4">
                      {{-- CATEGORIA --}}
               <div class="form-group">
-                <label class="control-label" for="textarea-input">Categoria: </label>
+                <label class="control-label" for="textarea-input">Categoria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
                         <select name="categoria"  class="form-control" required>
                                 
 
@@ -88,7 +88,7 @@ $(document).ready(function(){
                 <div class="col-md-8">
                           {{-- RUBRO --}}
                  <div class="form-group">
-                <label class="control-label" for="textarea-input">Orientado a: </label>
+                <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span> </label>
                         <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos..."  rows="4" cols="10" ></textarea>
                     </div>
                 </div>
@@ -99,12 +99,12 @@ $(document).ready(function(){
             
             <div class="form-group">
                 
-                <label class="control-label">Disponibilidad Horaria: </label>
+                <label class="control-label">Disponibilidad Horaria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
 
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
-                Fecha de inicio: <input type="date" placeholder="DD" name="disponibilidad"/>
+                Fecha de inicio:  <input type="date" placeholder="DD" name="disponibilidad"/>
                
                 </div></div></div>
                  
@@ -176,7 +176,7 @@ $(document).ready(function(){
                    <div class="row">
                  <div class="col-md-8">
                 <div class="form-group">
-                 Fecha de  finalización: <input type="date" placeholder="DD" name="disponibilidad"/>
+                 Fecha de  finalización:  <input type="date" placeholder="DD" name="disponibilidad"/>
                 </div></div></div>
 
             </div>
@@ -186,7 +186,7 @@ $(document).ready(function(){
     {{-- REMUNERACION --}}
 
                 <div class="form-group"> 
-                    <label class="control-label">Remuneracion Pretendida:</label> 
+                    <label class="control-label">Remuneracion Pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label> 
                 <div class="col-md-2">
                            
                      <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
