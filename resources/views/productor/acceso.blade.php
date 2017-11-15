@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Acceso Productor</div>
+                 <div class="panel-heading text-center"><h3>Iniciar sesión como Productor</h3></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="post" action="{{ url('productor/acceso') }}">
@@ -62,6 +62,17 @@
                                     Olvidaste tu contraseña?
                                 </a>
                             </div>
+                        </div>
+
+                         <hr style="width:75%; " >
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-3">
+        
+                    <label>¿Primera vez en Inet Web?</label>
+                        <a class="btn btn-link" href="{{ url('productor/registro') }}">
+                                   Registrate ya.
+                                </a>
+                                 </div>
                         </div>
                     </form>
                 </div>

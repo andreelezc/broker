@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Acceso Institucion</div>
+                <div class="panel-heading text-center"><h3>Iniciar sesión como Institución</h3></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ url('institucion/acceso') }}">
@@ -63,6 +63,18 @@
                                 </a>
                             </div>
                         </div>
+                        <hr style="width:75%; " >
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-3">
+        
+                    <label>¿Primera vez en Inet Web?</label>
+                        <a class="btn btn-link" href="{{ url('institucion/registro') }}">
+                                   Registrate ya.
+                                </a>
+                                 </div>
+                        </div>
+
+
                     </form>
                 </div>
             </div>

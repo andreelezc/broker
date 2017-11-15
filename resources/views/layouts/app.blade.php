@@ -162,8 +162,8 @@
                                             {{ csrf_field() }}
                                         </form> 
                         @else
-                            <li role="presentation"><a href="{{ url('institucion/inicio') }}">Institución</a></li>
-                            <li role="presentation"><a href="{{ url('productor/inicio') }}">Productor</a></li>
+                            <li role="presentation"><a href="{{ url('institucion/acceso') }}">Institución</a></li>
+                            <li role="presentation"><a href="{{ url('productor/acceso') }}">Productor</a></li>
                         @endif
                     </ul>
                     </div>
