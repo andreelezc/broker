@@ -42,15 +42,13 @@ class CapacidadController extends Controller
      	$c->remuneracion= $request->remuneracion; 
           $c->institucion_id = $user->id; 	
       //guardo en la base de datos
-           $c->save();
+      $c->save();
 
           //por cada palabra clave creo una keyword;
           $c->addKey($request->key1);
           $c->addKey($request->key2);
           $c->addKey($request->key3);
           $c->addKey($request->key4);
-
-
 
           //redireccion a la pag de inicio
           return view('institucion.mostrarCapacidad');
@@ -108,7 +106,8 @@ class CapacidadController extends Controller
       $c->save();
 
       return view("institucion.mostrarCapacidad");
+   
       }
-
+ 
      
 }

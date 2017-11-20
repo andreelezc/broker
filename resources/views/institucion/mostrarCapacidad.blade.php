@@ -77,30 +77,98 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                         </button>
-                                        <h4 class="modal-title"> {{ $capacidad->titulo }} 
+                                        <h4 class="modal-title"> {{ $capacidad->titulo }}  </h4>
 
                                          @foreach($capacidad->keywords as $key)
                                             <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
                                                 <span class="badge">{{ $key->palabra }}</span>
                                             </a>
                                          @endforeach
-                                         </h4>
+                                        
 
 
                                     </div>
                                      <!-- contenido de la ventana de la ventana-->
                                             <!-- panel de capacidad-->
                                     <div class="modal-body"> 
-                                    <p class="list-group-item-text"> Experiencia:  {{ $capacidad->experiencias }}</p>
+                                    <p class="list-group-item-text">  Descripcion: {{ $capacidad->descripcion }} </p>
                                         <p></p>
                                         <ul>
                                             <li>Categoria: {{ $capacidad->categoria }}</li>
-                                            <li>Descripcion: {{ $capacidad->descripcion }}</li>
+                                            <li>Experiencia:  {{ $capacidad->experiencias }}</li>
                                             <li>Orientacion: {{ $capacidad->orientacion }}</li>
-                                            
-                                            <li>Disponibilidad:<ul> -Inicio: {{ $capacidad->fechaInicio }}  <br>  
-                                                       -Fin: {{ $capacidad->fechaFin }}</ul>
-                                          </li>
+ 
+                
+                <li>  Disponibilidad Horaria: </li>  <br>
+
+                <div class="row">
+                <div class="col-md-6">
+                 <div class="form-group"> 
+                   <label>Fecha de inicio:  </label>  {{ $capacidad->fechaInicio }}
+                 <table class="table table-user-information">   
+                  <tbody> 
+                  <tr>         
+                     <td><label>Lunes</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioL }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinL }} </td>
+                  </tr> 
+                  <p></p>
+                   <tr>         
+                     <td><label>Martes</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioM }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinM }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Miercoles</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioMi }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinMi }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Jueves</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioJ }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinJ }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Viernes</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioV }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinV }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Sabado</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioS }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinS}} </td>
+                  </tr> 
+                  <p></p>
+                     <tr>         
+                     <td><label>Domingo</label></td>
+                     <td>de</td>
+                     <td> {{ $capacidad->horaInicioD }}</td> 
+                     <td>a</td>
+                     <td>{{ $capacidad->horaFinD }} </td>
+                  </tr> 
+                  <p></p>
+                   </tbody>
+                    </table>
+                     <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaInicio }}
+                   </div></div></div>
+                                                      
+         
                                             <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
                                         </ul>
                                         <p></p>
