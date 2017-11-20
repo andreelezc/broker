@@ -26,8 +26,7 @@ $(document).ready(function(){
 
      {{-- Inicio FORM --}}
             <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
-             {{ csrf_field() }}
-             
+             {{ csrf_field() }}       
             {{--<h2 class="text-center">Capacidad Laboral</h2>--}}
 
             {{-- TITULO --}}
@@ -71,25 +70,17 @@ $(document).ready(function(){
 
              {{-- CATEGORIA --}}
             <div class="row">
-                <div class="col-md-4">
-                    
-              <div class="form-group">
-                <label class="control-label" for="textarea-input">Categoria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
-                        <select name="categoria"  class="form-control" required>
-                                <option value="pasante">Pasante</option>
-                                <option value="trabajoFinal">Trabajo Final</option>
-                               <option value="Otros" >Otros  </option>
-                          </select>
-                          <br>
-
-                           <input class="form-control" type="text" name="agregar" id="text-input" placeholder="Agregar mas categorias...">
-                    </div>
+                <div class="col-md-4">                   
+                  <div class="form-group">
+                    <label class="control-label" for="textarea-input">Categoria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
+                    <input class="form-control" type="text" name="categoria" id="text-input" placeholder="Pasante, Trabajo Final, Becas...">
+                  </div>
                 </div>
                 <div class="col-md-8">
                           {{-- Orientado --}}
                  <div class="form-group">
                 <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
-                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos..."  rows="4" cols="10" ></textarea>
+                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos, Empresas, Instituciones ..."  rows="4" cols="10" ></textarea>
                     </div>
                 </div>
             </div>
