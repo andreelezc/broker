@@ -77,7 +77,15 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                         </button>
-                                        <h4 class="modal-title"> {{ $capacidad->titulo }} </h4>
+                                        <h4 class="modal-title"> {{ $capacidad->titulo }} 
+
+                                         @foreach($capacidad->keywords as $key)
+                                            <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
+                                                <span class="badge">{{ $key->palabra }}</span>
+                                            </a>
+                                         @endforeach
+                                         </h4>
+
 
                                     </div>
                                      <!-- contenido de la ventana de la ventana-->
@@ -87,8 +95,12 @@
                                         <p></p>
                                         <ul>
                                             <li>Categoria: {{ $capacidad->categoria }}</li>
-                                            <li>Rubro: {{ $capacidad->rubro }}</li>
-                                            <li>Disponibilidad: {{ $capacidad->disponibilidad }}</li>
+                                            <li>Descripcion: {{ $capacidad->descripcion }}</li>
+                                            <li>Orientacion: {{ $capacidad->orientacion }}</li>
+                                            
+                                            <li>Disponibilidad:<ul> -Inicio: {{ $capacidad->fechaInicio }}  <br>  
+                                                       -Fin: {{ $capacidad->fechaFin }}</ul>
+                                          </li>
                                             <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
                                         </ul>
                                         <p></p>

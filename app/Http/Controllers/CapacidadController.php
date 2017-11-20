@@ -19,20 +19,38 @@ class CapacidadController extends Controller
           // creo la capacidad
      	$c=new capacidad;
      	$c->titulo= $request->titulo;
-     	$c->propuesta= $request->propuesta;
+     	$c->descripcion= $request->descripcion;
      	$c->experiencias= $request->experiencias;
      	$c->categoria= $request->categoria;
-     	$c->rubro= $request->rubro;
-     	$c->disponibilidad= $request->disponibilidad;
+     	$c->orientacion= $request->orientacion;
+     	$c->fechaInicio= $request->fechaInicio;
+          $c->horaInicioL= $request->horaInicioL;
+          $c->horaFinL= $request->horaFinL;
+          $c->horaInicioM= $request->horaInicioM;
+          $c->horaFinM= $request->horaFinM;
+          $c->horaInicioMi= $request->horaInicioMi;
+          $c->horaFinMi= $request->horaFinMi;
+          $c->horaInicioJ= $request->horaInicioJ;
+          $c->horaFinJ= $request->horaFinJ;
+          $c->horaInicioV= $request->horaInicioV;
+          $c->horaFinV= $request->horaFinV;
+          $c->horaInicioS= $request->horaInicioS;
+          $c->horaFinS= $request->horaFinS;
+          $c->horaInicioD= $request->horaInicioD;
+          $c->horaFinD= $request->horaFinD;
+      $c->fechaFin= $request->fechaFin;
      	$c->remuneracion= $request->remuneracion; 
           $c->institucion_id = $user->id; 	
-     	$c->save(); //guardo en la base de datos
+      //guardo en la base de datos
+           $c->save();
 
           //por cada palabra clave creo una keyword;
           $c->addKey($request->key1);
           $c->addKey($request->key2);
           $c->addKey($request->key3);
           $c->addKey($request->key4);
+
+
 
           //redireccion a la pag de inicio
           return view('institucion.mostrarCapacidad');
@@ -62,14 +80,31 @@ class CapacidadController extends Controller
 
       public function editar(Request $request, $id)
       {
-        $c = capacidad::findOrFail($id);
-          $c->titulo= $request->titulo;
-      $c->propuesta= $request->propuesta;
+        $c = capacidad::findOrFail($id);  
+
+      $c->titulo= $request->titulo;
+      $c->descripcion= $request->descripcion;
       $c->experiencias= $request->experiencias;
       $c->categoria= $request->categoria;
-      $c->rubro= $request->rubro;
-      $c->disponibilidad= $request->disponibilidad;
+      $c->orientacion= $request->orientacion;
+      $c->fechaInicio= $request->fechaInicio;
+          $c->horaInicioL= $request->horaInicioL;
+          $c->horaFinL= $request->horaFinL;
+          $c->horaInicioM= $request->horaInicioM;
+          $c->horaFinM= $request->horaFinM;
+          $c->horaInicioMi= $request->horaInicioMi;
+          $c->horaFinMi= $request->horaFinMi;
+          $c->horaInicioJ= $request->horaInicioJ;
+          $c->horaFinJ= $request->horaFinJ;
+          $c->horaInicioV= $request->horaInicioV;
+          $c->horaFinV= $request->horaFinV;
+          $c->horaInicioS= $request->horaInicioS;
+          $c->horaFinS= $request->horaFinS;
+          $c->horaInicioD= $request->horaInicioD;
+          $c->horaFinD= $request->horaFinD;
+      $c->fechaFin= $request->fechaFin;
       $c->remuneracion= $request->remuneracion; 
+
       $c->save();
 
       return view("institucion.mostrarCapacidad");

@@ -17,6 +17,7 @@
                 {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
                 <img  height="100" width="100" avatar="{{ Auth::Guard('institucion')->user()->name }}"  class="img-responsive round" >  
                 <br>
+
                  <input type="file" name="avatar">  
 
               </div>
@@ -168,6 +169,9 @@
         </div>
       </div>
     </div>
+
+
+   
 
     
 
