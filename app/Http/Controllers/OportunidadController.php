@@ -17,14 +17,27 @@ class OportunidadController extends Controller
 
      	$o=new oportunidad;
      	$o->titulo= $request->titulo;
-     	$o->propuesta= $request->propuesta;
+     	$o->descripcion= $request->descripcion;
      	$o->requisito= $request->requisito;
-     	$o->categoria= $request->categoria;
-     	$o->rubro= $request->rubro;
-     	$o->disponibilidad= $request->disponibilidad;
-     	$o->remuneracion= $request->remuneracion;
-     	$o->fechaIngreso= $request->fechaIngreso;
-     	$o->fechaEgreso= $request->fechaEgreso;
+     	$o->fechaInicio= $request->fechaInicio;
+          $o->horaInicioL= $request->horaInicioL;
+          $o->horaFinL= $request->horaFinL;
+          $o->horaInicioM= $request->horaInicioM;
+          $o->horaFinM= $request->horaFinM;
+          $o->horaInicioMi= $request->horaInicioMi;
+          $o->horaFinMi= $request->horaFinMi;
+          $o->horaInicioJ= $request->horaInicioJ;
+          $o->horaFinJ= $request->horaFinJ;
+          $o->horaInicioV= $request->horaInicioV;
+          $o->horaFinV= $request->horaFinV;
+          $o->horaInicioS= $request->horaInicioS;
+          $o->horaFinS= $request->horaFinS;
+          $o->horaInicioD= $request->horaInicioD;
+          $o->horaFinD= $request->horaFinD;
+     	$o->numdura= $request->numdura;
+     
+     	$o->duracion= $request->duracion;
+        $o->remuneracion= $request->remuneracion;
           $o->productor_id = $user->id; 
      	$o->save(); //guardo en la base de datos
 
@@ -54,14 +67,27 @@ class OportunidadController extends Controller
       {
         $o = oportunidad::findOrFail($id);
       $o->titulo= $request->titulo;
-      $o->propuesta= $request->propuesta;
+      $o->descripcion= $request->descripcion;
       $o->requisito= $request->requisito;
-      $o->categoria= $request->categoria;
-      $o->rubro= $request->rubro;
-      $o->disponibilidad= $request->disponibilidad;
-      $o->remuneracion= $request->remuneracion;
-      $o->fechaIngreso= $request->fechaIngreso;
-      $o->fechaEgreso= $request->fechaEgreso;
+      $o->fechaInicio= $request->fechaInicio;
+          $o->horaInicioL= $request->horaInicioL;
+          $o->horaFinL= $request->horaFinL;
+          $o->horaInicioM= $request->horaInicioM;
+          $o->horaFinM= $request->horaFinM;
+          $o->horaInicioMi= $request->horaInicioMi;
+          $o->horaFinMi= $request->horaFinMi;
+          $o->horaInicioJ= $request->horaInicioJ;
+          $o->horaFinJ= $request->horaFinJ;
+          $o->horaInicioV= $request->horaInicioV;
+          $o->horaFinV= $request->horaFinV;
+          $o->horaInicioS= $request->horaInicioS;
+          $o->horaFinS= $request->horaFinS;
+          $o->horaInicioD= $request->horaInicioD;
+          $o->horaFinD= $request->horaFinD;
+      $o->numdura= $request->numdura;
+     
+      $o->duracion= $request->duracion;
+        $o->remuneracion= $request->remuneracion;
       $o->save();
 
       return view("productor.mostrarOportunidad");

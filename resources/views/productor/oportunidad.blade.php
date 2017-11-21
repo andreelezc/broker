@@ -27,17 +27,17 @@ $(document).ready(function(){
      {{-- Inicio FORM --}}
         <form method="POST" action="{{ url('productor/oportunidad') }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}
-            <h2 class="text-center">Oportunidad Laboral</h2>
+            {{--<h2 class="text-center">Oportunidad Laboral</h2>--}}
+
             {{-- Titulo--}}
             <div class="form-group">
-                <label class="control-label" for="text-input" > Titulo : <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
+                <label class="control-label" for="text-input" > Titulo : <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Oportunidad"></span></label>
                 <input class="form-control" type="text" name="titulo" id="text-input">
             </div>
-            {{-- PROPUESTA --}}
+           {{-- Descripcion --}}
             <div class="form-group">
-                <label class="control-label" for="email-input">Propuesta: </label>
-                <textarea class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propuesta  laboral a ofrecer..."  rows="8" cols="40" ></textarea>
-                
+                <label class="control-label" for="email-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Describa su Oportunidad"></span> </label>
+                <textarea class="form-control"  name="descripcion" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."></textarea>
             </div>
             {{-- PALABRAS CLAVE --}}
         <div class="form-group">
@@ -61,25 +61,20 @@ $(document).ready(function(){
         </div>  
             {{-- Requsitos --}}
             <div class="form-group">
-                <label class="control-label" for="textarea-input">Requisitos: </label>
-                <textarea class="form-control" name="requisito" id="textarea-input"  rows="8" cols="40"  placeholder="Requisitos minimos esperado del postulante"></textarea>
+                <label class="control-label" for="textarea-input">Requisitos:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Requisitos que los postulantes deben cumplir"></span></label>
+                <textarea class="form-control" name="requisito" rows="8" cols="40" placeholder=" Mencione requisitos laborales..." id="textarea-input"></textarea>
             </div>
        
         {{-- DISPONIBILIDAD --}}
-    <div class="row">
-        <div class="col-md-8">
-            
-            <div class="form-group">
-                
-                <label class="control-label">Disponibilidad Horaria: </label>
-
+   <div class="row">
+        <div class="col-md-8">          
+            <div class="form-group">         
+                <label class="control-label">Disponibilidad Horaria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
-                Fecha de inicio: <input type="date" placeholder="DD" name="disponibilidad"/>
-               
+                Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
                 </div></div></div>
-                 
 
                 <div class="row">
                 <div class="col-md-6">
@@ -89,61 +84,61 @@ $(document).ready(function(){
                   <tr>         
                      <td><label>Lunes</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td><input type="time" value="00:00" name="horaInicioL" /></td> 
                      <td>a</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00" name="horaFinL"  /></td>
                   </tr> 
                   <p></p>
                    <tr>         
                      <td><label>Martes</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td><input type="time"  value="00:00"  name="horaInicioM" /></td> 
                      <td>a</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time"   value="00:00" name="horaFinM" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Miercoles</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td><input type="time" value="00:00"   name="horaInicioMi" /></td> 
                      <td>a</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinMi" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Jueves</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td><input type="time" value="00:00"  name="horaInicioJ" /></td> 
                      <td>a</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinJ" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Viernes</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00"   name="horaInicioV" /></td>
                      <td>a</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinV" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Sabado</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td> 
+                     <td><input type="time" value="00:00"  name="horaInicioS" /></td> 
                      <td>a</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinS" /></td>
                   </tr> 
                   <p></p>
                      <tr>         
                      <td><label>Domingo</label></td>
                      <td>de</td>
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00" " name="horaInicioD" /></td>
                      <td>a</td> 
-                     <td><input type="time" placeholder="00" name="disponibilidad" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinD" /></td>
                   </tr> 
                   <p></p>
                    </tbody>
-          </table>
+                 </table>
                    </div></div></div>
                    
             </div>
@@ -170,15 +165,15 @@ $(document).ready(function(){
                   <tr>         
                             
         
-                       <td>   <label class="control-label" for="fechaIngreso">Duración: </label> </td>
+                       <td>   <label class="control-label" >Duración: </label> </td>
                         
-                        <td><input id="number" type="number"  />  </td>
+                        <td><input id="number" type="number" name="numdura" />  </td>
                        
-                        <td> <select name="categoria"  class="form-control" required>
-                                        <option value="pasante">Días</option>
-                                        <option value="pasante">Semanas</option>
-                                        <option value="encargado">Meses</option>
-                                        <option value="estudiante">Años</option>
+                        <td> <select name="duracion"  class="form-control" required>
+                                        <option value="Días">Días</option>
+                                        <option value="Semanas">Semanas</option>
+                                        <option value="Meses">Meses</option>
+                                        <option value="Años">Años</option>
                                 </select>  </td>
                                        </tbody>
           </table>

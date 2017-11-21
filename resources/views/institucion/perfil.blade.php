@@ -158,7 +158,7 @@
                          </div>
    
                          <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil  <i class="glyphicon glyphicon-remove"></i> </a>
+                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil <i class="glyphicon glyphicon-trash"></i> </a>
                          </div>
                      </div>
                   </div>  

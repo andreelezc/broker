@@ -165,7 +165,7 @@
                   <p></p>
                    </tbody>
                     </table>
-                     <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaInicio }}
+                     <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaFin }}
                    </div></div></div>
                                                       
          
@@ -191,7 +191,7 @@
                                                         {{ method_field('DELETE') }}
                                                         {{-- <input type="hidden" name="_method" value="delete"> --}}
                                                         <input type="hidden" name="id" value="{{ $capacidad->id }}">
-                                                         <button class="btn btn-default">Eliminar</button>
+                                                         <button class="btn btn-default">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
                                                      </form>
                                                    
                                               </div>

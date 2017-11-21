@@ -77,16 +77,86 @@
                                      <!-- contenido de la ventana de la ventana-->
                                             <!-- panel de capacidad-->
                                     <div class="modal-body"> 
-                                    <p class="list-group-item-text"> Propuesta:  {{ $oportunidad->propuesta }}</p>
+                                    <p class="list-group-item-text"> Descripción:  {{ $oportunidad->descripcion }}</p>
                                         <p></p>
                                         <ul>
                                             <li>Requisitos: {{ $oportunidad->requisitos }}</li>
-                                            <li>Categoria: {{ $oportunidad->categoria }}</li>
-                                            <li>Rubro: {{ $oportunidad->rubro }}</li>
-                                            <li>Franja Horaria: {{ $oportunidad->disponibilidad }}</li>
-                                            <li>Remuneracion: {{ $oportunidad->remuneracion }}</li>
-                                            <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li>
-                                            <li>Fecha de Ingreso: {{ $oportunidad->fechaEgreso }}</li>
+                                            <li>  Disponibilidad Horaria: </li>  <br>
+
+                <div class="row">
+                <div class="col-md-6">
+                 <div class="form-group"> 
+                   <label>Fecha de inicio:  </label>  {{ $oportunidad->fechaInicio }}
+                 <table class="table table-user-information">   
+                  <tbody> 
+                  <tr>         
+                     <td><label>Lunes</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioL }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinL }} </td>
+                  </tr> 
+                  <p></p>
+                   <tr>         
+                     <td><label>Martes</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioM }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinM }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Miercoles</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioMi }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinMi }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Jueves</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioJ }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinJ }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Viernes</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioV }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinV }} </td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Sabado</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioS }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinS}} </td>
+                  </tr> 
+                  <p></p>
+                     <tr>         
+                     <td><label>Domingo</label></td>
+                     <td>de</td>
+                     <td> {{ $oportunidad->horaInicioD }}</td> 
+                     <td>a</td>
+                     <td>{{ $oportunidad->horaFinD }} </td>
+                  </tr> 
+                  <p></p>
+                   </tbody>
+                    </table>
+                     <label>Fecha de  finalización:  </label>  {{ $oportunidad->fechaFin }}
+                   </div></div></div>
+                                                      
+         
+                        <li>Remuneracion : {{ $oportunidad->remuneracion }}</li>
+
+        
+                       <li> Duración: {{ $oportunidad->numdura }} {{ $oportunidad->duracion }} </li> 
+                        
+                        
                                         </ul>
                                         <p></p>
                                     </div>
@@ -109,7 +179,7 @@
                          
                             {{-- <input type="hidden" name="_method" value="delete"> --}}
                             <input type="hidden" name="id" value="{{ $oportunidad->id }}">
-                             <button class="btn btn-default">Eliminar</button>
+                             <button class="btn btn-default">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
                            </form>
 
                                  
@@ -126,10 +196,11 @@
             </div>
         </div>
     </div>
-    </div>
+ 
 
     </li>
 @endforeach
+  </div>
 </ul>
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}

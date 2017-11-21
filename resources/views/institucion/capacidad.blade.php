@@ -76,29 +76,24 @@ $(document).ready(function(){
                     <input class="form-control" type="text" name="categoria" id="text-input" placeholder="Pasante, Trabajo Final, Becas...">
                   </div>
                 </div>
-                <div class="col-md-8">
-                          {{-- Orientado --}}
+                  {{-- Orientado --}}
+                <div class="col-md-8">      
                  <div class="form-group">
-                <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
+                         <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
                         <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos, Empresas, Instituciones ..."  rows="4" cols="10" ></textarea>
                     </div>
                 </div>
             </div>
     {{-- DISPONIBILIDAD --}}
     <div class="row">
-        <div class="col-md-8">
-            
-            <div class="form-group">
-                
+        <div class="col-md-8">          
+            <div class="form-group">         
                 <label class="control-label">Disponibilidad Horaria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
-
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
                 Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
-               
                 </div></div></div>
-                 
 
                 <div class="row">
                 <div class="col-md-6">

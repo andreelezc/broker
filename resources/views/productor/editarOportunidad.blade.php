@@ -1,9 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({
+        placement : 'top'
+    });
+});
+</script> 
+
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Bienvenido a Oportunidades Laborales </div>
 
@@ -15,19 +25,20 @@
                         </div>
                     @endif               
      {{-- Inicio FORM --}}
-        <form method="POST" action="{{ url('productor/oportunidad/editar/'.$oportunidad->id) }}" class="bootstrap-form-with-validation">
+       <form method="POST" action="{{ url('productor/oportunidad/editar/'.$oportunidad->id) }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}
               {{ method_field('PUT') }}
-            <h2 class="text-center">Oportunidad Laboral</h2>
+            {{--<h2 class="text-center">Oportunidad Laboral</h2>--}}
+
             {{-- Titulo--}}
             <div class="form-group">
-                <label class="control-label" for="text-input"> Titulo :</label>
-                <input class="form-control" type="text" name="titulo" id="text-input" value="{{ $oportunidad->titulo }}">
+                <label class="control-label" for="text-input" > Titulo : <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Oportunidad"></span></label>
+                 <input class="form-control" type="text" name="titulo" id="text-input" value="{{ $oportunidad->titulo }}">
             </div>
-            {{-- PROPUESTA --}}
+           {{-- Descripcion --}}
             <div class="form-group">
-                <label class="control-label" for="email-input">Propuesta: </label>
-                <input class="form-control" type="text" name="propuesta" id="text-input" placeholder="Propongo ..." value="{{ $oportunidad->propuesta }}">
+                <label class="control-label" for="email-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Describa su Oportunidad"></span> </label>
+                <textarea class="form-control"  name="descripcion" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."> {{ $oportunidad->descripcion }}</textarea>
             </div>
             {{-- PALABRAS CLAVE --}}
         <div class="form-group">
@@ -43,104 +54,139 @@
                 
                   @endforeach
             </div>
-        </div>
+        </div>  
             {{-- Requsitos --}}
             <div class="form-group">
-                <label class="control-label" for="textarea-input">Requisitos: </label>
-                <textarea class="form-control" name="requisito" id="textarea-input"> {{ $oportunidad->requisito }}</textarea>
+                <label class="control-label" for="textarea-input">Requisitos:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Requisitos que los postulantes deben cumplir"></span></label>
+                <textarea class="form-control" name="requisito" rows="8" cols="40" placeholder=" Mencione requisitos laborales..." id="textarea-input"> {{ $oportunidad->requisito }}</textarea>
             </div>
-        <div class="row">
-            {{-- CATEGORIA --}}
-            <div class="col-md-6">
-              <div class="form-group">
-                <label class="control-label" for="textarea-input">Categoria: </label>
-                        <select name="categoria"  class="form-control" required>
-                                
-                                  <option value="pasante" 
-                                @if ($oportunidad->categoria == "pasante")
-                                    selected
-                                @endif
-                                >Pasante</option>
-                                <option value="encargado"
-                                @if ($oportunidad->categoria == "encargado")
-                                    selected
-                                @endif
-                                >Encargado</option>
-                                <option value="estudiante"
-                                @if ($oportunidad->categoria == "estudiante")
-                                    selected
-                                @endif
-                                >Estudiante</option>
-                         
-                        </select>
-                    </div>
-                </div>
-             {{-- RUBRO --}}
-            <div class="col-md-6">   
+       
+        {{-- DISPONIBILIDAD --}}
+   <div class="row">
+        <div class="col-md-8">
+            
+            <div class="form-group">
+                <label class="control-label">Disponibilidad Horaria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
+
+                <div class="row">
+                <div class="col-md-8 ">
                 <div class="form-group">
-                    <label class="control-label" for="textarea-input">Rubro: </label>
-                        <select name="rubro"  class="form-control" required>  
-                                 <option value="pyme"
-                                    @if ($oportunidad->rubro == "pyme")
-                                        selected
-                                    @endif
-                                    >PYME</option>
-                                    <option value="beca"
-                                    @if ($oportunidad->rubro == "beca")
-                                        selected
-                                    @endif
-                                    >Beca</option>
-                                    <option value="emprededores"
-                                    @if ($oportunidad->rubro == "emprendedores")
-                                        selected
-                                    @endif
-                                >Emprededores</option>
-                        </select>
-                </div>
+                Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio" value="{{ $oportunidad->fechaInicio }}" />
+               
+                </div></div></div>
+                
+                <div class="row">
+                <div class="col-md-6">
+                 <div class="form-group"> 
+                 <table class="table table-user-information">   
+                  <tbody> 
+                  <tr>         
+                     <td><label>Lunes</label></td>
+                     <td>de</td>
+                     <td><input type="time" value="{{ $oportunidad->horaInicioL }}" name="horaInicioL" /></td> 
+                     <td>a</td>
+                     <td><input type="time" value="{{ $oportunidad->horaFinL }}" name="horaFinL"  /></td>
+                  </tr> 
+                  <p></p>
+                   <tr>         
+                     <td><label>Martes</label></td>
+                     <td>de</td>
+                     <td><input type="time"  value="{{ $oportunidad->horaInicioM }}"  name="horaInicioM" /></td> 
+                     <td>a</td>
+                     <td><input type="time"   value="{{ $oportunidad->horaFinM }}" name="horaFinM" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Miercoles</label></td>
+                     <td>de</td>
+                     <td><input type="time" value="{{ $oportunidad->horaInicioMi }}"   name="horaInicioMi" /></td> 
+                     <td>a</td>
+                     <td><input type="time" value="{{ $oportunidad->horaFinMi }}"  name="horaFinMi" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Jueves</label></td>
+                     <td>de</td>
+                     <td><input type="time" value="{{ $oportunidad->horaInicioJ }}"  name="horaInicioJ" /></td> 
+                     <td>a</td>
+                     <td><input type="time" value="{{ $oportunidad->horaFinJ }}"  name="horaFinJ" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Viernes</label></td>
+                     <td>de</td>
+                     <td><input type="time" value="{{ $oportunidad->horaInicioV }}"   name="horaInicioV" /></td>
+                     <td>a</td>
+                     <td><input type="time" value="{{ $oportunidad->horaFinV }}"  name="horaFinV" /></td>
+                  </tr> 
+                  <p></p>
+                      <tr>         
+                     <td><label>Sabado</label></td>
+                     <td>de</td>
+                     <td><input type="time" value="{{ $oportunidad->horaInicioS }}"  name="horaInicioS" /></td> 
+                     <td>a</td>
+                     <td><input type="time" value="{{ $oportunidad->horaFinS }}"  name="horaFinS" /></td>
+                  </tr> 
+                  <p></p>
+                     <tr>         
+                     <td><label>Domingo</label></td>
+                     <td>de</td>
+                     <td><input type="time" value="{{ $oportunidad->horaInicioD }}" " name="horaInicioD" /></td>
+                     <td>a</td> 
+                     <td><input type="time" value="{{ $oportunidad->horaFinD }}"  name="horaFinD" /></td>
+                  </tr> 
+                  <p></p>
+                   </tbody>
+          </table>
+                   </div></div></div>
+                   
             </div>
         </div>
-        <div class="row">
-            {{-- DISPONIBILIDAD --}}
-            {{-- 
+        
+          
+    {{-- REMUNERACION --}}
 
-                !!!TODO
-                DISPONIBILIDAD POR DIA DE SEMANAS?
-
-
-
-             --}}
-             <div class="col-md-6"> 
-                <div class="form-group">
-                <label class="control-label">Franja Horaria: </label>
-                <input class="form-control" type="text" name="disponibilidad" minlength="5" inputmode="full-width-latin" placeholder="00:00   a  00:00" value="{{ $oportunidad->disponibilidad }}">
+                <div class="form-group"> 
+                    <label class="control-label">Remuneracion Ofrecida:</label> 
+                <div class="col-md-2">
+                           
+                     <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="100000.00" step="0.01" placeholder="$" value="{{ $oportunidad->remuneracion }}" />
                 </div>
-             </div>
-            {{-- REMUNERACION --}}
-             <div class="col-md-6">
-                <div class="for-group">
-                <label class="control-label">Remuneracion : </label>
-                <input class="form-control" type="text"  name="remuneracion"  placeholder="$" value="{{ $oportunidad->remuneracion }}">
                 </div>
-            </div>
-        </div>
+   </div>
+  
             {{-- Fechas de ingreso y egreso --}}
+             <div class="form-group">
         <div class="row">
-            <div class="col-md-6"> 
-                <div class="container">
-                <label class="control-label" for="fechaIngreso">Fecha de Ingreso: </label>
-                <input type="date" placeholder="DD" name="fechaIngreso"  / value="{{ $oportunidad->fechaIngreso }}">
+            <div class="col-md-8"> 
+            <table class="table table-user-information">   
+                  <tbody> 
+                  <tr>         
+                            
+        
+                       <td>   <label class="control-label" >Duración: </label> </td>
+                        
+                        <td><input id="number" type="number" name="numdura"   value="{{ $oportunidad->numdura }}"/>  </td>
+                       
+                        <td> <select name="duracion"  class="form-control" required>
+                                        <option value="Días"  @if ($oportunidad->duracion == "Días") selected
+                                                                @endif>Días</option>
+                                        <option value="Semanas" @if ($oportunidad->duracion == "Semanas") selected
+                                                                @endif>Semanas</option>
+                                        <option value="Meses"@if ($oportunidad->duracion == "Meses") selected
+                                                                @endif>Meses</option>
+                                        <option value="Años"@if ($oportunidad->duracion == "Años") selected
+                                                                @endif>Años</option>
+                                </select>
+                        </td>
+                    </tbody>
+          </table>
              </div>
-            </div>
-            <div class="col-md-6"> 
-                <div class="container">
-                     <label class="control-label" for= "fechaEgreso">Fecha de Egreso: </label>
-                     <input type="date" placeholder="DD" name="fechaEgreso"  / value="{{ $oportunidad->fechaEgreso }}">
-                </div>   
             </div>
         </div>
             {{-- SUBMIT --}}
             <br>
-        <div class="form-group">
+         <div class="form-group">
             <button class="btn btn-primary" type="submit">Guardar Cambios </button>
             <a  type="button" class="btn btn-primary col-md-offset-8 "  href="{{ url('productor/mostrarOportunidad') }}">Volver <i class=" glyphicon glyphicon-arrow-left "></i></a>
         </div>

@@ -104,6 +104,12 @@
                                     </div>
                                      <!-- footer de la ventana-->
                                     <div class="modal-footer">
+                                         <div class="modal-footer">
+                                      <a  class="btn btn-success" type="button" href="mailto:{{ $capacidad->institucion->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                      <button class="btn btn-primary" type="button">Marcar  <i class="glyphicon glyphicon-hand-up"></i></button>
+                                      <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
+                                         
+                                    </div>
                                         <button class="btn btn-default" type="button" data-dismiss="modal">Cerrar</button>
                                          <!--<button class="btn btn-primary" type="button">Save</button>-->
                                     </div>
