@@ -110,7 +110,7 @@
                                       <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
                                          
                                     </div>
-                                        <button class="btn btn-default" type="button" data-dismiss="modal">Cerrar</button>
+                                        
                                          <!--<button class="btn btn-primary" type="button">Save</button>-->
                                     </div>
                                 </div>
