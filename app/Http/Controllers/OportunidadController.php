@@ -47,7 +47,8 @@ class OportunidadController extends Controller
           $o->addKey($request->key3);
           $o->addKey($request->key4);
            // redireccion
-          return view('productor.mostrarOportunidad');
+         // return view('productor.mostrarOportunidad');
+          return redirect(url('productor/mostrarOportunidad'));
 
      	
      }
@@ -59,7 +60,9 @@ class OportunidadController extends Controller
 
         //TODO boton borrar
         //que mande el borrado con exito
-        return view('productor.mostrarOportunidad');
+        //return view('productor.mostrarOportunidad');
+        return redirect(url('productor/mostrarOportunidad'));
+
 
     }
 
@@ -90,7 +93,9 @@ class OportunidadController extends Controller
         $o->remuneracion= $request->remuneracion;
       $o->save();
 
-      return view("productor.mostrarOportunidad");
+      //return view("productor.mostrarOportunidad");
+      return redirect(url('productor/mostrarOportunidad'));
+
       }
      
 

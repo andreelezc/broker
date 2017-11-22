@@ -29,15 +29,10 @@
               <div class="col-md-4  col-md-offset-1">
                <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"  href="{{ url('institucion/capacidad')}}" ><i class="glyphicon glyphicon-plus"></i> Agregar</a>  
            </div>
-            </div>
-            
-
-
+            </div>   
 
   {{-- LISTA DE Capacidades  --}}
  
-
-
     <div class="row">
     
         <div class="  col-sm-9 col-xs-2">

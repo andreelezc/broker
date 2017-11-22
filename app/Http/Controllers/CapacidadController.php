@@ -51,7 +51,9 @@ class CapacidadController extends Controller
           $c->addKey($request->key4);
 
           //redireccion a la pag de inicio
-          return view('institucion.mostrarCapacidad');
+         // return view('institucion.mostrarCapacidad');
+          return redirect(url('institucion/mostrarCapacidad'));
+
      }
 
 
@@ -70,7 +72,8 @@ class CapacidadController extends Controller
 
               //TODO
               //que mande el borrado con exito
-              return view('institucion.mostrarCapacidad');
+              //return view('institucion.mostrarCapacidad');
+              return redirect(url('institucion/mostrarCapacidad'));
 
     
           
@@ -105,7 +108,8 @@ class CapacidadController extends Controller
 
       $c->save();
 
-      return view("institucion.mostrarCapacidad");
+     // return view("institucion.mostrarCapacidad");
+      return redirect(url('institucion/mostrarCapacidad'));
    
       }
  

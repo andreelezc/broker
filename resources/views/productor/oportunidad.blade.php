@@ -148,7 +148,7 @@ $(document).ready(function(){
     {{-- REMUNERACION --}}
 
                 <div class="form-group"> 
-                    <label class="control-label">Remuneracion Ofrecida:</label> 
+                    <label class="control-label">Remuneracion Ofrecida: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar la remuneracion ofrecida"></span></label> 
                 <div class="col-md-2">
                            
                      <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
@@ -162,10 +162,9 @@ $(document).ready(function(){
             <div class="col-md-8"> 
             <table class="table table-user-information">   
                   <tbody> 
-                  <tr>         
-                            
+                  <tr>              
         
-                       <td>   <label class="control-label" >Duración: </label> </td>
+                       <td>   <label class="control-label" >Duración: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Indicar la duracion de la oportunidad "></span></label> </td>
                         
                         <td><input id="number" type="number" name="numdura" />  </td>
                        

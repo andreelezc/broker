@@ -22,7 +22,7 @@
     <label for="search-input" class="control-label">Buscar</label>
     <div class="input-group">
         <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
-        <input type="search" name="search-input" class="form-control" id="search-input" />
+        <input type="search" name="search-input" class="form-control" id="search-input" placeholder="Ingresar busqueda + enter" />
     </div>
 </div>
  
