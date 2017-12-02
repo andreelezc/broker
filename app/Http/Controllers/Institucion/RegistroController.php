@@ -65,5 +65,7 @@ class RegistroController extends Controller
         return $institucion;
 
     }
+
+   
      
 }
