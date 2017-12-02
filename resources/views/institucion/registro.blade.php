@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Regista una Institucion</div>
+                <div class="panel-heading">Registrar una Institución</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ url('institucion/registro') }}"> 
@@ -30,7 +30,7 @@
 
 
                         <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Direccion </label>
+                            <label for="email" class="col-md-4 control-label">Dirección </label>
 
                             <div class="col-md-6">
                                 <input id="direccion" type="text" class="form-control" name="direccion" value="{{ old('direccion') }}" required>
@@ -47,7 +47,7 @@
 
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Correo Electronico </label>
+                            <label for="email" class="col-md-4 control-label">Correo electronico </label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>

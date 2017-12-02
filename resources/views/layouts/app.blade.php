@@ -184,7 +184,7 @@
          <div class="row">
             <div class="col-md-3 col-md-offset-0 col-sm-4 footer-navigation">
                 <header><img class="img-responsive" src=" {{asset('img/logo-inet2.png')}}" width="200" height="100"></header>
-                <h5 class="text-left"><a href="#" target="_parent">Instituto Nacional de Ecucacion Tecnologica </a></h5>
+                <h5 class="text-left"><a href="#" target="_parent">Instituto Nacional de Educacion Tecnologica </a></h5>
                 <p class="links"><a href="#">inicio</a><strong> · </strong><a href="#">contacto</a><strong> · </strong><a href="#">Novedades</a><strong> · </strong></p>
                 <p class="text-nowrap text-left company-name">
                 LINSSE © 2017 </p>

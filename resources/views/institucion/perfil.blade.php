@@ -35,7 +35,7 @@
                  </tr>     
                  
                   <tr>
-                          <td>Dirección de Correo:</td>
+                          <td>Dirección de correo:</td>
                         <td>
                             <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
                                 
@@ -73,7 +73,7 @@
                       </tr>
                       
                       <tr>
-                        <td>Descripcion:</td>
+                        <td>Descripción:</td>
                         <td> </td>
                       </tr>
                     </tbody>
@@ -121,7 +121,7 @@
                                                  
                                               </tr>                  
                                             <tr>
-                                                <td>Telefono: </td>
+                                                <td>Teléfono: </td>
                                                 <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>
                                                                           
                                               </tr>
@@ -129,7 +129,7 @@
                                                 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <textarea  rows="4"   cols="60" placeholder="Elavora una breve Descripcion del perfil de la institucion"></textarea></td>
+                                                <td> <textarea  rows="4"   cols="60" placeholder="Elaborá una breve descripción de tu perfil "></textarea></td>
                                               </tr>
                                             </tbody>
                                           </table>

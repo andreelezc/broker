@@ -31,13 +31,13 @@ $(document).ready(function(){
 
             {{-- Titulo--}}
             <div class="form-group">
-                <label class="control-label" for="text-input" > Titulo : <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Oportunidad"></span></label>
+                <label class="control-label" for="text-input" > Título : <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Oportunidad"></span></label>
                 <input class="form-control" type="text" name="titulo" id="text-input">
             </div>
            {{-- Descripcion --}}
             <div class="form-group">
                 <label class="control-label" for="email-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Describa su Oportunidad"></span> </label>
-                <textarea class="form-control"  name="descripcion" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."></textarea>
+                <textarea class="form-control"  name="descripcion" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de oportunidad laboral ofrecida."></textarea>
             </div>
             {{-- PALABRAS CLAVE --}}
         <div class="form-group">
@@ -148,7 +148,7 @@ $(document).ready(function(){
     {{-- REMUNERACION --}}
 
                 <div class="form-group"> 
-                    <label class="control-label">Remuneracion Ofrecida: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar la remuneracion ofrecida"></span></label> 
+                    <label class="control-label">Remuneración Ofrecida: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar la remuneracion ofrecida"></span></label> 
                 <div class="col-md-2">
                            
                      <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
@@ -181,10 +181,14 @@ $(document).ready(function(){
         </div>
             {{-- SUBMIT --}}
             <br>
-        <div class="form-group">
-            <button class="btn btn-primary" type="submit">Cargar </button>
-            <a  type="button" class="btn btn-primary col-md-offset-9 "  href="{{ url('productor/mostrarOportunidad') }}">Volver <i class=" glyphicon glyphicon-arrow-left "></i></a>
-        </div>
+       
+
+         <div class="form-group">
+            <a  type="button"  class="btn btn-primary btn-lg" href="{{ url('productor/mostrarOportunidad') }}"   ><h4> <i class=" glyphicon glyphicon-arrow-left"></i> Volver </h4></a>
+
+            <button class=" btn btn-success btn-lg col-md-offset-9 "  type="submit"><h4>Cargar</h4> </button>
+
+           </div>
             {{-- END FORM --}}
          </form>    
     <script src="assets/js/jquery.min.js"></script>

@@ -31,7 +31,7 @@ $(document).ready(function(){
 
             {{-- TITULO --}}
             <div class="form-group">
-                <label class="control-label" for="text-input"> Titulo: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
+                <label class="control-label" for="text-input"> Título: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
                 <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip"  >
             </div>
             
@@ -44,7 +44,7 @@ $(document).ready(function(){
                  {{-- PALABRAS CLAVE --}}
         <div class="form-group">
             <div class="row">
-                <div class="col-md-10"> <label class="control-label">Palabras Clave:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar 4 palabras diferentes acorde a la capacidad"></span></label>
+                <div class="col-md-10"> <label class="control-label">Palabras clave:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar 4 palabras diferentes acorde a la capacidad"></span></label>
                 <label>(ingrese palabras clave para facilitar la busqueda de su capacidad laboral)</label>
                 </div>
                 <div class="col-md-3">
@@ -72,7 +72,7 @@ $(document).ready(function(){
             <div class="row">
                 <div class="col-md-4">                   
                   <div class="form-group">
-                    <label class="control-label" for="textarea-input">Categoria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
+                    <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
                     <input class="form-control" type="text" name="categoria" id="text-input" placeholder="Pasante, Trabajo Final, Becas...">
                   </div>
                 </div>
@@ -88,7 +88,7 @@ $(document).ready(function(){
     <div class="row">
         <div class="col-md-8">          
             <div class="form-group">         
-                <label class="control-label">Disponibilidad Horaria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
+                <label class="control-label">Disponibilidad Horária:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
@@ -172,7 +172,7 @@ $(document).ready(function(){
     {{-- REMUNERACION --}}
 
                 <div class="form-group"> 
-                    <label class="control-label">Remuneracion Pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label> 
+                    <label class="control-label">Remuneración pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label> 
                 <div class="col-md-2">
                            
                      <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
@@ -184,11 +184,12 @@ $(document).ready(function(){
        
     {{-- SUBMIT --}}
         <div class="form-group">
-            <button class="btn btn-primary " type="submit">Cargar </button>
-            <a  type="button" class="btn btn-primary col-md-offset-9 "  href="{{ url('institucion/mostrarCapacidad') }}"> Volver <i class=" glyphicon glyphicon-arrow-left "></i></a>
+            <a  type="button"  class="btn btn-primary btn-lg" href="{{ url('institucion/mostrarCapacidad') }}"   ><h4> <i class=" glyphicon glyphicon-arrow-left"></i> Volver </h4></a>
+
+            <button class=" btn btn-success btn-lg col-md-offset-9 "  type="submit"><h4>Cargar</h4> </button>
+
            </div>
         {{-- END FORM --}}
-        
     </form> 
     
     <script src="assets/js/jquery.min.js"></script>

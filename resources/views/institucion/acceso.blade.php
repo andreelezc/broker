@@ -67,9 +67,9 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-3">
         
-                    <label>¿Primera vez en Inet Web?</label>
+                    <label>¿Primera vez ?</label>
                         <a class="btn btn-link" href="{{ url('institucion/registro') }}">
-                                   Registrate ya.
+                                   Registrate.
                                 </a>
                                  </div>
                         </div>

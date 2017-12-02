@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
                   @if (Auth::guard('productor')->check())
@@ -22,18 +22,27 @@
                   <div><img src="{{asset('img/tractor.png')}}" class="img-rounded img-responsive" /></div>
               </div>
           </div>
-          
+
           <div class="row">
-              <div class="col-md-3 col-xs-4">
-                  <a class="btn btn-success btn-block btn-lg" href="{{ url('productor/perfil') }}" type="button">PERFIL</a>
+            {{-- BOTON PERFIL --}}
+              <div class="col-md-2 col-xs-4">
+                  <a class="btn btn-success btn-block btn-lg" href="{{ url('productor/perfil') }}" type="button"><i class="glyphicon glyphicon-user"></i>  PERFIL</a>
               </div>
-              <div class="col-md-4 col-xs-4">
-                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/mostrarOportunidad')}}" type="button"> OPORTUNIDADES</a>
+            {{--  --}}
+              {{-- BOTON CAPACIDADES --}}
+              <div class="col-lg-5 col-md-4 col-xs-3">
+                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/mostrarOportunidad')}}" type="button"><i class="glyphicon glyphicon-plus"></i>  AGREGAR OPORTUNIDADES </a>
+
               </div>
+              {{-- BOTON BUSCAR --}}
               <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
-                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}" type="button">BUSCAR CAPACIDADES</a>
+                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}"  type="button"><i class="glyphicon glyphicon-search"></i>  BUSCAR OPORTUNIDADES</a>
               </div>
+              {{--  --}}
           </div>
+
+          
+          
       </div>
                    
 

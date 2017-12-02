@@ -57,8 +57,9 @@
                 <div class="panel-heading">Buscar Capacidades </div>
                 
                 <div class="input-group">
-                    <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
+                    
                     <input type="search" name="search-input" class="form-control" id="search-input" />
+                    <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
                 </div>
          
             <div class="form-group"></div>
@@ -78,8 +79,9 @@
                 <div class="panel-heading">Buscar Oportunidades Laborales</div>
                 
                 <div class="input-group">
-                    <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
+                    
                     <input type="search" name="search-input" class="form-control" id="search-input" />
+                    <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
                 </div>
          
             <div class="form-group"></div>
