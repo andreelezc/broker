@@ -4,9 +4,44 @@
 
 @section('content')     
 
+{{-- Tabla de descripción--}}
+<div class="form-group">
+    <div class="row">
+
+            <div class="container ">
+                    <div class="col-md-15 text-center"> <label class="control-label">Escribir aquí </label>
+                        <label>......</label>
+                    </div>
+              <div class="row transparent">
+                    <div class="col-md-6">
+                      <div class="tuyin first"> 
+                        <span class="title">Capacidades Laborales </span>
+                         <div class="plan-name">Institución</div>
+                          <div class="text">
+                            <p> </p>
+                          </div>
+                        <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="tuyin first"> 
+                        <span class="title">Oportunidades Laborales</span>
+                         <div class="plan-name">Productor</div>
+                          <div class="text">
+                            <p> </p>
+                          </div>
+                        <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>
+                      </div>
+                    </div>
+              </div>
+              
+            </div>
+</div>
+    </div>
 
 
-
+{{-- Botones--}}
    <div class="container ">
 <div class="col-md-10 col-md-offset-1">
            
@@ -50,6 +85,7 @@
    
    <br>
     
+    {{-- Barra de Busquedas--}}
      <div class="col-md-6">
         <form class="bootstrap-form-with-validation">
             <div class="form-group">
@@ -94,6 +130,8 @@
 
         </form>
     </div>
+
+
 
    
 

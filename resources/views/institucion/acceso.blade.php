@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-3">
         
-                    <label>¿Primera vez ?</label>
+                    <label>¿Aún no tienes cuenta?</label>
                         <a class="btn btn-link" href="{{ url('institucion/registro') }}">
                                    Registrate.
                                 </a>

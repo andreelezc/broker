@@ -36,7 +36,7 @@
         }
 
         .navbar-brand>img {
-          padding: 7px 15px;
+          padding: 5px 15px;
         }
 
     </style>
@@ -48,15 +48,21 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('logo-inet.png')}}" >
-        </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+             <div class="row">
+                <div class="navbar-brand"><a  href="{{ url('/') }}"><img  src="{{asset('logo-inet.png')}}" > </a> 
+                </div>
+                <div class="col-md-2 col-md-offset-3" ><img  src="{{asset('logofonietp.png')}}" /></div>
+            </div>
       </div>
+
+
       <div id="navbar2" class="navbar-collapse collapse" class="navbar-header" class="container-fluid">
       <!-- Right Side Of Navbar -->
       
@@ -95,13 +101,7 @@
             </ul>
          </div>
               
-                      
-                                     
-                                        
-                                  
-                                      
-                                        
-                                  
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -149,14 +149,7 @@
               </li>
             </ul>
         
-              
-                      
-                  
-                                      
-                                  
-                                      
-                                        
-                                  
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -184,7 +177,7 @@
          <div class="row">
             <div class="col-md-3 col-md-offset-0 col-sm-4 footer-navigation">
                 <header><img class="img-responsive" src=" {{asset('img/logo-inet2.png')}}" width="200" height="100"></header>
-                <h5 class="text-left"><a href="#" target="_parent">Instituto Nacional de Educacion Tecnologica </a></h5>
+                <h5 class="text-left">Instituto Nacional de Educación Tecnológica </h5>
                 <p class="links"><a href="#">inicio</a><strong> · </strong><a href="#">contacto</a><strong> · </strong><a href="#">Novedades</a><strong> · </strong></p>
                 <p class="text-nowrap text-left company-name">
                 LINSSE © 2017 </p>
@@ -207,6 +200,8 @@
                 </div>
             </div>
          </div>
+
+        
         </footer>
     
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>

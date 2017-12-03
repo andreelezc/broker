@@ -1,5 +1,5 @@
 footer{
-  background-color:#b4c2de;
+  background-color:#0e68af; 
   box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing:border-box;
   width:100%;
@@ -8,7 +8,7 @@ footer{
   padding:0px 50px;
   margin-top:100px;
   bottom:0;
-  color:#f8f3f3;
+  color:#b4c2de;
 }
 
 .footer-navigation h3{
@@ -52,7 +52,7 @@ footer{
 }
 
 .footer-contacts p a{
-  color:#5383d3;
+  color:#DDECFC;
   text-decoration:none;
 }
 
@@ -113,3 +113,42 @@ div.social-links{
   margin-bottom:5px;
 }
 
+
+.transparent .tuyin 
+    {
+    margin-top: 20px; 
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 1px solid #F7F7F7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 0px rgba(181, 181, 181, 0.3);
+    padding: 4%;
+    text-align: center;
+    width: 97%;
+    min-height: 315px;
+    position: relative;
+    margin-bottom: 25px;
+     }
+.transparent .tuyin .title 
+    {
+    text-align: center; 
+    color: #233344;
+    font-size: 49px; 
+    }
+.transparent .tuyin .plan-name 
+    {
+    font-size: 20px;
+    font-weight: 400;
+    border-bottom: 1px solid #FFF;
+    padding-bottom: 15px;
+    padding: 10px
+    }
+
+.transparent .tuyin .text
+    {
+    margin-top: 20px; 
+    color: #474747;
+    font-weight: 300;
+    margin-bottom: 13px; 
+    font-size: 16px;
+    text-align: justify;
+    }
