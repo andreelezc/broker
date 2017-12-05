@@ -89,12 +89,25 @@ $(document).ready(function(){
         <div class="col-md-8">          
             <div class="form-group">         
                 <label class="control-label">Disponibilidad Horária:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
+                <br>
+
                 <div class="row">
                 <div class="col-md-8 ">
                 <div class="form-group">
+
                 Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
+
+        <div class="checkbox">   
+            <label class="control-label">
+                    <label  class="control-label"> <input type="radio" name="movimiento" value="full" /> Todo el día     </label> 
+                    <label  class="control-label"> <input type="radio" name="movimiento" value="manana" /> Medio día: Mañana </label>
+                    <label  class="control-label"> <input type="radio" name="movimiento" value="tarde" /> Medio día: Tarde  </label>
+                    <label  class="control-label"> <input type="radio" name="movimiento" value="personalizar" /> Personalizar horario  </label>
+            </label>
+        </div>
                 </div></div></div>
 
+        
                 <div class="row">
                 <div class="col-md-6">
                  <div class="form-group"> 

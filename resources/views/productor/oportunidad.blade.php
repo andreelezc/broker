@@ -74,6 +74,15 @@ $(document).ready(function(){
                 <div class="col-md-8 ">
                 <div class="form-group">
                 Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
+
+                <div class="checkbox">   
+                    <label class="control-label">
+                            <label  class="control-label"> <input type="radio" name="movimiento" value="full" /> Todo el día     </label> 
+                            <label  class="control-label"> <input type="radio" name="movimiento" value="manana" /> Medio día: Mañana </label>
+                            <label  class="control-label"> <input type="radio" name="movimiento" value="tarde" /> Medio día: Tarde  </label>
+                            <label  class="control-label"> <input type="radio" name="movimiento" value="personalizar" /> Personalizar horario  </label>
+                    </label>
+                </div>
                 </div></div></div>
 
                 <div class="row">

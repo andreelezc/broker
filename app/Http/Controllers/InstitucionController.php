@@ -111,10 +111,28 @@ class InstitucionController extends Controller
     }
 
 
-    
+    public function editarPerfil()
+    {
+        $user = Auth::guard('institucion')->user();
+        return view('institucion.perfil',array('user'=>$user));
+    }
 
 
+      public function editar(Request $request)
+      {
+        $user = Auth::guard('institucion')->user(); 
+
+      $user->name= $request->name;
+      $user->direccion= $request->direccion;
+      $user->telefono= $request->telefono;
+      $user->descripcion= $request->descripcion;
+      
+      $user->save();
+
+     // return view("institucion.mostrarCapacidad");
+      return redirect(url('institucion/perfil'));
    
+      }
 
 
 }

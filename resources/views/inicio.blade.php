@@ -109,7 +109,7 @@
                 
                 <div class="input-group">
                     
-                    <input type="search" name="search-input" class="form-control" id="search-input" />
+                    <input type="search" name="search-input" class="form-control" id="search-input" placeholder="Ingresa tu busqueda de capacidad + enter"/>
                     <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
                 </div>
          
@@ -131,7 +131,7 @@
                 
                 <div class="input-group">
                     
-                    <input type="search" name="search-input" class="form-control" id="search-input" />
+                    <input type="search" name="search-input" class="form-control" id="search-input" placeholder="Ingresa tu busqueda de oportunidad + enter"/>
                     <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
                 </div>
          

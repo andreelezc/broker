@@ -17,6 +17,7 @@
                   {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
                  <img  height="100" width="100" avatar="{{ Auth::Guard('productor')->user()->name }}" class="img-responsive round">
                  <br>
+
                  <input type="file" name="avatar">  
                 </div>
                    {{--Tabla del perfil--}}
@@ -50,10 +51,7 @@
                         <td>Provincia:</td><td> Localidad:</td>
                         <td> </td>
                       </tr>
-                      <tr>
-                        <td>País:</td>
-                        <td> </td>
-                      </tr>
+                    
                       <tr>
                         <td>Telefono: </td>
                         <td>{{ Auth::Guard('productor')->user()->telefono }}
@@ -108,7 +106,15 @@
                                                   <td>Dirección:</td>
                                                 <td><input type="" name="" value="{{ Auth::Guard('productor')->user()->direccion }}"></td>
                                                  
-                                              </tr>                  
+                                              </tr>
+                                               <tr>
+                                          <td>CP:</td>
+                                          <td> </td>
+                                        </tr> 
+                                        <tr>
+                                          <td>Provincia:</td><td> Localidad:</td>
+                                          <td> </td>
+                                        </tr>                  
                                             <tr>
                                                 <td>Telefono: </td>
                                                 <td><input type="" name="" value="{{ Auth::Guard('productor')->user()->telefono }}"></td>
@@ -141,7 +147,7 @@
 
 
                           <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Marcados  <i class="glyphicon glyphicon-pushpin"></i> </a>
+                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Mis Selecciones  <i class="glyphicon glyphicon-pushpin"></i> </a>
                          </div>
    
                          <div class="col-md-4">

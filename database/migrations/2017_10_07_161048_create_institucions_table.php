@@ -19,7 +19,11 @@ class CreateInstitucionsTable extends Migration
             $table->string('email')->unique();
             $table->string('avatar')->default('avatar');
             $table->string('direccion');
+            $table->string('cp')->nullable();
+            $table->string('provincia')->nullable();
+             $table->string('localidad')->nullable();
             $table->string('telefono')->nullable();
+            $table->string('descripcion')->nullable();
             $table->string('password');
                $table->rememberToken();
 

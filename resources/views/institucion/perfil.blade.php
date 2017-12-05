@@ -10,6 +10,16 @@
               <h3 class="panel-title text-center">{{ Auth::Guard('institucion')->user()->name }}</h3>
           </div>
 
+  <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+    
+             
+
         <div class="panel-body">
           <div class="row">
                 {{-- Avatar--}}
@@ -59,10 +69,7 @@
                         <td>Provincia:</td><td> Localidad:</td>
                         <td> </td>
                       </tr>
-                      <tr>
-                        <td>País:</td>
-                        <td> </td>
-                      </tr>  
+                        
 
                     <tr>
                         <td>Teléfono: </td>
@@ -104,7 +111,12 @@
                                     </div>
                                      <!-- contenido de la ventana de la ventana-->
                                             <!-- panel de editar perfil-->
-                                    
+                                            {{-- Inicio FORM --}}
+ 
+                                    {{-- Inicio FORM --}}
+  <form method="POST" action="{{url('institucion/perfil/editar/'.Auth::Guard('institucion')->user())}}" class="bootstrap-form-with-validation">
+             {{ csrf_field() }}
+             {{ method_field('PUT') }}
                                          <table class="table table-user-information">
                                         <tbody>
                                          <tr>
@@ -117,16 +129,24 @@
                                          
                                               <tr>
                                                   <td>Dirección:</td>
-                                                <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->direccion }}"></td>
+                                                <td><input type="" name="direccion" value="{{ Auth::Guard('institucion')->user()->direccion }}"></td>
                                                  
-                                              </tr>                  
+                                              </tr>
+                                              <tr>
+                                                <td>CP:</td>
+                                                <td> </td>
+                                              </tr> 
+                                              <tr>
+                                                <td>Provincia:</td> <td>   Localidad:</td>
+                                                <td> </td>
+                                              </tr>
+                                                                  
                                             <tr>
                                                 <td>Teléfono: </td>
                                                 <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>
                                                                           
                                               </tr>
-                                              
-                                                
+
                                               <tr>
                                                 <td>Descripción:</td>
                                                 <td> <textarea  rows="4"   cols="60" placeholder="Elaborá una breve descripción de tu perfil "></textarea></td>
@@ -146,11 +166,13 @@
                                               
                                     </div>
                                   </div>
+                                  {{-- END FORM --}}
+    </form> 
                         </div>{{-- modal --}}
                           </div>
                       </div> {{-- modal --}} 
 
-
+       
 
 
                          <div class="col-md-4">
@@ -165,7 +187,9 @@
                 </div> {{--Fin Tabla--}}
               </div>
             </div>
+     
           </div>{{--Fin panel --}}   
+          </div>
         </div>
       </div>
     </div>

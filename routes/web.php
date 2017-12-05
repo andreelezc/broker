@@ -17,9 +17,13 @@ Route::middleware('isInstitucion')->group(function()
 {
 
 		Route::get('institucion/home', 'InstitucionController@index');
-		//Route::get('institucion/perfil', 'Institucion\PerfilController@index');
-		Route::get('institucion/perfil','InstitucionController@perfil');
+		
+		Route::get('institucion/perfil','InstitucionController@perfil');		
 		Route::put('institucion/perfil','InstitucionController@perfil');
+
+		Route::get('institucion/perfil/editar/{id}','InstitucionController@editarPerfil');
+		Route::put('institucion/perfil/editar/{id}','InstitucionController@editar');
+
 		//Route::post('institucion/perfil','InstitucionController@imag_perfil');
 		//Route::get('institucion/perfil','InstitucionController@maps');
 
