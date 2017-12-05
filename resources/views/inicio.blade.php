@@ -4,43 +4,6 @@
 
 @section('content')     
 
-{{-- Tabla de descripción--}}
-<div class="form-group">
-    <div class="row">
-
-            <div class="container ">
-                    <div class="col-md-15 text-center"> <label class="control-label">Escribir aquí </label>
-                        <label>......</label>
-                    </div>
-              <div class="row transparent">
-                    <div class="col-md-6">
-                      <div class="tuyin first"> 
-                        <span class="title">Capacidades Laborales </span>
-                         <div class="plan-name">Institución</div>
-                          <div class="text">
-                            <p> </p>
-                          </div>
-                        <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="tuyin first"> 
-                        <span class="title">Oportunidades Laborales</span>
-                         <div class="plan-name">Productor</div>
-                          <div class="text">
-                            <p> </p>
-                          </div>
-                        <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>
-                      </div>
-                    </div>
-              </div>
-              
-            </div>
-</div>
-    </div>
-
-
 {{-- Botones--}}
    <div class="container ">
 <div class="col-md-10 col-md-offset-1">
@@ -82,7 +45,59 @@
                 </div>
             </div>
         </div>
+        <br>
    
+{{-- Tabla de descripción--}}
+<div class="form-group">
+    <div class="row">
+
+            <div class="container ">
+                 <div class="panel panel-default">
+                
+                    <div class="col-md-15   text-center"> <label class="control-label "><h3>Comunicación entre Instituciones y Productores </h3></label>
+                    </div> </div> 
+
+                   <div  class="col-md-15 text-center"> <img  src="{{asset('info1.png')}}" /></div>
+                    
+              <div class="row transparent">
+                    <div class="col-md-6 ">
+                      <div class="tuyin first"> 
+                        <span class="title"><h2>Oportunidades Laborales </h2></span>
+                         <div class="plan-name">Productor</div>
+                          <div class="text">
+                            <p><li>Publicá tus oportunidades</li>
+                               <li>Buscá capacidades </li> </p>
+                          </div>
+                        {{--  <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>--}}
+                      </div>
+
+                    </div>
+                    
+                    
+
+                    <div class="col-md-6">
+
+                      <div class="tuyin first"> 
+                        <span class="title"><h2>Capacidades Laborales</h2></span>
+                         <div class="plan-name">Institución</div>
+                          <div class="text ">
+                            <p> <li>Publicá tus capacidades: Pasantias, Trabajos finales, o Tabajo de campo...</li>
+                                <li>Buscá oportunidades de trabajo</li></p>
+                          </div>
+                       {{--  <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>--}}
+                      </div>
+                    </div>
+              </div>
+              
+            </div>
+            <div  class="col-md-15 text-center"> <img  src="{{asset('info2.png')}}" /></div>
+</div>
+
+    </div>
+    
+{{--<div  class="col-md-15 text-center"> <img  src="{{asset('comunicacion.jpg')}}" /></div>--}}
+
+
    <br>
     
     {{-- Barra de Busquedas--}}
