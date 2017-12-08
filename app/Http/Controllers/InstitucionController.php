@@ -65,7 +65,7 @@ class InstitucionController extends Controller
      public function perfil()
     {
         // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
-        return view('institucion.perfil');
+        return view('institucion.perfil' );
     }
 
 
@@ -111,22 +111,39 @@ class InstitucionController extends Controller
     }
 
 
-    public function editarPerfil()
-    {
-        $user = Auth::guard('institucion')->user();
-        return view('institucion.perfil',array('user'=>$user));
+     
+public function update_avatar(Request $request){
+
+      // Handle the user upload of avatar
+      if($request->hasFile('avatar')){
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300, 300)->save( public_path('/cargas/avatars/'.$filename ) );
+
+        $user =Auth::guard('institucion')->user();
+        $user->avatar = $filename;
+        $user->save();
+      }
+
+      return redirect(url('institucion/perfil'));
+
     }
 
 
-      public function editar(Request $request)
+    public function editarPerfil($id)
+    {
+        $user =User::findOrFail($id);
+        return view('institucion.perfil',array("user"=>$user));
+    }
+
+
+    public function editar(Request $request, $id)
       {
-        $user = Auth::guard('institucion')->user(); 
+         $user =User::findOrFail($id);  
 
       $user->name= $request->name;
-      $user->direccion= $request->direccion;
-      $user->telefono= $request->telefono;
-      $user->descripcion= $request->descripcion;
-      
+
+
       $user->save();
 
      // return view("institucion.mostrarCapacidad");

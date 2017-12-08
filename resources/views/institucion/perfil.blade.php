@@ -24,18 +24,30 @@
           <div class="row">
                 {{-- Avatar--}}
               <div class="col-md-3 col-lg-3 " align="center"> 
-                {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
-                <img  height="100" width="100" avatar="{{ Auth::Guard('institucion')->user()->name }}"  class="img-responsive round" >  
-                <br>
+                {{-- 
+                <img  height="100" width="100" avatar="{{ Auth::Guard('institucion')->user()->name }}" src="{{ asset('img/default.jpg') }}" class="img-responsive round" >  --}}
 
-                 <input type="file" name="avatar">  
-
+                      <div class="col-md-10 col-md-offset-4">
+                               <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:30px;"  class="img-responsive round" >
+                              <br>
+                              <label>Cambiar foto de perfil:</label>
+                         </div>
+                        <div class="col-md-10 col-md-offset-0">
+                              <form enctype="multipart/form-data" action="{{url('institucion/perfil')}}" method="POST">   
+                                <input id="image1" type="file" name="avatar"  accept="image/*" />
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <br>
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                              </form>
+                       </div>
               </div>
              
                {{--Tabla del perfil--}}
               <div class=" col-md-10 col-lg-6 col-lg-offset-1"> 
                 <table class="table table-user-information">
                 <tbody>
+
+
                  <tr>
                         <td>Nombre:</td>
                         <td>{{ Auth::Guard('institucion')->user()->name }}</td>
@@ -102,26 +114,33 @@
                                 <div class="modal-content">
                                     <!-- header de la ventana-->
 
-                                    <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                         </button>
-                                        <h4 class="modal-title"> Editar Perfil de Institucion  </h4>
+                          <div class="container">
+                          <div class="row">
+                              <div class="  col-md-6  col-md-offset-2 col-lg-offset-0" >   
+                              
+                                         
+                                                      {{-- Titulo del panel. Nombre de la institucion --}}
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title text-center modal-title">  Editar Perfil de {{ Auth::Guard('institucion')->user()->name }}</h3>
+                                                    </div>
 
-                                    </div>
+                                     
                                      <!-- contenido de la ventana de la ventana-->
                                             <!-- panel de editar perfil-->
-                                            {{-- Inicio FORM --}}
- 
-                                    {{-- Inicio FORM --}}
-  <form method="POST" action="{{url('institucion/perfil/editar/'.Auth::Guard('institucion')->user())}}" class="bootstrap-form-with-validation">
-             {{ csrf_field() }}
-             {{ method_field('PUT') }}
+                                            
+                        {{-- Inicio FORM --}}
+                        <form method="POST" action="{{url('institucion/perfil/editar/'. Auth::Guard('institucion')->user()->id)}}" class="bootstrap-form-with-validation">
+                           {{ csrf_field() }}
+                          {{ method_field('PUT') }}
+
                                          <table class="table table-user-information">
                                         <tbody>
                                          <tr>
                                                 <td>Nombre:</td>
-                                                <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->name }}"></td>
+                                                <td><input type="" name="name" value="{{ Auth::Guard('institucion')->user()->name }}"></td>
                                                  <td>
                                               
                                           </td>  
@@ -134,13 +153,16 @@
                                               </tr>
                                               <tr>
                                                 <td>CP:</td>
-                                                <td> </td>
+                                               <td><input type="" name="cp"></td>
                                               </tr> 
                                               <tr>
-                                                <td>Provincia:</td> <td>   Localidad:</td>
-                                                <td> </td>
+                                                <td>Provincia:</td> 
+                                                <td> <input type="" name="provincia"></td>
                                               </tr>
-                                                                  
+                                              <tr><td>   Localidad:</td>
+                                                <td> <input type="" name="localidad"></td>
+
+                                               </tr>              
                                             <tr>
                                                 <td>Teléfono: </td>
                                                 <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>
@@ -149,31 +171,28 @@
 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <textarea  rows="4"   cols="60" placeholder="Elaborá una breve descripción de tu perfil "></textarea></td>
+                                                <td> <textarea  rows="4"   cols="40" placeholder="Elaborá una breve descripción de tu perfil " name="descripcion"></textarea></td>
                                               </tr>
                                             </tbody>
                                           </table>
                                             
                                      <!-- footer de la ventana-->
                                   <div class="modal-footer">
-                                    <div class="  col-lg-offset-2" >
+                                    <div class=" col-md-1  col-lg-offset-2" >
                                        <div class="row">
-                                              <div class="col-md-1  ">
+                                             {{--Boton de Guaedar --}}    
                                                   <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href=" ">Guardar  <i class="glyphicon glyphicon-edit"></i>   </a>
-                                              </div>
-                                              {{--Boton de Guaedar --}}                                            
-                                       </div>{{-- end row --}}
-                                              
+                                             
+                                                                                      
+                                       </div>{{-- end row --}}      
                                     </div>
                                   </div>
                                   {{-- END FORM --}}
-    </form> 
-                        </div>{{-- modal --}}
+                      </form> 
+                       </div>  </div>{{-- modal --}}
+                      </div></div>
                           </div>
                       </div> {{-- modal --}} 
-
-       
-
 
                          <div class="col-md-4">
                              <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Postulaciones <i class="glyphicon glyphicon-pushpin"></i> </a>
