@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use inetweb\Oportunidad;
 use inetweb\Capacidad;
 use inetweb\OportunidadKey;
-
+use inetweb\Institucion;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -62,11 +62,7 @@ class InstitucionController extends Controller
         return view('institucion.editarCapacidad',array("capacidad"=>$capacidad));
     }
 
-     public function perfil()
-    {
-        // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
-        return view('institucion.perfil' );
-    }
+   
 
 
     public function mostrarCapacidad()
@@ -130,18 +126,30 @@ public function update_avatar(Request $request){
     }
 
 
-    public function editarPerfil($id)
+      public function perfil()
     {
-        $user =User::findOrFail($id);
-        return view('institucion.perfil',array("user"=>$user));
+        // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
+        return view('institucion.perfil' );
     }
 
 
-    public function editar(Request $request, $id)
+    
+
+
+    public function editarPerfil(Request $request)
       {
-         $user =User::findOrFail($id);  
+         $user =Institucion::findOrFail($request->id);  
 
       $user->name= $request->name;
+      $user->direccion= $request->direccion;
+      $user->cp= $request->cp;
+      $user->provincia= $request->provincia;
+      $user->localidad= $request->localidad;
+      $user->telefono= $request->telefono;
+      $user->descripcion= $request->descripcion;
+      
+
+
 
 
       $user->save();

@@ -20,9 +20,7 @@ Route::middleware('isInstitucion')->group(function()
 		
 		Route::get('institucion/perfil','InstitucionController@perfil');	
 		Route::post('institucion/perfil', 'InstitucionController@update_avatar');
-
-		Route::get('institucion/perfil/editar/{id}','InstitucionController@editarPerfil');
-		Route::put('institucion/perfil/editar/{id}','InstitucionController@editar');	
+		Route::put('institucion/perfil','InstitucionController@editarPerfil');	
 		
 		Route::get('institucion/capacidad', 'InstitucionController@cargarCapacidad');
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');

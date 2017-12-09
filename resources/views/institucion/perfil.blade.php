@@ -75,25 +75,27 @@
                       </tr>  
                       <tr>
                         <td>CP:</td>
-                        <td> </td>
+                        <td> {{ Auth::Guard('institucion')->user()->cp }}</td>
                       </tr> 
                       <tr>
-                        <td>Provincia:</td><td> Localidad:</td>
-                        <td> </td>
+                        <td>Provincia:</td>
+                        <td> {{ Auth::Guard('institucion')->user()->provincia }}</td>
+                      </tr>
+                      <tr>
+                        <td> Localidad:</td>
+                        <td> {{ Auth::Guard('institucion')->user()->localidad }}</td>
                       </tr>
                         
 
                     <tr>
                         <td>Teléfono: </td>
-                        <td>{{ Auth::Guard('institucion')->user()->telefono }}
-                            
-                        </td>
+                        <td>{{ Auth::Guard('institucion')->user()->telefono }} </td>
                                                   
                       </tr>
                       
                       <tr>
                         <td>Descripción:</td>
-                        <td> </td>
+                        <td>{{ Auth::Guard('institucion')->user()->descripcion }} </td>
                       </tr>
                     </tbody>
                   </table>
@@ -132,7 +134,7 @@
                                             <!-- panel de editar perfil-->
                                             
                         {{-- Inicio FORM --}}
-                        <form method="POST" action="{{url('institucion/perfil/editar/'. Auth::Guard('institucion')->user()->id)}}" class="bootstrap-form-with-validation">
+                        <form method="POST" action="{{url('institucion/perfil')}}" class="bootstrap-form-with-validation">
                            {{ csrf_field() }}
                           {{ method_field('PUT') }}
 
@@ -142,6 +144,8 @@
                                                 <td>Nombre:</td>
                                                 <td><input type="" name="name" value="{{ Auth::Guard('institucion')->user()->name }}"></td>
                                                  <td>
+
+                                                 
                                               
                                           </td>  
                                          </tr>     
@@ -153,25 +157,26 @@
                                               </tr>
                                               <tr>
                                                 <td>CP:</td>
-                                               <td><input type="" name="cp"></td>
+                                               <td><input type="" name="cp" value="{{ Auth::Guard('institucion')->user()->cp }}"> </td>
                                               </tr> 
                                               <tr>
-                                                <td>Provincia:</td> 
-                                                <td> <input type="" name="provincia"></td>
+                                                  <td>Provincia:</td>
+                                                <td><input type="" name="provincia" value="{{ Auth::Guard('institucion')->user()->provincia }}"></td>
+                                                 
                                               </tr>
                                               <tr><td>   Localidad:</td>
-                                                <td> <input type="" name="localidad"></td>
+                                                <td> <input type="" name="localidad" value="{{ Auth::Guard('institucion')->user()->localidad }}"></td>
 
                                                </tr>              
                                             <tr>
                                                 <td>Teléfono: </td>
-                                                <td><input type="" name="" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>
+                                                <td><input type="" name="telefono" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>
                                                                           
                                               </tr>
 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <textarea  rows="4"   cols="40" placeholder="Elaborá una breve descripción de tu perfil " name="descripcion"></textarea></td>
+                                                <td> <textarea  rows="4"   cols="40" placeholder="Elaborá una breve descripción de tu perfil " name="descripcion"  >{{ Auth::Guard('institucion')->user()->descripcion }}</textarea></td>
                                               </tr>
                                             </tbody>
                                           </table>
@@ -180,8 +185,10 @@
                                   <div class="modal-footer">
                                     <div class=" col-md-1  col-lg-offset-2" >
                                        <div class="row">
-                                             {{--Boton de Guaedar --}}    
-                                                  <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href=" ">Guardar  <i class="glyphicon glyphicon-edit"></i>   </a>
+                                             {{--Boton de Guaedar --}}  
+                                                  
+                                                   <input type="hidden" name="id" value="{{ Auth::Guard('institucion')->user()->id }}" >
+                                                  <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " >    </input>
                                              
                                                                                       
                                        </div>{{-- end row --}}      
