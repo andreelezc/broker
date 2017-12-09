@@ -21,6 +21,7 @@ Route::middleware('isInstitucion')->group(function()
 		Route::get('institucion/perfil','InstitucionController@perfil');	
 		Route::post('institucion/perfil', 'InstitucionController@update_avatar');
 		Route::put('institucion/perfil','InstitucionController@editarPerfil');	
+		Route::delete('institucion/perfil','InstitucionController@eliminarPerfil')->name("eliminarPerfil");
 		
 		Route::get('institucion/capacidad', 'InstitucionController@cargarCapacidad');
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');

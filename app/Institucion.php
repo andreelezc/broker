@@ -4,13 +4,15 @@ namespace inetweb;
 
 use Illuminate\Notifications\Notifiable;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use inetweb\capacidad;
 
 class Institucion extends Authenticatable
 {
-      use Notifiable;
+      use Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +22,8 @@ class Institucion extends Authenticatable
     protected $fillable = [
         'name', 'email', 'direccion', 'password',
     ];
+
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that should be hidden for arrays.

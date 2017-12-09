@@ -133,8 +133,6 @@ public function update_avatar(Request $request){
     }
 
 
-    
-
 
     public function editarPerfil(Request $request)
       {
@@ -147,10 +145,6 @@ public function update_avatar(Request $request){
       $user->localidad= $request->localidad;
       $user->telefono= $request->telefono;
       $user->descripcion= $request->descripcion;
-      
-
-
-
 
       $user->save();
 
@@ -158,6 +152,19 @@ public function update_avatar(Request $request){
       return redirect(url('institucion/perfil'));
    
       }
+
+        public function eliminarPerfil(Request $request) {
+  
+             $user =Institucion::findOrFail($request->id);
+              $user->delete();
+
+              
+              return redirect(url('institucion/perfil'));
+
+    
+          
+          }
+
 
 
 }

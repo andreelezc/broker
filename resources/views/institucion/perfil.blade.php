@@ -204,10 +204,19 @@
                          <div class="col-md-4">
                              <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Postulaciones <i class="glyphicon glyphicon-pushpin"></i> </a>
                          </div>
-   
-                         <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil <i class="glyphicon glyphicon-trash"></i> </a>
-                         </div>
+
+
+
+                         <form method="post" action="{{ route('eliminarPerfil') }}">
+                                                          {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                <input type="hidden" name="id" value="{{ Auth::Guard('institucion')->user()->id }}">
+                                <div class="col-md-4">
+                                 <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil <i class="glyphicon glyphicon-trash"></i> </a>
+                                </div>
+                        </form>
+
                      </div>
                   </div>  
                 </div> {{--Fin Tabla--}}
