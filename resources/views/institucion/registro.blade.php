@@ -5,6 +5,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                @if(Session::has('registro'))     
+                        <div class="alert alert-info text-uppercase text-center" role="alert">
+                            <span>{{Session::get('registro')}}</span><strong>Inicia sesión </strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
                 <div class="panel-heading">Registrar una Institución</div>
 
                 <div class="panel-body">

@@ -8,17 +8,21 @@
             {{-- Titulo del panel. Nombre de la institucion --}}
           <div class="panel-heading">
               <h3 class="panel-title text-center">{{ Auth::Guard('institucion')->user()->name }}</h3>
+               
           </div>
 
   <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-    
-             
+                    @if(session('success'))
+                        <div class="alert alert-success text-center" role="alert">
+
+                            <strong>{{session('success')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif 
+                    
+                    
+           
 
         <div class="panel-body">
           <div class="row">
@@ -34,10 +38,10 @@
                          </div>
                         <div class="col-md-10 col-md-offset-0">
                               <form enctype="multipart/form-data" action="{{url('institucion/perfil')}}" method="POST">   
-                                <input id="image1" type="file" name="avatar"  accept="image/*" />
+                                <input type="file" value="Seleccionar imagen" name="avatar"  accept="image/*" >
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <br>
-                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                <input type="submit" value="Cargar" class="pull-right btn btn-sm btn-primary">
                               </form>
                        </div>
               </div>
@@ -189,12 +193,14 @@
                                                   
                                                    <input type="hidden" name="id" value="{{ Auth::Guard('institucion')->user()->id }}" >
                                                   <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " >    </input>
-                                             
+
                                                                                       
                                        </div>{{-- end row --}}      
                                     </div>
                                   </div>
                                   {{-- END FORM --}}
+
+
                       </form> 
                        </div>  </div>{{-- modal --}}
                       </div></div>
@@ -213,7 +219,9 @@
                                                         {{-- <input type="hidden" name="_method" value="delete"> --}}
                                 <input type="hidden" name="id" value="{{ Auth::Guard('institucion')->user()->id }}">
                                 <div class="col-md-4">
-                                 <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil <i class="glyphicon glyphicon-trash"></i> </a>
+                                 
+                                  <button class="btn btn-sm btn-danger" type="submit" >Eliminar Perfil <i class="glyphicon glyphicon-trash"></i></button>
+                                 
                                 </div>
                         </form>
 
@@ -230,8 +238,7 @@
     </div>
 
 
-   
-
+  
     
 
     <script src="{{ asset('js/avatar.js') }} "></script>

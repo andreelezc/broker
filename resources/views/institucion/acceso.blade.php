@@ -8,6 +8,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+
+                @if(Session::has('registro'))     
+                        <div class="alert alert-success text-uppercase text-center" role="alert">
+                            <span>{{Session::get('registro')}}</span> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
                 <div class="panel-heading text-center"><h3>Iniciar sesión como Institución</h3></div>
 
                 <div class="panel-body">

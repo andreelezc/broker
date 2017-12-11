@@ -7,6 +7,13 @@
 {{-- Botones--}}
    <div class="container ">
 <div class="col-md-10 col-md-offset-1">
+                    @if(session('status'))
+                    
+                        <div class="alert alert-danger text-uppercase text-center" role="alert">
+                            <strong>{{session('status')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
            
                 <div class="col-md-3">
                     <div class="row">

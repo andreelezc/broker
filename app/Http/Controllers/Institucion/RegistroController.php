@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Mail;
 use inetweb\Mail\nuevoUsuarioInstitucion;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class RegistroController extends Controller
 {
@@ -24,10 +24,10 @@ class RegistroController extends Controller
     }
     
 
+    
+     protected $redirectTo = 'institucion/acceso' ;
 
-     protected $redirectTo = 'institucion/acceso';
-
-
+   
      /* public function __construct()
     {
         $this->middleware('guest');
@@ -61,8 +61,13 @@ class RegistroController extends Controller
         
         ///manda mail
         Mail::to($institucion)->send(new nuevoUsuarioInstitucion($institucion->name)); 
+         ///mensaje flash
+       Session::flash('registro', 'Tu usuario a sido registrado ');
 
         return $institucion;
+        
+        //return redirect(url('institucion/acceso'))->with('registro','Tu cuenta a sido registrada');
+
 
     }
 
