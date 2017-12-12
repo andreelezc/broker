@@ -97,6 +97,11 @@ class OportunidadController extends Controller
       return redirect(url('productor/mostrarOportunidad'));
 
       }
+      public function oportunidad()
+    {
+        
+        return view('oportunidad');
+    }
      
 
 

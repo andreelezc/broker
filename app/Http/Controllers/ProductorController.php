@@ -50,6 +50,11 @@ class ProductorController extends Controller
     {
         return view('productor.inicio');
     }
+    public function productor()
+    {
+        
+        return view('productor');
+    }
 
      public function acceso()
     {

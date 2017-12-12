@@ -76,6 +76,14 @@ class InstitucionController extends Controller
         return view('institucion.inicio');
     }
 
+    public function institucion()
+    {
+        
+        return view('institucion');
+    }
+
+    
+
      public function acceso()
     {
         return view('institucion.acceso');
@@ -86,7 +94,7 @@ class InstitucionController extends Controller
         ///envio los resultados a la vista
         $oportunidades = Oportunidad::orderBy('id', 'desc')->take(10)->get();
         return view('institucion.buscar',array('oportunidades'=>$oportunidades));
-    }
+       
 
     //TODO 
     public function buscarPalabra($palabra,$pagina = 0)
@@ -104,6 +112,7 @@ class InstitucionController extends Controller
                                     ->get(['oportunidads.*']);
                 // 
                                     return view('institucion.buscar',array('oportunidades'=>$oportunidades));
+
     }
 
 
@@ -161,6 +170,7 @@ public function update_avatar(Request $request){
               return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
           
           }
+
 
 
 

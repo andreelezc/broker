@@ -112,6 +112,12 @@ class CapacidadController extends Controller
       return redirect(url('institucion/mostrarCapacidad'));
    
       }
+
+       public function capacidad()
+    {
+        
+        return view('capacidad');
+    }
  
      
 }
