@@ -14,11 +14,21 @@
 						      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar=""/> </div> 
 						        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
 						             <h4 class="list-group-item-heading"></h4>
-						             <span>Publicado por: </span>					                     
-						        </div>
-						    </div>
-							</li> 
-						</ul>{{--Fin de listado--}}
+						             <span>Publicado por: </span>		
+						          <ul class="list-group">
+								        @foreach($capacidad as $capacidad)
+								    <li class="list-group-item">
+								    <div class="row">
+								          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-4">
+								              <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>					
+								          </div>
+
+								    </div>
+
+									</li> 
+									@endforeach
+
+								</ul>{{--Fin de listado--}}
 						
 					</div>
 				</div>

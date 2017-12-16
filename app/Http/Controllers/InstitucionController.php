@@ -78,8 +78,9 @@ class InstitucionController extends Controller
 
     public function institucion()
     {
+        $institucion = institucion::orderBy('id')->take(10)->get();
+        return view('institucion',array('institucion'=>$institucion));
         
-        return view('institucion');
     }
 
     
@@ -95,7 +96,7 @@ class InstitucionController extends Controller
         $oportunidades = Oportunidad::orderBy('id', 'desc')->take(10)->get();
         return view('institucion.buscar',array('oportunidades'=>$oportunidades));
        
-
+      }
     //TODO 
     public function buscarPalabra($palabra,$pagina = 0)
     {

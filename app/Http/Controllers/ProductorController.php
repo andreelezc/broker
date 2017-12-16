@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use inetweb\Oportunidad;
 use inetweb\Capacidad;
 use inetweb\Institucion;
+use inetweb\Productor;
 
 class ProductorController extends Controller
 {
@@ -52,8 +53,9 @@ class ProductorController extends Controller
     }
     public function productor()
     {
-        
-        return view('productor');
+        $productor = productor::orderBy('id')->take(10)->get();
+        return view('productor',array('productor'=>$productor));
+       
     }
 
      public function acceso()

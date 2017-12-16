@@ -99,8 +99,9 @@ class OportunidadController extends Controller
       }
       public function oportunidad()
     {
+         $oportunidad = oportunidad::orderBy('id')->take(10)->get();
+        return view('oportunidad',array('oportunidad'=>$oportunidad));
         
-        return view('oportunidad');
     }
      
 

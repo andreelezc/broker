@@ -115,8 +115,9 @@ class CapacidadController extends Controller
 
        public function capacidad()
     {
-        
-        return view('capacidad');
+         $capacidad = capacidad::orderBy('id'->take(10)->get();
+        return view('capacidad',array('capacidad'=>$capacidad));
+       
     }
  
      

@@ -79,7 +79,7 @@ Auth::routes();
 /*Vistas Institucion */
 //Route::get('institucion/inicio', 'Institucion\InicioController@index');
 Route::get('institucion/inicio', 'InstitucionController@inicio');
-Route::get('institucion', 'InstitucionController@institucion');
+
 Route::get('institucion/acceso','InstitucionController@acceso');
 Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
@@ -91,7 +91,7 @@ Route::post('institucion/registro', 'Institucion\RegistroController@register');
 
 /*Vistas Productor */
 Route::get('productor/inicio', 'ProductorController@inicio');
-Route::get('productor', 'ProductorController@productor');
+
 Route::get('productor/acceso','ProductorController@acceso');
  // Acceso Routes...
 Route::get('productor/acceso', 'ProductorController@showLoginForm');
@@ -104,15 +104,15 @@ Route::post('productor/registro', 'Productor\RegistroController@register');
 
 Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
 Route::get('capacidad/all', 'CapacidadController@getAll');
-Route::get('capacidad', 'CapacidadController@capacidad');
 
 // showlists
 Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra');
 Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra');
 
 Route::get('oportunidad', 'OportunidadController@oportunidad');
-
-
+Route::get('institucion', 'InstitucionController@institucion');
+Route::get('capacidad', 'CapacidadController@capacidad');
+Route::get('productor', 'ProductorController@productor');
 
 
 Route::get("superlogout",function(){

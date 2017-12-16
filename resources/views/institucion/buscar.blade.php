@@ -113,7 +113,7 @@
 
                                       
 
-                                          <a class="btn btn-primary" type="submit" href>Postularme  <i class="glyphicon glyphicon-hand-up"></i></button>
+                                          <a class="btn btn-primary" type="submit" href>Postularme  <i class="glyphicon glyphicon-hand-up"></i></a>
                                      
 
                                       <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
@@ -134,6 +134,9 @@
         </div>
     </div>
 </div>
+
+
+
  <script src="{{ asset('js/avatar.js') }} "></script>
   <script src="{{ asset('js/jquery.min.js') }} "></script>
 <script type="text/javascript">
