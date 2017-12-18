@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use inetweb\Oportunidad;
+use inetweb\InteresProductor;
 use inetweb\Capacidad;
 use inetweb\Institucion;
 use inetweb\Productor;
@@ -106,4 +107,19 @@ class ProductorController extends Controller
                 // 
                                     return view('productor.buscar',array('capacidades'=>$capacidades));
     }
+
+
+
+
+      public function postular(Request $request)
+      {
+
+        $postulacion = new InteresProductor;
+        $postulacion->productor_id = $request->productor_id;//si esta alreves pero fue sin querer
+        $postulacion->capacidad_id = $request->capacidad_id;
+        $postulacion->save();
+        ///para el flashh
+        return redirect(url('/productor/buscar'))->with('status','Capacidad Laboral agregada a \'Mis Intereses\'');
+
+      }
 }
