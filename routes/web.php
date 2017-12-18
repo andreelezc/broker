@@ -36,6 +36,9 @@ Route::middleware('isInstitucion')->group(function()
 		Route::put('institucion/capacidad/editar/{id}','CapacidadController@editar');
 
 
+		///Postulacion
+		Route::post('institucion/postular','InstitucionController@postular')->name('postularInstitucion');
+
 
 });
 /*
@@ -58,6 +61,11 @@ Route::middleware('isProductor')->group(function(){
 
 		Route::get('productor/oportunidad/editar/{id}','ProductorController@editarOportunidad');
 		Route::put('productor/oportunidad/editar/{id}','OportunidadController@editar');
+
+
+
+		///Me intersa
+		Route::post('productor/postular','ProductorController@postular')->name('postularProductor');
 });
 
 

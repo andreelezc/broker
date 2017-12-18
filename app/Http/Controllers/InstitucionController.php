@@ -12,6 +12,8 @@ use inetweb\Capacidad;
 use inetweb\OportunidadKey;
 use inetweb\Institucion;
 
+use inetweb\InteresInstitucion;
+
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Mail;
@@ -146,31 +148,42 @@ public function update_avatar(Request $request){
 
     public function editarPerfil(Request $request)
       {
-         $user =Institucion::findOrFail($request->id);  
+        $user =Institucion::findOrFail($request->id);  
 
-      $user->name= $request->name;
-      $user->direccion= $request->direccion;
-      $user->cp= $request->cp;
-      $user->provincia= $request->provincia;
-      $user->localidad= $request->localidad;
-      $user->telefono= $request->telefono;
-      $user->descripcion= $request->descripcion;
+        $user->name= $request->name;
+        $user->direccion= $request->direccion;
+        $user->cp= $request->cp;
+        $user->provincia= $request->provincia;
+        $user->localidad= $request->localidad;
+        $user->telefono= $request->telefono;
+        $user->descripcion= $request->descripcion;
 
-      $user->save();
+        $user->save();
 
-     // return view("institucion.mostrarCapacidad");
-      return redirect(url('institucion/perfil'))->with('success','Tus datos fueron actualizados con exitos');
+       // return view("institucion.mostrarCapacidad");
+        return redirect(url('institucion/perfil'))->with('success','Tus datos fueron actualizados con exitos');
    
       }
 
-        public function eliminarPerfil(Request $request) {
-  
-             $user =Institucion::findOrFail($request->id);
-              $user->delete();
-            
-              return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
-          
-          }
+      public function eliminarPerfil(Request $request) {
+
+          $user =Institucion::findOrFail($request->id);
+          $user->delete();
+
+          return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
+
+      }
+
+      public function postular(Request $request)
+      {
+
+        $postulacion = new InteresInstitucion;
+        $postulacion->id_institucion = $request->id_institucion;
+        $postulacion->id_oportunidad = $request->id_oportunidad;
+        ///para el flashh
+        return redirect(url('/institucion/buscar'))->with('status','Oportunidad Laborar agregada a \'Mis Postulaciones\'');
+
+      }
 
 
 

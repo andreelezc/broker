@@ -111,10 +111,16 @@
                                     <div class="modal-footer">
                                       <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
 
-                                      
-
-                                          <a class="btn btn-primary" type="submit" href>Postularme  <i class="glyphicon glyphicon-hand-up"></i></a>
-                                     
+                                    <form method="POST" action="{{url('institucion/postular')}}" >
+                                      {{ csrf_field() }}
+                                     <input type="hidden" name="id_institucion" value="{{ Auth::Guard('institucion')->user()->id}}"> 
+                                     <input type="hidden" name="id_oportunidad" value="{{  $oportunidad->id }}"> 
+                                    <button class="btn btn-primary" type="submit">
+                                      Postularme
+                                          <span class="glyphicon glyphicon-hand-up"></span>
+                                    </button>
+                                         
+                                    </form>   
 
                                       <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
                                          
