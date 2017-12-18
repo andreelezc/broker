@@ -13,7 +13,7 @@ class InteresProductor extends Model
     	return $this->hasOne('inetweb\capacidad','capacidad_id');
     }
 
-    //
+    //relacion 
     public function productor()
     {
     	return $this->belongsTo('inetweb\productor','productor_id');
