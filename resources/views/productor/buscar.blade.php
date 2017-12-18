@@ -16,6 +16,13 @@
                        
                         </div>
                     @endif
+                        @if (session('seleccion'))
+                        <div class="alert alert-success">
+                            {{ session('seleccion') }}
+                       
+                            <a href="{{ route('seleccionesProductor') }}">Mis Selecciones</a>
+                        </div>
+                    @endif
 
 
 <div class="form-group">
@@ -34,7 +41,9 @@
 
     <li class="list-group-item">
     <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$capacidad->institucion->name}}"/>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+        {{-- <img class="round" avatar="{{$capacidad->institucion->name}}"/> --}}
+        <img src="/cargas/avatars/{{$capacidad->institucion->avatar}}" class="img-responsive round" >
 
 
       </div> 

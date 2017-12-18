@@ -16,6 +16,13 @@
                        
                         </div>
                     @endif
+                     @if (session('postulacion'))
+                        <div class="alert alert-success">
+                            {{ session('postulacion') }}
+                       
+                            <a href="{{ route('postulacionesInstitucion') }}">Mis Postulaciones</a>
+                        </div>
+                    @endif
 
 
 <div class="form-group">
@@ -33,8 +40,10 @@
 
    <li class="list-group-item">
     <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><img class="round" avatar="{{$oportunidad->productor->name}}"/>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 
+        {{-- <img class="round" avatar="{{$oportunidad->productor->name}}"/> --}}
+  <img src="/cargas/avatars/{{$oportunidad->productor->avatar}}" class="img-responsive round" >
 
       </div> 
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">

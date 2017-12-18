@@ -119,7 +119,12 @@ class ProductorController extends Controller
         $postulacion->capacidad_id = $request->capacidad_id;
         $postulacion->save();
         ///para el flashh
-        return redirect(url('/productor/buscar'))->with('status','Capacidad Laboral agregada a \'Mis Intereses\'');
+        return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 
+      }
+
+
+      public function selecciones(){
+        return view('productor.selecciones');
       }
 }

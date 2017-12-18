@@ -182,8 +182,13 @@ public function update_avatar(Request $request){
         $postulacion->oportunidad_id = $request->id_oportunidad;
         $postulacion->save();
         ///para el flashh
-        return redirect(url('/institucion/buscar'))->with('status','Oportunidad Laborar agregada a \'Mis Postulaciones\'');
+        return redirect(url('/institucion/buscar'))->with('postulacion','Oportunidad Laborar agregada a ');
 
+      }
+
+      public function postulaciones()
+      {
+          return view('institucion.postulaciones');
       }
 
 

@@ -208,7 +208,7 @@
                       </div> {{-- modal --}} 
 
                          <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Postulaciones <i class="glyphicon glyphicon-pushpin"></i> </a>
+                             <a data-original-title="postulaciones " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="{{ route('postulacionesInstitucion') }}">Mis Postulaciones <i class="glyphicon glyphicon-pushpin"></i> </a>
                          </div>
 
 

@@ -17,6 +17,7 @@ class CreateProductorsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('avatar')->default('default.jpg');
             $table->string('direccion');
             $table->string('password');
                $table->rememberToken();

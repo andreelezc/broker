@@ -27,9 +27,6 @@ Route::middleware('isInstitucion')->group(function()
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
 		Route::get('institucion/buscar', 'InstitucionController@buscar');
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
-	
-		
-
 		Route::delete('institucion/capacidad','CapacidadController@borrar')->name("borrarCapacidad");
 
 		Route::get('institucion/capacidad/editar/{id}','InstitucionController@editarCapacidad');
@@ -38,6 +35,8 @@ Route::middleware('isInstitucion')->group(function()
 
 		///Postulacion
 		Route::post('institucion/postular','InstitucionController@postular')->name('postularInstitucion');
+		///vista postulaciones
+		Route::get('institucion/postulaciones','InstitucionController@postulaciones')->name('postulacionesInstitucion');
 
 
 });
@@ -64,8 +63,12 @@ Route::middleware('isProductor')->group(function(){
 
 
 
-		///Me intersa
+		///Seleccionar
 		Route::post('productor/postular','ProductorController@postular')->name('postularProductor');
+
+		//selecciones
+		Route::get('productor/selecciones','ProductorController@selecciones')->name('seleccionesProductor');
+
 });
 
 
