@@ -3,4 +3,4 @@ falta:
 
 *	Relacion entre productor->capacidad->intitucion
 * 	Relacion entre institucion->oportunidad->capacidad
-*	
+*	tablas de migracion y seeders

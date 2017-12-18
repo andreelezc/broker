@@ -41,6 +41,13 @@ class Institucion extends Authenticatable
         return $this->hasMany('inetweb\capacidad');
     }
 
+    //relacion institucion intereses
+    //institucion->tinevarios->intereses
+      public function intereses()
+    {
+        return $this->hasMany('inetweb\InteresInstitucion');
+    }
+
 
 
 
