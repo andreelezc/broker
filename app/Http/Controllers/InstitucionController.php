@@ -187,8 +187,8 @@ public function update_avatar(Request $request){
         //Manda mails al que se postulo
         
         $productor =Productor::findOrFail($request);
-        // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
-        Mail::to($request->user())->send(new nuevaPostulacion($productor));
+         Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
+        //Mail::to($request->user())->send(new nuevaPostulacion($productor));
         ///para el flashh
         return redirect(url('/institucion/buscar'))->with('postulacion','Oportunidad Laborar agregada a ');
       
