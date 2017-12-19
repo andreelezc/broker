@@ -11,14 +11,36 @@
             </div>
             
           <div class="panel-body">
+              {{--Mensaje cuando se elimina un perfil--}}
+                  @if(session('success'))
+                        <div class="alert alert-success text-center" role="alert">
+
+                            <strong>{{session('success')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif 
+
             <div class="row">
                  {{-- Avatar--}}
                 <div class="col-md-3 col-lg-3 " align="center"> 
                   {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
-                 <img  height="100" width="100" avatar="{{ Auth::Guard('productor')->user()->name }}" class="img-responsive round">
-                 <br>
+                 {{--<img  height="100" width="100" avatar="{{ Auth::Guard('productor')->user()->name }}" class="img-responsive round">
+                  <input type="file" name="avatar">  --}}
+                          <div class="col-md-10 col-md-offset-4">
+                               <img src="/cargas/avatars/{{ Auth::Guard('productor')->user()->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:30px;"  class="img-responsive round" >
+                              <br>
+                              <label>Cambiar foto de perfil:</label>
+                         </div>
+                          <div class="col-md-10 col-md-offset-0">
+                              <form enctype="multipart/form-data" action="{{url('productor/perfil')}}" method="POST">   
+                                <input type="file" value="Seleccionar imagen" name="avatar"  accept="image/*" >
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <br>
+                                <input type="submit" value="Cargar" class="pull-right btn btn-sm btn-primary">
+                              </form>
+                       </div>
 
-                 <input type="file" name="avatar">  
+                
                 </div>
                    {{--Tabla del perfil--}}
                 <div class=" col-md-10 col-lg-6 col-lg-offset-1 "> 
@@ -42,27 +64,31 @@
                         <td>Direccion:</td>
                         <td>{{ Auth::Guard('productor')->user()->direccion }}</td>
                        
-                      </tr>
+                      </tr> 
+                      
                       <tr>
                         <td>CP:</td>
-                        <td> </td>
+                        <td> {{ Auth::Guard('productor')->user()->cp }}</td>
                       </tr> 
                       <tr>
-                        <td>Provincia:</td><td> Localidad:</td>
-                        <td> </td>
+                        <td>Provincia:</td>
+                        <td> {{ Auth::Guard('productor')->user()->provincia }}</td>
                       </tr>
-                    
                       <tr>
-                        <td>Telefono: </td>
-                        <td>{{ Auth::Guard('productor')->user()->telefono }}
-                            
-                        </td>
+                        <td> Localidad:</td>
+                        <td> {{ Auth::Guard('productor')->user()->localidad }}</td>
+                      </tr>
+                        
+
+                    <tr>
+                        <td>Teléfono: </td>
+                        <td>{{ Auth::Guard('productor')->user()->telefono }} </td>
                                                   
                       </tr>
                       
                       <tr>
-                        <td>Descripcion:</td>
-                        <td> </td>
+                        <td>Descripción:</td>
+                        <td>{{ Auth::Guard('productor')->user()->descripcion }} </td>
                       </tr>
                     </tbody>
                   </table>
@@ -86,45 +112,56 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                         </button>
-                                        <h4 class="modal-title"> Editar Perfil de Productor  </h4>
+                                        <h3 class="panel-title text-center modal-title">  Editar Perfil de {{ Auth::Guard('productor')->user()->name }}</h3>
 
                                     </div>
                                      <!-- contenido de la ventana de la ventana-->
                                             <!-- panel de editar perfil-->
                                     
+                                     {{-- Inicio FORM --}}
+                                    <form method="POST" action="{{url('productor/perfil')}}" class="bootstrap-form-with-validation">
+                                         {{ csrf_field() }}
+                                        {{ method_field('PUT') }}
+
                                          <table class="table table-user-information">
                                         <tbody>
                                          <tr>
                                                 <td>Nombre:</td>
-                                                <td><input type="" name="" value="{{ Auth::Guard('productor')->user()->name }}"></td>
+                                                <td><input type="" name="name" value="{{ Auth::Guard('productor')->user()->name }}"></td>
                                                  <td>
+
+                                                 
                                               
                                           </td>  
                                          </tr>     
                                          
                                               <tr>
                                                   <td>Dirección:</td>
-                                                <td><input type="" name="" value="{{ Auth::Guard('productor')->user()->direccion }}"></td>
+                                                <td><input type="" name="direccion" value="{{ Auth::Guard('productor')->user()->direccion }}"></td>
                                                  
                                               </tr>
-                                               <tr>
-                                          <td>CP:</td>
-                                          <td> </td>
-                                        </tr> 
-                                        <tr>
-                                          <td>Provincia:</td><td> Localidad:</td>
-                                          <td> </td>
-                                        </tr>                  
+                                              <tr>
+                                                <td>CP:</td>
+                                               <td><input type="" name="cp" value="{{ Auth::Guard('productor')->user()->cp }}"> </td>
+                                              </tr> 
+                                              <tr>
+                                                  <td>Provincia:</td>
+                                                <td><input type="" name="provincia" value="{{ Auth::Guard('productor')->user()->provincia }}"></td>
+                                                 
+                                              </tr>
+                                              <tr><td>   Localidad:</td>
+                                                <td> <input type="" name="localidad" value="{{ Auth::Guard('productor')->user()->localidad }}"></td>
+
+                                               </tr>              
                                             <tr>
-                                                <td>Telefono: </td>
-                                                <td><input type="" name="" value="{{ Auth::Guard('productor')->user()->telefono }}"></td>
+                                                <td>Teléfono: </td>
+                                                <td><input type="" name="telefono" value="{{ Auth::Guard('productor')->user()->telefono }}"></td>
                                                                           
                                               </tr>
-                                              
-                                                
+
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <textarea  rows="4"   cols="60" placeholder="Elavora una breve Descripcion del perfil de la institucion"></textarea></td>
+                                                <td> <textarea  rows="4"   cols="40" placeholder="Elaborá una breve descripción de tu perfil " name="descripcion"  >{{ Auth::Guard('productor')->user()->descripcion }}</textarea></td>
                                               </tr>
                                             </tbody>
                                           </table>
@@ -134,25 +171,39 @@
                                     <div class="  col-lg-offset-2" >
                                        <div class="row">
                                               <div class="col-md-1  ">
-                                                  <a data-original-title="Editar Capacidades" data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href=" ">Guardar  <i class="glyphicon glyphicon-edit"></i>   </a>
+                                                   {{--Boton de Guaedar --}}  
+                                                  
+                                                   <input type="hidden" name="id" value="{{ Auth::Guard('productor')->user()->id }}" >
+                                                  <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " > </input>
                                               </div>
                                               {{--Boton de Guaedar --}}                                            
                                        </div>{{-- end row --}}
                                               
                                     </div>
                                   </div>
+
+                              </form> {{--Fin from--}}    
                         </div>{{-- modal --}}
                           </div>
                       </div> {{-- modal --}} 
 
 
                           <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="">Mis Mis Selecciones  <i class="glyphicon glyphicon-pushpin"></i> </a>
+                             <a data-original-title="postulaciones " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="{{ route('seleccionesProductor') }}">Mis Mis Selecciones <i class="glyphicon glyphicon-pushpin"></i> </a>
+                            
                          </div>
    
-                         <div class="col-md-4">
-                             <a data-original-title="Eliminar " data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" href="">Eliminar Perfil  <i class="glyphicon glyphicon-trash"></i> </a>
-                         </div>
+                           <form method="post" action="{{ route('eliminarPerfil') }}">
+                                                          {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                <input type="hidden" name="id" value="{{ Auth::Guard('productor')->user()->id }}">
+                                <div class="col-md-4">
+                                 
+                                  <button class="btn btn-sm btn-danger" type="submit" >Eliminar Perfil <i class="glyphicon glyphicon-trash"></i></button>
+                                 
+                                </div>
+                        </form>
                     </div>
                   </div>            
             </div> {{--Fin de la Tabla--}}

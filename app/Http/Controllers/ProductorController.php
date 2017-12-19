@@ -13,6 +13,8 @@ use inetweb\InteresProductor;
 use inetweb\Capacidad;
 use inetweb\Institucion;
 use inetweb\Productor;
+use Intervention\Image\Facades\Image;
+use Mail;
 
 class ProductorController extends Controller
 {
@@ -127,4 +129,50 @@ class ProductorController extends Controller
       public function selecciones(){
         return view('productor.selecciones');
       }
+
+
+      public function update_avatar(Request $request){
+
+      // Handle the user upload of avatar
+      if($request->hasFile('avatar')){
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300, 300)->save( public_path('/cargas/avatars/'.$filename ) );
+
+        $user =Auth::guard('productor')->user();
+        $user->avatar = $filename;
+        $user->save();
+      }
+
+      return redirect(url('productor/perfil'));
+
+    }
+
+    public function editarPerfil(Request $request)
+      {
+        $user =Productor::findOrFail($request->id);  
+
+        $user->name= $request->name;
+        $user->direccion= $request->direccion;
+        $user->cp= $request->cp;
+        $user->provincia= $request->provincia;
+        $user->localidad= $request->localidad;
+        $user->telefono= $request->telefono;
+        $user->descripcion= $request->descripcion;
+
+        $user->save();
+
+       // return view("institucion.mostrarCapacidad");
+        return redirect(url('productor/perfil'))->with('success','Tus datos fueron actualizados con exitos');
+   
+      }
+      public function eliminarPerfil(Request $request) {
+
+          $user =Productor::findOrFail($request->id);
+          $user->delete();
+
+          return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
+
+      }
+
 }

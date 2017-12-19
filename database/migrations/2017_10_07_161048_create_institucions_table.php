@@ -21,7 +21,7 @@ class CreateInstitucionsTable extends Migration
             $table->string('direccion');
             $table->string('cp')->nullable();
             $table->string('provincia')->nullable();
-             $table->string('localidad')->nullable();
+            $table->string('localidad')->nullable();
             $table->string('telefono')->nullable();
             $table->string('descripcion')->nullable();
             $table->string('password');

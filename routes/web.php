@@ -51,6 +51,10 @@ Route::middleware('isProductor')->group(function(){
 
 		Route::get('productor/home', 'ProductorController@index');
 		Route::get('productor/perfil', 'ProductorController@perfil');
+		Route::delete('productor/perfil','ProductorController@eliminarPerfil')->name("eliminarPerfil");
+		Route::put('productor/perfil','ProductorController@editarPerfil');	
+		Route::post('productor/perfil', 'ProductorController@update_avatar');
+		
 		Route::get('productor/oportunidad', 'ProductorController@oportunidad');
 		Route::get('productor/mostrarOportunidad', 'ProductorController@mostrarOportunidad');
 		Route::get('productor/buscar', 'ProductorController@buscar');
@@ -60,6 +64,7 @@ Route::middleware('isProductor')->group(function(){
 
 		Route::get('productor/oportunidad/editar/{id}','ProductorController@editarOportunidad');
 		Route::put('productor/oportunidad/editar/{id}','OportunidadController@editar');
+
 
 
 

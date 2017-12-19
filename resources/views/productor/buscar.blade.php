@@ -113,24 +113,33 @@
                                     </div>
                                      <!-- footer de la ventana-->
                                     <div class="modal-footer">
-                                         <div class="modal-footer">
-                                      <a  class="btn btn-success" type="button" href="mailto:{{ $capacidad->institucion->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
-                                      
-
-                                      {{-- FORMULARIO DE POSTULACIÒN --}}
-                                      <form method="POST" action="{{url('productor/postular')}}" >
-                                          {{ csrf_field() }}
-                                         <input type="hidden" name="productor_id" value="{{ Auth::Guard('productor')->user()->id}}"> 
-                                         <input type="hidden" name="capacidad_id" value="{{  $capacidad->id }}"> 
-                                        <button class="btn btn-primary" type="submit">
-                                          Seleccionar
-                                              <span class="glyphicon glyphicon-hand-up"></span>
-                                        </button>
-                                             
-                                    </form>  
-                                      <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
                                          
-                                          </div>
+                                                    <div class="row">
+                                                 <div class="  col-lg-offset-1" >
+                                                  <div class="col-md-1  ">
+                                                <a  class="btn btn-success" type="button" href="mailto:{{ $capacidad->institucion->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                                  </div>
+                                                  <div class="   col-lg-offset-4" >
+                                                 <div class="col-md-1">
+
+                                                {{-- FORMULARIO DE POSTULACIÒN --}}
+                                                <form method="POST" action="{{url('productor/postular')}}" >
+                                                    {{ csrf_field() }}
+                                                   <input type="hidden" name="productor_id" value="{{ Auth::Guard('productor')->user()->id}}"> 
+                                                   <input type="hidden" name="capacidad_id" value="{{  $capacidad->id }}"> 
+                                                  <a class="btn btn-primary" type="submit">
+                                                    Seleccionar
+                                                        <span class="glyphicon glyphicon-hand-up"></span>
+                                                  </a>
+                                                       
+                                              </form>
+                                              </div></div> 
+                                              <div class="   col-lg-offset-8" >
+                                                   <div class="col-md-1">
+                                                <a class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></a>
+                                                   </div></div>
+                                                   </div></div>
+                                          
                                         
                                          
 
