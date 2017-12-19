@@ -11,13 +11,15 @@ use inetweb\Oportunidad;
 use inetweb\Capacidad;
 use inetweb\OportunidadKey;
 use inetweb\Institucion;
-
+use inetweb\Productor;
+use inetweb\Mail\nuevaPostulacion;
+use inetweb\Mail\nuevoUsuario;
 use inetweb\InteresInstitucion;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Mail;
-use inetweb\Mail\nuevoUsuario;
+
 
 class InstitucionController extends Controller
 {
@@ -140,7 +142,7 @@ public function update_avatar(Request $request){
 
       public function perfil()
     {
-        // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
+      // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
         return view('institucion.perfil' );
     }
 
@@ -148,7 +150,7 @@ public function update_avatar(Request $request){
 
     public function editarPerfil(Request $request)
       {
-        $user =Institucion::findOrFail($request->id);  
+        $user =Institucion::findOrFail($request->$id);  
 
         $user->name= $request->name;
         $user->direccion= $request->direccion;
@@ -181,8 +183,15 @@ public function update_avatar(Request $request){
         $postulacion->institucion_id = $request->id_institucion;//si esta alreves pero fue sin querer
         $postulacion->oportunidad_id = $request->id_oportunidad;
         $postulacion->save();
+
+        //Manda mails al que se postulo
+        
+        $productor =Productor::findOrFail($request);
+        // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
+        Mail::to($request->user())->send(new nuevaPostulacion($productor));
         ///para el flashh
         return redirect(url('/institucion/buscar'))->with('postulacion','Oportunidad Laborar agregada a ');
+      
 
       }
 

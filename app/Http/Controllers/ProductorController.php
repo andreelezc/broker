@@ -54,7 +54,7 @@ class ProductorController extends Controller
     }
     public function productor()
     {
-        $productor = productor::orderBy('id')->take(10)->get();
+        $productor = productor::orderBy('id');//->take(10)->get();
         return view('productor',array('productor'=>$productor));
        
     }

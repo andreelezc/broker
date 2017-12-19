@@ -62,7 +62,7 @@
 
         </div>
     
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
         <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
     </div>
     </div>
@@ -112,29 +112,46 @@
       
                                         </ul> 
            
-                                         <p  href="" class="text-center btn">Ver Perfil </p>
+                                        <!-- <p  href="" class="text-center btn">Ver Perfil </p>--> 
                                           <p></p>
 
                                     </div>
                                      <!-- footer de la ventana-->
                                     <div class="modal-footer">
-                                      <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                       <div class="row">
+                                       <div class="  col-lg-offset-2" >
+                                      
+                                                   <div class="col-md-1  ">
+                                              <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                              </div>
+                                                <div class="   col-lg-offset-4" >
+                                                 <div class="col-md-1">
 
-                                    <form method="POST" action="{{url('institucion/postular')}}" >
-                                      {{ csrf_field() }}
-                                     <input type="hidden" name="id_institucion" value="{{ Auth::Guard('institucion')->user()->id}}"> 
-                                     <input type="hidden" name="id_oportunidad" value="{{  $oportunidad->id }}"> 
-                                    <button class="btn btn-primary" type="submit">
-                                      Postularme
-                                          <span class="glyphicon glyphicon-hand-up"></span>
-                                    </button>
-                                         
-                                    </form>   
+                                              <form method="POST" action="{{url('institucion/postular')}}" >
+                                                {{ csrf_field() }}
+                                               <input type="hidden" name="id_institucion" value="{{ Auth::Guard('institucion')->user()->id}}"> 
+                                               <input type="hidden" name="id_oportunidad" value="{{  $oportunidad->id }}"> 
+                                              <a class="btn btn-primary" type="submit">
+                                                Postularme
+                                                    <span class="glyphicon glyphicon-hand-up"></span>
+                                              </a>
+                                                   
+                                              </form>
+                                                </div></div>
 
-                                      <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
-                                         
-                                    </div>
-                                </div>
+                                            <div class="   col-lg-offset-8" >
+                                                   <div class="col-md-1">
+
+                                              <a class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></a>
+                                                 </div></div>
+                                                   </div>
+                                                     </div>
+                                                       </div>
+
+                                   
+                                    
+                                  
+
                             </div>
                         </div>
 
