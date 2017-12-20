@@ -10,15 +10,15 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class nuevaSeleccion extends Mailable
 {
     use Queueable, SerializesModels;
-
+     public $institucion;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct( $productor)
     {
-        //
+         $this->institucion = $institucion;
     }
 
     /**
@@ -28,6 +28,7 @@ class nuevaSeleccion extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.usuarios.nuevaSeleccionCapacidad');
+        return $this->markdown('mails.usuarios.nuevaSeleccionCapacidad')->with([
+                'address' => $this->institucion ]);
     }
 }
