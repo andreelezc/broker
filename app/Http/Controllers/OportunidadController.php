@@ -20,6 +20,7 @@ class OportunidadController extends Controller
      	$o->descripcion= $request->descripcion;
      	$o->requisito= $request->requisito;
      	$o->fechaInicio= $request->fechaInicio;
+      
           $o->horaInicioL= $request->horaInicioL;
           $o->horaFinL= $request->horaFinL;
           $o->horaInicioM= $request->horaInicioM;

@@ -68,21 +68,29 @@ $(document).ready(function(){
                 <textarea class="form-control" name="experiencias" rows="8" cols="40" placeholder=" Mencione sus experiencias laborales..." id="textarea-input"></textarea>
             </div>
 
-             {{-- CATEGORIA --}}
+            
             <div class="row">
                 <div class="col-md-4">                   
                   <div class="form-group">
+                     {{-- CATEGORIA --}}
                     <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
                     <input class="form-control" type="text" name="categoria" id="text-input" placeholder="Pasante, Trabajo Final, Becas...">
-                  </div>
+                    <br>
+                    {{-- REMUNERACION --}}
+                    <label class="control-label">Remuneración pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label>
+
+                           
+                     <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
+              
+                  </div> 
                 </div>
                   {{-- Orientado --}}
                 <div class="col-md-8">      
                  <div class="form-group">
                          <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
-                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos, Empresas, Instituciones ..."  rows="4" cols="10" ></textarea>
+                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos, Empresas, Instituciones ..."  rows="5" cols="12" ></textarea>
                     </div>
-                </div>
+                </div> 
             </div>
     {{-- DISPONIBILIDAD --}}
     <div class="row">
@@ -92,20 +100,33 @@ $(document).ready(function(){
                 <br>
 
                 <div class="row">
-                <div class="col-md-8 ">
-                <div class="form-group">
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                        Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
+                        </div></div>
 
-                Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
-
+                     <div class="col-md-6">
+                        <div class="form-group">
+                         Fecha de  finalización:  <input type="date" placeholder="DD" name="fechaFin"/>
+                        </div></div>
+                </div>
+                
+        <table class="table table-user-information">
         <div class="checkbox">   
             <label class="control-label">
-                    <label  class="control-label"> <input type="radio" name="movimiento" value="full" /> Todo el día     </label> 
-                    <label  class="control-label"> <input type="radio" name="movimiento" value="manana" /> Medio día: Mañana </label>
-                    <label  class="control-label"> <input type="radio" name="movimiento" value="tarde" /> Medio día: Tarde  </label>
-                    <label  class="control-label"> <input type="radio" name="movimiento" value="personalizar" /> Personalizar horario  </label>
+                 <tbody> 
+                  <tr>   
+                   <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Todo el día" /> Todo el día     </label> </td>
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" /> Medio día: Mañana </label></td>
+                    </tr> 
+                    <tr>
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" /> Medio día: Tarde  </label></td>
+                   <td>  <label  class="control-label"> <input type="radio" name="tiempo" value="Personalizar horarios" /> Personalizar horarios </label></td> </tr> 
+                     
             </label>
         </div>
-                </div></div></div>
+        </table>
+                
 
         
                 <div class="row">
@@ -172,17 +193,13 @@ $(document).ready(function(){
                    </tbody>
           </table>
                    </div></div></div>
-                   <div class="row">
-                 <div class="col-md-8">
-                <div class="form-group">
-                 Fecha de  finalización:  <input type="date" placeholder="DD" name="fechaFin"/>
-                </div></div></div>
+                  
 
             </div>
         </div>
      
           
-    {{-- REMUNERACION --}}
+    {{-- REMUNERACION 
 
                 <div class="form-group"> 
                     <label class="control-label">Remuneración pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label> 
@@ -190,7 +207,7 @@ $(document).ready(function(){
                            
                      <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
                 </div>
-                </div>
+                </div>--}}
    </div>
   
 

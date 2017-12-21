@@ -63,56 +63,83 @@ $(document).ready(function(){
                 <textarea class="form-control" name="experiencias" rows="8" cols="40" placeholder=" Mencione sus experiencias laborales..." id="textarea-input">{{ $capacidad->experiencias }}</textarea>
             </div>
 
-             {{-- CATEGORIA --}}
-            <div class="row">
-                <div class="col-md-4">
-                    
-              <div class="form-group">
-                <label class="control-label" for="textarea-input">Categoria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
-                        <select name="categoria"  class="form-control" required>
-                                <option value="pasante" 
-                                @if ($capacidad->categoria == "pasante")
-                                    selected
-                                @endif
-                                >Pasante</option>
-                                <option value="encargado"
-                                @if ($capacidad->categoria == "trabajoFinal")
-                                    selected
-                                @endif
-                                >Trabajo Final</option>
-                                <option value="estudiante"
-                                @if ($capacidad->categoria == "Otos")
-                                    selected
-                                @endif
-                                >Otros</option>
-                          </select>
-                          <br>
 
-                           <input class="form-control" type="text" name="agregar" id="text-input" placeholder="Agregar mas categorias...">
-              </div>
+        <div class="row">
+                <div class="col-md-4">                   
+                  <div class="form-group">
+                     {{-- CATEGORIA --}}
+                    <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
+                    <input class="form-control" type="text" name="categoria" id="text-input" placeholder="Pasante, Trabajo Final, Becas..." value="{{ $capacidad->categoria }}">
+                    <br>
+                    {{-- REMUNERACION --}}
+                    <label class="control-label">Remuneración pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label>
+
+                           
+                     <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" value="{{ $capacidad->remuneracion }}"/>
+              
+                  </div> 
                 </div>
-                 {{-- Orientado --}}
-                <div class="col-md-8">         
+                  {{-- Orientado --}}
+                <div class="col-md-8">      
                  <div class="form-group">
-                <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
-                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos..."  rows="4" cols="10" >{{ $capacidad->orientacion }}</textarea>
+                         <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
+                        <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos, Empresas, Instituciones ..."  rows="5" cols="12" >{{ $capacidad->orientacion }}</textarea>
                     </div>
-                </div>
+                </div> 
             </div>
     {{-- DISPONIBILIDAD --}}
     <div class="row">
-        <div class="col-md-8">
-            
-            <div class="form-group">
-                <label class="control-label">Disponibilidad Horaria:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
+        <div class="col-md-8">          
+            <div class="form-group">         
+                <label class="control-label">Disponibilidad Horária:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cargar los horarios disponibles "></span></label>
+                <br>
 
                 <div class="row">
-                <div class="col-md-8 ">
-                <div class="form-group">
-                Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio" value="{{ $capacidad->fechaInicio }}" />
-               
-                </div></div></div>
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                        Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio" value="{{ $capacidad->fechaInicio }}" />
+                        </div></div>
+
+                     <div class="col-md-6">
+                        <div class="form-group">
+                         Fecha de  finalización:  <input type="date" placeholder="DD" name="fechaFin" value="{{ $capacidad->fechaFin }}" />
+                        </div></div>
+                </div>
                 
+        <table class="table table-user-information">
+        <div class="checkbox">   
+            <label class="control-label">
+                 <tbody> 
+                    <h5 class="text-center">Franja horaria Seleccionada: <label>{{ $capacidad->tiempo }}</label></h5>
+
+                 
+                <tr>   
+                   <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Todo el día" @if ($capacidad->tiempo == "Todo el día")
+                        checked
+                    @endif/> Todo el día </label>
+                    </td>
+
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" @if ($capacidad->tiempo == "Medio día: Mañana")
+                                    checked
+                                @endif /> Medio día: Mañana </label>
+                    </td>
+                </tr> 
+                <tr>
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" @if ($capacidad->tiempo == "Medio día: Tarde")
+                                    checked
+                                @endif/> Medio día: Tarde  </label>
+                    </td>
+
+                   <td><label  class="control-label"> <input type="radio" name="tiempo" value="Personalizar horarios" @if ($capacidad->tiempo == "Personalizar horarios")
+                                    checked
+                                @endif/> Personalizar horarios </label>
+                   </td> 
+               </tr> 
+                     
+            </label>
+        </div>
+        </table>
+
                 <div class="row">
                 <div class="col-md-6">
                  <div class="form-group"> 
@@ -177,27 +204,15 @@ $(document).ready(function(){
                    </tbody>
           </table>
                    </div></div></div>
-                   <div class="row">
-                 <div class="col-md-8">
-                <div class="form-group">
-                 Fecha de  finalización:  <input type="date" placeholder="DD" name="fechaFin" value="{{ $capacidad->fechaFin }}"/>
-                </div></div></div>
-
             </div>
-        </div>
-    
-        
-          
-    {{-- REMUNERACION --}}
-
-                <div class="form-group"> 
-                    <label class="control-label">Remuneracion Pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label> 
-                <div class="col-md-2">
-                           
-                     <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" value="{{ $capacidad->remuneracion }}" />
-                </div>
-                </div>
+        </div>        
    </div>
+  
+
+
+             
+                
+  
   
 
        

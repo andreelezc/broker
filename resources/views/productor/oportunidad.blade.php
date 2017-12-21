@@ -75,14 +75,21 @@ $(document).ready(function(){
                 <div class="form-group">
                 Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
 
-                <div class="checkbox">   
-                    <label class="control-label">
-                            <label  class="control-label"> <input type="radio" name="movimiento" value="full" /> Todo el día     </label> 
-                            <label  class="control-label"> <input type="radio" name="movimiento" value="manana" /> Medio día: Mañana </label>
-                            <label  class="control-label"> <input type="radio" name="movimiento" value="tarde" /> Medio día: Tarde  </label>
-                            <label  class="control-label"> <input type="radio" name="movimiento" value="personalizar" /> Personalizar horario  </label>
-                    </label>
-                </div>
+        <table class="table table-user-information">
+        <div class="checkbox">   
+            <label class="control-label">
+                 <tbody> 
+                  <tr>   
+                   <td> <label  class="control-label"> <input type="radio" name="movimiento" value="full" /> Todo el día     </label> </td>
+                    <td> <label  class="control-label"> <input type="radio" name="movimiento" value="manana" /> Medio día: Mañana </label></td>
+                    </tr> 
+                    <tr>
+                    <td> <label  class="control-label"> <input type="radio" name="movimiento" value="tarde" /> Medio día: Tarde  </label></td>
+                   <td>  <label  class="control-label"> <input type="radio" name="movimiento" value="personalizar" /> Personalizar  horarios </label></td> </tr> 
+                     
+            </label>
+        </div>
+        </table>
                 </div></div></div>
 
                 <div class="row">

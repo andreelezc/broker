@@ -20,10 +20,11 @@
                     @endif
               <div class="col-md-3 col-lg-2 " align="center"> 
                     {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
-                    <img  height="300" width="300" avatar="{{ Auth::Guard('institucion')->user()->name }}" class="img-responsive round" >
-                    
+                    {{--<img  height="300" width="300" avatar="{{ Auth::Guard('institucion')->user()->name }}" class="img-responsive round" >--}}
+                    <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" style="width:150px; height:130px; float:left; border-radius:50%; margin-right:30px;"  class="img-responsive round" >
 
                
+               <br>
                <br>
                 {{--Boton de nuevo --}}
               <div class="col-md-4  col-md-offset-1">
@@ -97,9 +98,13 @@
                 <li>  Disponibilidad Horaria: </li>  <br>
 
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                  <div class="form-group"> 
                    <label>Fecha de inicio:  </label>  {{ $capacidad->fechaInicio }}
+                   <br>
+                    <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaFin }}
+
+                   <h5 ">Franja horaria Seleccionada: <label>{{ $capacidad->tiempo }}</label></h5>
                  <table class="table table-user-information">   
                   <tbody> 
                   <tr>         
@@ -160,11 +165,11 @@
                   <p></p>
                    </tbody>
                     </table>
-                     <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaFin }}
+                    
                    </div></div></div>
                                                       
          
-                                            <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
+                                <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
                                         </ul>
                                         <p></p>
                                     </div>
@@ -186,7 +191,7 @@
                                                         {{ method_field('DELETE') }}
                                                         {{-- <input type="hidden" name="_method" value="delete"> --}}
                                                         <input type="hidden" name="id" value="{{ $capacidad->id }}">
-                                                         <button class="btn btn-default">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
+                                                         <a class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></a>
                                                      </form>
                                                    
                                               </div>

@@ -24,6 +24,7 @@ class CapacidadController extends Controller
      	$c->categoria= $request->categoria;
      	$c->orientacion= $request->orientacion;
      	$c->fechaInicio= $request->fechaInicio;
+      $c->tiempo= $request->tiempo;
           $c->horaInicioL= $request->horaInicioL;
           $c->horaFinL= $request->horaFinL;
           $c->horaInicioM= $request->horaInicioM;
@@ -89,6 +90,7 @@ class CapacidadController extends Controller
       $c->categoria= $request->categoria;
       $c->orientacion= $request->orientacion;
       $c->fechaInicio= $request->fechaInicio;
+      $c->tiempo= $request->tiempo;
           $c->horaInicioL= $request->horaInicioL;
           $c->horaFinL= $request->horaFinL;
           $c->horaInicioM= $request->horaInicioM;
