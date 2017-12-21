@@ -131,10 +131,10 @@
                                                 {{ csrf_field() }}
                                                <input type="hidden" name="id_institucion" value="{{ Auth::Guard('institucion')->user()->id}}"> 
                                                <input type="hidden" name="id_oportunidad" value="{{  $oportunidad->id }}"> 
-                                              <a class="btn btn-primary" type="submit">
+                                              <button class="btn btn-primary" type="submit">
                                                 Postularme
                                                     <span class="glyphicon glyphicon-hand-up"></span>
-                                              </a>
+                                              </button>
                                                    
                                               </form>
                                                 </div></div>
