@@ -19,6 +19,7 @@ class CreateOportunidadsTable extends Migration
             $table->string('descripcion');
             $table->string('requisito');
             $table->string('fechaInicio');
+            $table->string('tiempo');
                 $table->string('horaInicioL');
                 $table->string('horaFinL');
                 $table->string('horaInicioM');

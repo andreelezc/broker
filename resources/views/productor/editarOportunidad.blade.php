@@ -75,6 +75,41 @@ $(document).ready(function(){
                
                 </div></div></div>
                 
+        <table class="table table-user-information">
+        <div class="checkbox">   
+            <label class="control-label">
+                 <tbody> 
+                    <h5 class="text-center">Franja horaria Seleccionada: <label>{{ $oportunidad->tiempo }}</label></h5>
+
+                 
+                <tr>   
+                   <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Todo el día" @if ($oportunidad->tiempo == "Todo el día")
+                        checked
+                    @endif/> Todo el día </label>
+                    </td>
+
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" @if ($oportunidad->tiempo == "Medio día: Mañana")
+                                    checked
+                                @endif /> Medio día: Mañana </label>
+                    </td>
+                </tr> 
+                <tr>
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" @if ($oportunidad->tiempo == "Medio día: Tarde")
+                                    checked
+                                @endif/> Medio día: Tarde  </label>
+                    </td>
+
+                   <td><label  class="control-label"> <input type="radio" name="tiempo" value="Personalizar horarios" @if ($oportunidad->tiempo == "Personalizar horarios")
+                                    checked
+                                @endif/> Personalizar horarios </label>
+                   </td> 
+               </tr> 
+                     
+            </label>
+        </div>
+        </table>
+
+
                 <div class="row">
                 <div class="col-md-6">
                  <div class="form-group"> 

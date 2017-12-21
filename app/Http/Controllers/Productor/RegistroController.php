@@ -53,7 +53,7 @@ class RegistroController extends Controller
         ]);
 
          ///manda mail
-        //Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
+        Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
 
         return $productor;
     }

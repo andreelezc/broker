@@ -84,9 +84,10 @@
                                             <li>  Disponibilidad Horaria: </li>  <br>
 
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                  <div class="form-group"> 
                    <label>Fecha de inicio:  </label>  {{ $oportunidad->fechaInicio }}
+                   <h5 class="text-center">Franja horaria Seleccionada: <label>{{ $oportunidad->tiempo }}</label></h5>
                  <table class="table table-user-information">   
                   <tbody> 
                   <tr>         

@@ -80,12 +80,12 @@ $(document).ready(function(){
             <label class="control-label">
                  <tbody> 
                   <tr>   
-                   <td> <label  class="control-label"> <input type="radio" name="movimiento" value="full" /> Todo el día     </label> </td>
-                    <td> <label  class="control-label"> <input type="radio" name="movimiento" value="manana" /> Medio día: Mañana </label></td>
+                   <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Todo el día  " /> Todo el día     </label> </td>
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" /> Medio día: Mañana </label></td>
                     </tr> 
                     <tr>
-                    <td> <label  class="control-label"> <input type="radio" name="movimiento" value="tarde" /> Medio día: Tarde  </label></td>
-                   <td>  <label  class="control-label"> <input type="radio" name="movimiento" value="personalizar" /> Personalizar  horarios </label></td> </tr> 
+                    <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" /> Medio día: Tarde  </label></td>
+                   <td>  <label  class="control-label"> <input type="radio" name="tiempo" value="Personalizar  horarios" /> Personalizar  horarios </label></td> </tr> 
                      
             </label>
         </div>
