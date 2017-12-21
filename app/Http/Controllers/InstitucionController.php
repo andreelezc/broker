@@ -21,6 +21,7 @@ use Intervention\Image\Facades\Image;
 use Mail;
 
 
+
 class InstitucionController extends Controller
 {
     //
@@ -199,6 +200,10 @@ public function update_avatar(Request $request){
       {
           return view('institucion.postulaciones');
       }
+
+
+     
+
 
 
 

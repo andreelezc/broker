@@ -15,6 +15,8 @@ use inetweb\Institucion;
 use inetweb\Productor;
 use Intervention\Image\Facades\Image;
 use Mail;
+use inetweb\Mail\nuevaSeleccion;
+
 
 class ProductorController extends Controller
 {
@@ -120,6 +122,9 @@ class ProductorController extends Controller
         $postulacion->productor_id = $request->productor_id;//si esta alreves pero fue sin querer
         $postulacion->capacidad_id = $request->capacidad_id;
         $postulacion->save();
+
+        $institucion =institucion::findOrFail($request);
+         Mail::to(Auth::guard('productor')->user())->send(new nuevaSeleccion($institucion));
         ///para el flashh
         return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 
