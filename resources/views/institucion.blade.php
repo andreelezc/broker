@@ -8,6 +8,7 @@
                 <div class="panel-heading">Lista de  Instituciones Registradas </div>
                 	<div class="panel-body">
                 		{{--Listado--}}
+                		
 						<ul class="list-group">
 						   <li class="list-group-item">
 						    <div class="row">

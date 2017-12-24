@@ -29,6 +29,6 @@ class nuevaPostulacion extends Mailable
     public function build()
     {
         return $this->markdown('mails.usuarios.nuevaPostulacionOportunidad')->with([
-                'address' => $this->productor ]);
+                'name' => $this->productor ]);
     }
 }
