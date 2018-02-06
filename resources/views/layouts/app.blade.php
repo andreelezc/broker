@@ -147,17 +147,27 @@
                  document.getElementById('logout-form').submit();">Salir
                 </a>
               </li>
-            </ul>
-        
+            </ul>       
 
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form> 
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+              </form> 
                         @else
-                            <li role="presentation"><a href="{{ url('institucion/acceso') }}">Institución</a></li>
-                            <li role="presentation"><a href="{{ url('productor/acceso') }}">Productor</a></li>
+
+                         <div class="dropdown">      
+                             <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
+                                <i class="glyphicon glyphicon-user"></i>  Iniciar Sesión <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu"> 
+                                  <li role="presentation"><a href="{{ url('institucion/acceso') }}">Institución</a></li>
+                                  <li class="divider"></li>
+                                  <li role="presentation"><a href="{{ url('productor/acceso') }}">Productor</a></li>
+                                  
+                              </ul>
+                           </div>
+
                         @endif
+
                     </ul>
                     </div>
       </div>

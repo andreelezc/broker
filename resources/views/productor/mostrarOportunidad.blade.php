@@ -152,7 +152,7 @@
                    </div></div></div>
                                                       
          
-                        <li>Remuneracion : {{ $oportunidad->remuneracion }}</li>
+                        <li>Remuneración : {{ $oportunidad->remuneracion }}</li>
 
         
                        <li> Duración: {{ $oportunidad->numdura }} {{ $oportunidad->duracion }} </li> 

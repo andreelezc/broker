@@ -78,7 +78,31 @@
             </div>
         </div>
     </div>
+    <br>
+{{--<img src="{{asset('img/escuela.png')}}"--}}
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+    <div data-ride="carousel" class="carousel slide" id="carousel-1">
+       
+        <div role="listbox" class="carousel-inner">
+            <div class="item active col-md-offset-1"><img src="{{asset('img/Screenshot (52).png')}}"  /></div>
+            <div class="item col-md-offset-1"><img src="{{asset('img/Screenshot (53).png')}}"  /></div>
+            <div class="item col-md-offset-1 "><img src="{{asset('img/Screenshot (54).png')}}"  /></div>  
+        </div>
 
+        <div><a href="#carousel-1" role="button" data-slide="prev" class="left carousel-control"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+            <a href="#carousel-1" role="button" data-slide="next" class="right carousel-control"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+        </div>
+
+        <ol class=" carousel-indicators">
+            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-1" data-slide-to="1"></li>
+            <li data-target="#carousel-1" data-slide-to="2"></li>
+           
+        </ol>
+    </div>
+</div>
+</div>
 
  
         <br>

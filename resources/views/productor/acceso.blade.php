@@ -15,7 +15,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email</label>
+                            <label for="email" class="col-md-4 control-label">Correo Electrónico</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-3">
         
-                    <label>¿Primera vez?</label>
+                    <label>¿Aún no tienes cuenta?</label>
                         <a class="btn btn-link" href="{{ url('productor/registro') }}">
                                    Registrate.
                                 </a>

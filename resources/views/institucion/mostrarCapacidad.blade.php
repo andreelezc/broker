@@ -169,7 +169,7 @@
                    </div></div></div>
                                                       
          
-                                <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
+                                <li>Remuneración Pretendida: {{ $capacidad->remuneracion }}</li>
                                         </ul>
                                         <p></p>
                                     </div>
