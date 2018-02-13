@@ -79,8 +79,10 @@
         </div>
     </div>
     <br>
+
+
 {{--<img src="{{asset('img/escuela.png')}}"--}}
-<div class="row">
+{{--<div class="row">
 <div class="col-md-10 col-md-offset-1">
     <div data-ride="carousel" class="carousel slide" id="carousel-1">
        
@@ -102,11 +104,14 @@
         </ol>
     </div>
 </div>
-</div>
+</div>--}}
 
- 
-        <br>
-   
+
+       
+    <ol class=" carousel-indicators">
+       <img src="{{asset('Imagen2.png')}}"  />
+    </ol>
+
 {{-- Tabla de descripción--}}
 <div class="form-group">
     <div class="row">
@@ -114,10 +119,11 @@
             <div class="container ">
                  <div class="panel panel-default">
                 
-                    <div class="col-md-15   text-center"> <label class="control-label "><h3>Comunicación entre Instituciones y Productores </h3></label>
-                    </div> </div> 
+                    <div class="col-md-40  text-center"> <label class="control-label "><h3>Plataforma de comunicación entre Instituciones y Productores </h3></label>
+                    </div></div> 
 
-                   <div  class="col-md-15 text-center"> <img  src="{{asset('info1.png')}}" /></div>
+                   {{--<div  class="col-md-15 text-center"> 
+                <img  src="{{asset('info1.png')}}" /></div>--}}
                     
               <div class="row transparent">
                     <div class="col-md-6 ">
@@ -132,8 +138,8 @@
                       </div>
 
                     </div>
-                    
-                    
+
+                   
 
                     <div class="col-md-6">
 
@@ -145,17 +151,19 @@
                                 <li>Buscá oportunidades de trabajo</li></p>
                           </div>
                        {{--  <button type="button" class="btn btn-default">Ver <span class="glyphicon glyphicon-plus"></span> </button>--}}
+
                       </div>
                     </div>
               </div>
-              
+             
             </div>
-            <div  class="col-md-15 text-center"> <img  src="{{asset('info2.png')}}" /></div>
+          {{--<div  class="col-md-15 text-center">  
+          <img  src="{{asset('info2.png')}}" /></div>--}}
 </div>
-
 </div>
-    
+ 
 {{--<div  class="col-md-15 text-center"> <img  src="{{asset('comunicacion.jpg')}}" /></div>--}}
-   <br>
+  
+  
 
 @endsection

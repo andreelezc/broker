@@ -80,7 +80,7 @@
                                     <p class="list-group-item-text"> Descripción:  {{ $oportunidad->descripcion }}</p>
                                         <p></p>
                                         <ul>
-                                            <li>Requisitos: {{ $oportunidad->requisitos }}</li>
+                                            <li>Requisitos: {{ $oportunidad->requisito }}</li>
                                             <li>  Disponibilidad Horaria: </li>  <br>
 
                 <div class="row">
