@@ -74,11 +74,11 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-3">
         
-                    <label>¿Aún no tienes cuenta?</label>
-                        <a class="btn btn-link" href="{{ url('institucion/registro') }}">
-                                   Registrate.
-                                </a>
-                                 </div>
+                                 <label>¿Aún no tienes cuenta?</label>
+                            <a class="btn btn-link" href="{{ url('institucion/registro') }}">
+                                       Registrate.
+                                    </a>
+                            </div>
                         </div>
 
 
