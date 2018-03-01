@@ -22,8 +22,13 @@ class CapacidadController extends Controller
      	$c->descripcion= $request->descripcion;
      	$c->experiencias= $request->experiencias;
      	$c->categoria= $request->categoria;
+      $c->tipo= $request->tipo;
      	$c->orientacion= $request->orientacion;
+      $c->personal= $request->personal;
+      $c->remuneracion= $request->remuneracion; 
+      $c->lugar= $request->lugar; 
      	$c->fechaInicio= $request->fechaInicio;
+      $c->fechaFin= $request->fechaFin;
       $c->tiempo= $request->tiempo; 
           $c->horaInicioL= $request->horaInicioL;
           $c->horaFinL= $request->horaFinL;
@@ -39,8 +44,8 @@ class CapacidadController extends Controller
           $c->horaFinS= $request->horaFinS;
           $c->horaInicioD= $request->horaInicioD;
           $c->horaFinD= $request->horaFinD;
-      $c->fechaFin= $request->fechaFin;
-     	$c->remuneracion= $request->remuneracion; 
+      
+     	
           $c->institucion_id = $user->id; 	
       //guardo en la base de datos
       $c->save();

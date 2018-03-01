@@ -66,9 +66,15 @@ class DatabaseSeeder extends Seeder
             $c->titulo = 'Programacion Web';
             $c->descripcion = 'paginas ' ;
             $c->experiencias = 'php , laravel';
-            $c->categoria = 'Pasante';
-            $c->orientacion = 'Beca';
+            $c->categoria = 'Pasantia';
+            $c->tipo = 'Alumno';
+            $c->personal = '3';
+            $c->orientacion = 'Empresa';
+            $c->remuneracion = '5000';
+            $c->lugar = 'Corrientes';
             $c->fechaInicio = '20/11/2017';
+            $c->fechaFin = '20/11/2018';
+            $c->tiempo = 'Todo el día';
                   $c->horaInicioL='08:00';
                   $c->horaFinL='14:00' ;
                   $c->horaInicioM='00:00';
@@ -83,8 +89,8 @@ class DatabaseSeeder extends Seeder
                   $c->horaFinS= '00:00';
                   $c->horaInicioD='00:00';
                   $c->horaFinD='00:00';
-            $c->fechaFin = '20/11/2018';
-            $c->remuneracion = '5000';          
+            
+                     
             $c->institucion_id = 1;
             $c->save(); 
 
@@ -94,104 +100,7 @@ class DatabaseSeeder extends Seeder
             $c->addKey("Web");
             $c->addKey("Diseño");       
 
-     //-------------carga 2
-              $c = new Capacidad;
-             $c->titulo = 'Laravel Web';
-            $c->descripcion = 'paginas ' ;
-            $c->experiencias = 'php , array';
-            $c->categoria = 'Pasante';
-            $c->orientacion = 'empleado';
-            $c->fechaInicio = '20/11/2017';
-                  $c->horaInicioL='08:00';
-                  $c->horaFinL='14:00' ;
-                  $c->horaInicioM='00:00';
-                  $c->horaFinM= '00:00';
-                  $c->horaInicioMi='08:00';
-                  $c->horaFinMi='14:00';
-                  $c->horaInicioJ='00:00';
-                  $c->horaFinJ= '00:00';
-                  $c->horaInicioV='08:00';
-                  $c->horaFinV= '14:00';
-                  $c->horaInicioS='00:00';
-                  $c->horaFinS= '00:00';
-                  $c->horaInicioD='00:00';
-                  $c->horaFinD='00:00';
-            $c->fechaFin = '20/11/2018';
-            $c->remuneracion = '5000';          
-            $c->institucion_id = 2;
-            $c->save();  
-            //por cada palabra clave creo una keyword;
-            $c->addKey("keyword1");
-            $c->addKey("keyword2");
-            $c->addKey("keyword3");
-            $c->addKey("keyword4");
-
-      
-     //-------------carga 3   
-      $c = new Capacidad;
-             $c->titulo = 'desarrollador Web';
-            $c->descripcion = 'paginas ' ;
-            $c->experiencias = 'php , laravel';
-            $c->categoria = 'Pasante';
-            $c->orientacion = 'Beca';
-            $c->fechaInicio = '20/11/2017';
-                  $c->horaInicioL='08:00';
-                  $c->horaFinL='14:00' ;
-                  $c->horaInicioM='00:00';
-                  $c->horaFinM= '00:00';
-                  $c->horaInicioMi='08:00';
-                  $c->horaFinMi='14:00';
-                  $c->horaInicioJ='00:00';
-                  $c->horaFinJ= '00:00';
-                  $c->horaInicioV='08:00';
-                  $c->horaFinV= '14:00';
-                  $c->horaInicioS='00:00';
-                  $c->horaFinS= '00:00';
-                  $c->horaInicioD='00:00';
-                  $c->horaFinD='00:00';
-            $c->fechaFin = '20/11/2018';
-            $c->remuneracion = '5000';          
-            $c->institucion_id = 3;
-            $c->save();  
-            //por cada palabra clave creo una keyword;
-            $c->addKey("keyword1");
-            $c->addKey("keyword2");
-            $c->addKey("keyword3");
-            $c->addKey("keyword4");
-
-     
-    //-------------carga 4   
-       $c = new Capacidad;
-             $c->titulo = 'Analista Web';
-            $c->descripcion = 'paginas ' ;
-            $c->experiencias = 'php , laravel';
-            $c->categoria = 'Pasante';
-            $c->orientacion = 'Beca';
-            $c->fechaInicio = '20/11/2017';
-                  $c->horaInicioL='08:00';
-                  $c->horaFinL='14:00' ;
-                  $c->horaInicioM='00:00';
-                  $c->horaFinM= '00:00';
-                  $c->horaInicioMi='08:00';
-                  $c->horaFinMi='14:00';
-                  $c->horaInicioJ='00:00';
-                  $c->horaFinJ= '00:00';
-                  $c->horaInicioV='08:00';
-                  $c->horaFinV= '14:00';
-                  $c->horaInicioS='00:00';
-                  $c->horaFinS= '00:00';
-                  $c->horaInicioD='00:00';
-                  $c->horaFinD='00:00';
-            $c->fechaFin = '20/11/2018';
-            $c->remuneracion = '5000';          
-            $c->institucion_id = 4;
-            $c->save();  
-            //por cada palabra clave creo una keyword;
-            $c->addKey("keyword1");
-            $c->addKey("keyword2");
-            $c->addKey("keyword3");
-            $c->addKey("keyword4");
-
+    
     
     }
 

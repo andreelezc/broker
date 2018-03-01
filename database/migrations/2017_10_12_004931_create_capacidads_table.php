@@ -19,7 +19,11 @@ class CreateCapacidadsTable extends Migration
             $table->string('descripcion');
             $table->string('experiencias');
             $table->string('categoria');
+            $table->string('tipo');
             $table->string('orientacion');
+            $table->string('personal');
+            $table->string('remuneracion');
+            $table->string('lugar');
             $table->string('fechaInicio'); 
             $table->string('fechaFin');
             $table->string('tiempo');
@@ -38,7 +42,7 @@ class CreateCapacidadsTable extends Migration
                 $table->string('horaInicioD');
                 $table->string('horaFinD');
            
-            $table->string('remuneracion');
+            
             $table->integer('institucion_id')->unsigned();
             $table->foreign('institucion_id')->references('id')->on('institucions')->onDelete('cascade');
             $table->timestamps();
