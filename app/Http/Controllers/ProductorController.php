@@ -16,6 +16,7 @@ use inetweb\Productor;
 use Intervention\Image\Facades\Image;
 use Mail;
 use inetweb\Mail\nuevaSeleccion;
+use inetweb\Mail\nuevoUsuario;
 
 
 class ProductorController extends Controller
@@ -103,7 +104,9 @@ class ProductorController extends Controller
                                     ->where('capacidad_keys.palabra','like','%'.$palabra.'%')
                                     ->orWhere('capacidads.titulo','like','%'.$palabra.'%')
                                     ->orWhere('capacidads.descripcion','like','%'.$palabra.'%')
-                                    ->orWhere('capacidads.requisito','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.experiencias','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.lugar','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.orientacion','like','%'.$palabra.'%')
                                     ->distinct()
                                     ->skip($pagina * 10)
                                     ->take(10)
@@ -124,7 +127,9 @@ class ProductorController extends Controller
         $postulacion->save();
 
         $institucion =institucion::findOrFail($request);
-         Mail::to(Auth::guard('productor')->user())->send(new nuevaSeleccion($institucion));
+       
+
+         Mail::to($institucion)->send(new nuevaSeleccion($institucion));
         ///para el flashh
         return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 

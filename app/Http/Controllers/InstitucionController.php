@@ -22,6 +22,7 @@ use Mail;
 
 
 
+
 class InstitucionController extends Controller
 {
     //
@@ -111,7 +112,9 @@ class InstitucionController extends Controller
                                     ->where('oportunidad_keys.palabra','like','%'.$palabra.'%')
                                     ->orWhere('oportunidads.titulo','like','%'.$palabra.'%')
                                     ->orWhere('oportunidads.descripcion','like','%'.$palabra.'%')
-                                     
+                                    ->orWhere('oportunidads.requisito','like','%'.$palabra.'%')
+                                    ->orWhere('oportunidads.lugar','like','%'.$palabra.'%')
+                                    ->orWhere('oportunidads.orientacion','like','%'.$palabra.'%')
                                     ->distinct()
                                     ->skip($pagina * 10)
                                     ->take(10)

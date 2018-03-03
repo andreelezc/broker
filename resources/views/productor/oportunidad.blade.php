@@ -57,7 +57,7 @@ $(document).ready(function(){
                 <label class="control-label" for="textarea-input">Requisitos:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Requisitos que los postulantes deben cumplir"></span></label>
             </div>
             <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                <textarea class="form-control" name="requisito" rows="4" cols="40" placeholder=" Mencione sus experiencias laborales." id="textarea-input"></textarea>  
+                <textarea class="form-control" name="requisito" rows="4" cols="40" placeholder=" Mencione los requisitos." id="textarea-input"></textarea>  
             </div>
         </div>
         <br><br> <br><br><br>

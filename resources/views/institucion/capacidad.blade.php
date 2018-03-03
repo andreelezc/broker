@@ -70,33 +70,62 @@ $(document).ready(function(){
                <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar una categoria "></span></label>
             </div>
             <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                <input class="form-control" type="text" name="categoria" id="text-input" placeholder="Pasante, Trabajo Final, Becas.">
+                <select name="categoria"  class="form-control" id='categoria-select' required>
+                                  <option value="Pasantia">Pasantia</option>
+                                  <option value="Trabajo Final">Trabajo Final</option>
+                                  <option value="Proyecto">Proyecto</option>
+                                  <option value="Investigación">Investigación</option>
+                                  <option value="Beca">Beca</option> 
+                                  <option value="Otros" >-Otros-</option>
+                </select> 
+                
+                <input class="form-control" type="text" name="category" disabled="true" id="category"  placeholder="">
             </div>
-            <br>
+            <br><br>
         </div>
-        <br>
+        <br><br>
 {{-- Personal --}}
          <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
                <label class="control-label" for="textarea-input">Tipo de Personal:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar rango del personal"></span></label>
             </div>
             <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                <input class="form-control" type="text" name="tipo" id="text-input" placeholder="Alumno, Profesor, Director, Empleado, Jefe, Supervisor.">
+                <select name="tipo"  class="form-control" id='tipo-select' required>
+                                  <option value="Alumno">Alumno</option>
+                                  <option value="Profesor">Profesor</option>
+                                  <option value="Director">Director</option>
+                                  <option value="Empleado">Empleado</option>
+                                  <option value="Jefe">Jefe</option>
+                                  <option value="Supervisor">Supervisor</option>
+                                  <option value="Otros" >-Otros-</option>
+                </select> 
+                <input class="form-control" type="text" name="typo" disabled="true" id="typo" placeholder="">
             </div>
-           
+           <br>
+
         </div>
-<br><br>
+<br><br><br>
         {{-- Orientado --}}
          <div class="form-group">
                 <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
                    <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
                 </div>
                 <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                   <textarea class="form-control"  name="orientacion" id="text-input" placeholder="PYMES, Grupos, Empresas, Instituciones."  rows="5" cols="8" ></textarea>
+                    <select name="orientacion"  class="form-control" id='orientacion-select' required>
+                                  <option value="Instituciones">Instituciones</option>
+                                  <option value="Empresas">Empresas</option>
+                                  <option value="Pymes">Pymes</option>
+                                  <option value="Organización">Organización</option>
+                                  <option value="Grupos">Grupos</option>
+                                  <option value="Otros" >-Otros-</option>
+                    </select>  
+                  
+                   <input class="form-control" type="text" name="horientacion" disabled="true" id="horientacion" placeholder="">
                 </div>
                 <br>
             </div>
- <br><br> <br><br> <br>
+ <br><br> <br>
+
         {{-- PERSONAL --}}
          <div class="form-group">       
                 <div class="col-md-2 col-md-offset-0 col-sm-6 label-column">   
@@ -163,7 +192,8 @@ $(document).ready(function(){
                         
                            <td> <label  class="control-label   "> <input checked type="radio" name="tiempo" value="Todo el día" /> Todo el día     </label> </td>
                             <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" /> Medio día: Mañana </label></td>
-                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" /> Medio día: Tarde  </label></td>   
+                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" /> Medio día: Tarde  </label></td> 
+                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" /> Personalizar  </label></td>   
                      </label>
                     </div>
                  <table class="table table-user-information">   
@@ -266,8 +296,63 @@ $(document).ready(function(){
         {{-- END FORM --}}
     </form> 
     
-    <script src="assets/js/jquery.min.js"></script>
+     <script src="{{ asset('js/jquery.min.js') }} "></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+
+            //--------------categoria
+              $('#categoria-select').change(function(){
+
+                if($(this).val() == 'Otros'){
+                    $('#category').removeAttr("disabled")
+                }else{
+                    $('#category').attr("disabled",'true').attr('name','category')
+                  $(this).attr('name','categoria')
+                }
+            })
+              $('#category').change(function(){
+                  $('#categoria-select').attr('name','category')
+                  $(this).attr('name','categoria')
+             })
+
+             //--------------tipo
+              $('#tipo-select').change(function(){
+
+                if($(this).val() == 'Otros'){
+                    $('#typo').removeAttr("disabled")
+                }else{
+                    $('#typo').attr("disabled",'true').attr('name','typo')
+                  $(this).attr('name','tipo')
+                }
+            })
+              $('#typo').change(function(){
+                  $('#tipo-select').attr('name','typo')
+                  $(this).attr('name','tipo')
+             })
+
+              //--------------orientacion
+
+            $('#orientacion-select').change(function(){
+
+                if($(this).val() == 'Otros'){
+                    $('#horientacion').removeAttr("disabled")
+                }else{
+                    $('#horientacion').attr("disabled",'true').attr('name','horientacion')
+                  $(this).attr('name','orientacion')
+                }
+            })
+
+             $('#horientacion').change(function(){
+                  $('#orientacion-select').attr('name','horientacion')
+                  $(this).attr('name','orientacion')
+             })
+
+
+
+        })
+    </script>
              </div>
             </div>
         </div>

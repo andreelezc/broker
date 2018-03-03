@@ -41,6 +41,13 @@ class DatabaseSeeder extends Seeder
              // FABRICA 10 INSTANCIAS de Productor
 
        $productores = factory(inetweb\Productor::class,10)->create();	
+
+       $p = new Productor;
+            $p->name = 'Florencia';
+            $p->email = 'aflorenciacabrera@gmail.com' ;
+            $p->direccion = 'Bolivar 635';
+            $p->password = bcrypt('123456');
+             $p->save();  
     }
 
     private function seedInstitucions(){
@@ -56,6 +63,13 @@ class DatabaseSeeder extends Seeder
         	// FABRICA 10 INSTANCIAS de institucion
        $instituciones = factory(inetweb\Institucion::class,10)->create();
 
+       $i = new Institucion;
+            $i->name = 'Intituso Nuevo Siglo';
+            $i->email = 'florcabrera16@hotmail.com' ;
+            $i->direccion = 'Bolivar 1074';
+            $i->password = bcrypt('123456');
+            $i->save(); 
+
     }
 
 // Carga de capacidades de Institucion
@@ -66,9 +80,48 @@ class DatabaseSeeder extends Seeder
             $c->titulo = 'Programacion Web';
             $c->descripcion = 'paginas ' ;
             $c->experiencias = 'php , laravel';
-            $c->categoria = 'Pasantia';
+            $c->categoria = 'proyecto';
             $c->tipo = 'Alumno';
-            $c->personal = '3';
+            $c->personal = '2';
+            $c->orientacion = 'institucion';
+            $c->remuneracion = '5000';
+            $c->lugar = 'chaco';
+            $c->fechaInicio = '20/11/2017';
+            $c->fechaFin = '20/11/2018';
+            $c->tiempo = 'Todo el día';
+                  $c->horaInicioL='08:00';
+                  $c->horaFinL='14:00' ;
+                  $c->horaInicioM='00:00';
+                  $c->horaFinM= '00:00';
+                  $c->horaInicioMi='08:00';
+                  $c->horaFinMi='14:00';
+                  $c->horaInicioJ='00:00';
+                  $c->horaFinJ= '00:00';
+                  $c->horaInicioV='08:00';
+                  $c->horaFinV= '14:00';
+                  $c->horaInicioS='00:00';
+                  $c->horaFinS= '00:00';
+                  $c->horaInicioD='00:00';
+                  $c->horaFinD='00:00';
+            
+                     
+            $c->institucion_id = 1;
+            $c->save(); 
+
+              //por cada palabra clave creo una keyword;
+            $c->addKey("Php");
+            $c->addKey("Laravel");
+            $c->addKey("chaco");
+            $c->addKey("Diseño");    
+
+             //--------------carga 2
+        $c = new Capacidad;
+            $c->titulo = 'Programacion Web';
+            $c->descripcion = 'paginas ' ;
+            $c->experiencias = 'php , laravel';
+            $c->categoria = 'pasantia';
+            $c->tipo = 'profesor';
+            $c->personal = '2';
             $c->orientacion = 'Empresa';
             $c->remuneracion = '5000';
             $c->lugar = 'Corrientes';
@@ -97,8 +150,46 @@ class DatabaseSeeder extends Seeder
               //por cada palabra clave creo una keyword;
             $c->addKey("Php");
             $c->addKey("Laravel");
-            $c->addKey("Web");
-            $c->addKey("Diseño");       
+            $c->addKey("Corrientes");
+            $c->addKey("Diseño");  
+             //--------------carga 1
+        $c = new Capacidad;
+            $c->titulo = 'Programacion Web';
+            $c->descripcion = 'paginas ' ;
+            $c->experiencias = 'php , laravel';
+            $c->categoria = 'investigacion';
+            $c->tipo = 'empleados';
+            $c->personal = '3';
+            $c->orientacion = 'organizacion';
+            $c->remuneracion = '5000';
+            $c->lugar = 'Corrientes';
+            $c->fechaInicio = '20/11/2017';
+            $c->fechaFin = '20/11/2018';
+            $c->tiempo = 'Todo el día';
+                  $c->horaInicioL='08:00';
+                  $c->horaFinL='14:00' ;
+                  $c->horaInicioM='00:00';
+                  $c->horaFinM= '00:00';
+                  $c->horaInicioMi='08:00';
+                  $c->horaFinMi='14:00';
+                  $c->horaInicioJ='00:00';
+                  $c->horaFinJ= '00:00';
+                  $c->horaInicioV='08:00';
+                  $c->horaFinV= '14:00';
+                  $c->horaInicioS='00:00';
+                  $c->horaFinS= '00:00';
+                  $c->horaInicioD='00:00';
+                  $c->horaFinD='00:00';
+            
+                     
+            $c->institucion_id = 1;
+            $c->save(); 
+
+              //por cada palabra clave creo una keyword;
+            $c->addKey("Php");
+            $c->addKey("pagina");
+            $c->addKey("chaco");
+            $c->addKey("Diseño");   
 
     
     
@@ -111,10 +202,19 @@ class DatabaseSeeder extends Seeder
         DB::table('oportunidads')->delete();
          //--------------carga 1
         $o = new Oportunidad;
-            $o->titulo= 'Supervisores Técnicos en Corrientes';
+            $o->titulo= 'Supervisores Técnicos ';
             $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
-            $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';                            
+            $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
+            $o->categoria= 'pasantia';
+            $o->tipo= 'estudiante';
+            $o->orientacion= 'empresa';
+            $o->personal= '2';
+            $o->remuneracion= '3000';
+            $o->lugar= 'corrientes';   
+
             $o->fechaInicio = '20/11/2017';
+            $o->fechaFin= '20/12/2017';
+            $o->tiempo= 'Todo el día';
                   $o->horaInicioL='08:00';
                   $o->horaFinL='14:00' ;
                   $o->horaInicioM='00:00';
@@ -132,121 +232,104 @@ class DatabaseSeeder extends Seeder
 
             $o->numdura= '6';            
             $o->duracion= 'meses';
-            $o->remuneracion= '5000';
-           
-                      
+                    
+            $o->productor_id = 1;
+            $o->save(); 
+            //por cada palabra clave creo una keyword;
+            $o->addKey("Soporte");
+            $o->addKey("Tecnico");
+            $o->addKey("Electricidad");
+            $o->addKey("corrientes");
+
+
+            //--------------carga 2
+        $o = new Oportunidad;
+            $o->titulo= 'Supervisores Técnicos ';
+            $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
+            $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
+            $o->categoria= 'capacitacion';
+            $o->tipo= 'profesor';
+            $o->orientacion= 'empresa';
+            $o->personal= '2';
+            $o->remuneracion= '3000';
+            $o->lugar= 'chaco';   
+
+            $o->fechaInicio = '20/11/2017';
+            $o->fechaFin= '20/12/2017';
+            $o->tiempo= 'Todo el día';
+                  $o->horaInicioL='08:00';
+                  $o->horaFinL='14:00' ;
+                  $o->horaInicioM='00:00';
+                  $o->horaFinM= '00:00';
+                  $o->horaInicioMi='08:00';
+                  $o->horaFinMi='14:00';
+                  $o->horaInicioJ='00:00';
+                  $o->horaFinJ= '00:00';
+                  $o->horaInicioV='08:00';
+                  $o->horaFinV= '14:00';
+                  $o->horaInicioS='00:00';
+                  $o->horaFinS= '00:00';
+                  $o->horaInicioD='00:00';
+                  $o->horaFinD='00:00'; 
+
+            $o->numdura= '6';            
+            $o->duracion= 'meses';
+                    
+            $o->productor_id = 2;
+            $o->save(); 
+            //por cada palabra clave creo una keyword;
+            $o->addKey("Soporte");
+            $o->addKey("Tecnico");
+            $o->addKey("Electricidad");
+            $o->addKey("chaco");
+
+
+             //--------------carga 3
+        $o = new Oportunidad;
+            $o->titulo= 'Supervisores Técnicos ';
+            $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
+            $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
+            $o->categoria= 'proyecto';
+            $o->tipo= 'profesor';
+            $o->orientacion= 'institucion';
+            $o->personal= '2';
+            $o->remuneracion= '3000';
+            $o->lugar= 'corrientes';   
+
+            $o->fechaInicio = '20/11/2017';
+            $o->fechaFin= '20/12/2017';
+            $o->tiempo= 'Todo el día';
+                  $o->horaInicioL='08:00';
+                  $o->horaFinL='14:00' ;
+                  $o->horaInicioM='00:00';
+                  $o->horaFinM= '00:00';
+                  $o->horaInicioMi='08:00';
+                  $o->horaFinMi='14:00';
+                  $o->horaInicioJ='00:00';
+                  $o->horaFinJ= '00:00';
+                  $o->horaInicioV='08:00';
+                  $o->horaFinV= '14:00';
+                  $o->horaInicioS='00:00';
+                  $o->horaFinS= '00:00';
+                  $o->horaInicioD='00:00';
+                  $o->horaFinD='00:00'; 
+
+            $o->numdura= '6';            
+            $o->duracion= 'meses';
+                    
             $o->productor_id = 3;
             $o->save(); 
             //por cada palabra clave creo una keyword;
             $o->addKey("Soporte");
             $o->addKey("Tecnico");
             $o->addKey("Electricidad");
-            $o->addKey("Corrientes");
-
-        //--------------carga 2
-        $o = new Oportunidad;
-            $o->titulo= 'Asesor/Receptor de Taller para Concesionario Automotriz ';
-            $o->descripcion= 'Concesionario Oficial se encuentra en la búsqueda de un/a Asesor de Servicio para sector de Post Venta';
-            $o->requisito= 'Educación mínima: Secundaria';                            
-             $o->fechaInicio = '25/11/2017';
-                  $o->horaInicioL='08:00';
-                  $o->horaFinL='14:00' ;
-                  $o->horaInicioM='00:00';
-                  $o->horaFinM= '00:00';
-                  $o->horaInicioMi='08:00';
-                  $o->horaFinMi='14:00';
-                  $o->horaInicioJ='00:00';
-                  $o->horaFinJ= '00:00';
-                  $o->horaInicioV='08:00';
-                  $o->horaFinV= '14:00';
-                  $o->horaInicioS='00:00';
-                  $o->horaFinS= '00:00';
-                  $o->horaInicioD='00:00';
-                  $o->horaFinD='00:00'; 
-
-            $o->numdura= '6';            
-            $o->duracion= 'meses';
-            $o->remuneracion= '5000';
-                      
-            $o->productor_id = 4;
-            $o->save(); 
-            //por cada palabra clave creo una keyword;
-            $o->addKey("Asesor");
-            $o->addKey("Receptor");
-            $o->addKey("Automotriz");
-            $o->addKey("Concesionario");
-
-        //--------------carga 3
-        $o = new Oportunidad;
-            $o->titulo= 'Oficial de Negocios para Banco';
-            $o->descripcion= 'Importante banco de primera línea incorpora Oficial de negocios para una de sus sucursales';
-            $o->requisito= 'Educación mínima: Universitario';                            
-            $o->fechaInicio = '25/11/2017';
-                  $o->horaInicioL='08:00';
-                  $o->horaFinL='14:00' ;
-                  $o->horaInicioM='00:00';
-                  $o->horaFinM= '00:00';
-                  $o->horaInicioMi='08:00';
-                  $o->horaFinMi='14:00';
-                  $o->horaInicioJ='00:00';
-                  $o->horaFinJ= '00:00';
-                  $o->horaInicioV='08:00';
-                  $o->horaFinV= '14:00';
-                  $o->horaInicioS='00:00';
-                  $o->horaFinS= '00:00';
-                  $o->horaInicioD='00:00';
-                  $o->horaFinD='00:00';
-
-            $o->numdura= '6';            
-            $o->duracion= 'años';
-            $o->remuneracion= '8000'; 
-                      
-            $o->productor_id = 6;
-            $o->save(); 
-            //por cada palabra clave creo una keyword;
-            $o->addKey("Negocios");
-            $o->addKey("Banco");
-            $o->addKey("Universitario");
-            $o->addKey("Corrientes");
-
-        //--------------carga 4
-         $o = new Oportunidad;
-            $o->titulo= 'Técnico en sistemas - Manejo de Software y Hardware';
-            $o->descripcion= 'Mantenimiento de elementos de oficina';
-            $o->requisito= 'Educación mínima: Secundaria';                            
-           $o->fechaInicio = '30/11/2017';
-                  $o->horaInicioL='08:00';
-                  $o->horaFinL='14:00' ;
-                  $o->horaInicioM='00:00';
-                  $o->horaFinM= '00:00';
-                  $o->horaInicioMi='08:00';
-                  $o->horaFinMi='14:00';
-                  $o->horaInicioJ='00:00';
-                  $o->horaFinJ= '00:00';
-                  $o->horaInicioV='08:00';
-                  $o->horaFinV= '14:00';
-                  $o->horaInicioS='00:00';
-                  $o->horaFinS= '00:00';
-                  $o->horaInicioD='00:00';
-                  $o->horaFinD='00:00';
-
-            $o->numdura= '2';            
-            $o->duracion= 'semanas';
-            $o->remuneracion= '8000'; 
-                      
-                      
-            $o->productor_id = 10;
-            $o->save(); 
-            //por cada palabra clave creo una keyword;
-            $o->addKey("Soporte");
-            $o->addKey("Software");
-            $o->addKey("Hardware");
-            $o->addKey("oficina");
-
-
-             }
+            $o->addKey("corrientes");
 
 
 
+       }
+
+
+      
 
 }

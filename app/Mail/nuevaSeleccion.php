@@ -16,7 +16,7 @@ class nuevaSeleccion extends Mailable
      *
      * @return void
      */
-    public function __construct( $productor)
+    public function __construct( $institucion)
     {
          $this->institucion = $institucion;
     }

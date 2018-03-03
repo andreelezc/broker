@@ -127,10 +127,10 @@
                                                     {{ csrf_field() }}
                                                    <input type="hidden" name="productor_id" value="{{ Auth::Guard('productor')->user()->id}}"> 
                                                    <input type="hidden" name="capacidad_id" value="{{  $capacidad->id }}"> 
-                                                  <a class="btn btn-primary" type="submit">
-                                                    Seleccionar
-                                                        <span class="glyphicon glyphicon-hand-up"></span>
-                                                  </a>
+                                                  <button class="btn btn-primary" type="submit">
+                                                Selección
+                                                    <span class="glyphicon glyphicon-hand-up"></span>
+                                              </button>
                                                        
                                               </form>
                                               </div></div> 
