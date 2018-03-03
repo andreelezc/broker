@@ -75,7 +75,7 @@ $(document).ready(function(){
             <br>
         </div>
         <br>
-
+{{-- Personal --}}
          <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
                <label class="control-label" for="textarea-input">Tipo de Personal:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar rango del personal"></span></label>
@@ -118,7 +118,7 @@ $(document).ready(function(){
         </div> 
         <br><br>
              
- {{-- CATEGORIA --}}
+ {{-- Lugar --}}
          <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
                <label class="control-label" for="textarea-input">Lugar de Trabajo:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
@@ -227,8 +227,6 @@ $(document).ready(function(){
                    </tbody>
           </table>
                    </div></div></div>
-        
-          
 
             </div>
         </div>
@@ -256,10 +254,6 @@ $(document).ready(function(){
                 </div>
             </div>
         </div>
-          
-   
- 
-  
 
        
     {{-- SUBMIT --}}

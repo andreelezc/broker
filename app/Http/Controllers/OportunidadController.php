@@ -19,7 +19,14 @@ class OportunidadController extends Controller
      	$o->titulo= $request->titulo;
      	$o->descripcion= $request->descripcion;
      	$o->requisito= $request->requisito;
+      $o->categoria= $request->categoria;
+      $o->tipo= $request->tipo;
+      $o->orientacion= $request->orientacion;
+      $o->personal= $request->personal;
+      $o->remuneracion= $request->remuneracion;
+      $o->lugar= $request->lugar;
      	$o->fechaInicio= $request->fechaInicio;
+      $o->fechaFin= $request->fechaFin;
       $o->tiempo= $request->tiempo;
           $o->horaInicioL= $request->horaInicioL;
           $o->horaFinL= $request->horaFinL;
@@ -35,11 +42,10 @@ class OportunidadController extends Controller
           $o->horaFinS= $request->horaFinS;
           $o->horaInicioD= $request->horaInicioD;
           $o->horaFinD= $request->horaFinD;
-     	$o->numdura= $request->numdura;
-     
+     	$o->numdura= $request->numdura;   
      	$o->duracion= $request->duracion;
-        $o->remuneracion= $request->remuneracion;
-          $o->productor_id = $user->id; 
+      $o->productor_id = $user->id; 
+
      	$o->save(); //guardo en la base de datos
 
            //por cada palabra clave creo una keyword;

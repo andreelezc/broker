@@ -18,7 +18,14 @@ class CreateOportunidadsTable extends Migration
             $table->string('titulo');
             $table->string('descripcion');
             $table->string('requisito');
+            $table->string('categoria');
+            $table->string('tipo');
+            $table->string('orientacion');
+            $table->string('personal');
+            $table->string('remuneracion');
+            $table->string('lugar');
             $table->string('fechaInicio');
+            $table->string('fechaFin');
             $table->string('tiempo');
                 $table->string('horaInicioL');
                 $table->string('horaFinL');
@@ -33,8 +40,7 @@ class CreateOportunidadsTable extends Migration
                 $table->string('horaInicioS');
                 $table->string('horaFinS');
                 $table->string('horaInicioD');
-                $table->string('horaFinD');
-            $table->string('remuneracion');
+                $table->string('horaFinD'); 
             $table->integer('numdura');
             $table->string('duracion');
             $table->integer('productor_id')->unsigned();
