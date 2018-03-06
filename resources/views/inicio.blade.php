@@ -61,18 +61,18 @@
 <div class="row">
         <div class="col-md-12">
             <div class="container-fluid">
-                <div class="col-md-11 col-md-offset-2">
+                <div class="col-md-11 col-md-offset-1">
                         <a class="btn btn-primary active btn-lg" type="button"  href="{{ url('institucion') }}">
-                          <h1>20</h2> Instituciones Registradas 
+                          <h1>Entidades</h2> Formadores  -  Capacidades 
                         </a>
                          <a class="btn btn-success  active btn-lg" type="button"  href="{{ url('capacidad') }}">
-                          <h1>30</h2> Capacidades Laborales
+                          <h1>Capacidades</h2>  Laborales
                         </a>
                         <a class="btn btn-info  active btn-lg" type="button"  href="{{ url('productor') }}">
-                          <h1>40</h2> Productores Activos
+                          <h1>Entidades</h2> Toma Empleos  -  Oportunidades
                         </a>
                         <a class="btn btn-danger  active btn-lg" type="button"  href="{{ url('oportunidad') }}">
-                          <h1>+100</h2> Oportunidades Ofrecidas 
+                          <h1>Oportunidades</h2>  Ofrecidas 
                         </a>
                 </div>
             </div>

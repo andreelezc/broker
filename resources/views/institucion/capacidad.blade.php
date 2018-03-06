@@ -79,7 +79,7 @@ $(document).ready(function(){
                                   <option value="Otros" >-Otros-</option>
                 </select> 
                 
-                <input class="form-control" type="text" name="category" disabled="true" id="category"  placeholder="">
+                <input class="form-control" type="text" name="category" disabled="true" id="category"  placeholder="categoria">
             </div>
             <br><br>
         </div>

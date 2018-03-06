@@ -21,11 +21,11 @@
               <div class="col-md-3 col-lg-2 " align="center"> 
                     {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
                     {{--<img  height="300" width="300" avatar="{{ Auth::Guard('institucion')->user()->name }}" class="img-responsive round" >--}}
-                    <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" style="width:150px; height:130px; float:left; border-radius:50%; margin-right:30px;"  class="img-responsive round" >
+                    <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" style="width:150px; height:130px; float:left; border-radius:50%; margin-right:70px;"  class="img-responsive round" >
 
                
                <br>
-               <br>
+               <br><br><br><br><br><br>
                 {{--Boton de nuevo --}}
               <div class="col-md-4  col-md-offset-1">
                <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"  href="{{ url('institucion/capacidad')}}" ><i class="glyphicon glyphicon-plus"></i> Agregar</a>  
