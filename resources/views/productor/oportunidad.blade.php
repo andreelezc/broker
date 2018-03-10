@@ -35,7 +35,7 @@ $(document).ready(function(){
                     <label class="control-label" for="text-input"> Título: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
                 </div>
                 <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                    <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip" placeholder="Ingresar Título." >
+                    <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip" placeholder="Ingresar Título." required >
                 </div>
             </div>
             <br><br> <br>
@@ -46,7 +46,7 @@ $(document).ready(function(){
                     <label class="control-label" for="text-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Describa su capacidad"></span> </label>
                 </div>
                 <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                    <textarea class="form-control"  name="descripcion" rows="4" cols="20" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral."></textarea>
+                    <textarea class="form-control"  name="descripcion" rows="4" cols="20" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral." required></textarea>
                 </div>
             </div>
             <br><br> <br><br><br>
@@ -57,7 +57,7 @@ $(document).ready(function(){
                 <label class="control-label" for="textarea-input">Requisitos:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Requisitos que los postulantes deben cumplir"></span></label>
             </div>
             <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                <textarea class="form-control" name="requisito" rows="4" cols="40" placeholder=" Mencione los requisitos." id="textarea-input"></textarea>  
+                <textarea class="form-control" name="requisito" rows="4" cols="40" placeholder=" Mencione los requisitos." id="textarea-input" required></textarea>  
             </div>
         </div>
         <br><br> <br><br><br>
@@ -122,8 +122,9 @@ $(document).ready(function(){
                 <br>
             </div>
               
-        </div>
-            <br><br> 
+
+            <br><br><br> 
+
         {{-- PERSONAL --}}
          <div class="form-group">       
                 <div class="col-md-2 col-md-offset-0 col-sm-6 label-column">   
@@ -140,20 +141,26 @@ $(document).ready(function(){
                 <label class="control-label">Remuneración:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se ofrece al puesto"></span></label> 
             </div>
             <div class="col-md-2 col-md-offset-0 col-sm-6 input-column">
-               <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" />
+               <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" required/>
             </div>
         </div> 
         <br><br>
  {{-- Lugar --}}
         <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-               <label class="control-label" for="textarea-input">Lugar de Trabajo:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title=" lugar donde se desea desempeñar la oportunidad"></span></label>
+               <label class="control-label" for="textarea-input">Lugar de Trabajo:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
             </div>
-            <div class="col-md-6 col-md-offset-0 col-sm-5 input-column">
-                <input class="form-control" type="text" name="lugar" id="text-input" placeholder=" Ingresar Lugar donde se desea desempeñar.">
+
+        <div class="row">
+            <div class="col-md-3">
+              <input class="form-control" type="text" name="provincia" id="text-input" placeholder="Provincia." required>
+            </div>
+            <div class="col-md-3">
+               <input class="form-control" type="text" name="localidad" id="text-input" placeholder="Localidad." required>
             </div>
         </div>
-        <br><br>
+        </div> 
+        <br>
        
            {{-- DISPONIBILIDAD --}}
  <div class="form-group">
@@ -167,16 +174,16 @@ $(document).ready(function(){
             <div class="form-group">         
                 
 
-                <div class="row">
+               <div class="row">
                     <div class="col-md-4 ">
                         <div class="form-group">
-                        Fecha de inicio:  <input type="date" placeholder="DD" name="fechaInicio"/>
+                        Fecha de inicio:  <input type="date" min= "2018-01-01" id="start" placeholder="DD" name="fechaInicio" required/>
                         </div>
                     </div>
 
                      <div class="col-md-6">
                         <div class="form-group">
-                         Fecha de  finalización:  <input type="date" placeholder="DD" name="fechaFin"/>
+                         Fecha de  finalización:  <input type="date" id="end" placeholder="DD" name="fechaFin" required/>
                         </div>
                     </div>
 
@@ -188,9 +195,9 @@ $(document).ready(function(){
                     <div class="checkbox">   
                          <label class="control-label">
                         
-                           <td> <label  class="control-label   "> <input checked type="radio" name="tiempo" value="Todo el día" /> Todo el día     </label> </td>
-                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" /> Medio día: Mañana </label></td>
-                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" /> Medio día: Tarde  </label></td>   
+                           <td> <label  class="control-label"> <input {{-- checked --}} type="radio" name="tiempo" value="Todo el día" id="full" required/> Todo el día     </label> </td>
+                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" id="manana" required/> Medio día: Mañana </label></td>
+                            <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" id="tarde" required/> Medio día: Tarde  </label></td> 
                      </label>
                     </div>
                  <table class="table table-user-information">   
@@ -198,57 +205,57 @@ $(document).ready(function(){
                   <tr>         
                      <td><label>Lunes</label></td>
                      <td>de</td>
-                     <td><input type="time" value="00:00" name="horaInicioL" /></td> 
+                     <td><input type="time" value="00:00" name="horaInicioL"  class="clasedesde" id="lunstart1" /></td> 
                      <td>a</td>
-                     <td><input type="time" value="00:00" name="horaFinL"  /></td>
+                     <td><input type="time" value="00:00" name="horaFinL"  class="clasehasta" id="lunend1" /></td>
                   </tr> 
                   <p></p>
                    <tr>         
                      <td><label>Martes</label></td>
                      <td>de</td>
-                     <td><input type="time"  value="00:00"  name="horaInicioM" /></td> 
+                     <td><input type="time"  value="00:00"  name=" horaInicioM"   class="clasedesde" id="lunstart2"/></td> 
                      <td>a</td>
-                     <td><input type="time"   value="00:00" name="horaFinM" /></td>
+                     <td><input type="time"   value="00:00" name="horaFinM" class="clasehasta" id="lunend2" /></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Miercoles</label></td>
                      <td>de</td>
-                     <td><input type="time" value="00:00"   name="horaInicioMi" /></td> 
+                     <td><input type="time" value="00:00"   name="horaInicioMi"  class="clasedesde" id="lunstart3" /></td> 
                      <td>a</td>
-                     <td><input type="time" value="00:00"  name="horaFinMi" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinMi"  class="clasehasta" id="lunend3"/></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Jueves</label></td>
                      <td>de</td>
-                     <td><input type="time" value="00:00"  name="horaInicioJ" /></td> 
+                     <td><input type="time" value="00:00"  name="horaInicioJ" class="clasedesde"  id="lunstart4"/></td> 
                      <td>a</td>
-                     <td><input type="time" value="00:00"  name="horaFinJ" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinJ" class="clasehasta" id="lunend4"/></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Viernes</label></td>
                      <td>de</td>
-                     <td><input type="time" value="00:00"   name="horaInicioV" /></td>
+                     <td><input type="time" value="00:00"   name="horaInicioV"  class="clasedesde" id="lunstart5" /></td>
                      <td>a</td>
-                     <td><input type="time" value="00:00"  name="horaFinV" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinV" class="clasehasta" id="lunend5"/></td>
                   </tr> 
                   <p></p>
                       <tr>         
                      <td><label>Sabado</label></td>
                      <td>de</td>
-                     <td><input type="time" value="00:00"  name="horaInicioS" /></td> 
+                     <td><input type="time" value="00:00"  name="horaInicioS"  class="clasedesde" id="lunstart6" /></td> 
                      <td>a</td>
-                     <td><input type="time" value="00:00"  name="horaFinS" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinS" class="clasehasta" id="lunend6"/></td>
                   </tr> 
                   <p></p>
                      <tr>         
                      <td><label>Domingo</label></td>
                      <td>de</td>
-                     <td><input type="time" value="00:00" " name="horaInicioD" /></td>
+                     <td><input type="time" value="00:00" " name="horaInicioD"  class="clasedesde" id="lunstart7" /></td>
                      <td>a</td> 
-                     <td><input type="time" value="00:00"  name="horaFinD" /></td>
+                     <td><input type="time" value="00:00"  name="horaFinD" class="clasehasta" id="lunend7"/></td>
                   </tr> 
                   <p></p>
                    </tbody>
@@ -265,7 +272,7 @@ $(document).ready(function(){
         
                        <td>   Duración: </td>
                         
-                        <td><input id="number" type="number" name="numdura" />  </td>
+                        <td><input id="number" type="number" name="numdura" required />  </td>
                        
                         <td> <select name="duracion"  class="form-control" required>
                                         <option value="Días">Días</option>
@@ -320,6 +327,39 @@ $(document).ready(function(){
     <script type="text/javascript">
         
         $(document).ready(function(){
+
+
+           //-------------- Horarios Predeterminado
+              $('#full').change(function(){
+
+              $(".clasedesde").val('06:00');
+              $(".clasehasta").val('23:00');
+             })
+
+              $('#manana').change(function(){
+
+              $(".clasedesde").val('06:00');
+              $(".clasehasta").val('14:00');
+             })
+
+              $('#tarde').change(function(){
+
+              $(".clasedesde").val('14:00');
+              $(".clasehasta").val('23:00');
+             })
+
+            //--------------Valida Fecha  \
+              var start = document.getElementById('start');
+              var end = document.getElementById('end');
+
+              start.addEventListener('change', function() {
+                  if (start.value)
+                 end.min = start.value;
+              }, false);
+                  end.addEventListener('change', function() {
+                  if (end.value)
+              start.max = end.value;
+              }, false);
 
             //--------------categoria
               $('#categoria-select').change(function(){

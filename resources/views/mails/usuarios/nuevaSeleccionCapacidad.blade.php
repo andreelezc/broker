@@ -1,12 +1,13 @@
 @component('mail::message')
-# Introduction
+# Capacidad Seleccionada
 
-The body of your message.
+
+Inicia en tu cuenta para ver 
 
 @component('mail::button', ['url' => ''])
-Button Text
+Acceder
 @endcomponent
 
-Thanks,<br>
+Gracias,<br>
 {{ config('app.name') }}
 @endcomponent

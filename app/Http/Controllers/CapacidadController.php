@@ -26,7 +26,8 @@ class CapacidadController extends Controller
      	$c->orientacion= $request->orientacion;
       $c->personal= $request->personal;
       $c->remuneracion= $request->remuneracion; 
-      $c->lugar= $request->lugar; 
+      $c->provincia= $request->provincia; 
+      $c->localidad= $request->localidad; 
      	$c->fechaInicio= $request->fechaInicio;
       $c->fechaFin= $request->fechaFin;
       $c->tiempo= $request->tiempo; 

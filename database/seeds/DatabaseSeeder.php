@@ -85,9 +85,10 @@ class DatabaseSeeder extends Seeder
             $c->personal = '2';
             $c->orientacion = 'institucion';
             $c->remuneracion = '5000';
-            $c->lugar = 'chaco';
-            $c->fechaInicio = '20/11/2017';
-            $c->fechaFin = '20/11/2018';
+            $c->provincia = 'chaco';
+            $c->localidad = 'barranqueras';
+            $c->fechaInicio = '20/11/2018';
+            $c->fechaFin = '20/11/2019';
             $c->tiempo = 'Todo el día';
                   $c->horaInicioL='08:00';
                   $c->horaFinL='14:00' ;
@@ -124,7 +125,8 @@ class DatabaseSeeder extends Seeder
             $c->personal = '2';
             $c->orientacion = 'Empresa';
             $c->remuneracion = '5000';
-            $c->lugar = 'Corrientes';
+             $c->provincia = 'chaco';
+            $c->localidad = 'barranqueras';
             $c->fechaInicio = '20/11/2017';
             $c->fechaFin = '20/11/2018';
             $c->tiempo = 'Todo el día';
@@ -162,7 +164,8 @@ class DatabaseSeeder extends Seeder
             $c->personal = '3';
             $c->orientacion = 'organizacion';
             $c->remuneracion = '5000';
-            $c->lugar = 'Corrientes';
+             $c->provincia = 'corrientes';
+            $c->localidad = 'goya';
             $c->fechaInicio = '20/11/2017';
             $c->fechaFin = '20/11/2018';
             $c->tiempo = 'Todo el día';
@@ -210,8 +213,8 @@ class DatabaseSeeder extends Seeder
             $o->orientacion= 'empresa';
             $o->personal= '2';
             $o->remuneracion= '3000';
-            $o->lugar= 'corrientes';   
-
+            $o->provincia= 'corrientes';
+            $o->localidad= 'corrientes';      
             $o->fechaInicio = '20/11/2017';
             $o->fechaFin= '20/12/2017';
             $o->tiempo= 'Todo el día';
@@ -252,8 +255,8 @@ class DatabaseSeeder extends Seeder
             $o->orientacion= 'empresa';
             $o->personal= '2';
             $o->remuneracion= '3000';
-            $o->lugar= 'chaco';   
-
+            $o->provincia= 'chaco';
+            $o->localidad= 'charata';  
             $o->fechaInicio = '20/11/2017';
             $o->fechaFin= '20/12/2017';
             $o->tiempo= 'Todo el día';
@@ -294,8 +297,8 @@ class DatabaseSeeder extends Seeder
             $o->orientacion= 'institucion';
             $o->personal= '2';
             $o->remuneracion= '3000';
-            $o->lugar= 'corrientes';   
-
+             $o->provincia= 'chaco';
+            $o->localidad= 'fontana';  
             $o->fechaInicio = '20/11/2017';
             $o->fechaFin= '20/12/2017';
             $o->tiempo= 'Todo el día';

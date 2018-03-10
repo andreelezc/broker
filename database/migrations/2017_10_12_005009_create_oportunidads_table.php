@@ -23,7 +23,8 @@ class CreateOportunidadsTable extends Migration
             $table->string('orientacion');
             $table->string('personal');
             $table->string('remuneracion');
-            $table->string('lugar');
+            $table->string('provincia');
+            $table->string('localidad');
             $table->string('fechaInicio');
             $table->string('fechaFin');
             $table->string('tiempo');

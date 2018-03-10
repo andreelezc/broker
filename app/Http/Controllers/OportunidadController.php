@@ -24,7 +24,8 @@ class OportunidadController extends Controller
       $o->orientacion= $request->orientacion;
       $o->personal= $request->personal;
       $o->remuneracion= $request->remuneracion;
-      $o->lugar= $request->lugar;
+      $o->provincia= $request->provincia;
+      $o->localidad= $request->localidad;
      	$o->fechaInicio= $request->fechaInicio;
       $o->fechaFin= $request->fechaFin;
       $o->tiempo= $request->tiempo;
