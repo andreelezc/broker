@@ -51,7 +51,7 @@
 
 
                         <div class="form-group{{ $errors->has('cue') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label"> CUE <h5>Código Único del Establecimiento </h5></label>
+                            <label for="cue" class="col-md-4 control-label"> CUE <h5>Código Único del Establecimiento </h5></label>
 
                             <div class="col-md-6">
                                 <input id="cue" type="num" class="form-control" name="cue" value="{{ old('cue') }}" required>
@@ -109,13 +109,13 @@
                          <div class="panel-heading text-center"><h4>Datos de contacto</h4></div>
 
                        
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name1') ? ' has-error' : '' }}">
                             <label for="name1" class="col-md-4 control-label text-center">Nombre de contacto:</label>
 
                             <div class="col-md-6">
                                 <input id="name1" type="text" class="form-control" name="name1" value="{{ old('name1') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('name1'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name1') }}</strong>
                                     </span>
@@ -127,7 +127,7 @@
                             <label for="email" class="col-md-4 control-label">Correo electrónico </label>
 
                             <div class="col-md-6">
-                                <input id="email1" type="email" class="form-control" name="email1" value="{{ old('email') }}" required>
+                                <input id="email1" type="email" class="form-control" name="email1" value="{{ old('email1') }}" required>
 
                                 @if ($errors->has('email1'))
                                     <span class="help-block">
@@ -140,7 +140,7 @@
                             <label for="telefono1" class="col-md-4 control-label"> Teléfono de contacto </label>
 
                             <div class="col-md-6">
-                                <input id="cue" type="num" class="form-control" name="telefono1" value="{{ old('telefono') }}" required>
+                                <input id="telefono1" type="num" class="form-control" name="telefono1" value="{{ old('telefono1') }}" required>
 
                                 @if ($errors->has('telefono1'))
                                     <span class="help-block">
@@ -149,11 +149,11 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('cue') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label"> Horario de contacto </label>
+                        <div class="form-group{{ $errors->has('hora') ? ' has-error' : '' }}">
+                            <label for="hora" class="col-md-4 control-label"> Horario de contacto </label>
 
                             <div class="col-md-6">
-                                <input id="cue" type="text" class="form-control" name="hora" value="{{ old('cue') }}" placeholder="Lunes a Viernes: 8:00 hs - 17:00 hs  " required>
+                                <input id="hora" type="text" class="form-control" name="hora" value="{{ old('hora') }}" placeholder="Lunes a Viernes: 8:00 hs - 17:00 hs  " required>
 
                                 @if ($errors->has('hora'))
                                     <span class="help-block">

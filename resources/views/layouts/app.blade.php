@@ -79,17 +79,22 @@
                 {{ Auth::guard('institucion')->user()->name }} <span class="caret"></span>
             </a>
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li role="presentation">
+                <a href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i></i> Inicio</a>
+                </li>
                
                 <li role="presentation">
-                <a href="{{ url('/institucion/perfil') }}">Perfil</a>
+                <a href="{{ url('/institucion/perfil') }}"> <i class="glyphicon glyphicon-user"></i> Perfil</a>
                 </li>
                 <li role="presentation">
-                <a href="{{ url('/institucion/mostrarCapacidad') }}">Capacidad
+                <a href="{{ url('/institucion/mostrarCapacidad') }}"> <i class="glyphicon glyphicon-plus"></i>Capacidad
                 </a>
                 <li role="presentation">
-                <a href="{{ url('/institucion/buscar') }}">Buscar Oportunidad
+                <a href="{{ url('/institucion/buscar') }}"> <i class="glyphicon glyphicon-search"></i> Buscar Oportunidad
                 </a>
-
+                </li>
+                <li role="presentation">
+                <a href="{{ url('/institucion/postulaciones') }}"> <i class="glyphicon glyphicon-hand-up"></i> Postulaciones</a>
                 </li>
               <li class="divider"></li>
               <li class="dropdown-submenu">

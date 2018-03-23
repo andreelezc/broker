@@ -28,10 +28,8 @@ $(document).ready(function(){
 
      {{-- Inicio FORM --}}
             <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
-             {{ csrf_field() }}       
-
-            <h4 class="text">Comunica una capacidad laboral generada a partir de las pasantias, trabajos practicos, trabajos de campo, proyectos, trabajos finales u otra fuente institucional.</h4>
-            <br>
+             {{ csrf_field() }}  
+             <div class="alert alert-success" role="alert"><span>Comunica una capacidad laboral generada a partir de las pasantias, trabajos practicos, trabajos de campo, proyectos, trabajos finales u otra fuente institucional.<strong> </strong> </span></div>     
             
 
             {{-- TITULO --}}
@@ -69,13 +67,16 @@ $(document).ready(function(){
             <br>
         </div>
         <br><br><br><br>
-         {{-- CATEGORIA --}}
+
+         
       <div class="row">
-        <div class="form-group">
-            <div class="col-md-2 ">
+        {{-- CATEGORIA --}}
+        <div class=" col-md-6">
+         <div class="form-group">
+            <div class="col-md-4">
                <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar una categoria "></span></label>
             </div>
-            <div class="col-md-3 ">
+            <div class="col-md-6 ">
                 <select name="categoria"  class="form-control" id='categoria-select' required>
                                   <option value="Pasantia">Pasantia</option>
                                   <option value="Trabajo Final">Trabajo Final</option>
@@ -87,15 +88,16 @@ $(document).ready(function(){
                 
                 <input class="form-control" type="text" name="category" disabled="true" id="category"  placeholder="">
             </div>
-            <br><br>
-        </div>
-        <br><br>
-{{-- Personal --}}
-         <div class="form-group">
-            <div class="col-md-2 ">
+           
+       </div>
+      </div>
+          {{-- Personal --}}
+          <div class="col-md-6">
+          <div class="form-group">
+            <div class="col-md-4  ">
                <label class="control-label" for="textarea-input">Tipo de postulante:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar rango del personal"></span></label>
             </div>
-            <div class="col-md-3 ">
+            <div class="col-md-6">
                 <select name="tipo"  class="form-control" id='tipo-select' required>
                                   <option value="Alumno">Alumno</option>
                                   <option value="Profesor">Profesor</option>
@@ -107,11 +109,10 @@ $(document).ready(function(){
                 </select> 
                 <input class="form-control" type="text" name="typo" disabled="true" id="typo" placeholder="">
             </div>
-           <br>
-
-       </div>
       </div>
-<br><br><br>
+    </div>
+      </div>
+<br>
      
 
         {{-- PERSONAL --}}
@@ -137,7 +138,7 @@ $(document).ready(function(){
              
  {{-- Lugar --}}
          <div class="form-group">
-            <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
+            <div class="col-md-3 col-md-offset-0 col-sm-2 label-column">
                <label class="control-label" for="textarea-input">Lugar de Trabajo:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar provincia y localidad"></span></label>
             </div>
 
@@ -149,7 +150,7 @@ $(document).ready(function(){
                <input class="form-control" type="text" name="localidad" id="text-input" placeholder="Localidad." required>
             </div>
         </div>
-        </div>  <br>
+        </div>  
     {{-- DISPONIBILIDAD --}}
  <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">

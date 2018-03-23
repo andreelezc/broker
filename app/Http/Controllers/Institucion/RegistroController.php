@@ -59,6 +59,7 @@ class RegistroController extends Controller
             'cue' => $data['cue'],
             'name1' => $data['name1'],
             'telefono1' => $data['telefono1'],
+            'email1' => $data['email1'],
             'hora' => $data['hora'],
 
             'password' => bcrypt($data['password']),
