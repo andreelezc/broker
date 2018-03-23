@@ -11,7 +11,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif
-                <div class="panel-heading">Registrar una Institución</div>
+                <div class="panel-heading text-center">Registrar una Institución</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ url('institucion/registro') }}"> 
@@ -20,7 +20,7 @@
 
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Usuario</label>
+                            <label for="name" class="col-md-4 control-label">Nombre de la Institución</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -36,7 +36,7 @@
 
 
                         <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Dirección </label>
+                            <label for="email" class="col-md-4 control-label">Dirección de la Institución</label>
 
                             <div class="col-md-6">
                                 <input id="direccion" type="text" class="form-control" name="direccion" value="{{ old('direccion') }}" required>
@@ -50,10 +50,25 @@
                         </div>
 
 
+                        <div class="form-group{{ $errors->has('cue') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label"> CUE <h5>Código Único del Establecimiento </h5></label>
+
+                            <div class="col-md-6">
+                                <input id="cue" type="num" class="form-control" name="cue" value="{{ old('cue') }}" required>
+
+                                @if ($errors->has('cue'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('cue') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
 
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Correo electronico </label>
+                            <label for="email" class="col-md-4 control-label">Correo electrónico Institución </label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -88,7 +103,68 @@
                             </div>
                         </div>
 
-                        <div class="form-group" >
+                      {{-- Datos de contacto --}}
+
+                        <hr style="width:75%; " >
+                         <div class="panel-heading text-center"><h4>Datos de contacto</h4></div>
+
+                       
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name1" class="col-md-4 control-label text-center">Nombre de contacto:</label>
+
+                            <div class="col-md-6">
+                                <input id="name1" type="text" class="form-control" name="name1" value="{{ old('name1') }}" required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name1') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email1') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">Correo electrónico </label>
+
+                            <div class="col-md-6">
+                                <input id="email1" type="email" class="form-control" name="email1" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email1'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email1') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('telefono1') ? ' has-error' : '' }}">
+                            <label for="telefono1" class="col-md-4 control-label"> Teléfono de contacto </label>
+
+                            <div class="col-md-6">
+                                <input id="cue" type="num" class="form-control" name="telefono1" value="{{ old('telefono') }}" required>
+
+                                @if ($errors->has('telefono1'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('telefono1') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('cue') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label"> Horario de contacto </label>
+
+                            <div class="col-md-6">
+                                <input id="cue" type="text" class="form-control" name="hora" value="{{ old('cue') }}" placeholder="Lunes a Viernes: 8:00 hs - 17:00 hs  " required>
+
+                                @if ($errors->has('hora'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('hora') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                         <div class="form-group" >
                        
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -96,6 +172,7 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -15,7 +15,9 @@ $(document).ready(function(){
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading "><h3>Bienvenido a Capacidades Laborales</h3></div>
+                <div class="panel-heading "><h3> Carga de Capacidades Laborales</h3></div>
+
+               
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -27,12 +29,15 @@ $(document).ready(function(){
      {{-- Inicio FORM --}}
             <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}       
-            {{--<h2 class="text-center">Capacidad Laboral</h2>--}}
+
+            <h4 class="text">Comunica una capacidad laboral generada a partir de las pasantias, trabajos practicos, trabajos de campo, proyectos, trabajos finales u otra fuente institucional.</h4>
+            <br>
+            
 
             {{-- TITULO --}}
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-                    <label class="control-label" for="text-input"> Título: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
+                    <label class="control-label" for="text-input"> Título representativo: <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingrese un titulo acorde a su Capacidad"></span></label>
                 </div>
                 <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
                     <input class="form-control" type="text" name="titulo" id="text-input"  data-toggle="tooltip" placeholder="Ingresar Título." required>
@@ -56,7 +61,7 @@ $(document).ready(function(){
         {{-- EXPERIENCIA --}}
         <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-                <label class="control-label" for="textarea-input">Experiencias previas:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Experias adquiridas que aporten a su capacidad"></span></label>
+                <label class="control-label" for="textarea-input">Experiencia previa:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Experias adquiridas que aporten a su capacidad"></span></label>
             </div>
             <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
                 <textarea class="form-control" name="experiencias" rows="4" cols="40" placeholder=" Mencione sus experiencias laborales." id="textarea-input" required></textarea>  
@@ -65,11 +70,12 @@ $(document).ready(function(){
         </div>
         <br><br><br><br>
          {{-- CATEGORIA --}}
-         <div class="form-group">
-            <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
+      <div class="row">
+        <div class="form-group">
+            <div class="col-md-2 ">
                <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar una categoria "></span></label>
             </div>
-            <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
+            <div class="col-md-3 ">
                 <select name="categoria"  class="form-control" id='categoria-select' required>
                                   <option value="Pasantia">Pasantia</option>
                                   <option value="Trabajo Final">Trabajo Final</option>
@@ -86,10 +92,10 @@ $(document).ready(function(){
         <br><br>
 {{-- Personal --}}
          <div class="form-group">
-            <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-               <label class="control-label" for="textarea-input">Tipo de Personal:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar rango del personal"></span></label>
+            <div class="col-md-2 ">
+               <label class="control-label" for="textarea-input">Tipo de postulante:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar rango del personal"></span></label>
             </div>
-            <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
+            <div class="col-md-3 ">
                 <select name="tipo"  class="form-control" id='tipo-select' required>
                                   <option value="Alumno">Alumno</option>
                                   <option value="Profesor">Profesor</option>
@@ -103,43 +109,25 @@ $(document).ready(function(){
             </div>
            <br>
 
-        </div>
+       </div>
+      </div>
 <br><br><br>
-        {{-- Orientado --}}
-         <div class="form-group">
-                <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-                   <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
-                </div>
-                <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                    <select name="orientacion"  class="form-control" id='orientacion-select' required>
-                                  <option value="Instituciones">Instituciones</option>
-                                  <option value="Empresas">Empresas</option>
-                                  <option value="Pymes">Pymes</option>
-                                  <option value="Organización">Organización</option>
-                                  <option value="Grupos">Grupos</option>
-                                  <option value="Otros" >-Otros-</option>
-                    </select>  
-                  
-                   <input class="form-control" type="text" name="horientacion" disabled="true" id="horientacion" placeholder="">
-                </div>
-                <br>
-            </div>
- <br><br> <br>
+     
 
         {{-- PERSONAL --}}
          <div class="form-group">       
                 <div class="col-md-2 col-md-offset-0 col-sm-6 label-column">   
-                    <label class="control-label" for="textarea-input">Cantidad de vacantes:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Personas con esta capacidad adquirida"></span></label>
+                    <label class="control-label" for="textarea-input">Cantidad de postulantes:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Cantidad de personas del grupo de trabajo"></span></label>
                 </div>
                  <div class="col-md-2 col-md-offset-0 col-sm-6 input-column">
-                    <input class="form-control"  type="number"  name="personal" step="1" min="0" max="1000000" placeholder="N° personal." required/>
+                    <input class="form-control"  type="number"  name="personal" step="1" min="0" max="1000000" placeholder="N° ." required/>
                 </div>
         </div>
         <br><br>
          {{-- REMUNERACION --}}                    
        <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-6 label-column">
-                <label class="control-label">Remuneración pretendida:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label> 
+                <label class="control-label">Remuneración esperada:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar el importe que se espera recibir acorde a conocimientos y horarios seleccionados"></span></label> 
             </div>
             <div class="col-md-2 col-md-offset-0 col-sm-6 input-column">
                <input class="form-control"  type="number"  name="remuneracion" min="0.00" max="10000.00" step="0.01" placeholder="$" required/>
@@ -150,7 +138,7 @@ $(document).ready(function(){
  {{-- Lugar --}}
          <div class="form-group">
             <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-               <label class="control-label" for="textarea-input">Lugar de Trabajo:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Selecionar una categoria o agregar"></span></label>
+               <label class="control-label" for="textarea-input">Lugar de Trabajo:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar provincia y localidad"></span></label>
             </div>
 
         <div class="row">
@@ -198,10 +186,12 @@ $(document).ready(function(){
                            <td> <label  class="control-label"> <input {{-- checked --}} type="radio" name="tiempo" value="Todo el día" id="full" required/> Todo el día     </label> </td>
                             <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Mañana" id="manana" required/> Medio día: Mañana </label></td>
                             <td> <label  class="control-label"> <input type="radio" name="tiempo" value="Medio día: Tarde" id="tarde" required/> Medio día: Tarde  </label></td> 
-                             
+                              <h5><span>  Personalizar franja horaria</span> </h5>
                      </label>
                     </div>
+                   
                  <table class="table table-user-information">   
+                   
                   <tbody> 
                   <tr>         
                      <td><label>Lunes</label></td>
@@ -273,7 +263,7 @@ $(document).ready(function(){
         <div class="form-group">
             <div class="row">
                 <div class="col-md-10"> <label class="control-label">Palabras clave:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar 4 palabras diferentes acorde a la capacidad"></span></label>
-                <label>(ingrese palabras clave para facilitar la busqueda de su capacidad laboral)</label>
+                <label>(ingrese palabras clave para facilitar la búsqueda de su capacidad laboral)</label>
                 </div>
                 <div class="col-md-3">
                     <input name="key1" type="text" class="form-control" required />

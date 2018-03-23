@@ -46,7 +46,11 @@
                        </div>
               </div>
              
+
                {{--Tabla del perfil--}}
+
+                <h3 class="panel-title text-center">Datos de la Institución</h3>
+                <br>
               <div class=" col-md-10 col-lg-6 col-lg-offset-1"> 
                 <table class="table table-user-information">
                 <tbody>
@@ -103,6 +107,9 @@
                       </tr>
                     </tbody>
                   </table>
+
+                   <h3 class="panel-title text-center">Datos del Contacto</h3>
+                   <br>
                     {{-- botones de abajo --}}
                    <div class="panel-footer  ">
                      <div class="row">

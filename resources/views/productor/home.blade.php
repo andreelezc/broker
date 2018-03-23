@@ -36,7 +36,7 @@
               </div>
               {{-- BOTON BUSCAR --}}
               <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
-                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}"  type="button"><i class="glyphicon glyphicon-search"></i>  BUSCAR OPORTUNIDADES</a>
+                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}"  type="button"><i class="glyphicon glyphicon-search"></i>  BUSCAR CAPACIDADES</a>
               </div>
               {{--  --}}
           </div>

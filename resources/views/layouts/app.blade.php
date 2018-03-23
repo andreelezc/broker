@@ -73,7 +73,7 @@
 
         <div class="dropdown">
            <ul class="nav navbar-nav ">
-          <li role="presentation"><a  href="{{ url('/institucion/home') }}"><i class="glyphicon glyphicon-home"></i></a></li> </ul>
+          <li role="presentation"><a  href="{{ url('/institucion/home') }}">Inicio<i class="glyphicon glyphicon-home"></i> </a></li> </ul>
 
            <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
                 {{ Auth::guard('institucion')->user()->name }} <span class="caret"></span>
@@ -112,7 +112,7 @@
 
                             <div class="dropdown">
                             <ul class="nav navbar-nav ">
-          <li role="presentation"><a  href="{{ url('/productor/home') }}"><i class="glyphicon glyphicon-home"></i></a></li> </ul>           
+          <li role="presentation"><a  href="{{ url('/productor/home') }}">Inicio <i class="glyphicon glyphicon-home"></i></a></li> </ul>           
                             <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
                  {{ Auth::guard('productor')->user()->name }} <span class="caret"></span>
             </a>

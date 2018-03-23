@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
             $c->categoria = 'proyecto';
             $c->tipo = 'Alumno';
             $c->personal = '2';
-            $c->orientacion = 'institucion';
+           
             $c->remuneracion = '5000';
             $c->provincia = 'chaco';
             $c->localidad = 'barranqueras';
@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
             $c->categoria = 'pasantia';
             $c->tipo = 'profesor';
             $c->personal = '2';
-            $c->orientacion = 'Empresa';
+            
             $c->remuneracion = '5000';
              $c->provincia = 'chaco';
             $c->localidad = 'barranqueras';
@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder
             $c->categoria = 'investigacion';
             $c->tipo = 'empleados';
             $c->personal = '3';
-            $c->orientacion = 'organizacion';
+            
             $c->remuneracion = '5000';
              $c->provincia = 'corrientes';
             $c->localidad = 'goya';
