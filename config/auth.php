@@ -55,6 +55,10 @@ return [
             'driver' => 'session',
             'provider' => 'productor',
         ],
+         'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
 
 
 
@@ -91,6 +95,10 @@ return [
         'institucion' => [
             'driver' => 'eloquent',
             'model' => inetweb\Institucion::class,
+        ],
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => inetweb\Admin::class,
         ],
         // 'users' => [
         //     'driver' => 'database',
