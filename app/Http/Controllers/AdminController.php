@@ -33,11 +33,13 @@ class AdminController extends Controller
    
       public function index()
     {
-          $user = Auth::guard('admin')->user();
-        return view('administracion.home',array('user'=>$user));
+        //   $user = Auth::guard('admin')->user();
+        // return view('administracion.home',array('user'=>$user));
+
+        $productores = Productor::get();
+          return view('administracion.home',array('productores'=>$productores));
   
     }
-
 
        public function acceso()
     {
