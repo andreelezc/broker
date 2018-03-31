@@ -92,6 +92,38 @@
                       </tr>
                     </tbody>
                   </table>
+
+{{--Datos de contacto--}}
+                  <h3 class="panel-title text-center">Datos del Contacto</h3>
+                   <br>
+                   <table class="table table-user-information">
+                <tbody>
+                 <tr>
+                        <td>Nombre:</td>
+                        <td>{{ Auth::Guard('productor')->user()->name1 }}</td>
+                         <td>
+                      
+                  </td>  
+                 </tr>           
+                  <tr>
+                      <td>Dirección de correo:</td>
+                    <td>
+                        <a href="mailto:{{ Auth::Guard('productor')->user()->email1 }}">
+                            
+                        {{ Auth::Guard('productor')->user()->email1 }}
+                        </a>
+                        
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono: </td>
+                        <td>{{ Auth::Guard('productor')->user()->telefono1 }} </td>
+                                                  
+                      </tr>
+                   
+                    </tbody>
+                  </table>
+
                    {{-- botones de abajo --}}
                    <div class="panel-footer  ">
                     <div class="row">
@@ -188,17 +220,17 @@
                       </div> {{-- modal --}} 
 
 
-                          <div class="col-md-4">
+                          {{--<div class="col-md-4">
                              <a data-original-title="postulaciones " data-toggle="tooltip" type="button" class="btn btn-sm btn-success" href="{{ route('seleccionesProductor') }}">Mis Mis Selecciones <i class="glyphicon glyphicon-pushpin"></i> </a>
                             
-                         </div>
+                         </div>--}}
    
                            <form method="post" action="{{ route('eliminarPerfil') }}">
                                                           {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
                                                         {{-- <input type="hidden" name="_method" value="delete"> --}}
                                 <input type="hidden" name="id" value="{{ Auth::Guard('productor')->user()->id }}">
-                                <div class="col-md-4">
+                                <div class="col-md-6 col-md-offset-2">
                                  
                                   <button class="btn btn-sm btn-danger" type="submit" >Eliminar Perfil <i class="glyphicon glyphicon-trash"></i></button>
                                  

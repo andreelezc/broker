@@ -73,14 +73,14 @@
 
         <div class="dropdown">
            <ul class="nav navbar-nav ">
-          <li role="presentation"><a  href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i> Inicio </a></li> </ul>
+          <li role="presentation"><a  href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i> >&nbspInicio </a></li> </ul>
 
            <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
                 {{ Auth::guard('institucion')->user()->name }} <span class="caret"></span>
             </a>
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                 <li role="presentation">
-                <a href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i></i> Inicio</a>
+                <a href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i>>&nbspInicio</a>
                 </li>
                
                 <li role="presentation">
@@ -100,7 +100,7 @@
               <li class="dropdown-submenu">
                 
                 <a tabindex="-1" class="btn   " href="{{ route('logout') }}"onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">Salir
+                 document.getElementById('logout-form').submit();"><i class="glyphicon glyphicon-off"></i>Salir
                 </a>
               </li>
             </ul>
@@ -122,7 +122,7 @@
 
              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                 <li role="presentation">
-                <a href="{{ url('/productor/home') }}"> <i class="glyphicon glyphicon-home"></i></i> Inicio</a>
+                <a href="{{ url('/productor/home') }}"> <i class="glyphicon glyphicon-home"></i>&nbspInicio</a>
                 </li>
                
                 <li role="presentation">
@@ -142,7 +142,7 @@
               <li class="dropdown-submenu">
                 
                 <a tabindex="-1" class="btn   " href="{{ route('logout') }}"onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">Salir
+                 document.getElementById('logout-form').submit();"> <i class="glyphicon glyphicon-off"></i> Salir
                 </a>
               </li>
             </ul>
