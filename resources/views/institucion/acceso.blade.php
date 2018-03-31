@@ -15,7 +15,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif
-                <div class="panel-heading text-center"><h3>Iniciar sesión en CAPACIDADES</h3></div>
+                <div class="panel-heading text-center"><h3>Iniciar sesión como Institución</h3></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ url('institucion/acceso') }}">
