@@ -129,7 +129,7 @@
                                                    <input type="hidden" name="capacidad_id" value="{{  $capacidad->id }}"> 
                                                   <button class="btn btn-primary" type="submit">
                                                 Selección
-                                                    <span class="glyphicon glyphicon-hand-up"></span>
+                                                    <span class="glyphicon glyphicon-pushpin"></span>
                                               </button>
                                                        
                                               </form>
@@ -141,7 +141,7 @@
                                                    </div></div>
                                           
                                         
-                                         
+                                
 
                                     </div>{{-- /modal FOOTER  --}}
                                 </div>

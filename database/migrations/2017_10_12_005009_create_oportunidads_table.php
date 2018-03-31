@@ -18,9 +18,7 @@ class CreateOportunidadsTable extends Migration
             $table->string('titulo');
             $table->string('descripcion');
             $table->string('requisito');
-            $table->string('categoria');
-            $table->string('tipo');
-            $table->string('orientacion');
+            
             $table->string('personal');
             $table->string('remuneracion');
             $table->string('provincia');
