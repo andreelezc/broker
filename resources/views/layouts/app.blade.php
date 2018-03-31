@@ -90,7 +90,7 @@
                 <a href="{{ url('/institucion/mostrarCapacidad') }}"> <i class="glyphicon glyphicon-plus"></i>Capacidad
                 </a>
                 <li role="presentation">
-                <a href="{{ url('/institucion/buscar') }}"> <i class="glyphicon glyphicon-search"></i> Buscar Oportunidad
+                <a href="{{ url('/institucion/buscar') }}"> <i class="glyphicon glyphicon-search"></i> Buscar Oportunidades
                 </a>
                 </li>
                 <li role="presentation">
@@ -117,34 +117,29 @@
 
                             <div class="dropdown">
                             <ul class="nav navbar-nav ">
-          <li role="presentation"><a  href="{{ url('/productor/home') }}">Inicio <i class="glyphicon glyphicon-home"></i></a></li> </ul>           
+          <li role="presentation"><a  href="{{ url('/productor/home') }}"> <i class="glyphicon glyphicon-home"></i> Inicio </a></li> </ul>           
                             <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
                  {{ Auth::guard('productor')->user()->name }} <span class="caret"></span>
             </a>
-                                          
-                                                   
-                                      
-                                  
-            
-        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-               
-                
 
-                                      <li role="presentation">
-                                          <a href="{{ url('/productor/perfil') }}">
-                                          Perfil
-                                        </a>
-                                      </li>
-                                        <li role="presentation">
-                                          <a href="{{ url('/productor/mostrarOportunidad') }}">
-                                          Oportunidades
-                                        </a>
-                                      </li>
-                                       <li role="presentation">
-                                          <a href="{{ url('/productor/buscar') }}">
-                                          Buscar Capacidad
-                                        </a>
-                                      </li>
+             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li role="presentation">
+                <a href="{{ url('/productor/home') }}"> <i class="glyphicon glyphicon-home"></i></i> Inicio</a>
+                </li>
+               
+                <li role="presentation">
+                <a href="{{ url('/productor/perfil') }}"> <i class="glyphicon glyphicon-user"></i> Perfil</a>
+                </li>
+                <li role="presentation">
+                <a href="{{ url('/productor/mostrarOportunidad') }}"> <i class="glyphicon glyphicon-plus"></i>Oportunidades
+                </a>
+                <li role="presentation">
+                <a href="{{ url('/productor/buscar') }}"> <i class="glyphicon glyphicon-search"></i> Buscar Capacidades
+                </a>
+                </li>
+                <li role="presentation">
+                <a href="{{ url('/productor/selecciones') }}"> <i class="glyphicon glyphicon-pushpin"></i> Selecciones</a>
+                </li>
               <li class="divider"></li>
               <li class="dropdown-submenu">
                 
@@ -152,8 +147,9 @@
                  document.getElementById('logout-form').submit();">Salir
                 </a>
               </li>
-            </ul>       
-
+            </ul>
+                                           
+       
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
               </form> 
