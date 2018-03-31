@@ -12,6 +12,7 @@ class AdminController extends Controller
 {
     //
         use AuthenticatesUsers;
+        
    public function showLoginForm()
     {
         return view('administracion.login');
@@ -23,12 +24,22 @@ class AdminController extends Controller
      	return Auth::guard('admin');
      }
 
+     
+     public function authenticated()
+     {
+     	return redirect(url('admin'));
+     }
+
+   
       public function index()
     {
-        return view('administracion.home');
+          $user = Auth::guard('admin')->user();
+        return view('administracion.home',array('user'=>$user));
+  
     }
 
-         public function login()
+
+       public function acceso()
     {
         return view('administracion.login');
     }

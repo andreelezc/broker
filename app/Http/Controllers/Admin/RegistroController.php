@@ -25,12 +25,12 @@ class RegistroController extends Controller
         return view('administracion.registro');
     }
 
-    protected $redirectTo = 'admin/login';
+    protected $redirectTo = 'admin';
 
-    /*  public function __construct()
-    {
-        $this->middleware('guest');
-    }*/
+    //   public function __construct()
+    // {
+    //     $this->middleware('isAdmin');
+    // }
 
     protected function validator(array $data)
     {
@@ -45,7 +45,7 @@ class RegistroController extends Controller
    
     protected function create(array $data)
     {
-        $productor = Productor::create([
+        $admin = Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             // 'direccion' => $data['direccion'],
@@ -53,9 +53,9 @@ class RegistroController extends Controller
         ]);
 
         //  ///manda mail
-        // Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
+        // Mail::to($admin)->send(new nuevoUsuarioadmin($admin->name)); 
 
-        return $productor;
+        return $admin;
     }
 
 

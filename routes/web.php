@@ -82,7 +82,7 @@ Route::middleware('isProductor')->group(function(){
 */
 Route::middleware('isAdmin')->group(function(){
 	Route::get('admin','AdminController@index');
-
+	
 });
 
 
@@ -105,7 +105,7 @@ Auth::routes();
 Route::get('institucion/inicio', 'InstitucionController@inicio');
 
 Route::get('institucion/acceso','InstitucionController@acceso');
-Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
+// Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
 
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
@@ -127,6 +127,7 @@ Route::post('productor/registro', 'Productor\RegistroController@register');
 
 // ACCESSO ADMINITRACION
 Route::get('admin/login', 'AdminController@showLoginForm');
+Route::get('admin/login', 'AdminController@acceso');
 Route::post('admin/login', 'AdminController@login');
 Route::get('admin/registro', 'Admin\RegistroController@showRegistrationForm');
 Route::post('admin/registro', 'Admin\RegistroController@register');
