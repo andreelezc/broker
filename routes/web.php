@@ -75,7 +75,15 @@ Route::middleware('isProductor')->group(function(){
 		Route::get('productor/selecciones','ProductorController@selecciones')->name('seleccionesProductor');
 
 });
-
+/*
+|--------------------------------------------------------------------------
+| Rutas Privada Administración
+|--------------------------------------------------------------------------
+*/
+Route::middleware('isAdmin')->group(function(){
+	Route::get('admin','AdminController@index');
+	
+});
 
 
 ///no logueados
@@ -97,7 +105,7 @@ Auth::routes();
 Route::get('institucion/inicio', 'InstitucionController@inicio');
 
 Route::get('institucion/acceso','InstitucionController@acceso');
-Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
+// Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
 
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
@@ -116,6 +124,13 @@ Route::post('productor/acceso', 'ProductorController@login');
 Route::get('productor/registro', 'Productor\RegistroController@showRegistrationForm');
 Route::post('productor/registro', 'Productor\RegistroController@register');
 
+
+// ACCESSO ADMINITRACION
+Route::get('admin/login', 'AdminController@showLoginForm');
+Route::get('admin/login', 'AdminController@acceso');
+Route::post('admin/login', 'AdminController@login');
+Route::get('admin/registro', 'Admin\RegistroController@showRegistrationForm');
+Route::post('admin/registro', 'Admin\RegistroController@register');
 ////////////////////API para consultas * sin vistas
 
 Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
