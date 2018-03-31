@@ -17,7 +17,7 @@ class Productor extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'direccion', 'password',
+        'name', 'email', 'direccion', 'password','name1', 'email1', 'telefono1', 'cuit', 'hora',
     ];
 
     /**

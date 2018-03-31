@@ -19,6 +19,11 @@ class CreateProductorsTable extends Migration
             $table->string('email')->unique();
             $table->string('avatar')->default('default.jpg');
             $table->string('direccion');
+            $table->string('name1');
+            $table->string('telefono1');
+             $table->string('email1');
+            $table->string('hora');
+              $table->string('cuit');
             $table->string('cp')->nullable();
             $table->string('provincia')->nullable();
             $table->string('localidad')->nullable();

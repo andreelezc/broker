@@ -61,69 +61,7 @@ $(document).ready(function(){
             </div>
         </div>
         <br><br> <br><br><br>
-         {{-- CATEGORIA --}}
-         <div class="form-group">
-            <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-               <label class="control-label" for="textarea-input">Categoría:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar una categoria "></span></label>
-            </div>
-            <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                <select name="categoria"  class="form-control" id='categoria-select' required>
-                                  <option value="Pasantia">Pasantia</option>
-                                  <option value="Trabajo Final">Trabajo Final</option>
-                                  <option value="Proyecto">Proyecto</option>
-                                  <option value="Investigación">Investigación</option>
-                                  <option value="Beca">Beca</option> 
-                                  <option value="Otros" >-Otros-</option>
-                </select> 
-                
-                <input class="form-control" type="text" name="category" disabled="true" id="category"  placeholder="">
-            </div>
-            <br><br>
-        </div>
-        <br><br>
-{{-- Personal --}}
-         <div class="form-group">
-            <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-               <label class="control-label" for="textarea-input">Tipo de Personal:   <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Ingresar rango del personal"></span></label>
-            </div>
-            <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                <select name="tipo"  class="form-control" id='tipo-select' required>
-                                  <option value="Alumno">Alumno</option>
-                                  <option value="Profesor">Profesor</option>
-                                  <option value="Director">Director</option>
-                                  <option value="Empleado">Empleado</option>
-                                  <option value="Jefe">Jefe</option>
-                                  <option value="Supervisor">Supervisor</option>
-                                  <option value="Otros" >-Otros-</option>
-                </select> 
-                <input class="form-control" type="text" name="typo" disabled="true" id="typo" placeholder="">
-            </div>
-           <br>
-
-        </div>
-<br><br><br>
-        {{-- Orientado --}}
-         <div class="form-group">
-                <div class="col-md-2 col-md-offset-0 col-sm-2 label-column">
-                   <label class="control-label" for="textarea-input">Orientado a:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Especificar a quienes esta orientada la capacidad "></span> </label>
-                </div>
-                <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                    <select name="orientacion"  class="form-control" id='orientacion-select' required>
-                                  <option value="Instituciones">Instituciones</option>
-                                  <option value="Empresas">Empresas</option>
-                                  <option value="Pymes">Pymes</option>
-                                  <option value="Organización">Organización</option>
-                                  <option value="Grupos">Grupos</option>
-                                  <option value="Otros" >-Otros-</option>
-                    </select>  
-                  
-                   <input class="form-control" type="text" name="horientacion" disabled="true" id="horientacion" placeholder="">
-                </div>
-                <br>
-            </div>
-              
-
-            <br><br><br> 
+         
 
         {{-- PERSONAL --}}
          <div class="form-group">       

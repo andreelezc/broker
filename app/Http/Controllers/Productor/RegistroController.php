@@ -49,11 +49,19 @@ class RegistroController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'direccion' => $data['direccion'],
+            'cuit' => $data['cuit'],
+            'name1' => $data['name1'],
+            'telefono1' => $data['telefono1'],
+            'email1' => $data['email1'],
+            'hora' => $data['hora'],
             'password' => bcrypt($data['password']),
         ]);
 
          ///manda mail
         Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
+
+        //mensaje flash
+       Session::flash('registro', 'Tu usuario ha sido registrado con éxito. El administrador del sitio evaluará tu solicitud y realizará el alta definitiva. Te avisaremos con un correo electrónico.');
 
         return $productor;
     }

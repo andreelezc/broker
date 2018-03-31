@@ -124,7 +124,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email1') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Correo electrónico </label>
+                            <label for="email" class="col-md-4 control-label">Correo electrónico  de contacto</label>
 
                             <div class="col-md-6">
                                 <input id="email1" type="email" class="form-control" name="email1" value="{{ old('email1') }}" required>
