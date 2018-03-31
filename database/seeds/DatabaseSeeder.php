@@ -34,18 +34,28 @@ class DatabaseSeeder extends Seeder
             $p->name = 'Sambrana';
             $p->email = 'sambranaivan@gmail.com' ;
             $p->direccion = 'Bolivar 635';
+            $p->cuit ='36112457';
+             $p->name1 ='flor';
+             $p->telefono1 ='telefono1';
+             $p->email1 ='aflorenciacabrera@gmail.com';
+             $p->hora ='8-9';
             $p->password = bcrypt('123456');
              $p->save();  
 
 
              // FABRICA 10 INSTANCIAS de Productor
 
-       $productores = factory(inetweb\Productor::class,10)->create();	
+      // $productores = factory(inetweb\Productor::class,10)->create();	
 
        $p = new Productor;
             $p->name = 'Florencia';
             $p->email = 'aflorenciacabrera@gmail.com' ;
             $p->direccion = 'Bolivar 635';
+            $p->cuit ='36112457';
+             $p->name1 ='flor';
+             $p->telefono1 ='333333333';
+             $p->email1 ='aflorenciacabrera@gmail.com';
+             $p->hora ='8-9';
             $p->password = bcrypt('123456');
              $p->save();  
     }
@@ -57,16 +67,26 @@ class DatabaseSeeder extends Seeder
             $i->name = 'UNNE';
             $i->email = 'sambranaivan@gmail.com' ;
             $i->direccion = 'Bolivar 1074';
+             $i->cue ='36112457';
+             $i->name1 ='flor';
+             $i->telefono1 ='33333333';
+             $i->email1 ='aflorenciacabrera@gmail.com';
+             $i->hora ='8-9';
             $i->password = bcrypt('123456');
             $i->save();    
 
         	// FABRICA 10 INSTANCIAS de institucion
-       $instituciones = factory(inetweb\Institucion::class,10)->create();
+       //$instituciones = factory(inetweb\Institucion::class,10)->create();
 
        $i = new Institucion;
             $i->name = 'Intituso Nuevo Siglo';
             $i->email = 'florcabrera16@hotmail.com' ;
             $i->direccion = 'Bolivar 1074';
+            $i->cue ='36112457';
+             $i->name1 ='flor';
+             $i->telefono1 ='telefono1';
+             $i->email1 ='aflorenciacabrera@gmail.com';
+             $i->hora ='8-9';
             $i->password = bcrypt('123456');
             $i->save(); 
 
@@ -154,45 +174,7 @@ class DatabaseSeeder extends Seeder
             $c->addKey("Laravel");
             $c->addKey("Corrientes");
             $c->addKey("Diseño");  
-             //--------------carga 1
-        $c = new Capacidad;
-            $c->titulo = 'Programacion Web';
-            $c->descripcion = 'paginas ' ;
-            $c->experiencias = 'php , laravel';
-            $c->categoria = 'investigacion';
-            $c->tipo = 'empleados';
-            $c->personal = '3';
-            
-            $c->remuneracion = '5000';
-             $c->provincia = 'corrientes';
-            $c->localidad = 'goya';
-            $c->fechaInicio = '20/11/2017';
-            $c->fechaFin = '20/11/2018';
-            $c->tiempo = 'Todo el día';
-                  $c->horaInicioL='08:00';
-                  $c->horaFinL='14:00' ;
-                  $c->horaInicioM='00:00';
-                  $c->horaFinM= '00:00';
-                  $c->horaInicioMi='08:00';
-                  $c->horaFinMi='14:00';
-                  $c->horaInicioJ='00:00';
-                  $c->horaFinJ= '00:00';
-                  $c->horaInicioV='08:00';
-                  $c->horaFinV= '14:00';
-                  $c->horaInicioS='00:00';
-                  $c->horaFinS= '00:00';
-                  $c->horaInicioD='00:00';
-                  $c->horaFinD='00:00';
-            
-                     
-            $c->institucion_id = 1;
-            $c->save(); 
-
-              //por cada palabra clave creo una keyword;
-            $c->addKey("Php");
-            $c->addKey("pagina");
-            $c->addKey("chaco");
-            $c->addKey("Diseño");   
+             
 
     
     
@@ -208,9 +190,7 @@ class DatabaseSeeder extends Seeder
             $o->titulo= 'Supervisores Técnicos ';
             $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
             $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
-            $o->categoria= 'pasantia';
-            $o->tipo= 'estudiante';
-            $o->orientacion= 'empresa';
+            
             $o->personal= '2';
             $o->remuneracion= '3000';
             $o->provincia= 'corrientes';
@@ -250,9 +230,7 @@ class DatabaseSeeder extends Seeder
             $o->titulo= 'Supervisores Técnicos ';
             $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
             $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
-            $o->categoria= 'capacitacion';
-            $o->tipo= 'profesor';
-            $o->orientacion= 'empresa';
+            
             $o->personal= '2';
             $o->remuneracion= '3000';
             $o->provincia= 'chaco';
@@ -287,47 +265,7 @@ class DatabaseSeeder extends Seeder
             $o->addKey("chaco");
 
 
-             //--------------carga 3
-        $o = new Oportunidad;
-            $o->titulo= 'Supervisores Técnicos ';
-            $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
-            $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
-            $o->categoria= 'proyecto';
-            $o->tipo= 'profesor';
-            $o->orientacion= 'institucion';
-            $o->personal= '2';
-            $o->remuneracion= '3000';
-             $o->provincia= 'chaco';
-            $o->localidad= 'fontana';  
-            $o->fechaInicio = '20/11/2017';
-            $o->fechaFin= '20/12/2017';
-            $o->tiempo= 'Todo el día';
-                  $o->horaInicioL='08:00';
-                  $o->horaFinL='14:00' ;
-                  $o->horaInicioM='00:00';
-                  $o->horaFinM= '00:00';
-                  $o->horaInicioMi='08:00';
-                  $o->horaFinMi='14:00';
-                  $o->horaInicioJ='00:00';
-                  $o->horaFinJ= '00:00';
-                  $o->horaInicioV='08:00';
-                  $o->horaFinV= '14:00';
-                  $o->horaInicioS='00:00';
-                  $o->horaFinS= '00:00';
-                  $o->horaInicioD='00:00';
-                  $o->horaFinD='00:00'; 
-
-            $o->numdura= '6';            
-            $o->duracion= 'meses';
-                    
-            $o->productor_id = 3;
-            $o->save(); 
-            //por cada palabra clave creo una keyword;
-            $o->addKey("Soporte");
-            $o->addKey("Tecnico");
-            $o->addKey("Electricidad");
-            $o->addKey("corrientes");
-
+             
 
 
        }
