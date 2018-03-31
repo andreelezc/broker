@@ -80,7 +80,8 @@ Route::middleware('isProductor')->group(function(){
 | Rutas Privada Administración
 |--------------------------------------------------------------------------
 */
-Route::middleware('isProductor')->group(function(){
+Route::middleware('isAdmin')->group(function(){
+	Route::get('admin','AdminController@index');
 
 });
 
@@ -127,6 +128,8 @@ Route::post('productor/registro', 'Productor\RegistroController@register');
 // ACCESSO ADMINITRACION
 Route::get('admin/login', 'AdminController@showLoginForm');
 Route::post('admin/login', 'AdminController@login');
+Route::get('admin/registro', 'Admin\RegistroController@showRegistrationForm');
+Route::post('admin/registro', 'Admin\RegistroController@register');
 ////////////////////API para consultas * sin vistas
 
 Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');

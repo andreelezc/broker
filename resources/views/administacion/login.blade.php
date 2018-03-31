@@ -15,10 +15,10 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif
-                <div class="panel-heading text-center"><h3>Iniciar sesión en CAPACIDADES</h3></div>
+                <div class="panel-heading text-center"><h3>Acceso Admistrador</h3></div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('institucion/acceso') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('admin/login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -75,7 +75,7 @@
                             <div class="col-md-8 col-md-offset-3">
         
                                  <label>¿Aún no tienes cuenta?</label>
-                            <a class="btn btn-link" href="{{ url('institucion/registro') }}">
+                            <a class="btn btn-link" href="{{ url('admin/registro') }}">
                                        Registrate.
                                     </a>
                             </div>

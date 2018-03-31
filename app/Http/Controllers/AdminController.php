@@ -30,7 +30,7 @@ class AdminController extends Controller
 
          public function login()
     {
-        return view('adminstracion.login');
+        return view('administracion.login');
     }
 
 }
