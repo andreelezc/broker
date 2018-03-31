@@ -23,19 +23,23 @@
                             @foreach ($productores as $user)
                                 
                                 <tr>
-                                    <td>$user->name</td>
-                                    <td>$user->email</td>
-                                    <td>$user->telefono</td>
+                                    <td>Productor</td>
+
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->telefono1}}</td>
                                      <td>
-                                     {{--  @if ($user->estatus)
-                                            <a class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbspActivar</a>
-                                            @else
-                                            <a class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i>&nbspBloquer</a>
+                                          <a class="btn btn-success"><i class="glyphicon glyphicon-user"></i>&nbspVer Perfil</a>
+                                          @if ($user->status)
+                                          <a class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i>&nbspBloquer</a> 
+                                          
+                                          @else
+                                          <a class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbspActivar</a>
                                             
-                                     @endif  --}}
+                                     @endif
 
                                      </td>
-                                     <td>algo</td>
+                                    
                                 </tr>
                             @endforeach
                                

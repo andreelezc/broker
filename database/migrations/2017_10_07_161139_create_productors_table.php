@@ -30,6 +30,7 @@ class CreateProductorsTable extends Migration
             $table->string('telefono')->nullable();
             $table->string('descripcion')->nullable();
             $table->string('password');
+            $table->boolean('estado')->default(false);
                $table->rememberToken();
 
             $table->timestamps();
