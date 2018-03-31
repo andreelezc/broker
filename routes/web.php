@@ -75,6 +75,12 @@ Route::middleware('isProductor')->group(function(){
 		Route::get('productor/selecciones','ProductorController@selecciones')->name('seleccionesProductor');
 
 });
+/*
+|--------------------------------------------------------------------------
+| Rutas Privada Administración
+|--------------------------------------------------------------------------
+*/
+Route::get('administracion/admin','AdministradorController@index')->name('administracion');
 
 
 
