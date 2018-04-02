@@ -20,10 +20,11 @@ class CreateInstitucionsTable extends Migration
             $table->string('avatar')->default('default.jpg');
             $table->string('direccion');
             $table->string('name1');
+            $table->string('url')->default('defaultUrl');
             $table->string('telefono1');
              $table->string('email1');
             $table->string('hora');
-              $table->string('cue');
+              $table->string('cue')->unique();
             $table->string('cp')->nullable();
             $table->string('provincia')->nullable();
             $table->string('localidad')->nullable();

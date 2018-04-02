@@ -83,8 +83,8 @@
                                 @endif
                             </div>
                         </div>
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-5 control-label">Url de la Institución </label>
+                            <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+                            <label for="url" class="col-md-5 control-label">Sitio web de la Institución </label>
 
                             <div class="col-md-7">
                                 <input id="url" type="url" class="form-control" name="url" value="{{ old('url') }}" required>

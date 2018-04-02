@@ -42,6 +42,7 @@ class RegistroController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:institucions',
+            'cue' => 'required|string|max:255|unique:institucions',
             'direccion' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -57,6 +58,7 @@ class RegistroController extends Controller
             'email' => $data['email'],
             'direccion' => $data['direccion'],
             'cue' => $data['cue'],
+            'url' => $data['url'],
             'name1' => $data['name1'],
             'telefono1' => $data['telefono1'],
             'email1' => $data['email1'],

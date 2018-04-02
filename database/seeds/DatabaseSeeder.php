@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
             $p->name = 'Florencia';
             $p->email = 'aflorenciacabrera@gmail.com' ;
             $p->direccion = 'Bolivar 635';
-            $p->cuit ='36112457';
+            $p->cuit ='361124572';
              $p->name1 ='flor';
              $p->telefono1 ='333333333';
              $p->email1 ='aflorenciacabrera@gmail.com';
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
             $i->name = 'UNNE';
             $i->email = 'sambranaivan@gmail.com' ;
             $i->direccion = 'Bolivar 1074';
-             $i->cue ='36112457';
+             $i->cue ='361124527';
              $i->name1 ='flor';
              $i->telefono1 ='33333333';
              $i->email1 ='aflorenciacabrera@gmail.com';

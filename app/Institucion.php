@@ -20,7 +20,7 @@ class Institucion extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'direccion', 'password','name1', 'email1', 'telefono1', 'cue', 'hora'
+        'name', 'email', 'direccion', 'password','name1', 'email1', 'telefono1', 'cue', 'hora','url'
     ];
 
     protected $dates = ['deleted_at'];
