@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading text-center">
                   @if (Auth::guard('productor')->check())
                     <h3>Bienvenido {{ Auth::guard('productor')->user()->name }}</h3>
                   @endif

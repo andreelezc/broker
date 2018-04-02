@@ -108,7 +108,7 @@
                     </tbody>
                   </table>
                   
-
+{{--Datos de contacto--}}
                    <h3 class="panel-title text-center">Datos del Contacto</h3>
                    <br>
                    <table class="table table-user-information">
