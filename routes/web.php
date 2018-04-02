@@ -82,6 +82,11 @@ Route::middleware('isProductor')->group(function(){
 */
 Route::middleware('isAdmin')->group(function(){
 	Route::get('admin','AdminController@index');
+
+	////activar y desactivar usuarios
+
+	Route::get('admin/activar/{tipo}/{user}','AdminController@activar');
+	Route::get('admin/suspender/{tipo}/{user}','AdminController@suspender');
 	
 });
 

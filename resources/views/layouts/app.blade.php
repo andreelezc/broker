@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Cookie')}}">
     <link rel="stylesheet" href="{{asset('/assets/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('/bootstrap/css/Pretty-Footer.css')}}">
-    <link rel="stylesheet" href="{{asset('/bootstrap/css/Hero-Technology.css')}}">
+    
     <link rel="stylesheet" href="{{asset('/bootstrap/css/styles.css')}}">
     
 
@@ -60,6 +60,9 @@
                 </div>
                 <div class="col-md-2 col-md-offset-3" ><img  src="{{asset('logofonietp.png')}}" /></div>
             </div>
+            <div class="row">
+                <a href="/admin" style="font-size:0.8em">Administración</a>
+            </div>
       </div>
 
 
@@ -73,14 +76,14 @@
 
         <div class="dropdown">
            <ul class="nav navbar-nav ">
-          <li role="presentation"><a  href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i> >&nbspInicio </a></li> </ul>
+          {{--  <li role="presentation"><a  href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i>&nbspInicio </a></li> </ul>  --}}
 
            <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
                 {{ Auth::guard('institucion')->user()->name }} <span class="caret"></span>
             </a>
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                 <li role="presentation">
-                <a href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i>>&nbspInicio</a>
+                <a href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i>&nbspInicio</a>
                 </li>
                
                 <li role="presentation">

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Cookie')}}">
     <link rel="stylesheet" href="{{asset('/assets/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('/bootstrap/css/Pretty-Footer.css')}}">
-    <link rel="stylesheet" href="{{asset('/bootstrap/css/Hero-Technology.css')}}">
     <link rel="stylesheet" href="{{asset('/bootstrap/css/styles.css')}}">
     
 
@@ -56,10 +55,16 @@
             </button>
 
              <div class="row">
-                <div class="navbar-brand"><a  href="{{ url('/') }}"><img  src="{{asset('logo-inet.png')}}" > </a> 
+                <div class="navbar-brand">
+                    <a  href="{{ url('/') }}">
+                        <img  src="{{asset('logo-inet.png')}}" > 
+                    </a> 
                 </div>
-                <div class="col-md-2 col-md-offset-3" ><img  src="{{asset('logofonietp.png')}}" /></div>
+                <div class="col-md-2 col-md-offset-3" >
+                    <img  src="{{asset('logofonietp.png')}}" />
+                </div>
             </div>
+            
       </div>
 
 

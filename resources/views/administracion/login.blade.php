@@ -70,7 +70,7 @@
                                 </a>
                             </div>
                         </div>
-                        <hr style="width:75%; " >
+                        {{--  <hr style="width:75%; " >
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-3">
         
@@ -79,7 +79,7 @@
                                        Registrate.
                                     </a>
                             </div>
-                        </div>
+                        </div>  --}}
 
 
                     </form>

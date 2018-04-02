@@ -36,7 +36,7 @@ class AdminController extends Controller
         //   $user = Auth::guard('admin')->user();
         // return view('administracion.home',array('user'=>$user));
 
-        $productores = Productor::get();
+        $productores = Productor::orderBy('estado','asc')->get();
         // ->where('estado','=',0);//estado  = false
         $instituciones = Institucion::get();
         // ->where('estado','=',0);//estado  = false
@@ -48,5 +48,39 @@ class AdminController extends Controller
     {
         return view('administracion.login');
     }
+
+    public function activar($tipo,$user){
+        if($tipo == 'productor')
+        {
+            $u = Productor::findOrFail($user);
+              
+        }
+        else
+        {
+            $u = Productor::findOrFail($user);
+        }
+        $u->estado = 1;
+        $u->save();
+
+       return back()->with('activado','Usuario '.$u->name .' activado');
+
+    }
+    public function suspender($tipo,$user){
+        if($tipo == 'productor')
+        {
+            $u = Productor::findOrFail($user);
+              
+        }
+        else
+        {
+            $u = Productor::findOrFail($user);
+        }
+        $u->estado = 0;
+        $u->save();
+return back()->with('suspendido','Usuario '.$u->name .' suspendido');;
+      
+
+    }
+
 
 }
