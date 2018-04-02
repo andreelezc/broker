@@ -154,7 +154,7 @@ public function update_avatar(Request $request){
 
     public function editarPerfil(Request $request)
       {
-        $user =Institucion::findOrFail($request->$id);  
+        $user =Institucion::findOrFail($request->id);  
 
         $user->name= $request->name;
         $user->direccion= $request->direccion;

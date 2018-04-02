@@ -140,10 +140,7 @@ Route::get('capacidad/all', 'CapacidadController@getAll');
 Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra');
 Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra');
 
-Route::get('oportunidad', 'OportunidadController@oportunidad');
-Route::get('institucion', 'InstitucionController@institucion');
-Route::get('capacidad', 'CapacidadController@capacidad');
-Route::get('productor', 'ProductorController@productor');
+//BORRE ESTO PORQUE ERAN VISTAS PUBLICAR QUE NO VAMOS USAR MAS
 
 
 Route::get("superlogout",function(){

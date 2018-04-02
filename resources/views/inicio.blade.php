@@ -24,16 +24,16 @@
         <div class="col-md-12">
             <div class="container-fluid">
                 <div class="col-md-11 col-md-offset-1">
-                        <a class="btn btn-primary active btn-lg" type="button"  href="{{ url('institucion') }}">
+                        <a class="btn btn-primary active btn-lg" type="button"  href="{{ url('institucion/inicio') }}">
                           <h1>Instituciones </h2> Formadores  <i class="glyphicon glyphicon-arrow-right"></i> Capacidades 
                         </a>
-                         <a class="btn btn-success  active btn-lg" type="button"  href="{{ url('capacidad') }}">
+                         <a class="btn btn-success  active btn-lg" type="button"  href="{{ url('institucion/inicio') }}">
                           <h1>Capacidades</h2>  Laborales
                         </a>
-                        <a class="btn btn-info  active btn-lg" type="button"  href="{{ url('productor') }}">
+                        <a class="btn btn-info  active btn-lg" type="button"  href="{{ url('productor/inicio') }}">
                           <h1>Productores </h2>  Empleos  <i class="glyphicon glyphicon-arrow-right"></i>  Oportunidades
                         </a>
-                        <a class="btn btn-danger  active btn-lg" type="button"  href="{{ url('oportunidad') }}">
+                        <a class="btn btn-danger  active btn-lg" type="button"  href="{{ url('productor/inicio') }}">
                           <h1>Oportunidades</h2>  Ofrecidas 
                         </a>
                 </div>

@@ -37,7 +37,10 @@ class AdminController extends Controller
         // return view('administracion.home',array('user'=>$user));
 
         $productores = Productor::get();
-          return view('administracion.home',array('productores'=>$productores));
+        // ->where('estado','=',0);//estado  = false
+        $instituciones = Institucion::get();
+        // ->where('estado','=',0);//estado  = false
+          return view('administracion.home',array('productores'=>$productores,'instituciones'=>$instituciones,));
   
     }
 
