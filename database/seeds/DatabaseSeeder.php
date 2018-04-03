@@ -275,8 +275,8 @@ class DatabaseSeeder extends Seeder
         DB::table('admins')->delete();
             $a = new Admin;
             $a->email = 'admin@admin.com';
-            $a->name = 'Intituso Nuevo Siglo';
-            $a->password = bcrypt('123456');
+            $a->name = 'administrador';
+            $a->password = bcrypt('admin');
             $a->save();
 
 
