@@ -13,7 +13,7 @@
 
 */
 	
-Route::middleware('isInstitucion')->group(function()
+Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 {
 
 		Route::get('institucion/home', 'InstitucionController@index');
@@ -46,7 +46,8 @@ Route::middleware('isInstitucion')->group(function()
 |--------------------------------------------------------------------------
 
 */
-Route::middleware('isProductor')->group(function(){
+Route::group(['middleware'=>['isProductor','ProductorActivada']],function()
+{
 ///rutas solo accesibles por usuarios autenticados de tipo productor
 
 		Route::get('productor/home', 'ProductorController@index');

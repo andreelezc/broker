@@ -8,7 +8,6 @@
             {{-- Titulo del panel. Nombre de la institucion --}}
           <div class="panel-heading">
               <h3 class="panel-title text-center">{{ Auth::Guard('institucion')->user()->name }}</h3>
-               
           </div>
 
   <div class="panel-body">
@@ -67,9 +66,9 @@
                   <tr>
                           <td>Dirección de correo:</td>
                         <td>
-                            <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
+                            <a href="mailto:{{ Auth::Guard('institucion')->user()->email1 }}">
                                 
-                            {{ Auth::Guard('institucion')->user()->email }}
+                            {{ Auth::Guard('institucion')->user()->email1 }}
                             </a>
                             
                         </td>
@@ -86,13 +85,13 @@
                         <td> {{ Auth::Guard('institucion')->user()->cp }}</td>
                       </tr> 
                       <tr>
-                        <td>Provincia:</td>
-                        <td> {{ Auth::Guard('institucion')->user()->provincia }}</td>
-                      </tr>
-                      <tr>
                         <td> Localidad:</td>
                         <td> {{ Auth::Guard('institucion')->user()->localidad }}</td>
                       </tr>
+                              <tr>
+                                <td>Provincia:</td>
+                                <td> {{ Auth::Guard('institucion')->user()->provincia }}</td>
+                              </tr>
                         
 
                     <tr>
@@ -123,9 +122,9 @@
                   <tr>
                       <td>Dirección de correo:</td>
                     <td>
-                        <a href="mailto:{{ Auth::Guard('institucion')->user()->email1 }}">
+                        <a href="mailto:{{ Auth::Guard('institucion')->user()->email }}">
                             
-                        {{ Auth::Guard('institucion')->user()->email1 }}
+                        {{ Auth::Guard('institucion')->user()->email }}
                         </a>
                         
                     </td>
@@ -200,15 +199,15 @@
                                                 <td>CP:</td>
                                                <td><input type="" name="cp" value="{{ Auth::Guard('institucion')->user()->cp }}"> </td>
                                               </tr> 
-                                              <tr>
-                                                  <td>Provincia:</td>
-                                                <td><input type="" name="provincia" value="{{ Auth::Guard('institucion')->user()->provincia }}"></td>
-                                                 
-                                              </tr>
                                               <tr><td>   Localidad:</td>
                                                 <td> <input type="" name="localidad" value="{{ Auth::Guard('institucion')->user()->localidad }}"></td>
-
-                                               </tr>              
+                                                
+                                              </tr>              
+                                                  <tr>
+                                                      <td>Provincia:</td>
+                                                    <td><input type="" name="provincia" value="{{ Auth::Guard('institucion')->user()->provincia }}"></td>
+                                                     
+                                                  </tr>
                                             <tr>
                                                 <td>Teléfono: </td>
                                                 <td><input type="" name="telefono" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>

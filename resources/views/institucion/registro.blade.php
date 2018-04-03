@@ -70,15 +70,15 @@
 
 
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-5 control-label">Correo electrónico de la Institución </label>
+                        <div class="form-group{{ $errors->has('email1') ? ' has-error' : '' }}">
+                            <label for="email1" class="col-md-5 control-label">Correo electrónico de la Institución </label>
 
                             <div class="col-md-7">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email1" type="email" class="form-control" name="email1" value="{{ old('email1') }}" required>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('email1'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('email1') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -87,7 +87,7 @@
                             <label for="url" class="col-md-5 control-label">Sitio web de la Institución </label>
 
                             <div class="col-md-7">
-                                <input id="url" type="url" class="form-control" name="url" value="{{ old('url') }}" required>
+                                <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" required>
 
                                 @if ($errors->has('url'))
                                     <span class="help-block">
@@ -118,15 +118,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email1') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-5 control-label">Correo electrónico  de contacto</label>
 
                             <div class="col-md-7">
-                                <input id="email1" type="email" class="form-control" name="email1" value="{{ old('email1') }}" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                                @if ($errors->has('email1'))
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email1') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>

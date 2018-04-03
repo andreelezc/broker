@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 use inetweb\Productor;
 use inetweb\Institucion;
+use inetweb\Admin;
 use inetweb\Capacidad;
 use inetweb\Oportunidad;
 use inetweb\Keyword;
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
         self::seedInstitucions();
         self::seedCapacidads();
         self::seedOportunidads();
+        self::seedAdmins();
         $this->command->info('Tabla usuarios inicializada con datos!');
          $this->command->info('Tabla capacidades inicializada con datos!');
           $this->command->info('Tabla oportunidades inicializada con datos!');
@@ -40,6 +42,7 @@ class DatabaseSeeder extends Seeder
              $p->email1 ='aflorenciacabrera@gmail.com';
              $p->hora ='8-9';
             $p->password = bcrypt('123456');
+            $p->estado = 1;
              $p->save();  
 
 
@@ -73,6 +76,7 @@ class DatabaseSeeder extends Seeder
              $i->email1 ='aflorenciacabrera@gmail.com';
              $i->hora ='8-9';
             $i->password = bcrypt('123456');
+            $i->estado = 1;
             $i->save();    
 
         	// FABRICA 10 INSTANCIAS de institucion
@@ -265,10 +269,20 @@ class DatabaseSeeder extends Seeder
             $o->addKey("chaco");
 
 
-             
-
-
        }
+
+         private function seedAdmins(){
+        DB::table('admins')->delete();
+            $a = new Admin;
+            $a->email = 'admin@admin.com';
+            $a->name = 'Intituso Nuevo Siglo';
+            $a->password = bcrypt('123456');
+            $a->save();
+
+
+         }
+
+
 
 
       

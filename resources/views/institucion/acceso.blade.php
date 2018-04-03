@@ -15,6 +15,12 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif
+                      @if(Session::has('activacion'))     
+                        <div class="alert alert-danger text-uppercase text-center" role="alert">
+                            <span>{{Session::get('activacion')}}</span> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
                 <div class="panel-heading text-center"><h3>Iniciar sesión como Institución</h3></div>
 
                 <div class="panel-body">
@@ -22,7 +28,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Correo Electrónico</label>
+                            <label for="email" class="col-md-4 control-label">Correo Electrónico de Contacto</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>

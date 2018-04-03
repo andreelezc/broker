@@ -14,6 +14,12 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif
+                     @if(Session::has('activacion'))     
+                        <div class="alert alert-danger text-uppercase text-center" role="alert">
+                            <span>{{Session::get('activacion')}}</span> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
                  <div class="panel-heading text-center"><h3>Iniciar sesión como Productor</h3></div>
 
                 <div class="panel-body">
