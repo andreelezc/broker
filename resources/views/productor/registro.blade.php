@@ -104,13 +104,9 @@
 
                         </div>
 
-
                       {{-- Datos de contacto ///  <hr style="width:75%; " > --}}
-                      <div class="col-md-6">
-   
-                         <div class="panel-heading text-center"><h4>Datos de contacto</h4></div>
-
-                       
+                      <div class="col-md-6">   
+                         <div class="panel-heading text-center"><h4>Datos de contacto</h4></div>                       
                         <div class="form-group{{ $errors->has('name1') ? ' has-error' : '' }}">
                             <label for="name1" class="col-md-5 control-label text-center">Nombre de contacto:</label>
 
