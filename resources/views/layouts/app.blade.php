@@ -61,7 +61,7 @@
                 <div class="col-md-2 col-md-offset-3" ><img  src="{{asset('logofonietp.png')}}" /></div>
             </div>
             <div class="row">
-                <a href="/admin" style="font-size:0.8em">Administración</a>
+                <div class="col-md-2"><a href="/admin" style="font-size:0.8em">Administración</a></div>
             </div>
       </div>
 
