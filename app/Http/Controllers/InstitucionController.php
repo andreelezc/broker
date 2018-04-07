@@ -14,7 +14,7 @@ use inetweb\Institucion;
 use inetweb\Productor;
 use inetweb\Mail\nuevaPostulacion;
 use inetweb\Mail\nuevoUsuario;
-use inetweb\InteresInstitucion;
+use inetweb\Postulacion;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -34,11 +34,6 @@ class InstitucionController extends Controller
         
         return view('institucion.acceso');
     }
-
-
-   
-    //protected $loginview = 'institucion.acceso';
-
 
      public function authenticated()
      {
@@ -68,9 +63,6 @@ class InstitucionController extends Controller
         return view('institucion.editarCapacidad',array("capacidad"=>$capacidad));
     }
 
-   
-
-
     public function mostrarCapacidad()
     {
         return view('institucion.mostrarCapacidad');
@@ -82,6 +74,7 @@ class InstitucionController extends Controller
         return view('institucion.inicio');
     }
 
+    //TODO ...paginacion
     public function institucion()
     {
         $institucion = institucion::orderBy('id')->take(10)->get();
@@ -89,13 +82,13 @@ class InstitucionController extends Controller
         
     }
 
-    
-
      public function acceso()
     {
         return view('institucion.acceso');
     }
 
+
+    //TODO ...paginacion
      public function buscar()
     {
         ///envio los resultados a la vista
@@ -183,9 +176,10 @@ public function update_avatar(Request $request){
       public function postular(Request $request)
       {
 
-        $postulacion = new InteresInstitucion;
+        $postulacion = new Postulacion;
         $postulacion->institucion_id = $request->id_institucion;//si esta alreves pero fue sin querer
         $postulacion->oportunidad_id = $request->id_oportunidad;
+        $postulacion->capacidad_id = $request->capacidad_id;
         $postulacion->save();
 
         //Manda mails al que se postulo
