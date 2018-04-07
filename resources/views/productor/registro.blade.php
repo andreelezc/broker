@@ -12,7 +12,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif
-                <div class="panel-heading">Registra un Productor</div>
+                <div class="panel-heading text-center" >Registra un Productor</div>
 
                 <div class="panel-body">
                     <div class="row">
@@ -50,19 +50,20 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('cuit') ? ' has-error' : '' }}">
-                            <label for="cuit" class="col-md-5 control-label"> CUIT:</label>
+                        <div class="form-group{{ $errors->has('cuil') ? ' has-error' : '' }}">
+                            <label for="cuil" class="col-md-5 control-label"> CUIL <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Clave Unica de Identificación Laboral"></span></label>
 
                             <div class="col-md-7">
-                                <input id="cuit" type="num" class="form-control" name="cuit" value="{{ old('cuit') }}" required>
+                                <input id="cuil" type="num" class="form-control" name="cuil" value="{{ old('cuil') }}" required>
 
-                                @if ($errors->has('cuit'))
+                                @if ($errors->has('cuil'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('cuit') }}</strong>
+                                        <strong>{{ $errors->first('cuil') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+
 
 
 
@@ -80,33 +81,25 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-5 control-label">Contraseña</label>
+                        <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+                            <label for="url" class="col-md-5 control-label">Sitio web del Productor </label>
 
                             <div class="col-md-7">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" required>
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('url'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('url') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-5 control-label">Confirmar contraseña</label>
+                </div>
 
-                            <div class="col-md-7">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        </div>
-
-                      {{-- Datos de contacto ///  <hr style="width:75%; " > --}}
+                      {{-- Info de contacto ///  <hr style="width:75%; " > --}}
                       <div class="col-md-6">   
-                         <div class="panel-heading text-center"><h4>Datos de contacto</h4></div>                       
+                         <div class="panel-heading text-center"><h4>Información de contacto</h4></div>                       
                         <div class="form-group{{ $errors->has('name1') ? ' has-error' : '' }}">
                             <label for="name1" class="col-md-5 control-label text-center">Nombre de contacto:</label>
 
@@ -160,23 +153,53 @@
                                 @endif
                             </div>
                         </div>
+
+                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-5 control-label">Contraseña</label>
+
+                            <div class="col-md-7">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-5 control-label">Confirmar contraseña</label>
+
+                            <div class="col-md-7">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+                      
 
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-4 col-md-offset-4 text-center">
                                 <button type="submit" class="btn btn-primary">
                                     Registrar
                                 </button>
                             </div>
                         </div>
+                         </div>
                     </form>
-                </div>
+               
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+   <script src={{asset('js/jquery.min.js')}}></script>
+    <script>
+       $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({
+        placement : 'top'
+    });
+});
+   </script>
+   
 @endsection

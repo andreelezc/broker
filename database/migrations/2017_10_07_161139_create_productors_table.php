@@ -24,7 +24,7 @@ class CreateProductorsTable extends Migration
              $table->string('email1');
              $table->string('url')->default('defaultUrl');
             $table->string('hora');
-              $table->string('cuit')->unique();
+              $table->string('cuil')->unique();
             $table->string('cp')->nullable();
             $table->string('provincia')->nullable();
             $table->string('localidad')->nullable();
