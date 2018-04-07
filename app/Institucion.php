@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use inetweb\capacidad;
+use inetweb\Postulacion;
 
 class Institucion extends Authenticatable
 {
@@ -43,9 +44,13 @@ class Institucion extends Authenticatable
 
     //relacion institucion intereses
     //institucion->tinevarios->intereses
-      public function intereses()
-    {
-        return $this->hasMany('inetweb\InteresInstitucion');
+    //   public function intereses()
+    // {
+    //     return $this->hasMany('inetweb\InteresInstitucion');
+    // }
+
+    public function postulaciones(){
+        return $this->hasMany('inetweb\Postulacion');
     }
 
 

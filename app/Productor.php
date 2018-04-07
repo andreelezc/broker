@@ -36,8 +36,9 @@ class Productor extends Authenticatable
         return $this->hasMany('inetweb\oportunidad');
     }
 
-    public function intereses()
-    {
-        return $this->hasMany('inetweb\InteresProductor');
-    }
+    // public function intereses()
+    // {
+    //     return $this->hasMany('inetweb\InteresProductor');
+    // }
+    
 }
