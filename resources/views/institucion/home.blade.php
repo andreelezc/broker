@@ -19,7 +19,20 @@
                           @endif
           <div class="row">
               <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-                  <div><img src="{{asset('img/escuela.png')}}" class="img-rounded img-responsive" /> </div>
+                  
+                @if(Auth::guard('institucion')->user()->avatar !=="default.jpg")
+                
+                    
+                    <div> <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" class="img-rounded img-responsive" /> </div>
+                
+                @else
+                
+                    <div><img src="{{asset('img/escuela.png')}}" class="img-rounded img-responsive" /> </div>
+
+                
+                @endif
+
+
               </div>
           </div>
           <br>

@@ -27,7 +27,7 @@
                  {{--<img  height="100" width="100" avatar="{{ Auth::Guard('productor')->user()->name }}" class="img-responsive round">
                   <input type="file" name="avatar">  --}}
                           <div class="col-md-10 col-md-offset-4">
-                               <img src="/cargas/avatars/{{ Auth::Guard('productor')->user()->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:30px;"  class="img-responsive round" >
+                               <img src="/cargas/avatars/{{ Auth::Guard('productor')->user()->avatar }}" style="width:150px; height:150px; float:left; margin-right:30px;"  class="img-responsive" >
                               <br>
                               <label>Cambiar foto de perfil:</label>
                          </div>
