@@ -179,7 +179,7 @@ public function update_avatar(Request $request){
         $postulacion = new Postulacion;
         $postulacion->institucion_id = $request->id_institucion;//si esta alreves pero fue sin querer
         $postulacion->oportunidad_id = $request->id_oportunidad;
-        $postulacion->capacidad_id = $request->capacidad_id;
+        $postulacion->capacidad_id = $request->id_capacidad;
         $postulacion->save();
 
         //Manda mails al que se postulo

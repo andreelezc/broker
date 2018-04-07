@@ -63,7 +63,7 @@
         </div>
     
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver más</a>
+        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default btn-primary " data-toggle="modal" > ver más</a>
     </div>
     </div>
        
@@ -122,15 +122,15 @@
                                                 <div class="col-md-4" >
                                                 
 
-                                                    <form method="POST" action="{{url('institucion/postular')}}" >
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" name="id_institucion" value="{{ Auth::Guard('institucion')->user()->id}}"> 
-                                                    <input type="hidden" name="id_oportunidad" value="{{  $oportunidad->id }}"> 
-                                                    {{--  <button class="btn btn-primary" type="button">  --}}
-                                                         <a href="#selectCapacidad"   class="text-center btn btn-default " data-toggle="modal" >
-                                                        Postularme
-                                                        <span class="glyphicon glyphicon-hand-up"></span>
+                                                         <a href="#selectCapacidad"
+                                                            user_id="{{ Auth::Guard('institucion')->user()->id}}"  
+                                                            oportunidad_id="{{  $oportunidad->id }}" 
+                                                            
+                                                            class="text-center btn btn-default boton_oportunidad" data-toggle="modal" data-dismiss="modal" >
+                                                            Postularme
+                                                            <span class="glyphicon glyphicon-hand-up"></span>
                                                          </a>
+                                                         {{--  Este boton manda user_id y oportunidad_id al modal de la capacidad  --}}
 
                                                     </form>
                                                
@@ -177,13 +177,19 @@
                                                         <div class="modal-body"> 
                                                             <div class="row">
                                                                 <div class="col-mod-8 col-offset-2">
-                                                                    
-                                                                    <select name="capacidad_id" id="capacidad_id">
-                                                                        @foreach (Auth::Guard('institucion')->user()->capacidades as $item)
+                                                                         <form id="formularioPostulacion" method="POST" action="{{url('institucion/postular')}}" >
+                                                                                 {{ csrf_field() }} 
+                                                                    <div class="formgroup">
+                                                                        <input type="hidden" name="id_oportunidad" id="id_oportunidad">
+                                                                        <input type="hidden" name="id_institucion" id="id_institucion">
+                                                                        <select class="form-control" id="capacidad_id" name="id_capacidad">
+                                                                            @foreach (Auth::Guard('institucion')->user()->capacidades as $item)
                                                                             <option value="{{$item->id}}">{{$item->id." - ".$item->titulo}}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                    
+                                                                            @endforeach
+                                                                        </select>
+                                                                        
+                                                                    </div>
+                                                                         </form>
                                                                 </div>
                                                             </div>
 
@@ -191,7 +197,9 @@
                                                         <!-- footer de la ventana-->
 
                                                         <div class="modal-footer">
-
+                                                           <a class="btn btn-default btn-primary" id="enviarPostulacion">Postular
+                                                                    <span class="glyphicon glyphicon-hand-up"></span>
+                                                           </a>
                                                         </div>{{-- fin modal footer   --}}
                                                     </div>
                                                 </div>
@@ -222,6 +230,23 @@
                 var buscarurl = "{{ url('/institucion/buscar/')}}";
                location.href = buscarurl+"/"+$("#search-input").val();
             
+        })
+
+        //Para la Posutlacion
+        $(".boton_oportunidad").click(function(){
+
+            var oportunidad = $(this).attr('oportunidad_id')
+            var user_id = $(this).attr('user_id')
+            //cambiar le valor de la capacidad la formulario
+            $("#id_oportunidad").val(oportunidad);
+            $("#id_institucion").val(user_id);
+
+
+
+        })
+
+        $("#enviarPostulacion").click(function(){
+            $("#formularioPostulacion").submit();
         })
      })
  </script>
