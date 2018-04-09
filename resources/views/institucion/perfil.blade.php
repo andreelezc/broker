@@ -194,7 +194,7 @@
                           {{ method_field('PUT') }}
 
                                           {{--  Datos de la Institución --}}
-                                      <h3 class="panel-title text-center"> Datos de Contacto</h3>
+                                      <h3 class="panel-title text-center"> Datos de la Institución</h3>
                                          <table class="table table-user-information">
                                         <tbody>
                                          <tr>

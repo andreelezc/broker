@@ -43,6 +43,8 @@
                 
                 </div>
                    {{--Tabla del perfil--}}
+                   <h3 class="panel-title text-center">Datos del Productor</h3>
+                <br>
                 <div class=" col-md-10 col-lg-6 col-lg-offset-1 "> 
                   <table class="table table-user-information">
                     <tbody>
@@ -65,7 +67,11 @@
                         <td>{{ Auth::Guard('productor')->user()->direccion }}</td>
                        
                       </tr> 
-                      
+                      <tr>
+                        <td>CUIL:</td>
+                        <td>{{ Auth::Guard('productor')->user()->cuil }}</td>
+                       
+                      </tr> 
                       <tr>
                         <td>CP:</td>
                         <td> {{ Auth::Guard('productor')->user()->cp }}</td>
@@ -90,10 +96,15 @@
                         <td>Descripción:</td>
                         <td>{{ Auth::Guard('productor')->user()->descripcion }} </td>
                       </tr>
+                       <tr>
+                        <td>Sitio Web: </td>
+                        <td>{{ Auth::Guard('productor')->user()->url }} </td>                          
+                    </tr>
                     </tbody>
                   </table>
+                  <hr style="width:75%; " > 
 
-{{--Datos de contacto--}}
+                  {{--Datos de contacto--}}
                   <h3 class="panel-title text-center">Datos del Contacto</h3>
                    <br>
                    <table class="table table-user-information">
@@ -140,69 +151,107 @@
                                 <div class="modal-content">
                                     <!-- header de la ventana-->
 
-                                    <div class="modal-header">
+                                   {{--  <div class="modal-header"> --}}
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                         </button>
-                                        <h3 class="panel-title text-center modal-title">  Editar Perfil de {{ Auth::Guard('productor')->user()->name }}</h3>
+                                   {{--  </div> --}}
 
-                                    </div>
+                        <div class="container">
+                          <div class="row">
+                              <div class="  col-md-6  col-md-offset-2 col-lg-offset-0" >   
+
+
+                                    <div class="panel-heading">
+                                    <h3 class="panel-title text-center modal-title">  Editar Perfil de {{ Auth::Guard('productor')->user()->name }}</h3>
+                                  </div>
                                      <!-- contenido de la ventana de la ventana-->
                                             <!-- panel de editar perfil-->
-                                    
+                                     
                                      {{-- Inicio FORM --}}
                                     <form method="POST" action="{{url('productor/perfil')}}" class="bootstrap-form-with-validation">
                                          {{ csrf_field() }}
                                         {{ method_field('PUT') }}
-
+                                        
+                                        {{--  Datos del productor --}}
+                                      <h3 class="panel-title text-center"> Datos de Productor</h3>
                                          <table class="table table-user-information">
                                         <tbody>
                                          <tr>
                                                 <td>Nombre:</td>
-                                                <td><input type="" name="name" value="{{ Auth::Guard('productor')->user()->name }}"></td>
+                                                <td><input  class="form-control" type="" name="name" value="{{ Auth::Guard('productor')->user()->name }}"></td>
                                                  <td>
-
-                                                 
-                                              
                                           </td>  
                                          </tr>     
                                          
                                               <tr>
                                                   <td>Dirección:</td>
-                                                <td><input type="" name="direccion" value="{{ Auth::Guard('productor')->user()->direccion }}"></td>
+                                                <td><input  class="form-control" type="" name="direccion" value="{{ Auth::Guard('productor')->user()->direccion }}"></td>
                                                  
                                               </tr>
                                               <tr>
+                                                <td>CUIL:</td>
+                                               <td><input class="form-control" type="" name="cuil" value="{{ Auth::Guard('productor')->user()->cuil }}"> </td>
+                                              </tr> 
+                                              <tr>
                                                 <td>CP:</td>
-                                               <td><input type="" name="cp" value="{{ Auth::Guard('productor')->user()->cp }}"> </td>
+                                               <td><input class="form-control" type="" name="cp" value="{{ Auth::Guard('productor')->user()->cp }}"> </td>
                                               </tr> 
                                               <tr>
                                                   <td>Provincia:</td>
-                                                <td><input type="" name="provincia" value="{{ Auth::Guard('productor')->user()->provincia }}"></td>
+                                                <td><input class="form-control" type="" name="provincia" value="{{ Auth::Guard('productor')->user()->provincia }}"></td>
                                                  
                                               </tr>
                                               <tr><td>   Localidad:</td>
-                                                <td> <input type="" name="localidad" value="{{ Auth::Guard('productor')->user()->localidad }}"></td>
+                                                <td> <input class="form-control" type="" name="localidad" value="{{ Auth::Guard('productor')->user()->localidad }}"></td>
 
                                                </tr>              
                                             <tr>
                                                 <td>Teléfono: </td>
-                                                <td><input type="" name="telefono" value="{{ Auth::Guard('productor')->user()->telefono }}"></td>
+                                                <td><input class="form-control" type="" name="telefono" value="{{ Auth::Guard('productor')->user()->telefono }}"></td>
                                                                           
                                               </tr>
 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <textarea  rows="4"   cols="40" placeholder="Elaborá una breve descripción de tu perfil " name="descripcion"  >{{ Auth::Guard('productor')->user()->descripcion }}</textarea></td>
+                                                <td> <input  class="form-control"  placeholder="Elaborá una breve descripción de tu perfil " name="descripcion" value="{{ Auth::Guard('productor')->user()->descripcion }}" ></td>
+                                              </tr>
+                                             <tr>
+                                                <td>Sitio Web: </td>
+                                                <td><input class="form-control" type="" name="url" value="{{ Auth::Guard('productor')->user()->url }}"></td>
                                               </tr>
                                             </tbody>
                                           </table>
+                                           {{-- Info de contacto --}}
+                                          <hr style="width:75%; " > 
+                                          <h3 class="panel-title text-center">Información del Contacto</h3>
+
+                                           <table class="table table-user-information">
+                                        <tbody>
+                                         <tr>
+                                                <td>Nombre:</td>
+                                                <td><input class="form-control" type="" name="name1" value="{{ Auth::Guard('productor')->user()->name1 }}"></td>
+                                                 <td>                                           
+                                          </td>  
+                                         </tr>             
+                                              
+                                               <tr>
+                                                <td>Teléfono: </td>
+                                                <td><input class="form-control" type="" name="telefono1" value="{{ Auth::Guard('productor')->user()->telefono1 }}"></td>                                          </tr>
+                                              <tr>
+                                                <td>Horario  <br>Contacto: </td>
+                                                <td><input class="form-control" type="" name="hora" value="{{ Auth::Guard('productor')->user()->hora }}"></td>      
+                                                 </tr>
+
+                                            </tbody>
+                                          </table>
+
                                             
                                      <!-- footer de la ventana-->
                                   <div class="modal-footer">
                                     <div class="  col-lg-offset-2" >
                                        <div class="row">
-                                              <div class="col-md-1  ">
+                                              <div class="col-md-4 col-lg-offset-4 ">
                                                    {{--Boton de Guaedar --}}  
                                                   
                                                    <input type="hidden" name="id" value="{{ Auth::Guard('productor')->user()->id }}" >
@@ -215,6 +264,7 @@
                                   </div>
 
                               </form> {{--Fin from--}}    
+                               </div> </div> </div>
                         </div>{{-- modal --}}
                           </div>
                       </div> {{-- modal --}} 
