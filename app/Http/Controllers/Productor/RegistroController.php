@@ -50,7 +50,7 @@ class RegistroController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'direccion' => $data['direccion'],
-            'cuil' => $data['cuit'],
+            'cuil' => $data['cuil'],
             'url' => $data['url'],
             'name1' => $data['name1'],
             'telefono1' => $data['telefono1'],
