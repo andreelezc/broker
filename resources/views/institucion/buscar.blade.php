@@ -133,7 +133,7 @@
                                                          {{--  Este boton manda user_id y oportunidad_id al modal de la capacidad  --}}
 
                                                     </form>
-                                               
+                                             
                                                 </div>
 
                                                 
@@ -144,36 +144,31 @@
                                             </div>
                                         </div>{{-- fin modal footer   --}}
 
-                                   
-                                    
-                                  
-
                             </div>
                         </div>
                     </div>
 
-
-                    
-                    
-                    
                 </li>
                 @endforeach
             </ul>
-            
+                        {{-- paginaciones --}} 
+                    <div class="text-center">
+                      {!!$oportunidades->links()!!}
+                    </div>
             
                                     {{--  MODAL DE SELECCIÓN DE CAPACIDAD  --}}
                                             <div class="modal fade in" id="selectCapacidad" >
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
-                                                        {{--  <!-- header de la ventana-->  --}}
+                                                        {{--  <!-header de la ventana->  --}}
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">×</span>
                                                             </button>
                                                             <h4 class="modal-title"> Seleccionar Capacidad para la Postulación </h4>
                                                         </div>
-                                                        {{--  <!-- contenido de la ventana de la ventana-->  --}}
-                                                        {{--  <!-- panel de oportunidad-->  --}}
+                                                        {{--   contenido de la ventana de la ventana  --}}
+                                                        {{--   panel de oportunidad  --}}
                                                         <div class="modal-body"> 
                                                             <div class="row">
                                                                 <div class="col-mod-8 col-offset-2">

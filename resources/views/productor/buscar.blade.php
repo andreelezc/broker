@@ -151,6 +151,11 @@
     </li>
 @endforeach
 </ul>
+                      {{-- paginaciones --}} 
+                    <div class="text-center">
+                      {!!$capacidades->links()!!}
+                    </div>
+
 
                  </div>
             </div>

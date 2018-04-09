@@ -208,13 +208,19 @@
               </div>
           </div> {{-- modal --}} 
 
+
     </li>
+  
 @endforeach
+                    {{-- <div class="text-center">
+                      {!!$capacidades->links()!!}
+                    </div> --}}
+
     </div>
 </ul>
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
-          
+
 
     
     <script src="{{ asset('js/avatar.js') }} "></script>

@@ -65,8 +65,8 @@ class CapacidadController extends Controller
 
 
      public function getAll(){
-          $capacidades = capacidad::all();
-          return json_encode($capacidades);
+       $capacidades = capacidad::all();
+         return json_encode($capacidades);
      }
       
 
@@ -124,6 +124,7 @@ class CapacidadController extends Controller
        public function capacidad()
     {
          $capacidad = capacidad::orderBy('id')->take(10)->get();
+        
         return view('capacidad',array('capacidad'=>$capacidad));
        
     }

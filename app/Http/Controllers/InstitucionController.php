@@ -15,7 +15,7 @@ use inetweb\Productor;
 use inetweb\Mail\nuevaPostulacion;
 use inetweb\Mail\nuevoUsuario;
 use inetweb\Postulacion;
-
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Mail;
@@ -65,6 +65,7 @@ class InstitucionController extends Controller
 
     public function mostrarCapacidad()
     {
+         $capacidad = capacidad::paginate(1);
         return view('institucion.mostrarCapacidad');
     }
 
@@ -77,7 +78,7 @@ class InstitucionController extends Controller
     //TODO ...paginacion
     public function institucion()
     {
-        $institucion = institucion::orderBy('id')->take(10)->get();
+        $institucion = institucion::orderBy('id')->paginate(10);
         return view('institucion',array('institucion'=>$institucion));
         
     }
@@ -92,7 +93,7 @@ class InstitucionController extends Controller
      public function buscar()
     {
         ///envio los resultados a la vista
-        $oportunidades = Oportunidad::orderBy('id', 'desc')->take(10)->get();
+        $oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(10);
         return view('institucion.buscar',array('oportunidades'=>$oportunidades));
        
       }

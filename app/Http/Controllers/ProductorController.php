@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Pagination\LengthAwarePaginator;
 use inetweb\Oportunidad;
 use inetweb\InteresProductor;
 use inetweb\Capacidad;
@@ -87,7 +87,7 @@ class ProductorController extends Controller
      public function buscar()
     {
         ///buscar 10 capacidades y mostrar
-        $capacidades = capacidad::orderBy('id', 'desc')->take(10)->get();
+        $capacidades = capacidad::orderBy('id', 'desc')->paginate(10);
         // return $capacidades->Institucion;
         //envio los resultados a la vista
         return view('productor.buscar',array('capacidades'=>$capacidades));

@@ -10,10 +10,10 @@
 
 *Controlar que no se repitan las postulacion/SELECCIONES
 
-*Editar de Perfiles -- que se puedan editar TODOS los datos (Info de contacto y url sitio web) ----- "Listo para Instituciones"
-
-**Cambie el orden del if en el boton de activar y suspender de productores xq estaba alrevez.-
+*Editar de Perfiles -- que se puedan editar TODOS los datos (Info de contacto y url sitio web) ----- "Listo para Instituciones y Productores"
 
 *Envio de Mail solo al mail de contacto y al Admin
 
+---------------------------------------------------------------------------------------------------------------
+**Cambie el orden del if en el boton de activar y suspender de productores xq estaba alrevez.-
 ----Error--- Cuando se intenta entrar en una cuenta que no se activo por el admin, logea igual en la barra (no deja hacer nada pero abria q sacar el logueo)
