@@ -32,7 +32,7 @@
 
                       <div class="col-md-10 col-md-offset-4">
                                <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" style="width:150px; height:150px; float:left;  margin-right:30px;"  class="img-responsive" >
-                              <br>
+                              <br><br><br> <br><br><br> <br><br>
                               <label>Cambiar foto de perfil:</label>
                          </div>
                         <div class="col-md-10 col-md-offset-0">
@@ -61,8 +61,7 @@
                          <td>
                       
                   </td>  
-                 </tr>     
-                 
+                 </tr>      
                   <tr>
                           <td>Dirección de correo:</td>
                         <td>
@@ -73,11 +72,14 @@
                             
                         </td>
                         </tr>
-                                        
-                  
                       <tr>
                           <td>Dirección:</td>
                         <td>{{ Auth::Guard('institucion')->user()->direccion }}</td>
+                         
+                      </tr>  
+                       <tr>
+                          <td>CUE:</td>
+                        <td>{{ Auth::Guard('institucion')->user()->cue }}</td>
                          
                       </tr>  
                       <tr>
@@ -92,8 +94,6 @@
                                 <td>Provincia:</td>
                                 <td> {{ Auth::Guard('institucion')->user()->provincia }}</td>
                               </tr>
-                        
-
                     <tr>
                         <td>Teléfono: </td>
                         <td>{{ Auth::Guard('institucion')->user()->telefono }} </td>
@@ -104,11 +104,19 @@
                         <td>Descripción:</td>
                         <td>{{ Auth::Guard('institucion')->user()->descripcion }} </td>
                       </tr>
+
+                      <tr>
+                        <td>Sitio Web: </td>
+                        <td>{{ Auth::Guard('institucion')->user()->url }} </td>                          
+                    </tr>
+
                     </tbody>
                   </table>
                   
-{{--Datos de contacto--}}
-                   <h3 class="panel-title text-center">Datos del Contacto</h3>
+                  
+                      {{--Datos de contacto--}}
+                      <hr style="width:75%; " > 
+                   <h3 class="panel-title text-center">Información del Contacto</h3>
                    <br>
                    <table class="table table-user-information">
                 <tbody>
@@ -133,7 +141,13 @@
                         <td>Teléfono: </td>
                         <td>{{ Auth::Guard('institucion')->user()->telefono1 }} </td>
                                                   
-                      </tr>
+                    </tr>
+                    <tr>
+                        <td>Horario de Contacto: </td>
+                        <td>{{ Auth::Guard('institucion')->user()->hora }} </td>
+                                                  
+                    </tr>
+                   
                    
                     </tbody>
                   </table>
@@ -168,6 +182,7 @@
                                                     <div class="panel-heading">
                                                         <h3 class="panel-title text-center modal-title">  Editar Perfil de {{ Auth::Guard('institucion')->user()->name }}</h3>
                                                     </div>
+                                                      <hr style="width:75%; " > 
 
                                      
                                      <!-- contenido de la ventana de la ventana-->
@@ -178,52 +193,78 @@
                            {{ csrf_field() }}
                           {{ method_field('PUT') }}
 
+                                          {{--  Datos de la Institución --}}
+                                      <h3 class="panel-title text-center"> Datos de Contacto</h3>
                                          <table class="table table-user-information">
                                         <tbody>
                                          <tr>
                                                 <td>Nombre:</td>
-                                                <td><input type="" name="name" value="{{ Auth::Guard('institucion')->user()->name }}"></td>
-                                                 <td>
-
-                                                 
-                                              
+                                                <td><input class="form-control" type="" name="name" value="{{ Auth::Guard('institucion')->user()->name }}"></td>
+                                                 <td>                                           
                                           </td>  
-                                         </tr>     
-                                         
+                                         </tr>             
                                               <tr>
                                                   <td>Dirección:</td>
-                                                <td><input type="" name="direccion" value="{{ Auth::Guard('institucion')->user()->direccion }}"></td>
+                                                <td><input class="form-control" type="" name="direccion" value="{{ Auth::Guard('institucion')->user()->direccion }}"></td>
                                                  
                                               </tr>
                                               <tr>
                                                 <td>CP:</td>
-                                               <td><input type="" name="cp" value="{{ Auth::Guard('institucion')->user()->cp }}"> </td>
+                                               <td><input class="form-control" type="" name="cp" value="{{ Auth::Guard('institucion')->user()->cp }}"> </td>
                                               </tr> 
                                               <tr><td>   Localidad:</td>
-                                                <td> <input type="" name="localidad" value="{{ Auth::Guard('institucion')->user()->localidad }}"></td>
+                                                <td> <input class="form-control" type="" name="localidad" value="{{ Auth::Guard('institucion')->user()->localidad }}"></td>
                                                 
                                               </tr>              
                                                   <tr>
                                                       <td>Provincia:</td>
-                                                    <td><input type="" name="provincia" value="{{ Auth::Guard('institucion')->user()->provincia }}"></td>
+                                                    <td><input class="form-control" type="" name="provincia" value="{{ Auth::Guard('institucion')->user()->provincia }}"></td>
                                                      
                                                   </tr>
-                                            <tr>
+                                               <tr>
                                                 <td>Teléfono: </td>
-                                                <td><input type="" name="telefono" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>
-                                                                          
+                                                <td><input class="form-control" type="" name="telefono" value="{{ Auth::Guard('institucion')->user()->telefono }}"></td>                                                                         
                                               </tr>
 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <textarea  rows="4"   cols="40" placeholder="Elaborá una breve descripción de tu perfil " name="descripcion"  >{{ Auth::Guard('institucion')->user()->descripcion }}</textarea></td>
+                                                <td> <input  class="form-control"  placeholder="Elaborá una breve descripción de tu perfil " name="descripcion" value="{{ Auth::Guard('institucion')->user()->descripcion }}" ></td>
+                                              </tr>
+
+                                              <tr>
+                                                <td>Sitio Web: </td>
+                                                <td><input class="form-control" type="" name="url" value="{{ Auth::Guard('institucion')->user()->url }}"></td>
                                               </tr>
                                             </tbody>
                                           </table>
-                                            
+
+                                          {{-- Info de contacto --}}
+                                          <hr style="width:75%; " > 
+                                          <h3 class="panel-title text-center">Información del Contacto</h3>
+
+                                           <table class="table table-user-information">
+                                        <tbody>
+                                         <tr>
+                                                <td>Nombre:</td>
+                                                <td><input class="form-control" type="" name="name1" value="{{ Auth::Guard('institucion')->user()->name1 }}"></td>
+                                                 <td>                                           
+                                          </td>  
+                                         </tr>             
+                                              
+                                               <tr>
+                                                <td>Teléfono: </td>
+                                                <td><input class="form-control" type="" name="telefono1" value="{{ Auth::Guard('institucion')->user()->telefono1 }}"></td>                                          </tr>
+                                              <tr>
+                                                <td>Horario  <br>Contacto: </td>
+                                                <td><input class="form-control" type="" name="hora" value="{{ Auth::Guard('institucion')->user()->hora }}"></td>      
+                                                 </tr>
+
+                                            </tbody>
+                                          </table>
+
                                      <!-- footer de la ventana-->
                                   <div class="modal-footer">
-                                    <div class=" col-md-1  col-lg-offset-2" >
+                                    <div class=" col-md-4  col-lg-offset-4" >
                                        <div class="row">
                                              {{--Boton de Guaedar --}}  
                                                   

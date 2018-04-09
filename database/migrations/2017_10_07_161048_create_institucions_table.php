@@ -20,7 +20,7 @@ class CreateInstitucionsTable extends Migration
             $table->string('avatar')->default('default.jpg');
             $table->string('direccion');
             $table->string('name1');
-            $table->string('url')->default('defaultUrl');
+            $table->string('url')->default('No Tiene');
             $table->string('telefono1');
              $table->string('email1');
             $table->string('hora');

@@ -148,7 +148,7 @@ public function update_avatar(Request $request){
     public function editarPerfil(Request $request)
       {
         $user =Institucion::findOrFail($request->id);  
-
+        //datos de la institución
         $user->name= $request->name;
         $user->direccion= $request->direccion;
         $user->cp= $request->cp;
@@ -156,6 +156,10 @@ public function update_avatar(Request $request){
         $user->localidad= $request->localidad;
         $user->telefono= $request->telefono;
         $user->descripcion= $request->descripcion;
+        //info de contacto
+        $user->name1= $request->name1;
+        $user->telefono1= $request->telefono1;
+        $user->hora= $request->hora;
 
         $user->save();
 
