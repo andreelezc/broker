@@ -1,7 +1,6 @@
 <?php
 
 namespace inetweb\Http\Controllers;
-
 use Illuminate\Http\Request;
 use inetweb\Oportunidad;
 use inetweb\OportunidadKey;
@@ -19,9 +18,6 @@ class OportunidadController extends Controller
      	$o->titulo= $request->titulo;
      	$o->descripcion= $request->descripcion;
      	$o->requisito= $request->requisito;
-      $o->categoria= $request->categoria;
-      $o->tipo= $request->tipo;
-      $o->orientacion= $request->orientacion;
       $o->personal= $request->personal;
       $o->remuneracion= $request->remuneracion;
       $o->provincia= $request->provincia;
@@ -60,6 +56,8 @@ class OportunidadController extends Controller
 
      	
      }
+
+     
     public function borrar(Request $request) {
   
       
@@ -108,7 +106,7 @@ class OportunidadController extends Controller
       }
       public function oportunidad()
     {
-         $oportunidad = oportunidad::orderBy('id')->take(10)->get();
+         $oportunidad = oportunidad::orderBy('id')->paginate(1);//->take(10)->get();
         return view('oportunidad',array('oportunidad'=>$oportunidad));
         
     }

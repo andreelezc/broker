@@ -15,7 +15,7 @@ class ProductorActivada
      */
     public function handle($request, Closure $next)
     {
-         if (Auth::guard('productor')->user()->estado) 
+         if (Auth::guard('productor')->user()->estado==0) 
         {
             return redirect('/productor/acceso')->with('activacion','Su cuenta aun no ha sido activada, comuniquese con el Administrador');
         }

@@ -212,9 +212,6 @@
     </li>
   
 @endforeach
-                    {{-- <div class="text-center">
-                      {!!$capacidades->links()!!}
-                    </div> --}}
 
     </div>
 </ul>

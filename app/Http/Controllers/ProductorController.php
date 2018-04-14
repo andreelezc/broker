@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Pagination\LengthAwarePaginator;
+
 use inetweb\Oportunidad;
 use inetweb\InteresProductor;
 use inetweb\Capacidad;
@@ -46,7 +46,9 @@ class ProductorController extends Controller
 
       public function index()
     {
-        return view('productor.home');
+        $user = Auth::guard('productor')->user();
+        return view('productor.home',array('user'=>$user));
+       //return view('productor.home');
     }
 
     public function perfil()
@@ -59,7 +61,8 @@ class ProductorController extends Controller
     }
     public function productor()
     {
-        $productor = productor::orderBy('id');//->take(10)->get();
+         $productor = productor::orderBy('id')->paginate(10);
+        //$productor = productor::orderBy('id');//->take(10)->get();
         return view('productor',array('productor'=>$productor));
        
     }
@@ -75,6 +78,8 @@ class ProductorController extends Controller
     }
     public function mostrarOportunidad()
     {
+      
+       //$oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(1);
         return view('productor.mostrarOportunidad');
     }
 

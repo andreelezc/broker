@@ -15,7 +15,7 @@ use inetweb\Productor;
 use inetweb\Mail\nuevaPostulacion;
 use inetweb\Mail\nuevoUsuario;
 use inetweb\Postulacion;
-use Illuminate\Pagination\LengthAwarePaginator;
+
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Mail;
@@ -65,7 +65,7 @@ class InstitucionController extends Controller
 
     public function mostrarCapacidad()
     {
-         $capacidad = capacidad::paginate(1);
+       
         return view('institucion.mostrarCapacidad');
     }
 
@@ -204,11 +204,6 @@ public function update_avatar(Request $request){
       {
           return view('institucion.postulaciones');
       }
-
-
-     
-
-
 
 
 

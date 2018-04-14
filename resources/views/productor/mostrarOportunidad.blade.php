@@ -204,9 +204,11 @@
 @endforeach
   </div>
 </ul>
+
+ 
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
-          
+         
 
     
     <script src="{{ asset('js/avatar.js') }} "></script>

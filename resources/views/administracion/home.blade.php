@@ -49,11 +49,10 @@
                                         </a>
                                           @if ($user->estado)
                                            
-                                          <a class="btn btn-primary boton-activar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="productor" ><i class="glyphicon glyphicon-ok"></i>&nbspActivar</a>
+                                          <a class="btn btn-danger boton-desactivar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="productor"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</a>
                                           @else
                                           
-
-                                          <a class="btn btn-danger boton-desactivar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="productor"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</a>
+                                          <a class="btn btn-primary boton-activar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="productor" ><i class="glyphicon glyphicon-ok"></i>&nbspActivar</a>
                                             
                                      @endif
 
