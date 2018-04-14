@@ -214,7 +214,7 @@ public function update_avatar(Request $request){
               //TODO
               //que mande el borrado con exito
               //return view('institucion.mostrarCapacidad');
-              return redirect(url('institucion/postulaciones'));
+              return redirect(url('institucion/postulaciones'))->with('success','POSTULACION ELIMINADA ');
 
     
           

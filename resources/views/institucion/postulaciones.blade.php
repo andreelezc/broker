@@ -10,12 +10,13 @@
                 <div class="panel-heading">Mis Postulaciones</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                       
-                        </div>
-                    @endif
+                     @if(session('success'))
+                        <div class="alert alert-success text-center" role="alert">
+
+                            <strong>{{session('success')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif 
 
                      
                
