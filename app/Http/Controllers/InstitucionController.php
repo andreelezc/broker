@@ -191,7 +191,7 @@ public function update_avatar(Request $request){
         
         $productor =Productor::findOrFail($request);
         // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
-        Mail::to($productor)->send(new nuevaPostulacion($productor));
+        //Mail::to($productor)->send(new nuevaPostulacion($productor));
 
 
         ///para el flashh
@@ -204,6 +204,21 @@ public function update_avatar(Request $request){
       {
           return view('institucion.postulaciones');
       }
+
+       public function borrar(Request $request) {
+        
+            
+             $postulacion = Postulacion::findOrFail($request->id);
+              $postulacion->delete();
+
+              //TODO
+              //que mande el borrado con exito
+              //return view('institucion.mostrarCapacidad');
+              return redirect(url('institucion/postulaciones'));
+
+    
+          
+          }
 
 
 

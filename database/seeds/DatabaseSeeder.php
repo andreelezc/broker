@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         self::seedProductors();
         self::seedInstitucions();
         self::seedCapacidads();
-        //self::seedOportunidads();
+        self::seedOportunidads();
         self::seedAdmins();
         $this->command->info('Tabla usuarios inicializada con datos!');
          $this->command->info('Tabla capacidades inicializada con datos!');
@@ -187,51 +187,51 @@ class DatabaseSeeder extends Seeder
 
     // Carga de Oportunidades de Productor
 
-     // private function seedOportunidads(){
-     //    DB::table('oportunidads')->delete();
+     private function seedOportunidads(){
+        DB::table('oportunidads')->delete();
          
-     //        //--------------carga 2
-     //    $o = new Oportunidad;
-     //        $o->titulo= ' Técnicos ';
-     //        $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
-     //        $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
+            //--------------carga 1
+        $o = new Oportunidad;
+            $o->titulo= ' Técnicos ';
+            $o->descripcion= 'búsqueda de Supervisores Técnicos para formar parte de un importante proyecto a nivel nacional ';
+            $o->requisito= 'Poseer sólidos conocimientos y experiencia de al menos 2 años en';
             
-     //        $o->personal= '2';
-     //        $o->remuneracion= '3000';
-     //        $o->provincia= 'chaco';
-     //        $o->localidad= 'charata';  
-     //        $o->fechaInicio = '20/11/2017';
-     //        $o->fechaFin= '20/12/2017';
-     //        $o->tiempo= 'Todo el día';
-     //              $o->horaInicioL='08:00';
-     //              $o->horaFinL='14:00' ;
-     //              $o->horaInicioM='00:00';
-     //              $o->horaFinM= '00:00';
-     //              $o->horaInicioMi='08:00';
-     //              $o->horaFinMi='14:00';
-     //              $o->horaInicioJ='00:00';
-     //              $o->horaFinJ= '00:00';
-     //              $o->horaInicioV='08:00';
-     //              $o->horaFinV= '14:00';
-     //              $o->horaInicioS='00:00';
-     //              $o->horaFinS= '00:00';
-     //              $o->horaInicioD='00:00';
-     //              $o->horaFinD='00:00'; 
+            $o->personal= '2';
+            $o->remuneracion= '3000';
+            $o->provincia= 'chaco';
+            $o->localidad= 'charata';  
+            $o->fechaInicio = '20/11/2017';
+            $o->fechaFin= '20/12/2017';
+            $o->tiempo= 'Todo el día';
+                  $o->horaInicioL='08:00';
+                  $o->horaFinL='14:00' ;
+                  $o->horaInicioM='00:00';
+                  $o->horaFinM= '00:00';
+                  $o->horaInicioMi='08:00';
+                  $o->horaFinMi='14:00';
+                  $o->horaInicioJ='00:00';
+                  $o->horaFinJ= '00:00';
+                  $o->horaInicioV='08:00';
+                  $o->horaFinV= '14:00';
+                  $o->horaInicioS='00:00';
+                  $o->horaFinS= '00:00';
+                  $o->horaInicioD='00:00';
+                  $o->horaFinD='00:00'; 
 
-     //        $o->numdura= '6';            
-     //        $o->duracion= 'meses';
+            $o->numdura= '6';            
+            $o->duracion= 'meses';
                     
-     //        $o->productor_id = 1;
-     //        $o->save(); 
-     //        //por cada palabra clave creo una keyword;
-     //        $o->addKey("Soporte");
-     //        $o->addKey("Tecnico");
-     //        $o->addKey("Electricidad");
-     //        $o->addKey("chaco");
+            $o->productor_id = 1;
+            $o->save(); 
+            //por cada palabra clave creo una keyword;
+            $o->addKey("Soporte");
+            $o->addKey("Tecnico");
+            $o->addKey("Electricidad");
+            $o->addKey("chaco");
 
 
 
-     //   }
+       }
 
          private function seedAdmins(){
         DB::table('admins')->delete();

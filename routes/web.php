@@ -37,6 +37,7 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 		Route::post('institucion/postular','InstitucionController@postular')->name('postularInstitucion');
 		///vista postulaciones
 		Route::get('institucion/postulaciones','InstitucionController@postulaciones')->name('postulacionesInstitucion');
+		Route::delete('institucion/postulaciones','InstitucionController@borrar')->name("borrarPostulacion");
 
 
 });

@@ -183,21 +183,21 @@
                                           </div>
                                           {{--Boton de eliminar --}}
                                           <div class="   col-lg-offset-7" >
-                                           <div class="col-md-1">
+                                               <div class="col-md-1">
+                                                <form method="post" action="{{ route('borrarCapacidad') }}">
+                                                    {{ csrf_field() }}
+                                                  {{ method_field('DELETE') }}
+                                               
+                                                  {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                                  <input type="hidden" name="id" value="{{  $capacidad->id }}">
+                                                   <button class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
+                                                 </form>
 
+                                                       
+                                                  </div>
 
-                                                    <form method="post" action="{{ route('borrarCapacidad') }}">
-                                                          {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
-                                                        <input type="hidden" name="id" value="{{ $capacidad->id }}">
-                                                         <a class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></a>
-                                                     </form>
-                                                   
-                                              </div>
-
-                                                  {{-- end col-lg --}}
-                                           </div>
+                                {{-- end col-lg --}}
+                                          </div>
                                           {{-- end col --}}
                                     </div>
                                           {{-- end row --}}
