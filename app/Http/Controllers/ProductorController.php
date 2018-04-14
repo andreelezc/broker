@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use inetweb\Oportunidad;
-use inetweb\InteresProductor;
+use inetweb\Seleccion;
 use inetweb\Capacidad;
 use inetweb\Institucion;
 use inetweb\Productor;
@@ -126,9 +126,10 @@ class ProductorController extends Controller
       public function postular(Request $request)
       {
 
-        $postulacion = new InteresProductor;
+        $postulacion = new Seleccion;
         $postulacion->productor_id = $request->productor_id;//si esta alreves pero fue sin querer
         $postulacion->capacidad_id = $request->capacidad_id;
+        $postulacion->oportunidad_id = $request->oportunidad_id;
         $postulacion->save();
 
         $institucion =institucion::findOrFail($request);

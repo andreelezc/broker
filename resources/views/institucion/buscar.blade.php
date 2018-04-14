@@ -25,6 +25,7 @@
                     @endif
 
 
+{{-- FORMULARIO DE BUSQUEDA --}}
 <div class="form-group">
     <label for="search-input" class="control-label">Buscar</label>
     <div class="input-group">
@@ -41,10 +42,7 @@
    <li class="list-group-item">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-
-        {{-- <img class="round" avatar="{{$oportunidad->productor->name}}"/> --}}
-  <img src="/cargas/avatars/{{$oportunidad->productor->avatar}}" class="img-responsive round" >
-
+            <img src="/cargas/avatars/{{$oportunidad->productor->avatar}}" class="img-responsive round" >
       </div> 
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
              <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>
@@ -63,7 +61,9 @@
         </div>
     
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default btn-primary " data-toggle="modal" > ver más</a>
+        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default btn-primary " data-toggle="modal" >
+        ver más
+        </a>
     </div>
     </div>
        
@@ -132,7 +132,7 @@
                                                          </a>
                                                          {{--  Este boton manda user_id y oportunidad_id al modal de la capacidad  --}}
 
-                                                    </form>
+                                                    
                                              
                                                 </div>
 
@@ -218,6 +218,8 @@
                location.href = buscarurl+"/"+$(this).val();
             }
         })
+
+
 
          $("#buscar").click(function(e){
            
