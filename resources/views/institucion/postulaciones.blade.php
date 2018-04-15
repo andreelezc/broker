@@ -22,7 +22,7 @@
                
 
 
-{{-- LISTA DE OPORTUNIDADES flor --}}
+{{-- LISTA DE postulaciones flor --}}
 <ul class="list-group">
     @foreach(Auth::Guard('institucion')->user()->postulaciones as $interes)
     
@@ -200,13 +200,18 @@
 </li>
     @endforeach
 </ul>
-
-
+                   
+                      {{-- paginaciones --}} 
+                     {{-- <div class="text-center">
+                    
+                      {!!Auth::Guard('institucion')->user()->postulaciones->links()!!}
+                    </div>  --}}
 
                  </div>
             </div>
         </div>
     </div>
 </div>
+ 
 
 @endsection

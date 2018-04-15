@@ -106,7 +106,7 @@ class OportunidadController extends Controller
       }
       public function oportunidad()
     {
-         $oportunidad = oportunidad::orderBy('id')->paginate(1);//->take(10)->get();
+         $oportunidad = oportunidad::orderBy('id')->paginate(10);//->take(10)->get();
         return view('oportunidad',array('oportunidad'=>$oportunidad));
         
     }

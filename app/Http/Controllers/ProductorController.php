@@ -4,7 +4,7 @@ namespace inetweb\Http\Controllers;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -114,7 +114,7 @@ class ProductorController extends Controller
                                     ->orWhere('capacidads.orientacion','like','%'.$palabra.'%')
                                     ->distinct()
                                     ->skip($pagina * 10)
-                                    ->take(10)
+                                    ->paginate(10)
                                     ->get(['capacidads.*']);
                 // 
                                     return view('productor.buscar',array('capacidades'=>$capacidades));
@@ -135,7 +135,7 @@ class ProductorController extends Controller
         $institucion =institucion::findOrFail($request);
        
 
-        // Mail::to($institucion)->send(new nuevaSeleccion($institucion));
+         // Mail::to($institucion)->send(new nuevaSeleccion($institucion));
         ///para el flashh
         return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 

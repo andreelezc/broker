@@ -4,6 +4,7 @@ namespace inetweb\Http\Controllers;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 use Illuminate\Http\Request;
 
@@ -88,6 +89,9 @@ class InstitucionController extends Controller
         return view('institucion.acceso');
     }
 
+    
+     
+
 
     //TODO ...paginacion
      public function buscar()
@@ -111,7 +115,7 @@ class InstitucionController extends Controller
                                     ->orWhere('oportunidads.orientacion','like','%'.$palabra.'%')
                                     ->distinct()
                                     ->skip($pagina * 10)
-                                    ->take(10)
+                                    ->paginate(10)
                                     ->get(['oportunidads.*']);
                 // 
                                     return view('institucion.buscar',array('oportunidades'=>$oportunidades));
@@ -190,7 +194,7 @@ public function update_avatar(Request $request){
         //Manda mails al que se postulo
         
         $productor =Productor::findOrFail($request);
-        // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
+         // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
         //Mail::to($productor)->send(new nuevaPostulacion($productor));
 
 
@@ -200,9 +204,12 @@ public function update_avatar(Request $request){
 
       }
 
+      //TODO ...paginacion
       public function postulaciones()
       {
-          return view('institucion.postulaciones');
+        $postulacion = Postulacion::orderBy('id', 'desc')->paginate(1);
+        return view('institucion.postulaciones',array('postulacion'=>$postulacion));
+          //return view('institucion.postulaciones');
       }
 
        public function borrar(Request $request) {
@@ -216,8 +223,6 @@ public function update_avatar(Request $request){
               //return view('institucion.mostrarCapacidad');
               return redirect(url('institucion/postulaciones'))->with('success','POSTULACIÓN ELIMINADA ');
 
-    
-          
           }
 
 
