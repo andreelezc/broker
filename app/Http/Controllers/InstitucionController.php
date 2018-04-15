@@ -4,7 +4,7 @@ namespace inetweb\Http\Controllers;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Pagination\LengthAwarePaginator;
+//use Illuminate\Pagination\LengthAwarePaginator;
 
 use Illuminate\Http\Request;
 
@@ -207,8 +207,9 @@ public function update_avatar(Request $request){
       //TODO ...paginacion
       public function postulaciones()
       {
-        $postulacion = Postulacion::orderBy('id', 'desc')->paginate(1);
-        return view('institucion.postulaciones',array('postulacion'=>$postulacion));
+        $user =Auth::guard('institucion')->user()->id;
+        $postulacion = Postulacion::where('institucion_id', $user)->orderBy('id', 'desc')->paginate(10);
+        return view('institucion.postulaciones',compact('postulacion'));
           //return view('institucion.postulaciones');
       }
 

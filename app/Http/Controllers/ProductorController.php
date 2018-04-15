@@ -4,7 +4,7 @@ namespace inetweb\Http\Controllers;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Pagination\LengthAwarePaginator;
+//use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -190,7 +190,10 @@ class ProductorController extends Controller
       }
 
        public function selecciones(){
-        return view('productor.selecciones');
+        $user =Auth::guard('productor')->user()->id;
+        $seleccion = Seleccion::where('productor_id', $user)->orderBy('id', 'desc')->paginate(10);
+        return view('productor.selecciones',compact('seleccion'));
+        //return view('productor.selecciones');
       }
 
        public function borrar(Request $request) {

@@ -199,7 +199,11 @@
 </li>
     @endforeach
 </ul>
-
+                  {{-- paginaciones --}} 
+                     <div class="text-center">
+                    
+                      {!!$seleccion->links()!!}
+                    </div> 
 
 
                  </div>

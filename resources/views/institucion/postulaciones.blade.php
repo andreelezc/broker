@@ -202,10 +202,10 @@
 </ul>
                    
                       {{-- paginaciones --}} 
-                     {{-- <div class="text-center">
+                     <div class="text-center">
                     
-                      {!!Auth::Guard('institucion')->user()->postulaciones->links()!!}
-                    </div>  --}}
+                      {!!$postulacion->links()!!}
+                    </div> 
 
                  </div>
             </div>
