@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                      @if(session('success'))
-                        <div class="alert alert-success text-center" role="alert">
+                        <div class="alert alert-danger text-center" role="alert">
 
                             <strong>{{session('success')}}</strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -172,7 +172,7 @@
                          
                             {{-- <input type="hidden" name="_method" value="delete"> --}}
                             <input type="hidden" name="id" value="{{  $interes->oportunidad->id }}">
-                             <button class="btn btn-default">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
+                             <button class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
                            </form>
 
                                  

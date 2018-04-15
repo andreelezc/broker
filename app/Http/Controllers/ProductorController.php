@@ -135,16 +135,14 @@ class ProductorController extends Controller
         $institucion =institucion::findOrFail($request);
        
 
-         Mail::to($institucion)->send(new nuevaSeleccion($institucion));
+        // Mail::to($institucion)->send(new nuevaSeleccion($institucion));
         ///para el flashh
         return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 
       }
 
 
-      public function selecciones(){
-        return view('productor.selecciones');
-      }
+     
 
 
       public function update_avatar(Request $request){
@@ -190,5 +188,24 @@ class ProductorController extends Controller
           return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
 
       }
+
+       public function selecciones(){
+        return view('productor.selecciones');
+      }
+
+       public function borrar(Request $request) {
+        
+            
+             $seleccion = Seleccion::findOrFail($request->id);
+              $seleccion->delete();
+
+              //TODO
+              //que mande el borrado con exito
+              //return view('institucion.mostrarCapacidad');
+              return redirect(url('productor/selecciones'))->with('success','SELECCIÓN ELIMINADA ');
+
+    
+          
+          }
 
 }
