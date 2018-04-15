@@ -204,7 +204,10 @@
 @endforeach
   </div>
 </ul>
-
+                 <div class="text-center">
+                    
+                      {!!$oportunidades->links()!!}
+                    </div> 
  
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}

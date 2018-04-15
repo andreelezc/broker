@@ -212,9 +212,14 @@
     </li>
   
 @endforeach
-
+                       
     </div>
 </ul>
+
+                     <div class="text-center">
+                    
+                      {!!$capacidades->links()!!}
+                    </div> 
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
 

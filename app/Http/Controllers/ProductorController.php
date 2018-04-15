@@ -78,9 +78,12 @@ class ProductorController extends Controller
     }
     public function mostrarOportunidad()
     {
+        $user =Auth::guard('productor')->user()->id;
+        $oportunidades = oportunidad::orderBy('id', 'desc')->paginate(10);
+        return view('productor.mostrarOportunidad',compact('oportunidades'));
       
        //$oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(1);
-        return view('productor.mostrarOportunidad');
+        //return view('productor.mostrarOportunidad');
     }
 
     public function editarOportunidad($id)
