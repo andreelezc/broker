@@ -146,7 +146,7 @@ public function update_avatar(Request $request){
 
       public function perfil()
     {
-      // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
+       Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
         return view('institucion.perfil' );
     }
 
@@ -197,7 +197,7 @@ public function update_avatar(Request $request){
         
         $productor =Productor::findOrFail($request);
          // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
-        //Mail::to($productor)->send(new nuevaPostulacion($productor));
+        Mail::to($productor)->send(new nuevaPostulacion($productor));
 
 
         ///para el flashh
