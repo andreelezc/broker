@@ -200,7 +200,7 @@
                                                         <!-- footer de la ventana-->
 
                                                         <div class="modal-footer">
-                                                           <a class="btn btn-default btn-primary" id="enviarSeleccion">Postular
+                                                           <a class="btn btn-default btn-primary" id="enviarSeleccion">Seleccionar
                                                                     <span class="glyphicon glyphicon-hand-up"></span>
                                                            </a>
                                                         </div>{{-- fin modal footer   --}}

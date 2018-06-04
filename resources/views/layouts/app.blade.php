@@ -76,7 +76,7 @@
 
         <div class="dropdown">
            <ul class="nav navbar-nav ">
-          {{--  <li role="presentation"><a  href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i>&nbspInicio </a></li> </ul>  --}}
+          <li role="presentation"><a  href="{{ url('/institucion/home') }}"> <i class="glyphicon glyphicon-home"></i>&nbspInicio </a></li> </ul>  
 
            <a id="dLabel" role="button" data-toggle="dropdown"  class="btn btn-default navbar-btn " data-target="#" href="/page.html">
                 {{ Auth::guard('institucion')->user()->name }} <span class="caret"></span>
