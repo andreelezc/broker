@@ -25,7 +25,7 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 		
 		Route::get('institucion/capacidad', 'InstitucionController@cargarCapacidad');
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
-		Route::get('institucion/buscar', 'InstitucionController@buscar');
+		Route::get('institucion/buscar', 'InstitucionController@buscar');//anda
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
 		Route::delete('institucion/capacidad','CapacidadController@borrar')->name("borrarCapacidad");
 
@@ -141,8 +141,8 @@ Route::get('admin/registro', 'Admin\RegistroController@showRegistrationForm');
 Route::post('admin/registro', 'Admin\RegistroController@register');
 ////////////////////API para consultas * sin vistas
 
-Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
-Route::get('capacidad/all', 'CapacidadController@getAll');
+// Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
+// Route::get('capacidad/all', 'CapacidadController@getAll');
 
 // showlists
 Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra');

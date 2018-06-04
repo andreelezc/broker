@@ -115,7 +115,7 @@ class ProductorController extends Controller
                                     ->orWhere('capacidads.experiencias','like','%'.$palabra.'%')                       
                                     ->distinct()
                                     ->skip($pagina * 10)
-                                    ->paginate(10)
+                                    ->take(10)
                                     ->get(['capacidads.*']);
                 // 
                                     return view('productor.buscar',array('capacidades'=>$capacidades));

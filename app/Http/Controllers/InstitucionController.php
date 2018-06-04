@@ -115,9 +115,12 @@ class InstitucionController extends Controller
                                     ->orWhere('oportunidads.requisito','like','%'.$palabra.'%')
                                     ->distinct()
                                     ->skip($pagina * 10)
-                                    ->paginate(10)
+                                    ->take(10)
                                     ->get(['oportunidads.*']);
                 // 
+                
+        
+        // $oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(10);
                                     return view('institucion.buscar',array('oportunidades'=>$oportunidades));
 
     }
