@@ -141,9 +141,9 @@ class DatabaseSeeder extends Seeder
 
              //--------------carga 2
         $c = new Capacidad;
-            $c->titulo = 'Programacion Web';
+            $c->titulo = 'Diseño Grafico';
             $c->descripcion = 'paginas ' ;
-            $c->experiencias = 'php , laravel';
+            $c->experiencias = 'Photoshop , Coreldraw';
             $c->categoria = 'pasantia';
             $c->tipo = 'profesor';
             $c->personal = '2';
@@ -174,10 +174,51 @@ class DatabaseSeeder extends Seeder
             $c->save(); 
 
               //por cada palabra clave creo una keyword;
-            $c->addKey("Php");
-            $c->addKey("Laravel");
-            $c->addKey("Corrientes");
-            $c->addKey("Diseño");  
+            $c->addKey("diseño");
+            $c->addKey("marketing");
+            $c->addKey("photoshop");
+            $c->addKey("redes");  
+
+            
+             //--------------carga 3
+        $c = new Capacidad;
+            $c->titulo = 'Sistemas Embebidos';
+            $c->descripcion = 'Automatizacion de Sistemas, internet de las cosas, gestion de sensores' ;
+            $c->experiencias = 'Escuela de Sistemas Embebidos 2018';
+            $c->categoria = 'pasantia';
+            $c->tipo = 'profesor';
+            $c->personal = '2';
+            
+            $c->remuneracion = '5000';
+             $c->provincia = 'corrientes';
+            $c->localidad = 'capital';
+            $c->fechaInicio = '20/11/2017';
+            $c->fechaFin = '20/11/2018';
+            $c->tiempo = 'Todo el día';
+                  $c->horaInicioL='08:00';
+                  $c->horaFinL='14:00' ;
+                  $c->horaInicioM='00:00';
+                  $c->horaFinM= '00:00';
+                  $c->horaInicioMi='08:00';
+                  $c->horaFinMi='14:00';
+                  $c->horaInicioJ='00:00';
+                  $c->horaFinJ= '00:00';
+                  $c->horaInicioV='08:00';
+                  $c->horaFinV= '14:00';
+                  $c->horaInicioS='00:00';
+                  $c->horaFinS= '00:00';
+                  $c->horaInicioD='00:00';
+                  $c->horaFinD='00:00';
+            
+                     
+            $c->institucion_id = 1;
+            $c->save(); 
+
+              //por cada palabra clave creo una keyword;
+            $c->addKey("arduino");
+            $c->addKey("automatizacion");
+            $c->addKey("iot");
+            $c->addKey("redes");  
              
 
     

@@ -130,7 +130,7 @@
                                     </div>
                                     
                                     <div class="col-md-4">
-                                         <a href="#selectOportunidad"
+                                                        <a href="#selectOportunidad"
                                                             user_id="{{ Auth::Guard('productor')->user()->id}}"  
                                                             capacidad_id="{{  $capacidad->id }}" 
                                                             
