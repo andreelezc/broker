@@ -23,7 +23,7 @@ class CapacidadController extends Controller
      	$c->experiencias= $request->experiencias;
      	$c->categoria= $request->categoria;
       $c->tipo= $request->tipo;
-     	$c->orientacion= $request->orientacion;
+     
       $c->personal= $request->personal;
       $c->remuneracion= $request->remuneracion; 
       $c->provincia= $request->provincia; 
