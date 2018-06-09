@@ -130,6 +130,9 @@
                                     </div>
                                     
                                     <div class="col-md-4">
+
+
+                                        @if(count(Auth::Guard('productor')->user()->oportunidades))
                                                         <a href="#selectOportunidad"
                                                             user_id="{{ Auth::Guard('productor')->user()->id}}"  
                                                             capacidad_id="{{  $capacidad->id }}" 
@@ -138,8 +141,12 @@
                                                             Seleccionar
                                                             <span class="glyphicon glyphicon-hand-up"></span>
                                                          </a>
-                                                         {{--  Este boton manda user_id y capacidad_id al modal de la capacidad  --}}
 
+                                        @else
+                                        
+                                                         <button disabled="disabled" title="No hay capadidas">Seleccionar</button>
+                                                         {{--  Este boton manda user_id y capacidad_id al modal de la capacidad  --}}
+                                        @endif                 
                                     
                                      </div>
                             
