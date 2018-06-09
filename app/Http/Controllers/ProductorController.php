@@ -197,6 +197,14 @@ class ProductorController extends Controller
         //return view('productor.selecciones');
       }
 
+      public function postulaciones(){
+        
+        return view('productor.postulaciones');
+        //return view('productor.selecciones');
+      }
+
+      
+
        public function borrar(Request $request) {
         
             

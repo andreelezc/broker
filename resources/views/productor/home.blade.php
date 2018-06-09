@@ -39,7 +39,7 @@
             <div class="row">
           <div class="col-lg-2 col-md-offset-5  ">
              
-                  <a class="btn btn-success btn-block btn-lg" href="{{ url('productor/perfil') }}" type="button"><i class="glyphicon glyphicon-user"></i>  PERFIL</a>
+                  <a class="btn btn-info btn-block btn-lg" href="{{ url('productor/perfil') }}" type="button"><i class="glyphicon glyphicon-user"></i>  PERFIL</a>
             
             </div>
             </div>
@@ -48,17 +48,21 @@
           <div class="row">
             
               {{-- BOTON CAPACIDADES --}}
-              <div class="col-lg-4  ">
-                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/mostrarOportunidad')}}" type="button"><i class="glyphicon glyphicon-plus"></i>  AGREGAR OPORTUNIDADES </a>
+              <div class="col-lg-3  ">
+                  <a class="btn btn-primary btn-block btn-lg" href="{{ url('productor/mostrarOportunidad')}}" type="button"><i class="glyphicon glyphicon-plus"></i>  AGREGAR </br>OPORTUNIDADES </a>
 
               </div>
               {{-- BOTON BUSCAR --}}
-              <div class="col-lg-4 ">
-                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}" type="button"><i class="glyphicon glyphicon-search"></i>  BUSCAR CAPACIDADES</a>
+              <div class="col-lg-3 ">
+                  <a class="btn btn-warning btn-block btn-lg" href="{{ url('productor/buscar')}}" type="button"><i class="glyphicon glyphicon-search"></i>  BUSCAR </br> CAPACIDADES</a>
               </div>
 
-               <div class="col-lg-4">
-                  <a class="btn btn-danger btn-block btn-lg" href="{{ url('productor/selecciones')}}" type="button"> <i class="glyphicon glyphicon-pushpin"></i> VER SELECCIONES</a>
+               <div class="col-lg-3">
+                  <a class="btn btn-danger btn-block btn-lg" href="{{ url('productor/selecciones')}}" type="button"> <i class="glyphicon glyphicon-pushpin"></i> VER </br> SELECCIONES</a>
+              </div>
+
+              <div class="col-md-3">
+                  <a class="btn btn-success btn-block btn-lg" href="{{ url('productor/postulaciones')}}" type="button"> <i class="glyphicon glyphicon-ok"></i>  POSTULACIONES </br> LABORALES</a>
               </div>
               
           </div>   

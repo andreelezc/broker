@@ -99,6 +99,9 @@
                 <li role="presentation">
                 <a href="{{ url('/institucion/postulaciones') }}"> <i class="glyphicon glyphicon-hand-up"></i> Postulaciones</a>
                 </li>
+                <li role="presentation">
+                <a href="{{ url('/institucion/ofertas') }}"> <i class="glyphicon glyphicon-ok"></i> Ofertas Laborales</a>
+                </li>
               <li class="divider"></li>
               <li class="dropdown-submenu">
                 
@@ -140,6 +143,9 @@
                 </li>
                 <li role="presentation">
                 <a href="{{ url('/productor/selecciones') }}"> <i class="glyphicon glyphicon-pushpin"></i> Selecciones</a>
+                </li>
+                 <li role="presentation">
+                <a href="{{ url('/institucion/postulaciones') }}"> <i class="glyphicon glyphicon-ok"></i> Postulaciones Laborales </a>
                 </li>
               <li class="divider"></li>
               <li class="dropdown-submenu">

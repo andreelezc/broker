@@ -216,6 +216,13 @@ public function update_avatar(Request $request){
           //return view('institucion.postulaciones');
       }
 
+      public function ofertas()
+      {
+       
+        return view('institucion.ofertas');
+          
+      }
+
        public function borrar(Request $request) {
         
             

@@ -39,6 +39,8 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 		Route::get('institucion/postulaciones','InstitucionController@postulaciones')->name('postulacionesInstitucion');
 		Route::delete('institucion/postulaciones','InstitucionController@borrar')->name("borrarPostulacion");
 
+		Route::get('institucion/ofertas','InstitucionController@ofertas')->name('ofertasInstitucion');
+
 
 });
 /*
@@ -76,6 +78,8 @@ Route::group(['middleware'=>['isProductor','ProductorActivada']],function()
 		//selecciones
 		Route::get('productor/selecciones','ProductorController@selecciones')->name('seleccionesProductor');
 		Route::delete('productor/selecciones','ProductorController@borrar')->name("borrarSeleccion");
+
+		Route::get('productor/postulaciones','ProductorController@postulaciones')->name('postulacionesProductor');
 
 });
 /*
