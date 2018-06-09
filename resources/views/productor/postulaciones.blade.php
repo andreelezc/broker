@@ -18,15 +18,10 @@
                        </div>
                     @endif 
 
-
-
                             {{-- LISTA DE postulaciones flor --}}
                             <ul class="list-group">
                                 
                             </ul>
-
-
-                  
 
 
                  </div>

@@ -46,4 +46,7 @@ class Productor extends Authenticatable
         return $this->hasMany('inetweb\Seleccion');
     }
 
+
+    
+
 }
