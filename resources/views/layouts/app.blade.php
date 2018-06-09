@@ -145,7 +145,7 @@
                 <a href="{{ url('/productor/selecciones') }}"> <i class="glyphicon glyphicon-pushpin"></i> Selecciones</a>
                 </li>
                  <li role="presentation">
-                <a href="{{ url('/institucion/postulaciones') }}"> <i class="glyphicon glyphicon-ok"></i> Postulaciones Laborales </a>
+                <a href="{{ url('/productor/postulaciones') }}"> <i class="glyphicon glyphicon-ok"></i> Postulaciones Laborales </a>
                 </li>
               <li class="divider"></li>
               <li class="dropdown-submenu">
