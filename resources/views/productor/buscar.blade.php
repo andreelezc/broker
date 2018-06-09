@@ -137,15 +137,15 @@
                                                             user_id="{{ Auth::Guard('productor')->user()->id}}"  
                                                             capacidad_id="{{  $capacidad->id }}" 
                                                             
-                                                            class="text-center btn btn-default botonSeleccion" data-toggle="modal" data-dismiss="modal" >
+                                                            class="text-center btn btn-warning botonSeleccion" data-toggle="modal" data-dismiss="modal" >
                                                             Seleccionar
                                                             <span class="glyphicon glyphicon-hand-up"></span>
                                                          </a>
 
                                         @else
                                         
-                                                         <button disabled="disabled" title="No hay capadidas">Seleccionar</button>
-                                                         {{--  Este boton manda user_id y capacidad_id al modal de la capacidad  --}}
+                                                          <a href="#" class="text-center btn btn-warning  popover-test" title=""  data-placement="top" data-content="<p>para seleccionar debes de registrar almenos una oportunidad</p>"  > Seleccionar <span class="glyphicon glyphicon-hand-up"></span>
+                                                    </a>
                                         @endif                 
                                     
                                      </div>

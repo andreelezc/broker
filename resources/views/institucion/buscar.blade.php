@@ -120,17 +120,26 @@
                                                          <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
                                                 </div>
                                                 <div class="col-md-4" >
-                                                
 
+                                                     @if(count(Auth::Guard('institucion')->user()->capacidades))
+                                                
                                                          <a href="#selectCapacidad"
                                                             user_id="{{ Auth::Guard('institucion')->user()->id}}"  
                                                             oportunidad_id="{{  $oportunidad->id }}" 
                                                             
-                                                            class="text-center btn btn-default boton_oportunidad" data-toggle="modal" data-dismiss="modal" >
+                                                            class="text-center btn btn-warning boton_oportunidad" data-toggle="modal" data-dismiss="modal" >
                                                             Postularme
                                                             <span class="glyphicon glyphicon-hand-up"></span>
                                                          </a>
                                                          {{--  Este boton manda user_id y oportunidad_id al modal de la capacidad  --}}
+                                                    @else
+                                                 
+                                                    
+                                                    <a href="#" class="text-center btn btn-warning  popover-test" title=""  data-placement="top" data-content="<p>para postularte debes de registrar almenos una capacidad</p>"  > Postularme <span class="glyphicon glyphicon-hand-up"></span>
+                                                    </a>
+
+                                                      
+                                                    @endif
 
                                                     
                                              
@@ -244,6 +253,11 @@
 
         $("#enviarPostulacion").click(function(){
             $("#formularioPostulacion").submit();
+        })
+
+        $('.popover-test').popover({
+            html:true
+
         })
      })
  </script>
