@@ -224,6 +224,7 @@ public function update_avatar(Request $request){
 //         SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions 
 // where capacidad_id in (SELECT id from capacidads where institucion_id = 1))
         $ofertas = DB::select('SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions where capacidad_id in (SELECT id from capacidads where institucion_id = ?))', [$user->id]);
+        $ofertas = Oportunidad::hydrate($ofertas);
 
         
         return view('institucion.ofertas',array('ofertas'=>$ofertas));

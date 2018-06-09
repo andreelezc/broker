@@ -25,20 +25,27 @@
 
                                     <li class="list-group-item">
                                             <div class="row">
+
+                                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                                                  {{-- <img class="round" src="{{$interes->oportunidad->productor->avatar}}"/> --}}
+                                              <img src="/cargas/avatars/{{$oportunidad->productor->avatar}}" class="img-responsive round" >
+                                              {{-- style="width:150px; height:150px; float:left; border-radius:50%; margin-right:30px;" --}}
+
+                                                </div> 
                                               
                                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
                                                      <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>  
-                                                    {{--  <span>                  
-                                                        Publicado por: {{$interes->oportunidad->productor->name}}
+                                                     <span>                  
+                                                        Publicado por: {{$oportunidad->productor->name}}
                                                         </span>
                                                              <p>
-                                                       @foreach($interes->oportunidad->keywords as $key)
+                                                       @foreach($oportunidad->keywords as $key)
                                                         <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">
                                                        <span class="badge">{{ $key->palabra }}</span>
                                                           
                                                         </a>
                                                        @endforeach
-                                                        </p> --}}
+                                                        </p>
 
                                                 </div>
                                             
@@ -149,7 +156,10 @@
                                                                                     
                                                                              <!-- footer de la ventana-->
                                                                             <div class="modal-footer">
-                                                                                <div class="  col-lg-offset-2" >
+                                                                                <div class="  col-lg-offset-7" >
+                                                                                   <div class="col-md-4">
+                                                                                         <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                                                                </div>   
 
 
                                                                                     
@@ -159,7 +169,8 @@
                                                 </div>
                                             </div>
                                                                                        
-                                                  <!-- boton de la ventana-->                
+                                                  <!-- boton de la ventana--> 
+
                                         </li>
                            @endforeach
                       </ul>

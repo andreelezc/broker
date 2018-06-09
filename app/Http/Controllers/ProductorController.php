@@ -207,6 +207,7 @@ class ProductorController extends Controller
         // SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions 
         //where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = 1))
         $postulaciones = DB::select('SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = ?))', [$user->id]);
+         $postulaciones = Capacidad::hydrate($postulaciones);
 
         
         return view('productor.postulaciones',array('postulaciones'=>$postulaciones));
