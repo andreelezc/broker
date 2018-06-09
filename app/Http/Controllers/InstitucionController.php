@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 
+use DB;
 use inetweb\Oportunidad;
 use inetweb\Capacidad;
 use inetweb\OportunidadKey;
@@ -219,7 +220,15 @@ public function update_avatar(Request $request){
       public function ofertas()
       {
        
-        return view('institucion.ofertas');
+        $user =Auth::guard('institucion')->user();
+//         SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions 
+// where capacidad_id in (SELECT id from capacidads where institucion_id = 1))
+        $ofertas = DB::select('SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions where capacidad_id in (SELECT id from capacidads where institucion_id = ?))', [$user->id]);
+
+        
+        return view('institucion.ofertas',array('ofertas'=>$ofertas));
+        
+        // return view('institucion.ofertas');
           
       }
 

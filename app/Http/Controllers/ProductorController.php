@@ -8,11 +8,14 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+use DB;
 use inetweb\Oportunidad;
 use inetweb\Seleccion;
 use inetweb\Capacidad;
 use inetweb\Institucion;
 use inetweb\Productor;
+use inetweb\Postulacion;
 use Intervention\Image\Facades\Image;
 use Mail;
 use inetweb\Mail\nuevaSeleccion;
@@ -199,8 +202,17 @@ class ProductorController extends Controller
 
       public function postulaciones(){
         
-        return view('productor.postulaciones');
-        //return view('productor.selecciones');
+
+        $user =Auth::guard('productor')->user();
+        // SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions 
+        //where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = 1))
+        $postulaciones = DB::select('SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = ?))', [$user->id]);
+
+        
+        return view('productor.postulaciones',array('postulaciones'=>$postulaciones));
+        
+
+
       }
 
       

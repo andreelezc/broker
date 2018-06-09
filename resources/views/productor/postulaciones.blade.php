@@ -17,9 +17,12 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif 
-
                             {{-- LISTA DE postulaciones flor --}}
                             <ul class="list-group">
+                                
+                                @foreach ($postulaciones as $capacidad)
+                                   <h1>{{$capacidad->titulo}}</h1>
+                                @endforeach
                                 
                             </ul>
 

@@ -20,7 +20,9 @@
 
                       {{-- LISTA DE Ofertas flor --}}
                       <ul class="list-group">
-
+                          @foreach ($ofertas as $oportunidad)
+                                   <h1>{{$oportunidad->titulo}}</h1>
+                                @endforeach
                       </ul>
                    
                      
