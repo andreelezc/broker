@@ -114,7 +114,7 @@
 
                                         <div class="modal-footer">
                                             <div class="row">
-                                                <div class="col-md-12" >
+                                                <div class="col-md-16" >
 
                                                 <div class="col-md-4">
                                                          <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
@@ -135,8 +135,9 @@
                                                     @else
                                                  
                                                     
-                                                    <a href="#" class="text-center btn btn-warning  popover-test" title=""  data-placement="top" data-content="<p>para postularte debes de registrar almenos una capacidad</p>"  > Postularme <span class="glyphicon glyphicon-hand-up"></span>
+                                                    <a href="#" class="text-center btn btn-warning  popover-test" title="¡¡¡ATENCIÓN!!!" data-trigger="focus"  data-placement="top" data-content="<p>para postularte debes de registrar almenos una capacidad</p>"  > Postularme <span class="glyphicon glyphicon-hand-up"></span>
                                                     </a>
+
 
                                                       
                                                     @endif
@@ -254,6 +255,8 @@
         $("#enviarPostulacion").click(function(){
             $("#formularioPostulacion").submit();
         })
+
+        
 
         $('.popover-test').popover({
             html:true

@@ -56,7 +56,7 @@
                       <tr>
                         <td>Direccion de Correo:</td>
                         <td>
-                            <a href="mailto:{{ Auth::Guard('productor')->user()->email1 }}">                               
+                            <a href="mailto:{{ Auth::Guard('productor')->user()->email1 }}">                             
                             {{ Auth::Guard('productor')->user()->email1 }}
                             </a>
                         </td>
@@ -64,7 +64,7 @@
 
                       <tr>
                         <td>Direccion:</td>
-                        <td>{{ Auth::Guard('productor')->user()->direccion }}</td>
+                        <td>  {{ Auth::Guard('productor')->user()->direccion }}</td>
                        
                       </tr> 
                       <tr>
