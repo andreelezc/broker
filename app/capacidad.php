@@ -30,5 +30,10 @@ class capacidad extends Model
     	return $this;
     }
 
+    public function selecciones()
+    {
+        return $this->belongsTo('inetweb\Seleccion');
+    }
+
   
 }

@@ -210,7 +210,13 @@ class ProductorController extends Controller
          $postulaciones = Capacidad::hydrate($postulaciones);
 
         
-        return view('productor.postulaciones',array('postulaciones'=>$postulaciones));
+
+
+       $postu = DB::select('SELECT * from postulacions where oportunidad_id IN ( SELECT id from oportunidads where productor_id = ?)',[$user->id]);
+        
+        $postu = Postulacion::hydrate($postu);
+
+        return view('productor.postulaciones',array('postulaciones'=>$postulaciones,'postu'=>$postu));
         
 
 

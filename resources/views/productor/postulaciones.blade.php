@@ -19,7 +19,10 @@
                     @endif 
                             {{-- LISTA DE postulaciones flor --}}
                             <ul class="list-group">
-
+@foreach($postu as $postulacion)
+{{$postulacion->oportunidad->titulo}}
+{{$postulacion->capacidad->titulo}}
+@endforeach
                                 @foreach ($postulaciones as $capacidad)
 
                                  <li class="list-group-item">

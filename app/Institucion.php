@@ -53,6 +53,8 @@ class Institucion extends Authenticatable
         return $this->hasMany('inetweb\Postulacion');
     }
 
+    
+
 
 
 

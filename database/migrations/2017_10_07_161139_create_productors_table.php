@@ -22,7 +22,7 @@ class CreateProductorsTable extends Migration
             $table->string('name1');
             $table->string('telefono1');
              $table->string('email1');
-             $table->string('url')->default('defaultUrl');
+             $table->string('url')->default('No Tiene');
             $table->string('hora');
               $table->string('cuil')->unique();
             $table->string('cp')->nullable();

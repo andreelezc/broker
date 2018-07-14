@@ -11,12 +11,14 @@ use Illuminate\Http\Request;
 use DB;
 use inetweb\Oportunidad;
 use inetweb\Capacidad;
+use inetweb\Seleccion;
+use inetweb\Postulacion;
 use inetweb\OportunidadKey;
 use inetweb\Institucion;
 use inetweb\Productor;
 use inetweb\Mail\nuevaPostulacion;
 use inetweb\Mail\nuevoUsuario;
-use inetweb\Postulacion;
+
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -219,15 +221,25 @@ public function update_avatar(Request $request){
 
       public function ofertas()
       {
-       
         $user =Auth::guard('institucion')->user();
+
+        /////////////////////////////////////////////////////////////
+        ///////////////////////TOOOOODO ESTO PODER BORRAR DESPUE
+       
 //         SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions 
 // where capacidad_id in (SELECT id from capacidads where institucion_id = 1))
         $ofertas = DB::select('SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions where capacidad_id in (SELECT id from capacidads where institucion_id = ?))', [$user->id]);
-        $ofertas = Oportunidad::hydrate($ofertas);
+       $ofertas = Oportunidad::hydrate($ofertas);
+         //$ofertas = Capacidad::hydrate($ofertas);
+       ////////////////////////////////////////////////////////////
+       /////////////////////////////////////////////////////////////
 
+
+
+       $selecciones = DB::select('SELECT * from seleccions where capacidad_id IN ( SELECT id from capacidads where institucion_id = ?)',[$user->id]);
         
-        return view('institucion.ofertas',array('ofertas'=>$ofertas));
+        $selecciones = Seleccion::hydrate($selecciones);
+        return view('institucion.ofertas',array('ofertas'=>$ofertas,'selecciones'=>$selecciones));
         
         // return view('institucion.ofertas');
           

@@ -26,4 +26,16 @@ class oportunidad extends Model
     	$key->save();
     	return $this;
     }
+
+      public function selecciones()
+    {
+        return $this->belongsTo('inetweb\Seleccion');
+    }
+
+      public function postulacion()
+    {
+        return $this->belongsTo('inetweb\Postulacion');
+    }
+
+
 }

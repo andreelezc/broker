@@ -18,11 +18,17 @@
                        </div>
                     @endif 
 
+@foreach($selecciones as $seleccion)
+{{$seleccion->oportunidad->titulo}}
+{{$seleccion->capacidad->titulo}}
+@endforeach
+
+
                       {{-- LISTA DE Ofertas flor --}}
                       <ul class="list-group">
                           @foreach ($ofertas as $oportunidad)
                                    
-
+                   
                                     <li class="list-group-item">
                                             <div class="row">
 
@@ -168,16 +174,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                                                                       
-                                                  <!-- boton de la ventana--> 
+
 
                                         </li>
+             
+                                                  <!-- boton de la ventana--> 
+              
                            @endforeach
                       </ul>
                    
-                     
-
-                 </div>
+                   
             </div>
         </div>
     </div>
