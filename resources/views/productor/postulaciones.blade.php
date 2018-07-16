@@ -19,10 +19,10 @@
                     @endif 
                             {{-- LISTA DE postulaciones flor --}}
                             <ul class="list-group">
-@foreach($postu as $postulacion)
+{{-- @foreach($postu as $postulacion)
 {{$postulacion->oportunidad->titulo}}
 {{$postulacion->capacidad->titulo}}
-@endforeach
+@endforeach --}}
                                 @foreach ($postulaciones as $capacidad)
 
                                  <li class="list-group-item">
@@ -36,8 +36,11 @@
                                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
                                                  <h4 class="list-group-item-heading">{{ $capacidad->titulo }}</h4>
                                                  <span>                  
-                                                    Publicado por: {{$capacidad->institucion->name}}
-                                                    </span>
+                                                    Publicado por la Institución: {{$capacidad->institucion->name}}
+                                                    </span> <br>
+                                                    Se postulo a la Oportunidad: @foreach($postu as $postulacion)
+                                                                                    {{$postulacion->oportunidad->titulo}}
+                                                                                    @endforeach 
                                                          <p>
                                                    @foreach($capacidad->keywords as $key)
                                                     <a href="{{ url('/productor/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">

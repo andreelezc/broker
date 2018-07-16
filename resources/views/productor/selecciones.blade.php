@@ -35,7 +35,7 @@
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
              <h4 class="list-group-item-heading">{{ $interes->capacidad->titulo }}</h4>
              <span>                  
-                Publicado por: {{$interes->capacidad->institucion->name}}
+                Publicado por la Institución: {{$interes->capacidad->institucion->name}}
                 </span>
                      <p>
                @foreach($interes->capacidad->keywords as $key)

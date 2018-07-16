@@ -217,8 +217,7 @@ class ProductorController extends Controller
         $postu = Postulacion::hydrate($postu);
 
         return view('productor.postulaciones',array('postulaciones'=>$postulaciones,'postu'=>$postu));
-        
-
+    
 
       }
 

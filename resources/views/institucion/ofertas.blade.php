@@ -18,10 +18,10 @@
                        </div>
                     @endif 
 
-@foreach($selecciones as $seleccion)
+{{-- @foreach($selecciones as $seleccion)
 {{$seleccion->oportunidad->titulo}}
 {{$seleccion->capacidad->titulo}}
-@endforeach
+@endforeach --}}
 
 
                       {{-- LISTA DE Ofertas flor --}}
@@ -42,8 +42,11 @@
                                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
                                                      <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>  
                                                      <span>                  
-                                                        Publicado por: {{$oportunidad->productor->name}}
-                                                        </span>
+                                                        Publicado por el Productor: {{$oportunidad->productor->name}}
+                                                        </span> <br>
+                                                        Seleccionó esta capacidad:@foreach($selecciones as $seleccion)
+                                                                                    {{$seleccion->capacidad->titulo}}
+                                                                                    @endforeach
                                                              <p>
                                                        @foreach($oportunidad->keywords as $key)
                                                         <a href="{{ url('/institucion/buscar/'.$key->palabra) }}" title="Mas Ofertas de {{ $key->palabra }}">

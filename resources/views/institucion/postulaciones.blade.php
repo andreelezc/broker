@@ -38,7 +38,7 @@
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
              <h4 class="list-group-item-heading">{{ $interes->oportunidad->titulo }}</h4>
              <span>                  
-                Publicado por: {{$interes->oportunidad->productor->name}}
+                Publicado por el Productor: {{$interes->oportunidad->productor->name}}
                 </span>
                      <p>
                @foreach($interes->oportunidad->keywords as $key)

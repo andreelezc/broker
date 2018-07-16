@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         self::seedProductors();
         self::seedInstitucions();
-        // self::seedCapacidads();
+         self::seedCapacidads();
         self::seedOportunidads();
         self::seedAdmins();
         $this->command->info('Tabla usuarios inicializada con datos!');
@@ -97,133 +97,133 @@ class DatabaseSeeder extends Seeder
     }
 
 // // Carga de capacidades de Institucion
-//      private function seedCapacidads(){
-//         DB::table('Capacidads')->delete();
+     private function seedCapacidads(){
+        DB::table('Capacidads')->delete();
 //     //--------------carga 1
-//         $c = new Capacidad;
-//             $c->titulo = 'Programacion Web';
-//             $c->descripcion = 'paginas ' ;
-//             $c->experiencias = 'php , laravel';
-//             $c->categoria = 'proyecto';
-//             $c->tipo = 'Alumno';
-//             $c->personal = '2';
+        $c = new Capacidad;
+            $c->titulo = 'Programacion Web';
+            $c->descripcion = 'paginas ' ;
+            $c->experiencias = 'php , laravel';
+            $c->categoria = 'proyecto';
+            $c->tipo = 'Alumno';
+            $c->personal = '2';
            
-//             $c->remuneracion = '5000';
-//             $c->provincia = 'chaco';
-//             $c->localidad = 'barranqueras';
-//             $c->fechaInicio = '20/11/2018';
-//             $c->fechaFin = '20/11/2019';
-//             $c->tiempo = 'Todo el día';
-//                   $c->horaInicioL='08:00';
-//                   $c->horaFinL='14:00' ;
-//                   $c->horaInicioM='00:00';
-//                   $c->horaFinM= '00:00';
-//                   $c->horaInicioMi='08:00';
-//                   $c->horaFinMi='14:00';
-//                   $c->horaInicioJ='00:00';
-//                   $c->horaFinJ= '00:00';
-//                   $c->horaInicioV='08:00';
-//                   $c->horaFinV= '14:00';
-//                   $c->horaInicioS='00:00';
-//                   $c->horaFinS= '00:00';
-//                   $c->horaInicioD='00:00';
-//                   $c->horaFinD='00:00';
+            $c->remuneracion = '5000';
+            $c->provincia = 'chaco';
+            $c->localidad = 'barranqueras';
+            $c->fechaInicio = '20/11/2018';
+            $c->fechaFin = '20/11/2019';
+            $c->tiempo = 'Todo el día';
+                  $c->horaInicioL='08:00';
+                  $c->horaFinL='14:00' ;
+                  $c->horaInicioM='00:00';
+                  $c->horaFinM= '00:00';
+                  $c->horaInicioMi='08:00';
+                  $c->horaFinMi='14:00';
+                  $c->horaInicioJ='00:00';
+                  $c->horaFinJ= '00:00';
+                  $c->horaInicioV='08:00';
+                  $c->horaFinV= '14:00';
+                  $c->horaInicioS='00:00';
+                  $c->horaFinS= '00:00';
+                  $c->horaInicioD='00:00';
+                  $c->horaFinD='00:00';
             
                      
-//             $c->institucion_id = 1;
-//             $c->save(); 
+            $c->institucion_id = 1;
+            $c->save(); 
 
 //               //por cada palabra clave creo una keyword;
-//             $c->addKey("Php");
-//             $c->addKey("Laravel");
-//             $c->addKey("chaco");
-//             $c->addKey("Diseño");    
+            $c->addKey("Php");
+            $c->addKey("Laravel");
+            $c->addKey("chaco");
+            $c->addKey("Diseño");    
 
 //              //--------------carga 2
-//         $c = new Capacidad;
-//             $c->titulo = 'Diseño Grafico';
-//             $c->descripcion = 'paginas ' ;
-//             $c->experiencias = 'Photoshop , Coreldraw';
-//             $c->categoria = 'pasantia';
-//             $c->tipo = 'profesor';
-//             $c->personal = '2';
+        $c = new Capacidad;
+            $c->titulo = 'Diseño Grafico';
+            $c->descripcion = 'paginas ' ;
+            $c->experiencias = 'Photoshop , Coreldraw';
+            $c->categoria = 'pasantia';
+            $c->tipo = 'profesor';
+            $c->personal = '2';
             
-//             $c->remuneracion = '5000';
-//              $c->provincia = 'chaco';
-//             $c->localidad = 'barranqueras';
-//             $c->fechaInicio = '20/11/2017';
-//             $c->fechaFin = '20/11/2018';
-//             $c->tiempo = 'Todo el día';
-//                   $c->horaInicioL='08:00';
-//                   $c->horaFinL='14:00' ;
-//                   $c->horaInicioM='00:00';
-//                   $c->horaFinM= '00:00';
-//                   $c->horaInicioMi='08:00';
-//                   $c->horaFinMi='14:00';
-//                   $c->horaInicioJ='00:00';
-//                   $c->horaFinJ= '00:00';
-//                   $c->horaInicioV='08:00';
-//                   $c->horaFinV= '14:00';
-//                   $c->horaInicioS='00:00';
-//                   $c->horaFinS= '00:00';
-//                   $c->horaInicioD='00:00';
-//                   $c->horaFinD='00:00';
+            $c->remuneracion = '5000';
+             $c->provincia = 'chaco';
+            $c->localidad = 'barranqueras';
+            $c->fechaInicio = '20/11/2017';
+            $c->fechaFin = '20/11/2018';
+            $c->tiempo = 'Todo el día';
+                  $c->horaInicioL='08:00';
+                  $c->horaFinL='14:00' ;
+                  $c->horaInicioM='00:00';
+                  $c->horaFinM= '00:00';
+                  $c->horaInicioMi='08:00';
+                  $c->horaFinMi='14:00';
+                  $c->horaInicioJ='00:00';
+                  $c->horaFinJ= '00:00';
+                  $c->horaInicioV='08:00';
+                  $c->horaFinV= '14:00';
+                  $c->horaInicioS='00:00';
+                  $c->horaFinS= '00:00';
+                  $c->horaInicioD='00:00';
+                  $c->horaFinD='00:00';
             
                      
-//             $c->institucion_id = 1;
-//             $c->save(); 
+            $c->institucion_id = 1;
+            $c->save(); 
 
 //               //por cada palabra clave creo una keyword;
-//             $c->addKey("diseño");
-//             $c->addKey("marketing");
-//             $c->addKey("photoshop");
-//             $c->addKey("redes");  
+            $c->addKey("diseño");
+            $c->addKey("marketing");
+            $c->addKey("photoshop");
+            $c->addKey("redes");  
 
             
 //              //--------------carga 3
-//         $c = new Capacidad;
-//             $c->titulo = 'Sistemas Embebidos';
-//             $c->descripcion = 'Automatizacion de Sistemas, internet de las cosas, gestion de sensores' ;
-//             $c->experiencias = 'Escuela de Sistemas Embebidos 2018';
-//             $c->categoria = 'pasantia';
-//             $c->tipo = 'profesor';
-//             $c->personal = '2';
+        $c = new Capacidad;
+            $c->titulo = 'Sistemas Embebidos';
+            $c->descripcion = 'Automatizacion de Sistemas, internet de las cosas, gestion de sensores' ;
+            $c->experiencias = 'Escuela de Sistemas Embebidos 2018';
+            $c->categoria = 'pasantia';
+            $c->tipo = 'profesor';
+            $c->personal = '2';
             
-//             $c->remuneracion = '5000';
-//              $c->provincia = 'corrientes';
-//             $c->localidad = 'capital';
-//             $c->fechaInicio = '20/11/2017';
-//             $c->fechaFin = '20/11/2018';
-//             $c->tiempo = 'Todo el día';
-//                   $c->horaInicioL='08:00';
-//                   $c->horaFinL='14:00' ;
-//                   $c->horaInicioM='00:00';
-//                   $c->horaFinM= '00:00';
-//                   $c->horaInicioMi='08:00';
-//                   $c->horaFinMi='14:00';
-//                   $c->horaInicioJ='00:00';
-//                   $c->horaFinJ= '00:00';
-//                   $c->horaInicioV='08:00';
-//                   $c->horaFinV= '14:00';
-//                   $c->horaInicioS='00:00';
-//                   $c->horaFinS= '00:00';
-//                   $c->horaInicioD='00:00';
-//                   $c->horaFinD='00:00';
+            $c->remuneracion = '5000';
+             $c->provincia = 'corrientes';
+            $c->localidad = 'capital';
+            $c->fechaInicio = '20/11/2017';
+            $c->fechaFin = '20/11/2018';
+            $c->tiempo = 'Todo el día';
+                  $c->horaInicioL='08:00';
+                  $c->horaFinL='14:00' ;
+                  $c->horaInicioM='00:00';
+                  $c->horaFinM= '00:00';
+                  $c->horaInicioMi='08:00';
+                  $c->horaFinMi='14:00';
+                  $c->horaInicioJ='00:00';
+                  $c->horaFinJ= '00:00';
+                  $c->horaInicioV='08:00';
+                  $c->horaFinV= '14:00';
+                  $c->horaInicioS='00:00';
+                  $c->horaFinS= '00:00';
+                  $c->horaInicioD='00:00';
+                  $c->horaFinD='00:00';
             
                      
-//             $c->institucion_id = 1;
-//             $c->save(); 
+            $c->institucion_id = 1;
+            $c->save(); 
 
 //               //por cada palabra clave creo una keyword;
-//             $c->addKey("arduino");
-//             $c->addKey("automatizacion");
-//             $c->addKey("iot");
-//             $c->addKey("redes");  
+            $c->addKey("arduino");
+            $c->addKey("automatizacion");
+            $c->addKey("iot");
+            $c->addKey("redes");  
              
 
     
     
-//     }
+    }
 
 
 //     // Carga de Oportunidades de Productor
