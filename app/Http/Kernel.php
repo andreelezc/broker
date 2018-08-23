@@ -59,5 +59,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'isInstitucion' => \inetweb\Http\Middleware\isInstitucion::class,
         'isProductor' => \inetweb\Http\Middleware\isProductor::class,
+        'isAdmin' => \inetweb\Http\Middleware\isAdmin::class,
+        'InstitucionActivada' => \inetweb\Http\Middleware\InstitucionActivada::class,
+        'ProductorActivada' => \inetweb\Http\Middleware\ProductorActivada::class,
     ];
 }

@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use DB;
 class CapacidadController extends Controller
 {
-    //
-
+    // 
+   
 
      public function crear(Request $request)
      {
@@ -22,8 +22,15 @@ class CapacidadController extends Controller
      	$c->descripcion= $request->descripcion;
      	$c->experiencias= $request->experiencias;
      	$c->categoria= $request->categoria;
-     	$c->orientacion= $request->orientacion;
+      $c->tipo= $request->tipo;
+     
+      $c->personal= $request->personal;
+      $c->remuneracion= $request->remuneracion; 
+      $c->provincia= $request->provincia; 
+      $c->localidad= $request->localidad; 
      	$c->fechaInicio= $request->fechaInicio;
+      $c->fechaFin= $request->fechaFin;
+      $c->tiempo= $request->tiempo; 
           $c->horaInicioL= $request->horaInicioL;
           $c->horaFinL= $request->horaFinL;
           $c->horaInicioM= $request->horaInicioM;
@@ -38,8 +45,8 @@ class CapacidadController extends Controller
           $c->horaFinS= $request->horaFinS;
           $c->horaInicioD= $request->horaInicioD;
           $c->horaFinD= $request->horaFinD;
-      $c->fechaFin= $request->fechaFin;
-     	$c->remuneracion= $request->remuneracion; 
+      
+     	
           $c->institucion_id = $user->id; 	
       //guardo en la base de datos
       $c->save();
@@ -58,8 +65,8 @@ class CapacidadController extends Controller
 
 
      public function getAll(){
-          $capacidades = capacidad::all();
-          return json_encode($capacidades);
+       $capacidades = capacidad::all();
+         return json_encode($capacidades);
      }
       
 
@@ -89,6 +96,7 @@ class CapacidadController extends Controller
       $c->categoria= $request->categoria;
       $c->orientacion= $request->orientacion;
       $c->fechaInicio= $request->fechaInicio;
+      $c->tiempo= $request->tiempo;
           $c->horaInicioL= $request->horaInicioL;
           $c->horaFinL= $request->horaFinL;
           $c->horaInicioM= $request->horaInicioM;
@@ -115,7 +123,8 @@ class CapacidadController extends Controller
 
        public function capacidad()
     {
-         $capacidad = capacidad::orderBy('id')->take(10)->get();
+         $capacidad = capacidad::orderBy('id')->paginate(1);//->take(10)->get();
+        
         return view('capacidad',array('capacidad'=>$capacidad));
        
     }

@@ -5,7 +5,9 @@
 
 Gracias por Registrarte a Inet Web.
 
-Ingresa a tu cuenta para emprezar.- 
+El administrador del sitio evaluará tu solicitud y realizará el alta definitiva.
+
+Te avisaremos con un correo electrónico para poder ingresa a tu cuenta, completar tus datos y empezar a operar con tus oportunidades.- 
 
 @component('mail::button', ['url' => 'http://linsse.com.ar/inetweb/institucion/acceso'])
 ir a Mi Cuenta 

@@ -29,7 +29,7 @@
 
 									</li> 
 									@endforeach
-								         
+								        
 
 								</ul>{{--Fin de listado--}}					                     
 						        </div>

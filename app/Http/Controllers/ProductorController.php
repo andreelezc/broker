@@ -4,15 +4,23 @@ namespace inetweb\Http\Controllers;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+//use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+use DB;
 use inetweb\Oportunidad;
-use inetweb\InteresProductor;
+use inetweb\Seleccion;
 use inetweb\Capacidad;
 use inetweb\Institucion;
 use inetweb\Productor;
+use inetweb\Postulacion;
+use Intervention\Image\Facades\Image;
+use Mail;
+use inetweb\Mail\nuevaSeleccion;
+use inetweb\Mail\nuevoUsuario;
+
 
 class ProductorController extends Controller
 {
@@ -41,7 +49,9 @@ class ProductorController extends Controller
 
       public function index()
     {
-        return view('productor.home');
+        $user = Auth::guard('productor')->user();
+        return view('productor.home',array('user'=>$user));
+       //return view('productor.home');
     }
 
     public function perfil()
@@ -54,7 +64,8 @@ class ProductorController extends Controller
     }
     public function productor()
     {
-        $productor = productor::orderBy('id')->take(10)->get();
+         $productor = productor::orderBy('id')->paginate(10);
+        //$productor = productor::orderBy('id');//->take(10)->get();
         return view('productor',array('productor'=>$productor));
        
     }
@@ -70,7 +81,12 @@ class ProductorController extends Controller
     }
     public function mostrarOportunidad()
     {
-        return view('productor.mostrarOportunidad');
+        $user =Auth::guard('productor')->user()->id;
+        $oportunidades = oportunidad::orderBy('id', 'desc')->paginate(10);
+        return view('productor.mostrarOportunidad',compact('oportunidades'));
+      
+       //$oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(1);
+        //return view('productor.mostrarOportunidad');
     }
 
     public function editarOportunidad($id)
@@ -82,7 +98,7 @@ class ProductorController extends Controller
      public function buscar()
     {
         ///buscar 10 capacidades y mostrar
-        $capacidades = capacidad::orderBy('id', 'desc')->take(10)->get();
+        $capacidades = capacidad::orderBy('id', 'desc')->paginate(10);
         // return $capacidades->Institucion;
         //envio los resultados a la vista
         return view('productor.buscar',array('capacidades'=>$capacidades));
@@ -99,7 +115,7 @@ class ProductorController extends Controller
                                     ->where('capacidad_keys.palabra','like','%'.$palabra.'%')
                                     ->orWhere('capacidads.titulo','like','%'.$palabra.'%')
                                     ->orWhere('capacidads.descripcion','like','%'.$palabra.'%')
-                                    ->orWhere('capacidads.requisito','like','%'.$palabra.'%')
+                                    ->orWhere('capacidads.experiencias','like','%'.$palabra.'%')                       
                                     ->distinct()
                                     ->skip($pagina * 10)
                                     ->take(10)
@@ -114,17 +130,112 @@ class ProductorController extends Controller
       public function postular(Request $request)
       {
 
-        $postulacion = new InteresProductor;
+        $postulacion = new Seleccion;
         $postulacion->productor_id = $request->productor_id;//si esta alreves pero fue sin querer
         $postulacion->capacidad_id = $request->capacidad_id;
+        $postulacion->oportunidad_id = $request->oportunidad_id;
         $postulacion->save();
+
+        $institucion =institucion::findOrFail($request);
+       
+
+          Mail::to($institucion)->send(new nuevaSeleccion($institucion));
         ///para el flashh
         return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 
       }
 
 
-      public function selecciones(){
-        return view('productor.selecciones');
+     
+
+
+      public function update_avatar(Request $request){
+
+      // Handle the user upload of avatar
+      if($request->hasFile('avatar')){
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300, 300)->save( public_path('/cargas/avatars/'.$filename ) );
+
+        $user =Auth::guard('productor')->user();
+        $user->avatar = $filename;
+        $user->save();
       }
+
+      return redirect(url('productor/perfil'));
+
+    }
+
+    public function editarPerfil(Request $request)
+      {
+        $user =Productor::findOrFail($request->id);  
+
+        $user->name= $request->name;
+        $user->direccion= $request->direccion;
+        $user->cp= $request->cp;
+        $user->provincia= $request->provincia;
+        $user->localidad= $request->localidad;
+        $user->telefono= $request->telefono;
+        $user->descripcion= $request->descripcion;
+
+        $user->save();
+
+       // return view("institucion.mostrarCapacidad");
+        return redirect(url('productor/perfil'))->with('success','Tus datos fueron actualizados con exitos');
+   
+      }
+      public function eliminarPerfil(Request $request) {
+
+          $user =Productor::findOrFail($request->id);
+          $user->delete();
+
+          return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
+
+      }
+
+       public function selecciones(){
+        $user =Auth::guard('productor')->user()->id;
+        $seleccion = Seleccion::where('productor_id', $user)->orderBy('id', 'desc')->paginate(10);
+        return view('productor.selecciones',compact('seleccion'));
+        //return view('productor.selecciones');
+      }
+
+      public function postulaciones(){
+        
+
+        $user =Auth::guard('productor')->user();
+        // SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions 
+        //where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = 1))
+        $postulaciones = DB::select('SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = ?))', [$user->id]);
+         $postulaciones = Capacidad::hydrate($postulaciones);
+
+        
+
+
+       $postu = DB::select('SELECT * from postulacions where oportunidad_id IN ( SELECT id from oportunidads where productor_id = ?)',[$user->id]);
+        
+        $postu = Postulacion::hydrate($postu);
+
+        return view('productor.postulaciones',array('postulaciones'=>$postulaciones,'postu'=>$postu));
+    
+
+      }
+
+      
+
+       public function borrar(Request $request) {
+        
+            
+             $seleccion = Seleccion::findOrFail($request->id);
+              $seleccion->delete();
+
+              //TODO
+              //que mande el borrado con exito
+              //return view('institucion.mostrarCapacidad');
+              return redirect(url('productor/selecciones'))->with('success','SELECCIÓN ELIMINADA ');
+
+    
+          
+          }
+
 }

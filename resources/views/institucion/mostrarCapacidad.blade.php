@@ -20,11 +20,12 @@
                     @endif
               <div class="col-md-3 col-lg-2 " align="center"> 
                     {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
-                    <img  height="300" width="300" avatar="{{ Auth::Guard('institucion')->user()->name }}" class="img-responsive round" >
-                    
+                    {{--<img  height="300" width="300" avatar="{{ Auth::Guard('institucion')->user()->name }}" class="img-responsive round" >--}}
+                    <img src="/cargas/avatars/{{ Auth::Guard('institucion')->user()->avatar }}" style="width:150px; height:130px; float:left; border-radius:50%; margin-right:70px;"  class="img-responsive round" >
 
                
                <br>
+               <br><br><br><br><br><br>
                 {{--Boton de nuevo --}}
               <div class="col-md-4  col-md-offset-1">
                <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"  href="{{ url('institucion/capacidad')}}" ><i class="glyphicon glyphicon-plus"></i> Agregar</a>  
@@ -59,7 +60,7 @@
 
 
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-              <a href="#ventana{{ $capacidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+              <a href="#ventana{{ $capacidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver más</a>
           </div>
     </div>
 
@@ -97,9 +98,13 @@
                 <li>  Disponibilidad Horaria: </li>  <br>
 
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                  <div class="form-group"> 
                    <label>Fecha de inicio:  </label>  {{ $capacidad->fechaInicio }}
+                   <br>
+                    <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaFin }}
+
+                   <h5 ">Franja horaria Seleccionada: <label>{{ $capacidad->tiempo }}</label></h5>
                  <table class="table table-user-information">   
                   <tbody> 
                   <tr>         
@@ -160,11 +165,11 @@
                   <p></p>
                    </tbody>
                     </table>
-                     <label>Fecha de  finalización:  </label>  {{ $capacidad->fechaFin }}
+                    
                    </div></div></div>
                                                       
          
-                                            <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
+                                <li>Remuneración Pretendida: {{ $capacidad->remuneracion }}</li>
                                         </ul>
                                         <p></p>
                                     </div>
@@ -178,21 +183,21 @@
                                           </div>
                                           {{--Boton de eliminar --}}
                                           <div class="   col-lg-offset-7" >
-                                           <div class="col-md-1">
+                                               <div class="col-md-1">
+                                                <form method="post" action="{{ route('borrarCapacidad') }}">
+                                                    {{ csrf_field() }}
+                                                  {{ method_field('DELETE') }}
+                                               
+                                                  {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                                  <input type="hidden" name="id" value="{{  $capacidad->id }}">
+                                                   <button class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
+                                                 </form>
 
+                                                       
+                                                  </div>
 
-                                                    <form method="post" action="{{ route('borrarCapacidad') }}">
-                                                          {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
-                                                        <input type="hidden" name="id" value="{{ $capacidad->id }}">
-                                                         <button class="btn btn-default">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
-                                                     </form>
-                                                   
-                                              </div>
-
-                                                  {{-- end col-lg --}}
-                                           </div>
+                                {{-- end col-lg --}}
+                                          </div>
                                           {{-- end col --}}
                                     </div>
                                           {{-- end row --}}
@@ -203,13 +208,21 @@
               </div>
           </div> {{-- modal --}} 
 
+
     </li>
+  
 @endforeach
+                       
     </div>
 </ul>
+
+                     <div class="text-center">
+                    
+                      {!!$capacidades->links()!!}
+                    </div> 
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
-          
+
 
     
     <script src="{{ asset('js/avatar.js') }} "></script>

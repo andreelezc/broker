@@ -13,7 +13,7 @@
 
 */
 	
-Route::middleware('isInstitucion')->group(function()
+Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 {
 
 		Route::get('institucion/home', 'InstitucionController@index');
@@ -25,7 +25,7 @@ Route::middleware('isInstitucion')->group(function()
 		
 		Route::get('institucion/capacidad', 'InstitucionController@cargarCapacidad');
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
-		Route::get('institucion/buscar', 'InstitucionController@buscar');
+		Route::get('institucion/buscar', 'InstitucionController@buscar');//anda
 		Route::post('institucion/capacidad', 'CapacidadController@crear');
 		Route::delete('institucion/capacidad','CapacidadController@borrar')->name("borrarCapacidad");
 
@@ -37,6 +37,9 @@ Route::middleware('isInstitucion')->group(function()
 		Route::post('institucion/postular','InstitucionController@postular')->name('postularInstitucion');
 		///vista postulaciones
 		Route::get('institucion/postulaciones','InstitucionController@postulaciones')->name('postulacionesInstitucion');
+		Route::delete('institucion/postulaciones','InstitucionController@borrar')->name("borrarPostulacion");
+
+		Route::get('institucion/ofertas','InstitucionController@ofertas')->name('ofertasInstitucion');
 
 
 });
@@ -46,11 +49,16 @@ Route::middleware('isInstitucion')->group(function()
 |--------------------------------------------------------------------------
 
 */
-Route::middleware('isProductor')->group(function(){
+Route::group(['middleware'=>['isProductor','ProductorActivada']],function()
+{
 ///rutas solo accesibles por usuarios autenticados de tipo productor
 
 		Route::get('productor/home', 'ProductorController@index');
 		Route::get('productor/perfil', 'ProductorController@perfil');
+		Route::delete('productor/perfil','ProductorController@eliminarPerfil')->name("eliminarPerfil");
+		Route::put('productor/perfil','ProductorController@editarPerfil');	
+		Route::post('productor/perfil', 'ProductorController@update_avatar');
+		
 		Route::get('productor/oportunidad', 'ProductorController@oportunidad');
 		Route::get('productor/mostrarOportunidad', 'ProductorController@mostrarOportunidad');
 		Route::get('productor/buscar', 'ProductorController@buscar');
@@ -63,14 +71,31 @@ Route::middleware('isProductor')->group(function(){
 
 
 
+
 		///Seleccionar
 		Route::post('productor/postular','ProductorController@postular')->name('postularProductor');
 
 		//selecciones
 		Route::get('productor/selecciones','ProductorController@selecciones')->name('seleccionesProductor');
+		Route::delete('productor/selecciones','ProductorController@borrar')->name("borrarSeleccion");
+
+		Route::get('productor/postulaciones','ProductorController@postulaciones')->name('postulacionesProductor');
 
 });
+/*
+|--------------------------------------------------------------------------
+| Rutas Privada Administración
+|--------------------------------------------------------------------------
+*/
+Route::middleware('isAdmin')->group(function(){
+	Route::get('admin','AdminController@index');
 
+	////activar y desactivar usuarios
+
+	Route::get('admin/activar/{tipo}/{user}','AdminController@activar');
+	Route::get('admin/suspender/{tipo}/{user}','AdminController@suspender');
+	
+});
 
 
 ///no logueados
@@ -92,7 +117,7 @@ Auth::routes();
 Route::get('institucion/inicio', 'InstitucionController@inicio');
 
 Route::get('institucion/acceso','InstitucionController@acceso');
-Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
+// Route::get('institucion/acceso', 'InstitucionController@showLoginForm');
 Route::post('institucion/acceso', 'InstitucionController@login');
 
 Route::get('institucion/registro', 'Institucion\RegistroController@showRegistrationForm');
@@ -111,19 +136,23 @@ Route::post('productor/acceso', 'ProductorController@login');
 Route::get('productor/registro', 'Productor\RegistroController@showRegistrationForm');
 Route::post('productor/registro', 'Productor\RegistroController@register');
 
+
+// ACCESSO ADMINITRACION
+Route::get('admin/login', 'AdminController@showLoginForm');
+Route::get('admin/login', 'AdminController@acceso');
+Route::post('admin/login', 'AdminController@login');
+Route::get('admin/registro', 'Admin\RegistroController@showRegistrationForm');
+Route::post('admin/registro', 'Admin\RegistroController@register');
 ////////////////////API para consultas * sin vistas
 
-Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
-Route::get('capacidad/all', 'CapacidadController@getAll');
+// Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
+// Route::get('capacidad/all', 'CapacidadController@getAll');
 
 // showlists
 Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra');
 Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra');
 
-Route::get('oportunidad', 'OportunidadController@oportunidad');
-Route::get('institucion', 'InstitucionController@institucion');
-Route::get('capacidad', 'CapacidadController@capacidad');
-Route::get('productor', 'ProductorController@productor');
+//BORRE ESTO PORQUE ERAN VISTAS PUBLICAR QUE NO VAMOS USAR MAS
 
 
 Route::get("superlogout",function(){

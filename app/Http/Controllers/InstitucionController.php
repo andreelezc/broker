@@ -4,20 +4,28 @@ namespace inetweb\Http\Controllers;
 
 use inetweb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+//use Illuminate\Pagination\LengthAwarePaginator;
 
 use Illuminate\Http\Request;
 
+use DB;
 use inetweb\Oportunidad;
 use inetweb\Capacidad;
+use inetweb\Seleccion;
+use inetweb\Postulacion;
 use inetweb\OportunidadKey;
 use inetweb\Institucion;
+use inetweb\Productor;
+use inetweb\Mail\nuevaPostulacion;
+use inetweb\Mail\nuevoUsuario;
 
-use inetweb\InteresInstitucion;
 
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Mail;
-use inetweb\Mail\nuevoUsuario;
+
+
+
 
 class InstitucionController extends Controller
 {
@@ -30,11 +38,6 @@ class InstitucionController extends Controller
         
         return view('institucion.acceso');
     }
-
-
-   
-    //protected $loginview = 'institucion.acceso';
-
 
      public function authenticated()
      {
@@ -64,12 +67,12 @@ class InstitucionController extends Controller
         return view('institucion.editarCapacidad',array("capacidad"=>$capacidad));
     }
 
-   
-
-
     public function mostrarCapacidad()
     {
-        return view('institucion.mostrarCapacidad');
+       $user =Auth::guard('institucion')->user()->id;
+        $capacidades = capacidad::orderBy('id', 'desc')->paginate(10);
+        return view('institucion.mostrarCapacidad',compact('capacidades'));
+        //return view('institucion.mostrarCapacidad');
     }
 
     public function inicio()
@@ -78,24 +81,28 @@ class InstitucionController extends Controller
         return view('institucion.inicio');
     }
 
+    //TODO ...paginacion
     public function institucion()
     {
-        $institucion = institucion::orderBy('id')->take(10)->get();
+        $institucion = institucion::orderBy('id')->paginate(10);
         return view('institucion',array('institucion'=>$institucion));
         
     }
-
-    
 
      public function acceso()
     {
         return view('institucion.acceso');
     }
 
+    
+     
+
+
+    //TODO ...paginacion
      public function buscar()
     {
         ///envio los resultados a la vista
-        $oportunidades = Oportunidad::orderBy('id', 'desc')->take(10)->get();
+        $oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(10);
         return view('institucion.buscar',array('oportunidades'=>$oportunidades));
        
       }
@@ -108,12 +115,15 @@ class InstitucionController extends Controller
                                     ->where('oportunidad_keys.palabra','like','%'.$palabra.'%')
                                     ->orWhere('oportunidads.titulo','like','%'.$palabra.'%')
                                     ->orWhere('oportunidads.descripcion','like','%'.$palabra.'%')
-                                     
+                                    ->orWhere('oportunidads.requisito','like','%'.$palabra.'%')
                                     ->distinct()
                                     ->skip($pagina * 10)
                                     ->take(10)
                                     ->get(['oportunidads.*']);
                 // 
+                
+        
+        // $oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(10);
                                     return view('institucion.buscar',array('oportunidades'=>$oportunidades));
 
     }
@@ -140,7 +150,7 @@ public function update_avatar(Request $request){
 
       public function perfil()
     {
-        // Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
+       //Mail::to(Auth::guard('institucion')->user())->send(new nuevoUsuario());       
         return view('institucion.perfil' );
     }
 
@@ -149,7 +159,7 @@ public function update_avatar(Request $request){
     public function editarPerfil(Request $request)
       {
         $user =Institucion::findOrFail($request->id);  
-
+        //datos de la institución
         $user->name= $request->name;
         $user->direccion= $request->direccion;
         $user->cp= $request->cp;
@@ -157,6 +167,10 @@ public function update_avatar(Request $request){
         $user->localidad= $request->localidad;
         $user->telefono= $request->telefono;
         $user->descripcion= $request->descripcion;
+        //info de contacto
+        $user->name1= $request->name1;
+        $user->telefono1= $request->telefono1;
+        $user->hora= $request->hora;
 
         $user->save();
 
@@ -177,21 +191,76 @@ public function update_avatar(Request $request){
       public function postular(Request $request)
       {
 
-        $postulacion = new InteresInstitucion;
+        $postulacion = new Postulacion;
         $postulacion->institucion_id = $request->id_institucion;//si esta alreves pero fue sin querer
         $postulacion->oportunidad_id = $request->id_oportunidad;
+        $postulacion->capacidad_id = $request->id_capacidad;
         $postulacion->save();
+
+        //Manda mails al que se postulo
+        
+        $productor =Productor::findOrFail($request);
+         // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
+        Mail::to($productor)->send(new nuevaPostulacion($productor));
+
+
         ///para el flashh
         return redirect(url('/institucion/buscar'))->with('postulacion','Oportunidad Laborar agregada a ');
+<<<<<<< HEAD
         Mail::to($postulacion)->send(new nuevaPostulacion($postulacion->name)); 
+=======
+      
+>>>>>>> 7384530fea2482c8175ad09ae6219d6119f674bf
 
       }
 
+      //TODO ...paginacion
       public function postulaciones()
       {
-          return view('institucion.postulaciones');
+        $user =Auth::guard('institucion')->user()->id;
+        $postulacion = Postulacion::where('institucion_id', $user)->orderBy('id', 'desc')->paginate(10);
+        return view('institucion.postulaciones',compact('postulacion'));
+          //return view('institucion.postulaciones');
       }
 
+      public function ofertas()
+      {
+        $user =Auth::guard('institucion')->user();
+
+        /////////////////////////////////////////////////////////////
+        ///////////////////////TOOOOODO ESTO PODER BORRAR DESPUE
+       
+//         SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions 
+// where capacidad_id in (SELECT id from capacidads where institucion_id = 1))
+        $ofertas = DB::select('SELECT * from oportunidads WHERE id in (SELECT oportunidad_id FROM seleccions where capacidad_id in (SELECT id from capacidads where institucion_id = ?))', [$user->id]);
+       $ofertas = Oportunidad::hydrate($ofertas);
+         //$ofertas = Capacidad::hydrate($ofertas);
+       ////////////////////////////////////////////////////////////
+       /////////////////////////////////////////////////////////////
+
+
+
+       $selecciones = DB::select('SELECT * from seleccions where capacidad_id IN ( SELECT id from capacidads where institucion_id = ?)',[$user->id]);
+        
+        $selecciones = Seleccion::hydrate($selecciones);
+        return view('institucion.ofertas',array('ofertas'=>$ofertas,'selecciones'=>$selecciones));
+        
+        // return view('institucion.ofertas');
+          
+      }
+
+       public function borrar(Request $request) {
+        
+            
+             $postulacion = Postulacion::findOrFail($request->id);
+              $postulacion->delete();
+
+              //TODO
+              //que mande el borrado con exito
+              //return view('institucion.mostrarCapacidad');
+              return redirect(url('institucion/postulaciones'))->with('success','POSTULACIÓN ELIMINADA ');
+
+          }
 
 
 

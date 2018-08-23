@@ -20,10 +20,11 @@
                     @endif
               <div class="col-md-3 col-lg-2 " align="center"> 
                     {{-- <img alt="User Pic" src="{{ asset('img/avatar_2x.png') }}" class="img-circle img-responsive">  --}}
-                    <img  height="300" width="300" avatar="{{ Auth::Guard('productor')->user()->name }}" class="img-responsive round" >
+                {{--<img  height="300" width="300" avatar="{{ Auth::Guard('productor')->user()->name }}" class="img-responsive round" >--}}
+                <img src="/cargas/avatars/{{ Auth::Guard('productor')->user()->avatar }}" style="width:150px; height:130px; float:left; border-radius:50%; margin-right:70px;"  class="img-responsive round" >
 
            
-               <br>
+               <br> <br><br><br><br><br><br>
                 {{--Boton de nuevo --}}
               <div class="col-md-4  col-md-offset-1">
                <a data-original-title="Editar Telefono" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"  href="{{ url('productor/oportunidad')}}" ><i class="glyphicon glyphicon-plus"></i> Agregar</a>  
@@ -58,7 +59,7 @@
 
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver más</a>
     </div>
     </div>
 
@@ -80,13 +81,14 @@
                                     <p class="list-group-item-text"> Descripción:  {{ $oportunidad->descripcion }}</p>
                                         <p></p>
                                         <ul>
-                                            <li>Requisitos: {{ $oportunidad->requisitos }}</li>
+                                            <li>Requisitos: {{ $oportunidad->requisito }}</li>
                                             <li>  Disponibilidad Horaria: </li>  <br>
 
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                  <div class="form-group"> 
                    <label>Fecha de inicio:  </label>  {{ $oportunidad->fechaInicio }}
+                   <h5 class="text-center">Franja horaria Seleccionada: <label>{{ $oportunidad->tiempo }}</label></h5>
                  <table class="table table-user-information">   
                   <tbody> 
                   <tr>         
@@ -151,7 +153,7 @@
                    </div></div></div>
                                                       
          
-                        <li>Remuneracion : {{ $oportunidad->remuneracion }}</li>
+                        <li>Remuneración : {{ $oportunidad->remuneracion }}</li>
 
         
                        <li> Duración: {{ $oportunidad->numdura }} {{ $oportunidad->duracion }} </li> 
@@ -202,9 +204,14 @@
 @endforeach
   </div>
 </ul>
+                 <div class="text-center">
+                    
+                      {!!$oportunidades->links()!!}
+                    </div> 
+ 
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}
-          
+         
 
     
     <script src="{{ asset('js/avatar.js') }} "></script>

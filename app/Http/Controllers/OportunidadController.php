@@ -1,7 +1,6 @@
 <?php
 
 namespace inetweb\Http\Controllers;
-
 use Illuminate\Http\Request;
 use inetweb\Oportunidad;
 use inetweb\OportunidadKey;
@@ -19,7 +18,13 @@ class OportunidadController extends Controller
      	$o->titulo= $request->titulo;
      	$o->descripcion= $request->descripcion;
      	$o->requisito= $request->requisito;
+      $o->personal= $request->personal;
+      $o->remuneracion= $request->remuneracion;
+      $o->provincia= $request->provincia;
+      $o->localidad= $request->localidad;
      	$o->fechaInicio= $request->fechaInicio;
+      $o->fechaFin= $request->fechaFin;
+      $o->tiempo= $request->tiempo;
           $o->horaInicioL= $request->horaInicioL;
           $o->horaFinL= $request->horaFinL;
           $o->horaInicioM= $request->horaInicioM;
@@ -34,11 +39,10 @@ class OportunidadController extends Controller
           $o->horaFinS= $request->horaFinS;
           $o->horaInicioD= $request->horaInicioD;
           $o->horaFinD= $request->horaFinD;
-     	$o->numdura= $request->numdura;
-     
+     	$o->numdura= $request->numdura;   
      	$o->duracion= $request->duracion;
-        $o->remuneracion= $request->remuneracion;
-          $o->productor_id = $user->id; 
+      $o->productor_id = $user->id; 
+
      	$o->save(); //guardo en la base de datos
 
            //por cada palabra clave creo una keyword;
@@ -52,6 +56,8 @@ class OportunidadController extends Controller
 
      	
      }
+
+     
     public function borrar(Request $request) {
   
       
@@ -73,6 +79,7 @@ class OportunidadController extends Controller
       $o->descripcion= $request->descripcion;
       $o->requisito= $request->requisito;
       $o->fechaInicio= $request->fechaInicio;
+      $o->tiempo= $request->tiempo;
           $o->horaInicioL= $request->horaInicioL;
           $o->horaFinL= $request->horaFinL;
           $o->horaInicioM= $request->horaInicioM;
@@ -99,7 +106,7 @@ class OportunidadController extends Controller
       }
       public function oportunidad()
     {
-         $oportunidad = oportunidad::orderBy('id')->take(10)->get();
+         $oportunidad = oportunidad::orderBy('id')->paginate(10);//->take(10)->get();
         return view('oportunidad',array('oportunidad'=>$oportunidad));
         
     }

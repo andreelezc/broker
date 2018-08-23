@@ -8,6 +8,18 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                 @if(Session::has('registro'))     
+                        <div class="alert alert-success text-uppercase text-center" role="alert">
+                            <span>{{Session::get('registro')}}</span> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
+                     @if(Session::has('activacion'))     
+                        <div class="alert alert-danger text-uppercase text-center" role="alert">
+                            <span>{{Session::get('activacion')}}</span> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                       </div>
+                    @endif
                  <div class="panel-heading text-center"><h3>Iniciar sesión como Productor</h3></div>
 
                 <div class="panel-body">
@@ -15,13 +27,13 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email</label>
+                            <label for="email" class="col-md-4 control-label">Correo Electrónico</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
+                                    <span class="help-block"> 
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -42,7 +54,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
@@ -50,7 +62,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
@@ -59,7 +71,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Olvidaste tu contraseña?
+                                    Recuperar tu contraseña?
                                 </a>
                             </div>
                         </div>
@@ -68,7 +80,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-3">
         
-                    <label>¿Primera vez?</label>
+                    <label>¿Aún no tienes cuenta?</label>
                         <a class="btn btn-link" href="{{ url('productor/registro') }}">
                                    Registrate.
                                 </a>

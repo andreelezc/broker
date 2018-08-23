@@ -5,7 +5,8 @@ namespace inetweb;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
+use inetweb\Seleccion;
 class Productor extends Authenticatable
 {
     //
@@ -17,7 +18,7 @@ class Productor extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'direccion', 'password',
+        'name', 'email', 'direccion', 'password','name1', 'email1', 'telefono1', 'cuil', 'hora','url'
     ];
 
     /**
@@ -36,8 +37,16 @@ class Productor extends Authenticatable
         return $this->hasMany('inetweb\oportunidad');
     }
 
-    public function intereses()
-    {
-        return $this->hasMany('inetweb\InteresProductor');
+    // public function intereses()
+    // {
+    //     return $this->hasMany('inetweb\InteresProductor');
+    // }
+    
+      public function selecciones(){
+        return $this->hasMany('inetweb\Seleccion');
     }
+
+
+    
+
 }

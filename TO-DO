@@ -1,6 +1,12 @@
-falta:
 
 
-*	Relacion entre productor->capacidad->intitucion
-* 	Relacion entre institucion->oportunidad->capacidad
-*	tablas de migracion y seeders
+
+
+*Controlar que no se repitan las postulacion/SELECCIONES
+
+*Envio de Mail solo al mail de contacto y al Admin
+
+**Al hacer  busqueda tira error ***
+
+---------------------------------------------------------------------------------------------------------------
+

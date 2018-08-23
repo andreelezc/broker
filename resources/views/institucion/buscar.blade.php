@@ -25,6 +25,7 @@
                     @endif
 
 
+{{-- FORMULARIO DE BUSQUEDA --}}
 <div class="form-group">
     <label for="search-input" class="control-label">Buscar</label>
     <div class="input-group">
@@ -41,10 +42,7 @@
    <li class="list-group-item">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-
-        {{-- <img class="round" avatar="{{$oportunidad->productor->name}}"/> --}}
-  <img src="/cargas/avatars/{{$oportunidad->productor->avatar}}" class="img-responsive round" >
-
+            <img src="/cargas/avatars/{{$oportunidad->productor->avatar}}" class="img-responsive round" >
       </div> 
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
              <h4 class="list-group-item-heading">{{ $oportunidad->titulo }}</h4>
@@ -62,89 +60,156 @@
 
         </div>
     
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default " data-toggle="modal" > ver mas</a>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        <a href="#ventana{{ $oportunidad->id }}"   class="text-center btn btn-default btn-primary " data-toggle="modal" >
+        ver más
+        </a>
     </div>
     </div>
        
        
-          <!-- boton de la ventana-->
+          <!--MODAL DE SELECCION DE OPORTUNIDAD-->
         
          
                         <div class="modal fade in" id="ventana{{ $oportunidad->id }}" >
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <!-- header de la ventana-->
+                                <!-- header de la ventana-->
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                         </button>
                                         <h4 class="modal-title"> {{ $oportunidad->titulo }} </h4>
-
                                     </div>
-                                     <!-- contenido de la ventana de la ventana-->
-                                            <!-- panel de oportunidad-->
+                                <!-- contenido de la ventana de la ventana-->
+                                    <!-- panel de oportunidad-->
                                     <div class="modal-body"> 
-                                    <p class="list-group-item-text"> Experiencia:  {{ $oportunidad->experiencias }}</p>
+                                        <p class="list-group-item-text"> Experiencia:  {{ $oportunidad->experiencias }}</p>
                                         <p></p>
                                         <ul>
                                             <li>Propuesta: {{ $oportunidad->propuesta }}</li>
-                                            
                                             <li>Requisitos: {{ $oportunidad->requisito }}</li>
                                             <li>Categoria: {{ $oportunidad->categoria }}</li>
                                             <li>Rubro: {{ $oportunidad->rubro }}</li>
                                             <li>Franja Horaria:: {{ $oportunidad->disponibilidad }}</li>
                                             <li>Remuneracion: {{ $oportunidad->remuneracion }}</li>
-                                             <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li>
-                                             <li>Fecha de Egreso: {{ $oportunidad->fechaEgreso }}</li>
-
+                                            <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li>
+                                            <li>Fecha de Egreso: {{ $oportunidad->fechaEgreso }}</li>
                                         </ul>
                                         <p></p>
                                     </div>
-                                            <!-- panel de contacto-->
+                                    <!-- panel de contacto-->
                                     <div class="modal-body">     
-                                    <p class="list-group-item-text"> Contacto:  {{ $oportunidad->productor->name }}</p>
-                                        <p></p>
-                                        <ul>
-                                            <li>Correo Electronico : {{ $oportunidad->productor->email }}</li>
-                                            <li>Direccion: {{ $oportunidad->productor->direccion }}</li>
-                                            <li>Telefono: {{ $oportunidad->productor->telefono  }}</li>
-      
-                                        </ul> 
-           
-                                         <p  href="" class="text-center btn">Ver Perfil </p>
-                                          <p></p>
+                                            <p class="list-group-item-text"> Contacto:  {{ $oportunidad->productor->name }}</p>
+                                            <p></p>
+                                            <ul>
+                                            <li>Correo Electrónico de Contacto : {{ $oportunidad->productor->email }}</li>
+                                            <li>Dirección de Contacto: {{ $oportunidad->productor->direccion }}</li>
+                                            <li>Teléfono de Contacto: {{ $oportunidad->productor->telefono  }}</li>
+                                            </ul> 
+                                            <p></p>
 
-                                    </div>
-                                     <!-- footer de la ventana-->
-                                    <div class="modal-footer">
-                                      <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                    </div>{{--  fin modal body  --}}
+                                    <!-- footer de la ventana-->
 
-                                    <form method="POST" action="{{url('institucion/postular')}}" >
-                                      {{ csrf_field() }}
-                                     <input type="hidden" name="id_institucion" value="{{ Auth::Guard('institucion')->user()->id}}"> 
-                                     <input type="hidden" name="id_oportunidad" value="{{  $oportunidad->id }}"> 
-                                    <button class="btn btn-primary" type="submit">
-                                      Postularme
-                                          <span class="glyphicon glyphicon-hand-up"></span>
-                                    </button>
-                                         
-                                    </form>   
+                                        <div class="modal-footer">
+                                            <div class="row">
+                                                <div class="col-md-16" >
 
-                                      <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></button>
-                                         
-                                    </div>
-                                </div>
+                                                <div class="col-md-4">
+                                                         <a  class="btn btn-success" type="button" href="mailto:{{ $oportunidad->productor->email }}">Contactar  <i class="glyphicon glyphicon-comment"></i> </a>
+                                                </div>
+                                                <div class="col-md-4" >
+
+                                                     @if(count(Auth::Guard('institucion')->user()->capacidades))
+                                                
+                                                         <a href="#selectCapacidad"
+                                                            user_id="{{ Auth::Guard('institucion')->user()->id}}"  
+                                                            oportunidad_id="{{  $oportunidad->id }}" 
+                                                            
+                                                            class="text-center btn btn-warning boton_oportunidad" data-toggle="modal" data-dismiss="modal" >
+                                                            Postularme
+                                                            <span class="glyphicon glyphicon-hand-up"></span>
+                                                         </a>
+                                                         {{--  Este boton manda user_id y oportunidad_id al modal de la capacidad  --}}
+                                                    @else
+                                                 
+                                                    
+                                                    <a href="#" class="text-center btn btn-warning  popover-test" title="¡¡¡ATENCIÓN!!!" data-trigger="focus"  data-placement="top" data-content="<p>para postularte debes de registrar almenos una capacidad</p>"  > Postularme <span class="glyphicon glyphicon-hand-up"></span>
+                                                    </a>
+
+
+                                                      
+                                                    @endif
+
+                                                    
+                                             
+                                                </div>
+
+                                                
+                                                <div class="col-md-4">
+                                                    <a class="btn btn-danger" type="button" data-dismiss="modal">Cerrar  <i class="glyphicon glyphicon-remove"></i></a>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>{{-- fin modal footer   --}}
+
                             </div>
                         </div>
+                    </div>
 
-</li>
-    @endforeach
-</ul>
+                </li>
+                @endforeach
+            </ul>
+                        {{-- paginaciones --}} 
+                    <div class="text-center">
+                      {{--  {!!$oportunidades->links()!!}  --}}
+                    </div>
+            
+                                    {{--  MODAL DE SELECCIÓN DE CAPACIDAD  --}}
+                                            <div class="modal fade in" id="selectCapacidad" >
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        {{--  <!-header de la ventana->  --}}
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title"> Seleccionar Capacidad para la Postulación </h4>
+                                                        </div>
+                                                        {{--   contenido de la ventana de la ventana  --}}
+                                                        {{--   panel de oportunidad  --}}
+                                                        <div class="modal-body"> 
+                                                            <div class="row">
+                                                                <div class="col-mod-8 col-offset-2">
+                                                                         <form id="formularioPostulacion" method="POST" action="{{url('institucion/postular')}}" >
+                                                                                 {{ csrf_field() }} 
+                                                                    <div class="formgroup">
+                                                                        <input type="hidden" name="id_oportunidad" id="id_oportunidad">
+                                                                        <input type="hidden" name="id_institucion" id="id_institucion">
+                                                                        <select class="form-control" id="capacidad_id" name="id_capacidad">
+                                                                            @foreach (Auth::Guard('institucion')->user()->capacidades as $item)
+                                                                            <option value="{{$item->id}}">{{$item->id." - ".$item->titulo}}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                        
+                                                                    </div>
+                                                                         </form>
+                                                                </div>
+                                                            </div>
 
+                                                        </div>{{--  fin modal body  --}}
+                                                        <!-- footer de la ventana-->
 
+                                                        <div class="modal-footer">
+                                                           <a class="btn btn-default btn-primary" id="enviarPostulacion">Postular
+                                                                    <span class="glyphicon glyphicon-hand-up"></span>
+                                                           </a>
+                                                        </div>{{-- fin modal footer   --}}
+                                                    </div>
+                                                </div>
 
-                 </div>
+                                            </div>
             </div>
         </div>
     </div>
@@ -164,12 +229,38 @@
             }
         })
 
+
+
          $("#buscar").click(function(e){
            
             
                 var buscarurl = "{{ url('/institucion/buscar/')}}";
                location.href = buscarurl+"/"+$("#search-input").val();
             
+        })
+
+        //Para la Posutlacion
+        $(".boton_oportunidad").click(function(){
+
+            var oportunidad = $(this).attr('oportunidad_id')
+            var user_id = $(this).attr('user_id')
+            //cambiar le valor de la capacidad la formulario
+            $("#id_oportunidad").val(oportunidad);
+            $("#id_institucion").val(user_id);
+
+
+
+        })
+
+        $("#enviarPostulacion").click(function(){
+            $("#formularioPostulacion").submit();
+        })
+
+        
+
+        $('.popover-test').popover({
+            html:true
+
         })
      })
  </script>
