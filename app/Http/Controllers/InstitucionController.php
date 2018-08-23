@@ -183,6 +183,7 @@ public function update_avatar(Request $request){
         $postulacion->save();
         ///para el flashh
         return redirect(url('/institucion/buscar'))->with('postulacion','Oportunidad Laborar agregada a ');
+        Mail::to($postulacion)->send(new nuevaPostulacion($postulacion->name)); 
 
       }
 
