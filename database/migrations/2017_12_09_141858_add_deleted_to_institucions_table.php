@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class AddDeletedToInstitucionsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations._
      *
      * @return void
      */

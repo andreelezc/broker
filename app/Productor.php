@@ -10,7 +10,8 @@ use inetweb\Seleccion;
 class Productor extends Authenticatable
 {
     //
-    use Notifiable;
+   use Notifiable,SoftDeletes;
+
 
     /**
      * The attributes that are mass assignable.
