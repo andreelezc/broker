@@ -13,9 +13,9 @@ class AddDeletedToProductorsTable extends Migration
      */
     public function up()
     {
-        Schema::table('prostuctors', function (Blueprint $table) {
+        Schema::table('productors', function (Blueprint $table) {
             //
-             $table->softDeletes();
+              $table->softDeletes();
         });
     }
 
@@ -26,7 +26,7 @@ class AddDeletedToProductorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('prostuctors', function (Blueprint $table) {
+        Schema::table('productors', function (Blueprint $table) {
             //
         });
     }
