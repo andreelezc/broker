@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
              $p->email1 ='aflorenciacabrera@gmail.com';
              $p->hora ='8-9';
             $p->password = bcrypt('123456');
-            $p->estado = 1;
+           
              $p->save();  
     }
 
@@ -93,7 +93,7 @@ class DatabaseSeeder extends Seeder
              $i->email1 ='aflorenciacabrera@gmail.com';
              $i->hora ='8-9';
             $i->password = bcrypt('123456');
-            $i->estado = 1;
+           
             $i->save(); 
 
     }
