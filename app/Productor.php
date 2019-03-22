@@ -21,6 +21,7 @@ class Productor extends Authenticatable
     protected $fillable = [
         'name', 'email', 'direccion', 'password','name1', 'email1', 'telefono1', 'cuil', 'hora','url'
     ];
+     protected $dates = ['deleted_at'];
 
     /**
      * The attributes that should be hidden for arrays.
