@@ -42,19 +42,19 @@
 {{-- Botones--}}
 
         <div class="row">
-          <div class="col-md-3"><a class="btn btn-block btn-primary  btn-lg" type="button"  href="{{ url('institucion/inicio') }}">
+          <div class="col-md-3"><a class="btn btn-block btn-primary  btn-lg" type="button"  href="#">
             <h1 class="numero_gigante text-center" style="font-size:70px"><strong>{{$Institucion}}</strong></h1>
             <h2 >Instituciones </h2>
           </a></div>
-          <div class="col-md-3"><a class="btn btn-block btn-success   btn-lg" type="button"  href="{{ url('institucion/inicio') }}">
+          <div class="col-md-3"><a class="btn btn-block btn-success   btn-lg" type="button"  href="#">
             <h1 class="numero_gigante text-center" style="font-size:70px"><strong>{{$Capacidad}}</strong></h1>
             <h2 >Capacidades</h2> 
           </a></div>
-          <div class="col-md-3"><a class="btn btn-block btn-info   btn-lg" type="button"  href="{{ url('productor/inicio') }}">
+          <div class="col-md-3"><a class="btn btn-block btn-info   btn-lg" type="button"  href="#">
             <h1 class="numero_gigante text-center" style="font-size:70px"><strong>{{$Productor}}</strong></h1>
             <h2 >Productores </h2>
           </a></div>
-          <div class="col-md-3"><a class="btn btn-block btn-danger   btn-lg" type="button"  href="{{ url('productor/inicio') }}">
+          <div class="col-md-3"><a class="btn btn-block btn-danger   btn-lg" type="button"  href="#">
             <h1 class="numero_gigante text-center" style="font-size:70px"><strong>{{$Oportunidad}}</strong></h1>
             <h2 >Oportunidades</h2>  
           </a></div>
