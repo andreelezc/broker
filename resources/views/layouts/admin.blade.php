@@ -139,7 +139,7 @@
                 <h5 class="text-left">Instituto Nacional de Educación Tecnológica </h5>
                 <p class="links"><a href="#">inicio</a><strong> · </strong><a href="#">contacto</a><strong> · </strong><a href="#">Novedades</a><strong> · </strong></p>
                 <p class="text-nowrap text-left company-name">
-                LINSSE © 2017 </p>
+                LINSSE © 2020 </p>
             </div>
             <div class="col-md-4 col-sm-6 footer-contacts">
                 <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
