@@ -68,7 +68,7 @@ class RegistroController extends Controller
         ]);
         
         ///manda mail
-        Mail::to($institucion)->send(new nuevoUsuarioInstitucion($institucion->name)); 
+        // Mail::to($institucion)->send(new nuevoUsuarioInstitucion($institucion->name)); 
          ///mensaje flash
        Session::flash('registro', 'Tu usuario ha sido registrado con éxito. El administrador del sitio evaluará tu solicitud y realizará el alta definitiva. Te avisaremos con un correo electrónico.');
 

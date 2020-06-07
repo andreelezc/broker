@@ -139,7 +139,7 @@ class ProductorController extends Controller
         $institucion =institucion::findOrFail($request);
        
 
-          Mail::to($institucion)->send(new nuevaSeleccion($institucion));
+          // Mail::to($institucion)->send(new nuevaSeleccion($institucion));
         ///para el flashh
         return redirect(url('/productor/buscar'))->with('seleccion','Capacidad Laboral agregada a ');
 

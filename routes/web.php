@@ -99,9 +99,7 @@ Route::middleware('isAdmin')->group(function(){
 
 
 ///no logueados
-Route::get('/', function () {
-    return view('inicio');
-});
+Route::get('/',"InstitucionController@noLogueados");
 
 Route::get('institucion', 'InstitucionController@institucion');
 
@@ -148,9 +146,6 @@ Route::post('admin/registro', 'Admin\RegistroController@register');
 // Route::get('capacidad/buscar/{key}', 'CapacidadController@buscar');
 // Route::get('capacidad/all', 'CapacidadController@getAll');
 
-// showlists
-Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra');
-Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra');
 
 //BORRE ESTO PORQUE ERAN VISTAS PUBLICAR QUE NO VAMOS USAR MAS
 
@@ -159,3 +154,11 @@ Route::get("superlogout",function(){
 	Session::flush();
 });
 
+Route::group(['middleware' => ['auth']], function () {
+
+// showlists
+Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra')->name('buscar.key.institucion');
+Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra')->name('buscar.key.productor');;
+
+
+});

@@ -14,6 +14,7 @@ use inetweb\Capacidad;
 use inetweb\Seleccion;
 use inetweb\Postulacion;
 use inetweb\OportunidadKey;
+use inetweb\CapacidadKey; 
 use inetweb\Institucion;
 use inetweb\Productor;
 use inetweb\Mail\nuevaPostulacion;
@@ -23,15 +24,78 @@ use inetweb\Mail\nuevoUsuario;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Mail;
-
-
-
+use stdClass;
 
 class InstitucionController extends Controller
 {
     //
 
      use AuthenticatesUsers;
+
+    public function noLogueados()
+    {
+      $contador_oportunidad = [];
+      $contador_capacidad = [];
+      $grafico = [];
+      $OportunidadKey = OportunidadKey::all();
+      $CapacidadKey = CapacidadKey::all();
+
+      foreach ($OportunidadKey as $p) 
+      {
+        if(isset($contador_oportunidad[strtolower($p->palabra)]))
+        {
+          $contador_oportunidad[strtolower($p->palabra)] += 1;
+        }
+        else
+        {
+          $contador_oportunidad[strtolower($p->palabra)] = 1;
+        }
+      }
+      foreach ($CapacidadKey as $p) 
+      {
+        if(isset($contador_capacidad[strtolower($p->palabra)]))
+        {
+          $contador_capacidad[strtolower($p->palabra)] += 1;
+        }
+        else
+        {
+          $contador_capacidad[strtolower($p->palabra)] = 1;
+        }
+      }
+     
+     arsort($contador_capacidad);
+     arsort($contador_oportunidad);
+    //  return $contador;
+      $label = [];
+      $i = 0;
+    foreach ($contador_oportunidad as $key => $value) 
+    {
+      if($i< 10)
+      {
+        $label[] = $key;
+        $grafico[] = $value;
+
+      }
+      $i++;
+    }
+
+    // return $grafico;
+
+
+    $Oportunidad = Oportunidad::all()->count();
+    $Capacidad = Capacidad::all()->count();
+    $Institucion = Institucion::all()->count();
+    $Productor = Productor::all()->count();
+      //contadores
+      return view('inicio')->with(["Oportunidad"=>$Oportunidad,
+      "Capacidad"=>$Capacidad,
+      "grafico"=>$grafico,
+      "label"=>$label,
+      "contador_capacidad"=>$contador_capacidad,
+      "contador_oportunidad"=>$contador_oportunidad,
+      "Institucion"=>$Institucion,
+      "Productor"=>$Productor]);
+    }
 
      public function showLoginForm()
     {
@@ -111,17 +175,29 @@ class InstitucionController extends Controller
     {
         // SELECT * FROM `oportunidads` LEFT JOIN oportunidad_keys on oportunidads.id = oportunidad_keys.oportunidad_id where oportunidad_keys.palabra LIKE '%full%'
         ///buscar las capacidades que tengan la keyword o en su contenidos
-        $oportunidades = Oportunidad::leftJoin('oportunidad_keys','oportunidads.id','=','oportunidad_keys.oportunidad_id')
-                                    ->where('oportunidad_keys.palabra','like','%'.$palabra.'%')
-                                    ->orWhere('oportunidads.titulo','like','%'.$palabra.'%')
-                                    ->orWhere('oportunidads.descripcion','like','%'.$palabra.'%')
-                                    ->orWhere('oportunidads.requisito','like','%'.$palabra.'%')
-                                    ->distinct()
-                                    ->skip($pagina * 10)
-                                    ->take(10)
-                                    ->get(['oportunidads.*']);
+        // $oportunidades = Oportunidad::leftJoin('oportunidad_keys','oportunidads.id','=','oportunidad_keys.oportunidad_id')
+        //                             ->where('oportunidad_keys.palabra','like','%'.$palabra.'%')
+        //                             ->orWhere('oportunidads.titulo','like','%'.$palabra.'%')
+        //                             ->orWhere('oportunidads.descripcion','like','%'.$palabra.'%')
+        //                             ->orWhere('oportunidads.requisito','like','%'.$palabra.'%')
+        //                             ->distinct()
+        //                             ->skip($pagina * 10)
+        //                             ->take(10)
+        //                             ->get(['oportunidads.*']);
+
+        $oportunidades = Oportunidad::with('keywords')->whereHas('keywords',function($q) use($palabra)
+                                                      {
+                                                        $q->where('palabra',$palabra);
+                                                      })->orWhere('titulo','like','%'.$palabra.'%')
+                                                      ->orWhere('titulo','like','%'.$palabra.'%')
+                                                      ->orWhere('descripcion','like','%'.$palabra.'%')
+                                                      ->orWhere('requisito','like','%'.$palabra.'%')
+                                                      ->distinct()
+                                                      ->skip($pagina * 10)
+                                                      ->take(10)->get();
+        
                 // 
-                
+                // return $oportunidades;
         
         // $oportunidades = Oportunidad::orderBy('id', 'desc')->paginate(10);
                                     return view('institucion.buscar',array('oportunidades'=>$oportunidades));
@@ -201,13 +277,13 @@ public function update_avatar(Request $request){
         
         $productor =Productor::findOrFail($request);
          // Mail::to(Auth::guard('institucion')->user())->send(new nuevaPostulacion($productor));
-        Mail::to($productor)->send(new nuevaPostulacion($productor));
+        // Mail::to($productor)->send(new nuevaPostulacion($productor));
 
 
         ///para el flashh
         return redirect(url('/institucion/buscar'))->with('postulacion','Oportunidad Laborar agregada a ');
 
-        Mail::to($postulacion)->send(new nuevaPostulacion($postulacion->name)); 
+        // Mail::to($postulacion)->send(new nuevaPostulacion($postulacion->name)); 
 
     
 

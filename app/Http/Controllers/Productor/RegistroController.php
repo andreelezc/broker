@@ -60,7 +60,7 @@ class RegistroController extends Controller
         ]);
 
          ///manda mail
-        Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
+        // Mail::to($productor)->send(new nuevoUsuarioProductor($productor->name)); 
 
         //mensaje flash
        Session::flash('registro', 'Tu usuario ha sido registrado con éxito. El administrador del sitio evaluará tu solicitud y realizará el alta definitiva. Te avisaremos con un correo electrónico.');

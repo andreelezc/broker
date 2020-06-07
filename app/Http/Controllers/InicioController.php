@@ -23,6 +23,7 @@ class InicioController extends Controller
      */
     public function index()
     {
+        ///contadores
         return view('inicio');
     }
 }
