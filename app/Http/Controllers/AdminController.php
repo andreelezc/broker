@@ -57,7 +57,7 @@ class AdminController extends Controller
         }
         else
         {
-            $u = Productor::findOrFail($user);
+            $u = Institucion::findOrFail($user);
         }
         $u->estado = 1;
         $u->save();
@@ -73,7 +73,7 @@ class AdminController extends Controller
         }
         else
         {
-            $u = Productor::findOrFail($user);
+            $u = Institucion::findOrFail($user);
         }
         $u->estado = 0;
         $u->save();
