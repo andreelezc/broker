@@ -171,7 +171,7 @@
                             {{ method_field('DELETE') }}
                          
                             {{-- <input type="hidden" name="_method" value="delete"> --}}
-                            <input type="hidden" name="id" value="{{  $interes->oportunidad->id }}">
+                            <input type="hidden" name="id" value="{{  $interes->id }}">
                              <button class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
                            </form>
 

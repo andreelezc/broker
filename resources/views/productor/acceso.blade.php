@@ -70,9 +70,9 @@
                                     Acceso
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Recuperar tu contraseña?
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
 

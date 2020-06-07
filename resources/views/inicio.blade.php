@@ -78,7 +78,7 @@
   <div class="col-md-6 col-sm-12">
     <div class="panel" style="height: 400px">
       <div class="panel-heading text-center">
-        <h2 >Capacidades segueridas</h2>
+        <h2 >Capacidades sugeridas</h2>
        
       </div>
       <div class="panel-body">
