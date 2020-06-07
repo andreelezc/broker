@@ -173,10 +173,10 @@
                                                <div class="col-md-1">
                                                 <form method="post" action="{{ route('borrarSeleccion') }}">
                                                     {{ csrf_field() }}
-                                                  {{ method_field('DELETE') }}
+                                                  {{-- {{ method_field('DELETE') }} --}}
                                                
                                                   {{-- <input type="hidden" name="_method" value="delete"> --}}
-                                                  <input type="hidden" name="id" value="{{  $interes->capacidad->id }}">
+                                                  <input type="hidden" name="id" value="{{  $interes->id }}">
                                                    <button class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i></button>
                                                  </form>
 

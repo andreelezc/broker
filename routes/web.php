@@ -77,7 +77,7 @@ Route::group(['middleware'=>['isProductor','ProductorActivada']],function()
 
 		//selecciones
 		Route::get('productor/selecciones','ProductorController@selecciones')->name('seleccionesProductor');
-		Route::delete('productor/selecciones','ProductorController@borrar')->name("borrarSeleccion");
+		Route::post('productor/selecciones/borrar','ProductorController@borrar')->name("borrarSeleccion");
 
 		Route::get('productor/postulaciones','ProductorController@postulaciones')->name('postulacionesProductor');
 
