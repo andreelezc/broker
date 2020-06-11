@@ -52,6 +52,7 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 Route::group(['middleware'=>['isProductor','ProductorActivada']],function()
 {
 ///rutas solo accesibles por usuarios autenticados de tipo productor
+		Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra')->name('buscar.key.productor');;
 
 		Route::get('productor/home', 'ProductorController@index');
 		Route::get('productor/perfil', 'ProductorController@perfil');
@@ -158,7 +159,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 // showlists
 Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra')->name('buscar.key.institucion');
-Route::get('productor/buscar/{key}/{page?}','ProductorController@buscarPalabra')->name('buscar.key.productor');;
+
 
 
 });
