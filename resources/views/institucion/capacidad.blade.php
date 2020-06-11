@@ -50,7 +50,7 @@ $(document).ready(function(){
                     <label class="control-label" for="text-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Describa su capacidad"></span> </label>
                 </div>
                 <div class="col-md-9 col-md-offset-0 col-sm-6 input-column">
-                    <textarea class="form-control"  name="descripcion" rows="4" cols="20" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral." required></textarea>
+                    <textarea class="form-control"  name="descripcion" rows="4" cols="20" maxlength="190" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral." required></textarea>
                 </div>
                 <br>
             </div>

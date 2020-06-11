@@ -214,7 +214,7 @@
 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <input  class="form-control"  placeholder="Elaborá una breve descripción de tu perfil " name="descripcion" value="{{ Auth::Guard('productor')->user()->descripcion }}" ></td>
+                                                <td> <input  class="form-control" maxlength="190"   placeholder="Elaborá una breve descripción de tu perfil " name="descripcion" value="{{ Auth::Guard('productor')->user()->descripcion }}" ></td>
                                               </tr>
                                              <tr>
                                                 <td>Sitio Web: </td>

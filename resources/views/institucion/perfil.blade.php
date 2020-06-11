@@ -228,7 +228,7 @@
 
                                               <tr>
                                                 <td>Descripción:</td>
-                                                <td> <input  class="form-control"  placeholder="Elaborá una breve descripción de tu perfil " name="descripcion" value="{{ Auth::Guard('institucion')->user()->descripcion }}" ></td>
+                                                <td> <input  class="form-control"  placeholder="Elaborá una breve descripción de tu perfil  "  maxlength="190"  name="descripcion" value="{{ Auth::Guard('institucion')->user()->descripcion }}" ></td>
                                               </tr>
 
                                               <tr>

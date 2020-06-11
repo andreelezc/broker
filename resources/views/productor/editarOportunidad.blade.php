@@ -38,7 +38,7 @@ $(document).ready(function(){
            {{-- Descripcion --}}
             <div class="form-group">
                 <label class="control-label" for="email-input"> Descripción:  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-original-title="Describa su Oportunidad"></span> </label>
-                <textarea class="form-control"  name="descripcion" rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."> {{ $oportunidad->descripcion }}</textarea>
+                <textarea class="form-control"  name="descripcion" maxlength="190"  rows="8" cols="40" id="text-input" placeholder=" Escriba aquí una breve descripción de su capacidad laboral.."> {{ $oportunidad->descripcion }}</textarea>
             </div>
             {{-- PALABRAS CLAVE --}}
         <div class="form-group">
