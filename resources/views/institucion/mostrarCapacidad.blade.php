@@ -218,7 +218,9 @@
 
                      <div class="text-center">
                     
-                      {!!$capacidades->links()!!}
+                   @if(Auth::Guard('institucion')->user()->capacidades->count() > 0)
+                   {!!$capacidades->links()!!}
+                   @endif
                     </div> 
 </div>
  {{-- Fin LISTA DE Mostrar Capacidades  --}}

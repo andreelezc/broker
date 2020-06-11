@@ -133,8 +133,9 @@ class InstitucionController extends Controller
 
     public function mostrarCapacidad()
     {
-       $user =Auth::guard('institucion')->user()->id;
-        $capacidades = capacidad::orderBy('id', 'desc')->paginate(10);
+       $user = Auth::guard('institucion')->user()->id;
+      //  Auth::Guard('institucion')->user()->capacidades->paginate(10);
+       $capacidades = capacidad::orderBy('id', 'desc')->paginate(10);
         return view('institucion.mostrarCapacidad',compact('capacidades'));
         //return view('institucion.mostrarCapacidad');
     }
