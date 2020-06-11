@@ -72,7 +72,7 @@ class InstitucionController extends Controller
     {
       if($i< 10)
       {
-        $label[] = $key;
+        $label[] = strtoupper($key);
         $grafico[] = $value;
 
       }
