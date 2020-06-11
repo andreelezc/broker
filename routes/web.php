@@ -30,7 +30,7 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 		Route::delete('institucion/capacidad','CapacidadController@borrar')->name("borrarCapacidad");
 
 		Route::get('institucion/capacidad/editar/{id}','InstitucionController@editarCapacidad');
-		Route::put('institucion/capacidad/editar/{id}','CapacidadController@editar');
+		Route::post('institucion/capacidad/{id}','CapacidadController@editar')->name('capacidad.editar');
 
 
 		///Postulacion

@@ -94,7 +94,7 @@ class CapacidadController extends Controller
       $c->descripcion= $request->descripcion;
       $c->experiencias= $request->experiencias;
       $c->categoria= $request->categoria;
-      $c->orientacion= $request->orientacion;
+    //   $c->orientacion= $request->orientacion;
       $c->fechaInicio= $request->fechaInicio;
       $c->tiempo= $request->tiempo;
           $c->horaInicioL= $request->horaInicioL;

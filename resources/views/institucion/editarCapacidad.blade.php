@@ -25,7 +25,7 @@ $(document).ready(function(){
                     @endif
 
      {{-- Inicio FORM --}}
-            <form method="POST" action="{{ url('institucion/capacidad') }}" class="bootstrap-form-with-validation">
+            <form method="POST" action="{{ route('capacidad.editar',['id'=>$capacidad->id]) }}" class="bootstrap-form-with-validation">
              {{ csrf_field() }}       
             {{--<h2 class="text-center">Capacidad Laboral</h2>--}}
 
