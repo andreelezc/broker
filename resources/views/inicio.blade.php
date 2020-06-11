@@ -109,7 +109,7 @@
             data: {
                 labels: @json($label),
                 datasets: [{
-                    label: '#',
+                    label: 'Cantidad',
                     data: @json($grafico),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
