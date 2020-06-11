@@ -17,7 +17,7 @@
                        </div>
                     @endif 
         <section>
-            <h1 class="text-center">Activar y Descativar Usuarios</h1>
+            <h1 class="text-center">Activar y Desactivar Usuarios</h1>
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
