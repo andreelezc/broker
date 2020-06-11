@@ -202,7 +202,7 @@
                                                 <td><input class="form-control" type="" name="provincia" value="{{ Auth::Guard('productor')->user()->provincia }}"></td>
                                                  
                                               </tr>
-                                              <tr><td>   Localidad:</td>
+                                              <tr><td>Localidad:</td>
                                                 <td> <input class="form-control" type="" name="localidad" value="{{ Auth::Guard('productor')->user()->localidad }}"></td>
 
                                                </tr>              
