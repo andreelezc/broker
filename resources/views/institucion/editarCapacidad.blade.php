@@ -195,13 +195,15 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-md-4 ">
                         <div class="form-group">
-                        Fecha de inicio:  <input type="date"  id="start" " name="fechaInicio" value="{{date_create_from_format('d/m/Y',$capacidad->fechaInicio)->format('Y-m-d')}}" required/>
+                        {{-- Fecha de inicio:  <input type="date"  id="start"  name="fechaInicio" value="{{date_create_from_format('d/m/Y',$capacidad->fechaInicio)->format('Y-m-d')}}" required/> --}}
+                        Fecha de inicio:  <input type="date"  id="start"  name="fechaInicio" value="{{date("Y-m-d",strtotime($capacidad->fechaInicio))}}" required/>
                         </div>
                     </div>
 
                      <div class="col-md-6">
                         <div class="form-group">
-                         Fecha de  finalización:  <input type="date" id="end" name="fechaFin" value="{{date_create_from_format('d/m/Y',$capacidad->fechaFin)->format('Y-m-d')}}" required/>
+                         {{-- Fecha de  finalización:  <input type="date" id="end" name="fechaFin" value="{{date_create_from_format('d/m/Y',$capacidad->fechaFin)->format('Y-m-d')}}" required/> --}}
+                        Fecha de  finalización:  <input type="date" id="end" name="fechaFin" value="{{date("Y-m-d",strtotime($capacidad->fechaFin))}}" required/>
                         </div>
                     </div>
 
