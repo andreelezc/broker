@@ -238,4 +238,53 @@ class ProductorController extends Controller
           
           }
 
+
+          public function actividad()
+          {
+
+            // capacidades del login
+            $oportunidades = Auth::guard('productor')->user()->oportunidades;
+          
+            $contador_key = [];
+            //por cada capacidad
+            foreach ($oportunidades as $oportunidad) 
+            {
+              // por cada key
+              foreach ($oportunidad->keywords as $k) 
+              {
+                if(isset($contador_key[strtolower($k->palabra)]))
+                {
+                  $contador_key[strtolower($k->palabra)] += 1;
+                }
+                else
+                {
+                  $contador_key[strtolower($k->palabra)] = 1;
+                }
+              }
+            }
+
+      //para el grafico
+      arsort($contador_key);
+      //  return $contador;
+        $label = [];
+        $i = 0;
+      foreach ($contador_key as $key => $value) 
+      {
+        if($i< 10)
+        {
+          $label[] = strtoupper($key);
+          $grafico[] = $value;
+  
+        }
+        $i++;
+      }
+
+
+          
+            return view('productor.actividad')
+            ->with('label',$label)
+            ->with('grafico',$grafico)
+            ;
+          }
+
 }

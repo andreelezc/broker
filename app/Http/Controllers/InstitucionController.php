@@ -338,6 +338,54 @@ public function update_avatar(Request $request){
 
           }
 
+          public function actividad()
+          {
+
+            // capacidades del login
+            $capacidades = Auth::guard('institucion')->user()->capacidades;
+          
+            $contador_key = [];
+            //por cada capacidad
+            foreach ($capacidades as $capacidad) 
+            {
+              // por cada key
+              foreach ($capacidad->keywords as $k) 
+              {
+                if(isset($contador_key[strtolower($k->palabra)]))
+                {
+                  $contador_key[strtolower($k->palabra)] += 1;
+                }
+                else
+                {
+                  $contador_key[strtolower($k->palabra)] = 1;
+                }
+              }
+            }
+
+      //para el grafico
+      arsort($contador_key);
+      //  return $contador;
+        $label = [];
+        $i = 0;
+      foreach ($contador_key as $key => $value) 
+      {
+        if($i< 10)
+        {
+          $label[] = strtoupper($key);
+          $grafico[] = $value;
+  
+        }
+        $i++;
+      }
+
+
+          
+            return view('institucion.actividad')
+            ->with('label',$label)
+            ->with('grafico',$grafico)
+            ;
+          }
+
 
 
 }

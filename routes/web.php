@@ -12,7 +12,10 @@
 |--------------------------------------------------------------------------
 
 */
-	
+
+use inetweb\Http\Controllers\InstitucionController;
+use inetweb\Institucion;
+
 Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 {
 
@@ -40,6 +43,10 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 		Route::delete('institucion/postulaciones','InstitucionController@borrar')->name("borrarPostulacion");
 
 		Route::get('institucion/ofertas','InstitucionController@ofertas')->name('ofertasInstitucion');
+
+
+		Route::get('institucion/actividad','InstitucionController@actividad')->name('institucion.actividad');
+
 
 
 });
@@ -70,7 +77,7 @@ Route::group(['middleware'=>['isProductor','ProductorActivada']],function()
 		Route::get('productor/oportunidad/editar/{id}','ProductorController@editarOportunidad');
 		Route::put('productor/oportunidad/editar/{id}','OportunidadController@editar');
 
-
+		Route::get('productor/actividad','ProductorController@actividad')->name('productor.actividad');
 
 
 		///Seleccionar

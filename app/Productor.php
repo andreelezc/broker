@@ -48,6 +48,10 @@ class Productor extends Authenticatable
         return $this->hasMany('inetweb\Seleccion');
     }
 
+    public function postulaciones(){
+        return $this->hasMany('inetweb\InteresProductor');
+    }
+
 
     
 
