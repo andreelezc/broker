@@ -24,7 +24,7 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 		Route::get('institucion/perfil','InstitucionController@perfil');	
 		Route::post('institucion/perfil', 'InstitucionController@update_avatar');
 		Route::put('institucion/perfil','InstitucionController@editarPerfil');	
-		Route::delete('institucion/perfil','InstitucionController@eliminarPerfil')->name("eliminarPerfil");
+		Route::delete('institucion/perfil','InstitucionController@eliminarPerfil')->name("eliminarInstitucion");
 		
 		Route::get('institucion/capacidad', 'InstitucionController@cargarCapacidad');
 		Route::get('institucion/mostrarCapacidad', 'InstitucionController@mostrarCapacidad');
@@ -107,7 +107,7 @@ Route::middleware('isAdmin')->group(function(){
 
 
 ///no logueados
-Route::get('/',"InstitucionController@noLogueados");
+Route::get('/',"InstitucionController@noLogueados")->name('home');
 
 Route::get('institucion', 'InstitucionController@institucion');
 

@@ -15,16 +15,16 @@
                     <div class="row">
                         <div class="col-md-4">
                             <p><h1>{{Auth::guard('institucion')->user()->capacidades->count()}}</h1></p>
-                            <p><h2>CAPACIDADES</h2></p>
+                            <p><h3>CAPACIDADES</h3></p>
                             
                         </div>
                         <div class="col-md-4">
                             <p><h1>{{Auth::guard('institucion')->user()->postulaciones->count()}}</h1></p>
-                            <p><h2>POSTULACIONES</h2></p>
+                            <p><h3>POSTULACIONES</h3></p>
                         </div>
                         <div class="col-md-4">
                             <p><h1>{{Auth::guard('institucion')->user()->intereses->count()}}</h1></p>
-                            <p><h2>OFERTAS</h2></p>
+                            <p><h3>OFERTAS</h3></p>
                         </div>
                     </div>
                     <h2>Capacidades por categoria</h2>

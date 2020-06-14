@@ -258,10 +258,11 @@ public function update_avatar(Request $request){
 
       public function eliminarPerfil(Request $request) {
 
+        
           $user =Institucion::findOrFail($request->id);
           $user->delete();
 
-          return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
+          return redirect()->route('home')->with('status','Tu cuenta a sido ELIMINADA');
 
       }
 

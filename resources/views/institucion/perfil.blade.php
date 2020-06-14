@@ -284,7 +284,7 @@
                           </div>
                       </div> {{-- modal --}} 
 
-                         <form method="post" action="{{ route('eliminarPerfil') }}">
+                         <form method="post" action="{{ route('eliminarInstitucion') }}">
                                                           {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
                                                         {{-- <input type="hidden" name="_method" value="delete"> --}}
