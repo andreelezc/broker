@@ -87,14 +87,14 @@
                                         <p class="list-group-item-text"> Experiencia:  {{ $oportunidad->experiencias }}</p>
                                         <p></p>
                                         <ul>
-                                            <li>Propuesta: {{ $oportunidad->propuesta }}</li>
+                                            {{-- <li>Propuesta: {{ $oportunidad->propuesta }}</li> --}}
                                             <li>Requisitos: {{ $oportunidad->requisito }}</li>
-                                            <li>Categoria: {{ $oportunidad->categoria }}</li>
+                                            {{-- <li>Categoria: {{ $oportunidad->categoria }}</li> --}}
                                             {{-- <li>Rubro: {{ $oportunidad->rubro }}</li> --}}
-                                            <li>Franja Horaria:: {{ $oportunidad->disponibilidad }}</li>
+                                            {{-- <li>Franja Horaria:: {{ $oportunidad->disponibilidad }}</li> --}}
                                             <li>Remuneracion: {{ $oportunidad->remuneracion }}</li>
-                                            <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li>
-                                            <li>Fecha de Egreso: {{ $oportunidad->fechaEgreso }}</li>
+                                            {{-- <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li> --}}
+                                            {{-- <li>Fecha de Egreso: {{ $oportunidad->fechaEgreso }}</li> --}}
                                         </ul>
                                         <p></p>
                                     </div>
