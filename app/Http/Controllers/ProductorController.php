@@ -246,9 +246,19 @@ class ProductorController extends Controller
             $oportunidades = Auth::guard('productor')->user()->oportunidades;
           
             $contador_key = [];
+            $linea_de_tiempo = [];
             //por cada capacidad
             foreach ($oportunidades as $oportunidad) 
             {
+              if(isset($linea_de_tiempo[date("d-m-Y",strtotime($oportunidad->created_at))]))
+              {
+
+                $linea_de_tiempo[date("d-m-Y",strtotime($oportunidad->created_at))] += 1;
+              }
+              else
+              {
+                $linea_de_tiempo[date("d-m-Y",strtotime($oportunidad->created_at))] = 1;
+              }
               // por cada key
               foreach ($oportunidad->keywords as $k) 
               {
@@ -279,11 +289,24 @@ class ProductorController extends Controller
         $i++;
       }
 
+       // linea de tiempo
+       foreach ($linea_de_tiempo as $key => $value) 
+       {
+        
+           $label_time[] = $key;
+           $grafico_time[] = $value;
+   
+       
+         
+       }
+
 
           
             return view('productor.actividad')
             ->with('label',$label)
             ->with('grafico',$grafico)
+            ->with('label_time',$label_time)
+            ->with('grafico_time',$grafico_time)
             ;
           }
 

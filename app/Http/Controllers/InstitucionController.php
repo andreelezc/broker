@@ -345,9 +345,19 @@ public function update_avatar(Request $request){
             $capacidades = Auth::guard('institucion')->user()->capacidades;
           
             $contador_key = [];
+            $linea_de_tiempo = [];
             //por cada capacidad
             foreach ($capacidades as $capacidad) 
             {
+              if(isset($linea_de_tiempo[date("d-m-Y",strtotime($capacidad->created_at))]))
+              {
+
+                $linea_de_tiempo[date("d-m-Y",strtotime($capacidad->created_at))] += 1;
+              }
+              else
+              {
+                $linea_de_tiempo[date("d-m-Y",strtotime($capacidad->created_at))] = 1;
+              }
               // por cada key
               foreach ($capacidad->keywords as $k) 
               {
@@ -378,11 +388,26 @@ public function update_avatar(Request $request){
         $i++;
       }
 
+      // linea de tiempo
+      foreach ($linea_de_tiempo as $key => $value) 
+      {
+       
+          $label_time[] = $key;
+          $grafico_time[] = $value;
+  
+      
+        
+      }
+
+      
+
 
           
             return view('institucion.actividad')
             ->with('label',$label)
             ->with('grafico',$grafico)
+            ->with('label_time',$label_time)
+            ->with('grafico_time',$grafico_time)
             ;
           }
 
