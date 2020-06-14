@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                <h4>ACTIVIDAD DE {{Auth::guard('institucion')->user()->name}}</h4>
+                <h4>Actividad de {{Auth::guard('institucion')->user()->name}}</h4>
                 </div>
 
                 <div class="panel-body text-center">
@@ -71,12 +71,23 @@
               legend:{
                 display:false
               },
-                scales: {
+              scales: {
                     xAxes: [{
                         ticks: {
                             beginAtZero: true
                         }
-                    }]
+                        ,
+                        gridLines:{
+                          display:false
+                        }
+                    }],
+                    yAxes:[
+                      {
+                        gridLines:{
+                          display:false
+                        }
+                      }
+                    ]
                 }
             }
         });

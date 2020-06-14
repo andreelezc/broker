@@ -149,7 +149,18 @@
                         ticks: {
                             beginAtZero: true
                         }
-                    }]
+                        ,
+                        gridLines:{
+                          display:false
+                        }
+                    }],
+                    yAxes:[
+                      {
+                        gridLines:{
+                          display:false
+                        }
+                      }
+                    ]
                 }
             }
         });
