@@ -29,6 +29,7 @@
                     </div>
                     <h2>Capacidades por categoria</h2>
                     <canvas id="myChart" width="400" ></canvas>
+                    <h2>Capacidades publicadas recientemente</h2>
                     <canvas id="tiempo" width="400" ></canvas>
         <script>
         var ctx = document.getElementById('myChart');
