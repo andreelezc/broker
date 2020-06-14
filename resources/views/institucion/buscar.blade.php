@@ -90,7 +90,7 @@
                                             <li>Propuesta: {{ $oportunidad->propuesta }}</li>
                                             <li>Requisitos: {{ $oportunidad->requisito }}</li>
                                             <li>Categoria: {{ $oportunidad->categoria }}</li>
-                                            <li>Rubro: {{ $oportunidad->rubro }}</li>
+                                            {{-- <li>Rubro: {{ $oportunidad->rubro }}</li> --}}
                                             <li>Franja Horaria:: {{ $oportunidad->disponibilidad }}</li>
                                             <li>Remuneracion: {{ $oportunidad->remuneracion }}</li>
                                             <li>Fecha de Ingreso: {{ $oportunidad->fechaIngreso }}</li>

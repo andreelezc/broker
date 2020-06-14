@@ -98,8 +98,8 @@
                         <p></p>
                         <ul>
                             <li>Categoria: {{ $capacidad->categoria }}</li>
-                            <li>Rubro: {{ $capacidad->rubro }}</li>
-                            <li>Disponibilidad: {{ $capacidad->disponibilidad }}</li>
+                            {{-- <li>Rubro: {{ $capacidad->rubro }}</li> --}}
+                            {{-- <li>Disponibilidad: {{ $capacidad->disponibilidad }}</li> --}}
                             <li>Remuneracion Pretendida: {{ $capacidad->remuneracion }}</li>
                         </ul>
                         <p></p>
@@ -116,7 +116,7 @@
                             
                         </ul> 
 
-                            <p  href="" class="text-center btn">Ver Perfil </p>
+                            {{-- <p  href="" class="text-center btn">Ver Perfil </p> --}}
                             <p></p>
 
                     </div>
