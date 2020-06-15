@@ -252,7 +252,7 @@ public function update_avatar(Request $request){
         $user->save();
 
        // return view("institucion.mostrarCapacidad");
-        return redirect(url('institucion/perfil'))->with('success','Tus datos fueron actualizados con exitos');
+        return redirect(url('institucion/perfil'))->with('success','Tus datos fueron actualizados con éxito.');
    
       }
 
@@ -262,7 +262,7 @@ public function update_avatar(Request $request){
           $user =Institucion::findOrFail($request->id);
           $user->delete();
 
-          return redirect()->route('home')->with('status','Tu cuenta a sido ELIMINADA');
+          return redirect()->route('home')->with('status','Tu cuenta ha sido ELIMINADA');
 
       }
 

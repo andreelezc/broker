@@ -181,7 +181,7 @@ class ProductorController extends Controller
         $user->save();
 
        // return view("institucion.mostrarCapacidad");
-        return redirect(url('productor/perfil'))->with('success','Tus datos fueron actualizados con exitos');
+        return redirect(url('productor/perfil'))->with('success','Tus datos fueron actualizados con éxito.');
    
       }
       public function eliminarPerfil(Request $request) {
@@ -189,7 +189,7 @@ class ProductorController extends Controller
           $user =Productor::findOrFail($request->id);
           $user->delete();
 
-          return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
+          return redirect(url('/'))->with('status','Tu cuenta ha sido ELIMINADA');
 
       }
 
