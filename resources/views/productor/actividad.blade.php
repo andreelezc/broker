@@ -76,7 +76,8 @@
               scales: {
                     xAxes: [{
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            stepSize: 1
                         }
                         ,
                         gridLines:{
@@ -132,7 +133,10 @@
                 {
                   gridLines:{
                     display:false
-                  }
+                  },
+                  ticks: {
+                        stepSize: 1
+                    }
                 }
               ]
           }
