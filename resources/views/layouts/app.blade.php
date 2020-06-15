@@ -203,7 +203,7 @@
 
 
         <footer>
-         <div class="row">
+         <div class="row" style="padding-top: 30px;">
             <div class="col-md-3 col-md-offset-0 col-sm-4 footer-navigation">
                 <header><img class="img-responsive" src=" {{asset('img/logo-inet2.png')}}" width="200" height="100"></header>
                 <h5 class="text-left">Instituto Nacional de Educación Tecnológica </h5>

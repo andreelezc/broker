@@ -67,7 +67,7 @@
 
  <div class="container">
     <div class="row">
-    <div  class="col-md-12 text-center "> <img  class="img-responsive" src="{{asset('cuadro.png')}}" /></div>
+    <div  class="col-md-12 text-center "> <img  class="img-responsive" src="{{asset('cuadro.png')}}" style="padding: 20px;"/></div>
     </div>
 </div>
 
