@@ -193,9 +193,9 @@ class InstitucionController extends Controller
                                                       ->orWhere('titulo','like','%'.$palabra.'%')
                                                       ->orWhere('descripcion','like','%'.$palabra.'%')
                                                       ->orWhere('requisito','like','%'.$palabra.'%')
-                                                      ->distinct()
-                                                      ->skip($pagina * 10)
-                                                      ->take(10)->get();
+                                                      ->distinct()->paginate(10);
+                                                      // ->skip($pagina * 10)
+                                                      // ->take(10)->get();
         
                 // 
                 // return $oportunidades;
