@@ -168,7 +168,9 @@
 </ul>
                       {{-- paginaciones --}} 
                     <div class="text-center">
-                       {!!$capacidades->links()!!} 
+                        @if($capacidades->count() > 0)
+                        {!!$capacidades->links()!!} 
+                        @endif
                     </div>
 
 {{-- MODAL DE SELECCION DE OPORTUNIDAD --}}
