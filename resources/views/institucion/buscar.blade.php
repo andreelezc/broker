@@ -163,7 +163,7 @@
             </ul>
                         {{-- paginaciones --}} 
                     <div class="text-center">
-                      {{--  {!!$oportunidades->links()!!}  --}}
+                       {!!$oportunidades->links()!!} 
                     </div>
             
                                     {{--  MODAL DE SELECCIÓN DE CAPACIDAD  --}}

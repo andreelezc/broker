@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        // self::seedProductors();
-        // self::seedInstitucions();
-        //  self::seedCapacidads();
-        // self::seedOportunidads();
+        self::seedProductors();
+        self::seedInstitucions();
+         self::seedCapacidads();
+        self::seedOportunidads();
         self::seedAdmins();
         $this->command->info('Tabla usuarios inicializada con datos!');
          $this->command->info('Tabla capacidades inicializada con datos!');

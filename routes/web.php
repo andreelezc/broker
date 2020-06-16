@@ -47,7 +47,7 @@ Route::group(['middleware'=>['isInstitucion','InstitucionActivada']],function()
 
 		Route::get('institucion/actividad','InstitucionController@actividad')->name('institucion.actividad');
 
-
+		Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra')->name('buscar.key.institucion');
 
 });
 /*
@@ -162,10 +162,10 @@ Route::get("superlogout",function(){
 	Session::flush();
 });
 
+
 Route::group(['middleware' => ['auth']], function () {
 
 // showlists
-Route::get('institucion/buscar/{key}/{page?}','InstitucionController@buscarPalabra')->name('buscar.key.institucion');
 
 
 
