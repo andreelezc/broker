@@ -56,6 +56,7 @@ class Institucion extends Authenticatable
     public function intereses(){
         return $this->hasMany('inetweb\InteresInstitucion');
     }
+  
     
 
 

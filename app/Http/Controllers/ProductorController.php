@@ -301,12 +301,20 @@ class ProductorController extends Controller
        }
 
 
+       $user =Auth::guard('productor')->user();
+       // SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions 
+       //where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = 1))
+       $postulaciones = DB::select('SELECT * from capacidads WHERE capacidads.id in (SELECT postulacions.capacidad_id FROM postulacions where oportunidad_id in (SELECT oportunidads.id from oportunidads where oportunidads.productor_id = ?))', [$user->id]);
+        $postulaciones = Capacidad::hydrate($postulaciones);
+
+
           
             return view('productor.actividad')
             ->with('label',$label)
             ->with('grafico',$grafico)
             ->with('label_time',$label_time)
             ->with('grafico_time',$grafico_time)
+            ->with('postulaciones', $postulaciones->count());
             ;
           }
 

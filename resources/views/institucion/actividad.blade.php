@@ -23,7 +23,7 @@
                             <p><h3>POSTULACIONES</h3></p>
                         </div>
                         <div class="col-md-4">
-                            <p><h1>{{Auth::guard('institucion')->user()->intereses->count()}}</h1></p>
+                            <p><h1>{{$ofertas}}</h1></p>
                             <p><h3>OFERTAS</h3></p>
                         </div>
                     </div>

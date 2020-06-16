@@ -23,7 +23,7 @@
                             <p><h3>SELECCIONES</h3></p>
                         </div>
                         <div class="col-md-4">
-                            <p><h1>{{Auth::guard('productor')->user()->postulaciones->count()}}</h1></p>
+                        <p><h1>{{$postulaciones}}</h1></p>
                             <p><h3>POSTULACIONES</h3></p>
                         </div>
                     </div>
