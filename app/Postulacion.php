@@ -9,7 +9,7 @@ class Postulacion extends Model
     //  //
     public function oportunidad()
     {
-    	return $this->belongsTo('inetweb\oportunidad','oportunidad_id');
+    	return $this->belongsTo('inetweb\Oportunidad','oportunidad_id');
     }
     //
     public function institucion()
