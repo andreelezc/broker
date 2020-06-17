@@ -19,6 +19,6 @@ class Seleccion extends Model
 
     public function capacidad()
     {
-    	return $this->belongsTo('inetweb\capacidad','capacidad_id');
+    	return $this->belongsTo('inetweb\Capacidad','capacidad_id');
     }
 }
